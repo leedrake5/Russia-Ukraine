@@ -60,8 +60,8 @@ current_captured <- ggplot(captured_melt, aes(Date, Captured, colour=Country, sh
 geom_point() +
 stat_smooth() +
 scale_x_date(date_labels = "%m/%d") +
-scale_y_continuous("Total Equipment Captured") +
-ggtitle(paste0("Total equipment captured through ", Sys.Date())) +
+scale_y_continuous("Total Equipment Captured by Enemy") +
+ggtitle(paste0("Total equipment captured by enemy through ", Sys.Date())) +
 theme_light()
 ggsave("~/Github/Russia-Ukraine/current_captured.jpg", current_captured, device="jpg", width=5, height=5)
 
@@ -82,8 +82,8 @@ current_grid <- ggplot(all_melt, aes(Date, Number, colour=Country, shape=Country
 geom_point() +
 stat_smooth() +
 scale_x_date(date_labels = "%m/%d") +
-scale_y_continuous("Total Equipment") +
-ggtitle(paste0("Total equipment through ", Sys.Date())) +
+scale_y_continuous("Total Equipment Lost") +
+ggtitle(paste0("Total equipment lost through ", Sys.Date())) +
 facet_grid(rows=vars(Type)) +
 theme_light()
 ggsave("~/Github/Russia-Ukraine/current_grid.jpg", current_grid, device="jpg", width=5, height=10)
