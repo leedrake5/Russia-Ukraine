@@ -18,8 +18,8 @@ total_melt <- total_melt %>%
     mutate(Daily = Total - lag(Total, default = first(Total)))
 
 current_total <- ggplot(total_melt, aes(Date, Total, colour=Country, shape=Country)) +
+geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
 geom_point() +
-geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country)) + 
 stat_smooth() +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Losses") +
@@ -39,8 +39,8 @@ destroyed_melt <- destroyed_melt %>%
 
 
 current_destroyed <- ggplot(destroyed_melt, aes(Date, Destroyed, colour=Country, shape=Country)) +
+geom_col(data=destroyed_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
 geom_point() +
-geom_col(data=destroyed_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country)) + 
 stat_smooth() +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Destroyed") +
@@ -59,9 +59,9 @@ abandoned_melt <- abandoned_melt %>%
     mutate(Daily = Abandoned - lag(Abandoned, default = first(Abandoned)))
 
 current_abandoned <- ggplot(abandoned_melt, aes(Date, Abandoned, colour=Country, shape=Country)) +
+geom_col(data=abandoned_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
 geom_point() +
 stat_smooth() +
-geom_col(data=abandoned_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country)) + 
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Abandoned") +
 ggtitle(paste0("Total equipment abandoned through ", Sys.Date())) +
@@ -79,8 +79,8 @@ captured_melt <- captured_melt %>%
     mutate(Daily = Captured - lag(Captured, default = first(Captured)))
 
 current_captured <- ggplot(captured_melt, aes(Date, Captured, colour=Country, shape=Country)) +
+geom_col(data=captured_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
 geom_point() +
-geom_col(data=captured_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country)) + 
 stat_smooth() +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Captured by Enemy") +
@@ -102,8 +102,8 @@ colnames(captured_melt)[3] <- "Number"
 all_melt <- rbindlist(list(destroyed_melt, abandoned_melt, captured_melt))
 
 current_grid <- ggplot(all_melt, aes(Date, Number, colour=Country, shape=Country)) +
+geom_col(data=all_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
 geom_point() +
-geom_col(data=all_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country)) + 
 stat_smooth() +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Lost") +
