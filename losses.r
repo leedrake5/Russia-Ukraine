@@ -19,7 +19,7 @@ scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Losses") +
 ggtitle(paste0("Total equipment losses through ", Sys.Date())) +
 theme_light()
-ggsave("~/Github/Russia-Ukraine/current_total.jpg", current_total, device="jpg", width=5, height=5)
+ggsave("~/Github/Russia-Ukraine/current_total.jpg", current_total, device="jpg", width=6, height=5)
 
 ####Destroyed
 destroyed_melt <- melt(equipment_losses[,c("Date", "Russia_Destroyed", "Ukraine_Destroyed")], id.var="Date")
@@ -34,7 +34,7 @@ scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Destroyed") +
 ggtitle(paste0("Total equipment destroyed through ", Sys.Date())) +
 theme_light()
-ggsave("~/Github/Russia-Ukraine/current_destroyed.jpg", current_destroyed, device="jpg", width=5, height=5)
+ggsave("~/Github/Russia-Ukraine/current_destroyed.jpg", current_destroyed, device="jpg", width=6, height=5)
 
 ####Abandoned
 abandoned_melt <- melt(equipment_losses[,c("Date", "Russia_Abandoned", "Ukraine_Abandoned")], id.var="Date")
@@ -49,7 +49,7 @@ scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Abandoned") +
 ggtitle(paste0("Total equipment abandoned through ", Sys.Date())) +
 theme_light()
-ggsave("~/Github/Russia-Ukraine/current_abandoned.jpg", current_abandoned, device="jpg", width=5, height=5)
+ggsave("~/Github/Russia-Ukraine/current_abandoned.jpg", current_abandoned, device="jpg", width=6, height=5)
 
 ####Captured
 captured_melt <- melt(equipment_losses[,c("Date", "Russia_Captured", "Ukraine_Captured")], id.var="Date")
@@ -64,7 +64,7 @@ scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Captured by Enemy") +
 ggtitle(paste0("Total equipment captured by enemy through ", Sys.Date())) +
 theme_light()
-ggsave("~/Github/Russia-Ukraine/current_captured.jpg", current_captured, device="jpg", width=5, height=5)
+ggsave("~/Github/Russia-Ukraine/current_captured.jpg", current_captured, device="jpg", width=6, height=5)
 
 
 ###All together now
@@ -86,5 +86,6 @@ scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Lost") +
 ggtitle(paste0("Total equipment lost through ", Sys.Date())) +
 facet_grid(rows=vars(Type)) +
-theme_light()
-ggsave("~/Github/Russia-Ukraine/current_grid.jpg", current_grid, device="jpg", width=5, height=10)
+theme_light() +
+theme(legend.position="bottom")
+ggsave("~/Github/Russia-Ukraine/current_grid.jpg", current_grid, device="jpg", width=6, height=10)
