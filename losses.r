@@ -3,6 +3,7 @@ library(RCurl)
 library(reshape2)
 library(data.table)
 library(gsheet)
+library(dplyr)
 
 equipment_losses <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0")
 
@@ -11,9 +12,14 @@ total_melt <- melt(equipment_losses[,c("Date", "Russia_Total", "Ukraine_Total")]
 total_melt$Date <- as.Date(total_melt$Date, format="%m/%d/%Y")
 colnames(total_melt) <- c("Date", "Country", "Total")
 total_melt$Country <- gsub("_Total", "", total_melt$Country)
+total_melt <- total_melt %>%
+    group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Total - lag(Total, default = first(Total)))
 
 current_total <- ggplot(total_melt, aes(Date, Total, colour=Country, shape=Country)) +
 geom_point() +
+geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country)) + 
 stat_smooth() +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Losses") +
@@ -26,9 +32,15 @@ destroyed_melt <- melt(equipment_losses[,c("Date", "Russia_Destroyed", "Ukraine_
 destroyed_melt$Date <- as.Date(destroyed_melt$Date, format="%m/%d/%Y")
 colnames(destroyed_melt) <- c("Date", "Country", "Destroyed")
 destroyed_melt$Country <- gsub("_Destroyed", "", destroyed_melt$Country)
+destroyed_melt <- destroyed_melt %>%
+    group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Destroyed - lag(Destroyed, default = first(Destroyed)))
+
 
 current_destroyed <- ggplot(destroyed_melt, aes(Date, Destroyed, colour=Country, shape=Country)) +
 geom_point() +
+geom_col(data=destroyed_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country)) + 
 stat_smooth() +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Destroyed") +
@@ -41,10 +53,15 @@ abandoned_melt <- melt(equipment_losses[,c("Date", "Russia_Abandoned", "Ukraine_
 abandoned_melt$Date <- as.Date(abandoned_melt$Date, format="%m/%d/%Y")
 colnames(abandoned_melt) <- c("Date", "Country", "Abandoned")
 abandoned_melt$Country <- gsub("_Abandoned", "", abandoned_melt$Country)
+abandoned_melt <- abandoned_melt %>%
+    group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Abandoned - lag(Abandoned, default = first(Abandoned)))
 
 current_abandoned <- ggplot(abandoned_melt, aes(Date, Abandoned, colour=Country, shape=Country)) +
 geom_point() +
 stat_smooth() +
+geom_col(data=abandoned_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country)) + 
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Abandoned") +
 ggtitle(paste0("Total equipment abandoned through ", Sys.Date())) +
@@ -56,9 +73,14 @@ captured_melt <- melt(equipment_losses[,c("Date", "Russia_Captured", "Ukraine_Ca
 captured_melt$Date <- as.Date(captured_melt$Date, format="%m/%d/%Y")
 colnames(captured_melt) <- c("Date", "Country", "Captured")
 captured_melt$Country <- gsub("_Captured", "", captured_melt$Country)
+captured_melt <- captured_melt %>%
+    group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Captured - lag(Captured, default = first(Captured)))
 
 current_captured <- ggplot(captured_melt, aes(Date, Captured, colour=Country, shape=Country)) +
 geom_point() +
+geom_col(data=captured_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country)) + 
 stat_smooth() +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Captured by Enemy") +
@@ -81,6 +103,7 @@ all_melt <- rbindlist(list(destroyed_melt, abandoned_melt, captured_melt))
 
 current_grid <- ggplot(all_melt, aes(Date, Number, colour=Country, shape=Country)) +
 geom_point() +
+geom_col(data=all_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country)) + 
 stat_smooth() +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Lost") +
