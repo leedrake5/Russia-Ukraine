@@ -358,3 +358,49 @@ scale_y_continuous("Logistics Systems Lost") +
 ggtitle(paste0("Logistics systems lost through ", Sys.Date())) +
 theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/current_logistics.jpg", current_logistics, device="jpg", width=6, height=5)
+
+
+###Analysis
+empty_columns <- colSums(is.na(equipment_losses) | equipment_losses == "") == nrow(equipment_losses)
+equipment_totals <- equipment_losses[,!empty_columns]
+equipment_totals <- equipment_totals[complete.cases(equipment_totals),]
+equipment_totals <- equipment_totals[nrow(equipment_totals),]
+
+equipment_ratios <- data.frame(Total=equipment_totals[,"Russia_Total"]/equipment_totals[,"Ukraine_Total"],
+    Destroyed=equipment_totals[,"Russia_Destroyed"]/equipment_totals[,"Ukraine_Destroyed"],
+    Damaged=equipment_totals[,"Russia_Damaged"]/equipment_totals[,"Ukraine_Damaged"],
+    Abandoned=equipment_totals[,"Russia_Abandoned"]/equipment_totals[,"Ukraine_Abandoned"],
+    Captured=equipment_totals[,"Russia_Captured"]/equipment_totals[,"Ukraine_Captured"],
+    Tanks=equipment_totals[,"Russia_Tanks"]/equipment_totals[,"Ukraine_Tanks"],
+    AFV=equipment_totals[,"Russia_AFV"]/equipment_totals[,"Ukraine_AFV"],
+    IFV=equipment_totals[,"Russia_IFV"]/equipment_totals[,"Ukraine_IFV"],
+    APC=equipment_totals[,"Russia_APC"]/equipment_totals[,"Ukraine_APC"],
+    IMV=equipment_totals[,"Russia_IMV"]/equipment_totals[,"Ukraine_IMV"],
+    Engineering=equipment_totals[,"Russia_Engineering"]/equipment_totals[,"Ukraine_Engineering"],
+    Engineering=equipment_totals[,"Russia_Coms"]/equipment_totals[,"Ukraine_Coms"],
+    Vehicles=equipment_totals[,"Russia_Vehicles"]/equipment_totals[,"Ukraine_Vehicles"],
+    Aircraft=equipment_totals[,"Russia_Aircraft"]/equipment_totals[,"Ukraine_Aircraft"],
+    MANPAD=equipment_totals[,"Russia_MANPAD"]/equipment_totals[,"Ukraine_MANPAD"],
+    SAM=equipment_totals[,"Russia_SAM"]/equipment_totals[,"Ukraine_SAM"],
+    SPAAG=equipment_totals[,"Russia_SPAAG"]/equipment_totals[,"Ukraine_SPAAG"],
+    Infantry=equipment_totals[,"Russia_Infantry"]/equipment_totals[,"Ukraine_Infantry"],
+    Logistics=equipment_totals[,"Russia_Logistics"]/equipment_totals[,"Ukraine_Logistics"],
+    Armor=equipment_totals[,"Russia_Armor"]/equipment_totals[,"Ukraine_Armor"],
+    Antiair=equipment_totals[,"Russia_Antiair"]/equipment_totals[,"Ukraine_Antiair"]
+)
+equipment_ratios_t <- data.frame(Type=gsub("Russia_", "", names(equipment_ratios)), Ratio=t(equipment_ratios))
+
+
+loss_type <- ggplot(equipment_ratios_t[equipment_ratios_t$Type %in% c("Destroyed", "Abandoned", "Captured"),], aes(Type, Ratio, colour=Type, fill=Type)) +
+geom_col() +
+scale_y_continuous("Ratio (Russian/Ukranian Losses)") +
+ggtitle(paste0("Loss ratios lost through ", Sys.Date())) +
+theme_light()
+ggsave("~/Github/Russia-Ukraine/Plots/current_loss_type.jpg", loss_type, device="jpg", width=6, height=5)
+
+unit_type <- ggplot(equipment_ratios_t[equipment_ratios_t$Type %in% c("Aircraft", "Antiair", "Infantry", "Armor", "Vehicles", "Logistics"),], aes(Type, Ratio, colour=Type, fill=Type)) +
+geom_col() +
+scale_y_continuous("Ratio (Russian/Ukranian Losses)") +
+ggtitle(paste0("Unit type ratios lost through ", Sys.Date())) +
+theme_light()
+ggsave("~/Github/Russia-Ukraine/Plots/current_unit_type.jpg", unit_type, device="jpg", width=6, height=5)
