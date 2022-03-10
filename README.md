@@ -79,7 +79,7 @@ By grouping synthetic vehicles, we can see how different systems have been prior
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_loss_type.jpg)
 These ratio plots use Russian equipment losses as the numerator and Ukranian losses as the denominator. The higher the bar, the higher the proportion of Russian losses. While Russians have abandoned vehicles at a higher rate, destructions remain the highest differential between the two armies. 
 
-##Unit Type
+## Unit Type
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_unit_type.jpg)
 Here, Ukranian strategy is abundantly clear. It has targeted Russian logistics operations (higher bar = more Russian losses) to an overwhelming degree. Russians have focusesd on anti-air systems (lower bar = more Ukranian losses), though remarkably despite this focus Ukranian's still have an almost 2-1 edge on taking these systems out. 
 
