@@ -429,7 +429,7 @@ percent_tanks <- equipment_losses  %>%
     mutate(Daily = Tanks - lag(Tanks, default = first(Tanks)))
     
     
-  current_percent_tanks <- ggplot(data=percent_tanks, mapping=aes(Date, Tanks, colour=Country, shape=Country)) +
+current_percent_total_tanks <- ggplot(data=percent_tanks, mapping=aes(Date, Tanks, colour=Country, shape=Country)) +
   geom_col(data=percent_tanks, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point() +
   stat_smooth(method="gam") +
@@ -439,7 +439,38 @@ percent_tanks <- equipment_losses  %>%
   ggtitle(paste0("Proportional tank losses through ", Sys.Date())) +
   theme_light()
 
-ggsave("~/Github/Russia-Ukraine/Plots/current_percent_tanks.jpg", current_percent_tanks, device="jpg", width=6, height=5)
+ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_tanks.jpg", current_percent_total_tanks, device="jpg", width=6, height=5)
+
+### Percent Loss estimate per common request
+### Deployed Tanks sourced from https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html
+percent_tanks <- equipment_losses  %>%
+  select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
+  mutate(Date = mdy(Date),
+         RT = 2840 - Russia + Russia_Capture,
+         UT = 2100 - Ukraine + Ukraine_Capture,
+         Russia =  Russia / RT,
+         Ukraine = Ukraine / UT) %>%
+  pivot_longer(cols = c("Russia", "Ukraine"),
+               names_to = "Country",
+               values_to = "Tanks")
+  
+  
+  percent_tanks <- percent_tanks %>% group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Tanks - lag(Tanks, default = first(Tanks)))
+    
+    
+current_percent_deployed_tanks <- ggplot(data=percent_tanks, mapping=aes(Date, Tanks, colour=Country, shape=Country)) +
+  geom_col(data=percent_tanks, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
+  geom_point() +
+  stat_smooth(method="gam") +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous(labels = percent) +
+  labs(y = "Tank Losses [% of tanks]") +
+  ggtitle(paste0("Proportional tank losses through ", Sys.Date())) +
+  theme_light()
+
+ggsave("~/Github/Russia-Ukraine/Plots/current_percent_deployed_tanks.jpg", current_percent_deployed_tanks, device="jpg", width=6, height=5)
 
 ###Relative AFV Losses
 ### Percent Loss estimate per common request
