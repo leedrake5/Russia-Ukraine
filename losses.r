@@ -436,7 +436,7 @@ percent_tanks <- equipment_losses  %>%
   scale_x_date(date_labels = "%m/%d") +
   scale_y_continuous(labels = percent) +
   labs(y = "Tank Losses [% of tanks]") +
-  ggtitle(paste0("Total tank losses through ", Sys.Date())) +
+  ggtitle(paste0("Proportional tank losses through ", Sys.Date())) +
   theme_light()
 
 ggsave("~/Github/Russia-Ukraine/Plots/current_percent_tanks.jpg", current_percent_tanks, device="jpg", width=6, height=5)
@@ -468,7 +468,7 @@ percent_afv <- equipment_losses  %>%
   scale_x_date(date_labels = "%m/%d") +
   scale_y_continuous(labels = percent) +
   labs(y = "AFV Losses [% of AFV]") +
-  ggtitle(paste0("Total AFV losses through ", Sys.Date())) +
+  ggtitle(paste0("Proportional AFV losses through ", Sys.Date())) +
   theme_light()
 
 ggsave("~/Github/Russia-Ukraine/Plots/current_percent_afv.jpg", current_percent_afv, device="jpg", width=6, height=5)
