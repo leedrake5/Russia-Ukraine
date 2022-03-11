@@ -4,6 +4,9 @@ library(reshape2)
 library(data.table)
 library(gsheet)
 library(dplyr)
+library(tidyverse)
+library(lubridate)
+library(scales)
 
 equipment_losses <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0")
 
@@ -20,7 +23,7 @@ total_melt <- total_melt %>%
 current_total <- ggplot(total_melt, aes(Date, Total, colour=Country, shape=Country)) +
 geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Losses") +
 ggtitle(paste0("Total equipment losses through ", Sys.Date())) +
@@ -41,7 +44,7 @@ destroyed_melt <- destroyed_melt %>%
 current_destroyed <- ggplot(destroyed_melt, aes(Date, Destroyed, colour=Country, shape=Country)) +
 geom_col(data=destroyed_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Destroyed") +
 ggtitle(paste0("Total equipment destroyed through ", Sys.Date())) +
@@ -61,7 +64,7 @@ abandoned_melt <- abandoned_melt %>%
 current_abandoned <- ggplot(abandoned_melt, aes(Date, Abandoned, colour=Country, shape=Country)) +
 geom_col(data=abandoned_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Abandoned") +
 ggtitle(paste0("Total equipment abandoned through ", Sys.Date())) +
@@ -81,7 +84,7 @@ captured_melt <- captured_melt %>%
 current_captured <- ggplot(captured_melt, aes(Date, Captured, colour=Country, shape=Country)) +
 geom_col(data=captured_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Captured by Enemy") +
 ggtitle(paste0("Total equipment captured by enemy through ", Sys.Date())) +
@@ -104,7 +107,7 @@ all_melt <- rbindlist(list(destroyed_melt, abandoned_melt, captured_melt))
 current_grid <- ggplot(all_melt, aes(Date, Number, colour=Country, shape=Country)) +
 geom_col(data=all_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Total Equipment Lost") +
 ggtitle(paste0("Total equipment lost through ", Sys.Date())) +
@@ -128,7 +131,7 @@ tanks_melt <- tanks_melt %>%
 current_tanks <- ggplot(tanks_melt, aes(Date, Tanks, colour=Country, shape=Country)) +
 geom_col(data=tanks_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Tanks Lost") +
 ggtitle(paste0("Tanks lost through ", Sys.Date())) +
@@ -148,7 +151,7 @@ afv_melt <- afv_melt %>%
 current_afv <- ggplot(afv_melt, aes(Date, AFV, colour=Country, shape=Country)) +
 geom_col(data=afv_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Armored Fighting Vehicles Lost") +
 ggtitle(paste0("AFV lost through ", Sys.Date())) +
@@ -168,7 +171,7 @@ ifv_melt <- ifv_melt %>%
 current_ifv <- ggplot(ifv_melt, aes(Date, IFV, colour=Country, shape=Country)) +
 geom_col(data=ifv_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Infantry Fighting Vehicles Lost") +
 ggtitle(paste0("IFV lost through ", Sys.Date())) +
@@ -188,7 +191,7 @@ apc_melt <- apc_melt %>%
 current_apc <- ggplot(apc_melt, aes(Date, APC, colour=Country, shape=Country)) +
 geom_col(data=apc_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Armored Personal Carriers Lost") +
 ggtitle(paste0("APC lost through ", Sys.Date())) +
@@ -208,7 +211,7 @@ imv_melt <- imv_melt %>%
 current_imv <- ggplot(imv_melt, aes(Date, IMV, colour=Country, shape=Country)) +
 geom_col(data=imv_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Infantry Mobility Vehicles Lost") +
 ggtitle(paste0("IMV lost through ", Sys.Date())) +
@@ -229,7 +232,7 @@ ev_melt <- ev_melt %>%
 current_ev <- ggplot(ev_melt, aes(Date, EV, colour=Country, shape=Country)) +
 geom_col(data=ev_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Engineering Vehicles Lost") +
 ggtitle(paste0("EV lost through ", Sys.Date())) +
@@ -249,7 +252,7 @@ vehicles_melt <- vehicles_melt %>%
 current_vehicles <- ggplot(vehicles_melt, aes(Date, Vehicles, colour=Country, shape=Country)) +
 geom_col(data=vehicles_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Vehicles Lost") +
 ggtitle(paste0("Vehicles lost through ", Sys.Date())) +
@@ -272,7 +275,7 @@ aircraft_melt <- aircraft_melt %>%
 current_aircraft <- ggplot(aircraft_melt, aes(Date, Aircraft, colour=Country, shape=Country)) +
 geom_col(data=aircraft_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Aircraft Lost") +
 ggtitle(paste0("Aircraft lost through ", Sys.Date())) +
@@ -292,7 +295,7 @@ antiaircraft_melt <- antiaircraft_melt %>%
 current_antiair <- ggplot(antiaircraft_melt, aes(Date, Antiair, colour=Country, shape=Country)) +
 geom_col(data=antiaircraft_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Anti-Air Systems Lost") +
 ggtitle(paste0("Anti-air systems lost through ", Sys.Date())) +
@@ -312,7 +315,7 @@ infantry_melt <- infantry_melt %>%
 current_infantry <- ggplot(infantry_melt, aes(Date, Infantry, colour=Country, shape=Country)) +
 geom_col(data=infantry_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Infantry Support Lost") +
 ggtitle(paste0("Infantry support lost through ", Sys.Date())) +
@@ -332,7 +335,7 @@ armor_melt <- armor_melt %>%
 current_armor <- ggplot(armor_melt, aes(Date, Armor, colour=Country, shape=Country)) +
 geom_col(data=armor_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Armor Lost") +
 ggtitle(paste0("Armor support lost through ", Sys.Date())) +
@@ -352,7 +355,7 @@ logistics_melt <- logistics_melt %>%
 current_logistics <- ggplot(logistics_melt, aes(Date, Logistics, colour=Country, shape=Country)) +
 geom_col(data=logistics_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
 geom_point() +
-stat_smooth() +
+stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Logistics Systems Lost") +
 ggtitle(paste0("Logistics systems lost through ", Sys.Date())) +
@@ -404,3 +407,68 @@ scale_y_continuous("Ratio (Russian/Ukranian Losses)") +
 ggtitle(paste0("Unit type ratios lost through ", Sys.Date())) +
 theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/current_unit_type.jpg", unit_type, device="jpg", width=6, height=5)
+
+
+###Relative Tank Losses
+### Percent Loss estimate per common request
+### Total Tanks sourced from https://inews.co.uk/news/world/russia-tanks-how-many-putin-armoured-forces-ukraine-nato-explained-1504470
+percent_tanks <- equipment_losses  %>%
+  select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
+  mutate(Date = mdy(Date),
+         RT = 13300 - Russia + Russia_Capture,
+         UT = 2100 - Ukraine + Ukraine_Capture,
+         Russia =  Russia / RT,
+         Ukraine = Ukraine / UT) %>%
+  pivot_longer(cols = c("Russia", "Ukraine"),
+               names_to = "Country",
+               values_to = "Tanks") 
+  
+  
+  percent_tanks <- percent_tanks %>% group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Tanks - lag(Tanks, default = first(Tanks)))
+    
+    
+  current_percent_tanks <- ggplot(data=percent_tanks, mapping=aes(Date, Tanks, colour=Country, shape=Country)) +
+  geom_col(data=percent_tanks, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
+  geom_point() +
+  stat_smooth(method="gam") +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous(labels = percent) +
+  labs(y = "Tank Losses [% of tanks]") +
+  ggtitle(paste0("Total tank losses through ", Sys.Date())) +
+  theme_light()
+
+ggsave("~/Github/Russia-Ukraine/Plots/current_percent_tanks.jpg", current_percent_tanks, device="jpg", width=6, height=5)
+
+###Relative AFV Losses
+### Percent Loss estimate per common request
+### Total Tanks sourced from https://inews.co.uk/news/world/russia-tanks-how-many-putin-armoured-forces-ukraine-nato-explained-1504470
+percent_afv <- equipment_losses  %>%
+  select(Date, Russia = Russia_AFV, Ukraine = Ukraine_AFV, Russia_Capture = Russia_AFV_Capture, Ukraine_Capture = Ukraine_AFV_Capture) %>%
+  mutate(Date = mdy(Date),
+         RT = 20000 - Russia + Russia_Capture,
+         UT = 2870 - Ukraine + Ukraine_Capture,
+         Russia =  Russia / RT,
+         Ukraine = Ukraine / UT) %>%
+  pivot_longer(cols = c("Russia", "Ukraine"),
+               names_to = "Country",
+               values_to = "AFV") 
+  
+  
+  percent_afv <- percent_afv %>% group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = AFV - lag(AFV, default = first(AFV)))
+    
+    
+  current_percent_afv <- ggplot(data=percent_afv, mapping=aes(Date, AFV, colour=Country, shape=Country)) +
+  geom_col(data=percent_afv, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
+  geom_point() +
+  stat_smooth(method="gam") +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous(labels = percent) +
+  labs(y = "AFV Losses [% of tanks]") +
+  ggtitle(paste0("Total AFV losses through ", Sys.Date())) +
+  theme_light()
+
+ggsave("~/Github/Russia-Ukraine/Plots/current_percent_afv.jpg", current_percent_afv, device="jpg", width=6, height=5)
