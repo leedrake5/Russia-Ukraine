@@ -435,7 +435,7 @@ current_percent_total_tanks <- ggplot(data=percent_tanks, mapping=aes(Date, Tank
   stat_smooth(method="gam") +
   scale_x_date(date_labels = "%m/%d") +
   scale_y_continuous(labels = percent) +
-  labs(y = "Tank Losses [% of tanks]") +
+  labs(y = "Tank Losses [% of total tanks]") +
   ggtitle(paste0("Proportional tank losses through ", Sys.Date())) +
   theme_light()
 
@@ -466,7 +466,7 @@ current_percent_deployed_tanks <- ggplot(data=percent_tanks, mapping=aes(Date, T
   stat_smooth(method="gam") +
   scale_x_date(date_labels = "%m/%d") +
   scale_y_continuous(labels = percent) +
-  labs(y = "Tank Losses [% of tanks]") +
+  labs(y = "Tank Losses [% of deployed tanks]") +
   ggtitle(paste0("Proportional tank losses through ", Sys.Date())) +
   theme_light()
 
