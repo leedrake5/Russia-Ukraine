@@ -467,7 +467,7 @@ percent_afv <- equipment_losses  %>%
   stat_smooth(method="gam") +
   scale_x_date(date_labels = "%m/%d") +
   scale_y_continuous(labels = percent) +
-  labs(y = "AFV Losses [% of tanks]") +
+  labs(y = "AFV Losses [% of AFV]") +
   ggtitle(paste0("Total AFV losses through ", Sys.Date())) +
   theme_light()
 
