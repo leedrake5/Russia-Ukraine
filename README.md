@@ -34,11 +34,11 @@ The degree to which Russians have lost more equipment (in every category type) i
 Tank losses were equivalent in the first four days of the war, with Russian tank loses increasing sharpely thereafter, though a jump in Ukranian tank losses can be seen at the start of the second week of the war. 
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_tanks.jpg)
-This graph, however, highlights the challenges Ukraine still faces. When the sheer scale of Russian tanks are considered (13,300 vs. 2,100 for Ukraine), the steep Russian losses are not yet bringing parity. In general, Ukraine loses 1 tank for every 3 it takes from Russia. This ratio has to get to 4 or higher to be sustainble. 
+This graph, however, highlights the challenges Ukraine still faces. When the sheer scale of Russian tanks are considered (13,300 vs. 2,100 for Ukraine), the steep Russian losses are not yet bringing parity. In general, Ukraine loses 1 tank for every 3 it takes from Russia. This ratio has to get to 4 or higher to be sustainble. Note that this estimate factors in verified tank captures by both Russia and Ukraine. 
 
 ## Armored Fighting Vehicles (AFV)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_afv.jpg)
-Armored Fighting Vehicles also see parity in losses in the first 4 days of the war, though Russian losses increase less dramatically than is seen with tanks. 
+Armored Fighting Vehicles also see parity in losses in the first 4 days of the war, though Russian losses increase less dramatically than is seen with tanks. Note that this estimate factors in verified AFV captures by both Russia and Ukraine. 
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_afv.jpg)
 When normalized to standing inventory, Russia's losses are a less significant fraction of their total inventory compared to Ukraine. This higlhights the steep challenge Ukraine faces. In general, Ukraine loses 1 AFV for every 3 it takes from Russia. This ratio has to get to 4 or higher to be sustainble. 
