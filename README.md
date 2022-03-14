@@ -9,19 +9,19 @@ Data is drawn from [this public google sheet](https://docs.google.com/spreadshee
 Points (red = Russia, blue = Ukraine) represent cumulative losses for each day, bar's represent daily losses. The line repreents a general additive model smooth on cumulative losses to date; the shaded grey band represents the 95% confidence interval based on extant veriation. A wider grey band means more uncertainty, a narrower grey band means less uncertainty. 
 
 ## Total Equipment Losses
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_total.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_total.jpg?)
 Ukranian and Russian equipment losses started off equivalent, but Russians quickly began to lose more equipment by the third day of the war. 
 
 ## Destroyed Equipment
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_destroyed.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_destroyed.jpg?)
 Destroyed Russian equipment outpaced destroyed Ukranian equipment by the second day of the war, though there are signs it is starting to taper. 
 
 ## Abandoned Equipment
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_abandoned.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_abandoned.jpg?)
 Ukranians abandoned equipment more readily in the early days fo the war, but by the third day this rate plateaued. Russian abandonments increased sharply on the third day, and began to taper at the end of the first week.
 
 ## Captured Equipment
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_captured.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_captured.jpg?)
 Russians have seen a much higher rate of equipment capture since the start of the war, with a sharp increase in the second week, though this has begun to taper by the start of the third week. 
 
 The degree to which Russians have lost more equipment (in every category type) is very striking. It is certaintly possible this is a product of Ukranians focusing on documenting Russian losses, though this can't be a complete explanation. 
@@ -30,70 +30,70 @@ The degree to which Russians have lost more equipment (in every category type) i
 "Raw" refers to a specific type of vehicle, such as a tank or armored personell carrier
 
 ## Tanks
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_tanks.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_tanks.jpg?)
 Tank losses were equivalent in the first four days of the war, with Russian tank loses increasing sharpely thereafter, though a jump in Ukranian tank losses can be seen at the start of the second week of the war. 
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_total_tanks.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_total_tanks.jpg?)
 This graph, however, highlights the challenges Ukraine still faces. When the sheer scale of [Russian tanks](https://inews.co.uk/news/world/russia-tanks-how-many-putin-armoured-forces-ukraine-nato-explained-1504470) are considered (13,300 vs. 2,100 for Ukraine), the steep Russian losses are not yet bringing parity. In general, Ukraine loses 1 tank for every 3 it takes from Russia. This ratio has to get to 4 or higher to be sustainble. Note that this estimate factors in verified tank captures by both Russia and Ukraine. 
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_deployed_tanks.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_deployed_tanks.jpg?)
 If we consider estimates of [deployed Russian tanks](https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html) instead of their total (2,840 vs. 2,100 for Ukraine), the picture is not as dire for Ukraine. This estiate likely is closer to the battlefont picture, as not all Russian tanks could be deployed at once, though Russia can sustain attrition longer than Ukraine. Note that this estimate factors in verified tank captures by both Russia and Ukraine. 
 
 ## Armored Fighting Vehicles (AFV)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_afv.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_afv.jpg?)
 Armored Fighting Vehicles also see parity in losses in the first 4 days of the war, though Russian losses increase less dramatically than is seen with tanks. Note that this estimate factors in verified AFV captures by both Russia and Ukraine. 
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_afv.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_afv.jpg?)
 When normalized to standing inventory, Russia's losses are a less significant fraction of their total inventory compared to Ukraine. This higlhights the steep challenge Ukraine faces. In general, Ukraine loses 1 AFV for every 3 it takes from Russia. This ratio has to get to 4 or higher to be sustainble. 
 
 ## Infantry Fighting Vehicles (IFV)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_ifv.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_ifv.jpg?)
 Ukranian's lost more Infrantry Fighting Vehicles in the first two days of the war, with Russian losses acellerating linearly until the end of the second week. 
 
 ## Armored Personel Carriers (APC)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_apc.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_apc.jpg?)
 Ukranian's lost more Armored Personel Carriers in the first two days of the war, with Russian losses acellerating linearly until the end of the second week, though the differential is less dramatic than with AFVs.
 
 ## Infantry Mobility Vehicles (IMV)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_imv.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_imv.jpg?)
 Infantry Mobility Vehicle losses are more or less equivalent between Ukranian and Russian forces through the first two weeks of the war. 
 
 # Synthetic Equipment Losses
 "Synthetic" refers to a combination of vehicle types to form a theme - such as aircraft (fighters + helicopters + drones) or anti-aircraft (SAM + MANPADS), etc. 
 
 ## Aircraft
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_aircraft.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_aircraft.jpg?)
 Ukranians have lost aircraft linearly, while Russians lost them almost exponentially in teh first two weeks of the war, though there are signs this is tapering sharpely. This calculation includes fighters, helicotpers, and drones. 
 
 ## Anti-air
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_antiair.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_antiair.jpg?)
 Ukranians sustained higher rates of loss of anti-air systems through the first week of the war, though Russian losses have since outpaced them by the second week of the war. This calculation includes MANPADS, SAMs, self-propelled anti-aircraft guns, radar, and jamming systems. 
 
 ## Armor
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_armor.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_armor.jpg?)
 Russian and Ukranian armor losses were equivalent in the first three days of the war, with Russian losses significantly outpacing Ukranians since. This calculaton includes both tanks and armored fighting vehicles.
 
 ## Infantry
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_infantry.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_infantry.jpg?)
 Infantry losses were higher among Ukranians at the start of the war, with Russian losses increasing sharply since then. Ukranian losses taper in the second week. This calculation includes infantry fighting vehicles, armored personell carriers, and infantry mobility vehicles.
 
 ## Vehicles (standard transportation)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_vehicles.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_vehicles.jpg?)
 Ukranians lost more vehicles on the first day, with Russian losses accelerating since then. This calculation includes all non-specialized vehicle types. 
 
 ## Logistics Systems
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_logistics.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_logistics.jpg?)
 Ukranians have lost few logistics systems, while Russian losses increased linearly until the end of the second when they began to taper. This calculation includes engineering and communications vehicles.
 
 #Analysis
 By grouping synthetic vehicles, we can see how different systems have been prioritized by Russian or Ukranians, providing a glimpse into strategy. 
 
 ## Loss Type
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_loss_type.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_loss_type.jpg?)
 These ratio plots use Russian equipment losses as the numerator and Ukranian losses as the denominator. The higher the bar, the higher the proportion of Russian losses. While Russians have abandoned vehicles at a higher rate, destructions remain the highest differential between the two armies. 
 
 ## Unit Type
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_unit_type.jpg)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_unit_type.jpg?)
 Here, Ukranian strategy is abundantly clear. It has targeted Russian logistics operations (higher bar = more Russian losses) to an overwhelming degree. Russians have focusesd on anti-air systems (lower bar = more Ukranian losses), though remarkably despite this focus Ukranian's still have an almost 2-1 edge on taking these systems out. 
 
 # Conclusions
