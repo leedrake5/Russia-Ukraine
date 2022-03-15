@@ -6,7 +6,7 @@ Using data from [Oryx's site](https://www.oryxspioenkop.com/2022/02/attack-on-eu
 
 Data is drawn from [this public google sheet](https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit?usp=sharing) which is updated based on the last update for each day. As such it is a lagging indicator, dependent not just on when equipment is lost, but when it is discovered and documented. 
 
-Points (red = Russia, blue = Ukraine) represent cumulative losses for each day, bar's represent daily losses. The line repreents a general additive model smooth on cumulative losses to date; the shaded grey band represents the 95% confidence interval based on extant veriation. A wider grey band means more uncertainty, a narrower grey band means less uncertainty. 
+Points (red = Russia, blue = Ukraine) represent cumulative losses for each day, bar's represent daily losses. The line repreents a general additive model smooth on cumulative losses to date; the shaded grey band represents the 95% confidence interval based on extant variation (e.g. point scatter). A wider grey band means more uncertainty, a narrower grey band means less uncertainty. 
 
 ## Total Equipment Losses
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_total.jpg?)
