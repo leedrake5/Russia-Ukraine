@@ -222,7 +222,7 @@ ggtitle(paste0("Total equipment lost through ", Sys.Date())) +
 facet_wrap(~Type, nrow=2, ncol=2) +
 theme_light() +
 theme(legend.position="bottom")
-ggsave("~/Github/Russia-Ukraine/Plots/ratio_grid.jpg", current_grid, device="jpg", width=6, height=10)
+ggsave("~/Github/Russia-Ukraine/Plots/ratio_grid.jpg", ratio_plot, device="jpg", width=6, height=10)
 
 
 
