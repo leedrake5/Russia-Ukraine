@@ -26,9 +26,6 @@ Russians have seen a much higher rate of equipment capture since the start of th
 
 The degree to which Russians have lost more equipment (in every category type) is very striking. It is certaintly possible this is a product of Ukranians focusing on documenting Russian losses, though this can't be a complete explanation. 
 
-## Ratios
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/ratio_grid.jpg?)
-This plot shows the ratios of losses (e.g. proportion of total) for Russia and Ukraine for each loss type.  
 
 # Raw Equipment Losses
 "Raw" refers to a specific type of vehicle, such as a tank or armored personell carrier
