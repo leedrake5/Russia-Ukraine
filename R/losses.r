@@ -119,6 +119,139 @@ theme(legend.position="bottom")
 ggsave("~/Github/Russia-Ukraine/Plots/current_grid.jpg", current_grid, device="jpg", width=6, height=10)
 
 
+##Ratio
+####Totals
+total_melt <- melt(equipment_losses[,c("Date", "Russia_Total", "Ukraine_Total")], id.var="Date")
+total_melt$Date <- as.Date(total_melt$Date, format="%m/%d/%Y")
+colnames(total_melt) <- c("Date", "Country", "Total")
+total_melt$Country <- gsub("_Total", "", total_melt$Country)
+total_melt <- total_melt %>%
+    group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Total - lag(Total, default = first(Total)))
+total_cast = reshape2::dcast(total_melt[,c("Date", "Country", "Daily")], formula=Date~Country, fun.aggregate=mean, value.var="Daily")
+total_cast$RussiaRatio <- total_cast$Russia/(total_cast$Russia+total_cast$Ukraine)
+total_cast$UkraineRatio <- total_cast$Ukraine/(total_cast$Russia+total_cast$Ukraine)
+total_cast$Ratio <- total_cast$Russia/total_cast$Ukraine
+total_cast <- total_cast[-1,]
+
+total_cast_ratio <- total_cast[,c("Date", "Ratio")]
+total_cast_melt <- reshape2::melt(total_cast[,c("Date", "RussiaRatio", "UkraineRatio")], id.var="Date")
+total_cast_melt$variable <- as.character(total_cast_melt$variable)
+total_cast_melt$variable[total_cast_melt$variable=="RussiaRatio"] <- "Russia"
+total_cast_melt$variable[total_cast_melt$variable=="UkraineRatio"] <- "Ukraine"
+colnames(total_cast_melt) <- c("Date", "Country", "Ratio")
+total_cast_melt$Type <- "Total"
+
+destroyed_melt <- melt(equipment_losses[,c("Date", "Russia_Destroyed", "Ukraine_Destroyed")], id.var="Date")
+destroyed_melt$Date <- as.Date(destroyed_melt$Date, format="%m/%d/%Y")
+colnames(destroyed_melt) <- c("Date", "Country", "Destroyed")
+destroyed_melt$Country <- gsub("_Destroyed", "", destroyed_melt$Country)
+destroyed_melt <- destroyed_melt %>%
+    group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Destroyed - lag(Destroyed, default = first(Destroyed)))
+destroyed_cast = reshape2::dcast(destroyed_melt[,c("Date", "Country", "Daily")], formula=Date~Country, fun.aggregate=mean, value.var="Daily")
+destroyed_cast$RussiaRatio <- destroyed_cast$Russia/(destroyed_cast$Russia+total_cast$Ukraine)
+destroyed_cast$UkraineRatio <- destroyed_cast$Ukraine/(destroyed_cast$Russia+destroyed_cast$Ukraine)
+destroyed_cast$Ratio <- destroyed_cast$Russia/destroyed_cast$Ukraine
+destroyed_cast <- destroyed_cast[-1,]
+
+destroyed_cast_ratio <- destroyed_cast[,c("Date", "Ratio")]
+destroyed_cast_melt <- reshape2::melt(destroyed_cast[,c("Date", "RussiaRatio", "UkraineRatio")], id.var="Date")
+destroyed_cast_melt$variable <- as.character(destroyed_cast_melt$variable)
+destroyed_cast_melt$variable[destroyed_cast_melt$variable=="RussiaRatio"] <- "Russia"
+destroyed_cast_melt$variable[destroyed_cast_melt$variable=="UkraineRatio"] <- "Ukraine"
+colnames(destroyed_cast_melt) <- c("Date", "Country", "Ratio")
+destroyed_cast_melt$Type <- "Destoyed"
+
+
+abandoned_melt <- melt(equipment_losses[,c("Date", "Russia_Abandoned", "Ukraine_Abandoned")], id.var="Date")
+abandoned_melt$Date <- as.Date(abandoned_melt$Date, format="%m/%d/%Y")
+colnames(abandoned_melt) <- c("Date", "Country", "Abandoned")
+abandoned_melt$Country <- gsub("_Abandoned", "", abandoned_melt$Country)
+abandoned_melt <- abandoned_melt %>%
+    group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Abandoned - lag(Abandoned, default = first(Abandoned)))
+abandoned_cast = reshape2::dcast(abandoned_melt[,c("Date", "Country", "Daily")], formula=Date~Country, fun.aggregate=mean, value.var="Daily")
+abandoned_cast$RussiaRatio <- abandoned_cast$Russia/(abandoned_cast$Russia+total_cast$Ukraine)
+abandoned_cast$UkraineRatio <- abandoned_cast$Ukraine/(abandoned_cast$Russia+destroyed_cast$Ukraine)
+abandoned_cast$Ratio <- abandoned_cast$Russia/abandoned_cast$Ukraine
+abandoned_cast <- abandoned_cast[-1,]
+
+abandoned_cast_ratio <- abandoned_cast[,c("Date", "Ratio")]
+abandoned_cast_melt <- reshape2::melt(abandoned_cast[,c("Date", "RussiaRatio", "UkraineRatio")], id.var="Date")
+abandoned_cast_melt$variable <- as.character(abandoned_cast_melt$variable)
+abandoned_cast_melt$variable[abandoned_cast_melt$variable=="RussiaRatio"] <- "Russia"
+abandoned_cast_melt$variable[abandoned_cast_melt$variable=="UkraineRatio"] <- "Ukraine"
+colnames(abandoned_cast_melt) <- c("Date", "Country", "Ratio")
+abandoned_cast_melt$Type <- "Abandoned"
+
+
+captured_melt <- melt(equipment_losses[,c("Date", "Russia_Captured", "Ukraine_Captured")], id.var="Date")
+captured_melt$Date <- as.Date(captured_melt$Date, format="%m/%d/%Y")
+colnames(captured_melt) <- c("Date", "Country", "Captured")
+captured_melt$Country <- gsub("_Captured", "", captured_melt$Country)
+captured_melt <- captured_melt %>%
+    group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Captured - lag(Captured, default = first(Captured)))
+captured_cast = reshape2::dcast(captured_melt[,c("Date", "Country", "Daily")], formula=Date~Country, fun.aggregate=mean, value.var="Daily")
+captured_cast$RussiaRatio <- captured_cast$Russia/(captured_cast$Russia+total_cast$Ukraine)
+captured_cast$UkraineRatio <- captured_cast$Ukraine/(captured_cast$Russia+destroyed_cast$Ukraine)
+captured_cast$Ratio <- captured_cast$Russia/captured_cast$Ukraine
+captured_cast <- captured_cast[-1,]
+
+captured_cast_ratio <- captured_cast[,c("Date", "Ratio")]
+captured_cast_melt <- reshape2::melt(captured_cast[,c("Date", "RussiaRatio", "UkraineRatio")], id.var="Date")
+captured_cast_melt$variable <- as.character(captured_cast_melt$variable)
+captured_cast_melt$variable[captured_cast_melt$variable=="RussiaRatio"] <- "Russia"
+captured_cast_melt$variable[captured_cast_melt$variable=="UkraineRatio"] <- "Ukraine"
+colnames(captured_cast_melt) <- c("Date", "Country", "Ratio")
+captured_cast_melt$Type <- "Captured"
+
+all_types <- as.data.frame(rbindlist(list(total_cast_melt, destroyed_cast_melt, abandoned_cast_melt, captured_cast_melt)))
+
+ratio_plot <- ggplot(data=all_types, aes(Date, Ratio, colour=Country, shape=Country)) +
+geom_point() +
+stat_smooth(method="loess") +
+scale_x_date(date_labels = "%m/%d") +
+scale_y_continuous("Total Equipment Lost", limits=c(-0.2, 1), labels=scales::percent, breaks=seq(0, 1, 0.25)) +
+ggtitle(paste0("Total equipment lost through ", Sys.Date())) +
+facet_wrap(~Type, nrow=2, ncol=2) +
+theme_light() +
+theme(legend.position="bottom")
+ggsave("~/Github/Russia-Ukraine/Plots/ratio_grid.jpg", current_grid, device="jpg", width=6, height=10)
+
+
+
+###All together now
+total_melt$Type <- "Total"
+colnames(total_melt)[3] <- "Number"
+destroyed_melt$Type <- "Destroyed"
+colnames(destroyed_melt)[3] <- "Number"
+abandoned_melt$Type <- "Abandoned"
+colnames(abandoned_melt)[3] <- "Number"
+captured_melt$Type <- "Captured"
+colnames(captured_melt)[3] <- "Number"
+
+all_melt <- rbindlist(list(destroyed_melt, abandoned_melt, captured_melt))
+
+current_grid <- ggplot(all_melt, aes(Date, Number, colour=Country, shape=Country)) +
+geom_col(data=all_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
+geom_point() +
+stat_smooth(method="gam") +
+scale_x_date(date_labels = "%m/%d") +
+scale_y_continuous("Total Equipment Lost") +
+ggtitle(paste0("Total equipment lost through ", Sys.Date())) +
+facet_grid(rows=vars(Type)) +
+theme_light() +
+theme(legend.position="bottom")
+ggsave("~/Github/Russia-Ukraine/Plots/current_grid.jpg", current_grid, device="jpg", width=6, height=10)
+
+
+
 ####Raw Equipment Types
 ####Tanks
 tanks_melt <- melt(equipment_losses[,c("Date", "Russia_Tanks", "Ukraine_Tanks")], id.var="Date")
