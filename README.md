@@ -30,6 +30,15 @@ The degree to which Russians have lost more equipment (in every category type) i
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/ratio_grid.jpg?)
 This plot shows the ratios of losses (e.g. proportion of total) for Russia and Ukraine for each loss type.  
 
+# Refugees
+These data are gathered by the United Nations High Commissioner on Refugees (UNHCR) operational data portal (ODP) [here](https://data2.unhcr.org/en/situations/ukraine). The line represents total refugees, while the bars below indicate daily totals. 
+
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_refugees.jpg?)
+
+Refugee outflows peaked on the 7th of March, but migration continues to be heavy. Refugees are primarily destined for Poland initially, though other nearby countries such as Moldova and Hungary are taking large numbers as well. This only counts migration out of Ukraine - including internal displacement [over 14% of Ukranians, or nearly 6.3 million people](https://www.aljazeera.com/news/2022/3/17/un-says-more-than-700-civilians-killed-ukraine-liveblog), have been displaced since the conflict began. 
+
+
+
 # Raw Equipment Losses
 "Raw" refers to a specific type of vehicle, such as a tank or armored personell carrier
 

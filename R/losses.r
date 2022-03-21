@@ -12,6 +12,24 @@ library(rvest)
 
 equipment_losses <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0")
 
+###Refugees
+refugees = equipment_losses[,c("Date", "UNHCR Ukraine Refugees")]
+refugees$Date <- as.Date(refugees$Date, format="%m/%d/%Y")
+colnames(refugees) <- c("Date", "Refugees")
+refugees <- refugees %>%
+    arrange(Date) %>%
+    mutate(Daily = Refugees - lag(Refugees, default = first(Refugees)))
+
+current_refugees <- ggplot(refugees, aes(Date, Refugees)) +
+geom_col(data=refugees, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
+geom_point() +
+stat_smooth(method="gam") +
+scale_x_date(date_labels = "%m/%d") +
+scale_y_continuous("Total Ukrainian Refugees", labels=scales::comma) +
+ggtitle(paste0("Total Ukrainian refugees through ", Sys.Date())) +
+theme_light()
+ggsave("~/Github/Russia-Ukraine/Plots/refugees_total.jpg", current_refugees, device="jpg", width=6, height=5)
+
 ####Totals
 total_melt <- melt(equipment_losses[,c("Date", "Russia_Total", "Ukraine_Total")], id.var="Date")
 total_melt$Date <- as.Date(total_melt$Date, format="%m/%d/%Y")
@@ -531,14 +549,14 @@ equipment_ratios_t <- data.frame(Type=gsub("Russia_", "", names(equipment_ratios
 
 loss_type <- ggplot(equipment_ratios_t[equipment_ratios_t$Type %in% c("Destroyed", "Abandoned", "Captured"),], aes(Type, Ratio, colour=Type, fill=Type)) +
 geom_col() +
-scale_y_continuous("Ratio (Russian/Ukranian Losses)") +
+scale_y_continuous("Ratio (Russian/Ukrainian Losses)") +
 ggtitle(paste0("Loss ratios lost through ", Sys.Date())) +
 theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/current_loss_type.jpg", loss_type, device="jpg", width=6, height=5)
 
 unit_type <- ggplot(equipment_ratios_t[equipment_ratios_t$Type %in% c("Aircraft", "Antiair", "Infantry", "Armor", "Vehicles", "Logistics"),], aes(Type, Ratio, colour=Type, fill=Type)) +
 geom_col() +
-scale_y_continuous("Ratio (Russian/Ukranian Losses)") +
+scale_y_continuous("Ratio (Russian/Ukrainian Losses)") +
 ggtitle(paste0("Unit type ratios lost through ", Sys.Date())) +
 theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/current_unit_type.jpg", unit_type, device="jpg", width=6, height=5)
