@@ -334,7 +334,7 @@ theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/current_apc.jpg", current_apc, device="jpg", width=6, height=5)
 
 ####Infantry Mobility Vehicles (IMVs)
-imv_melt <- melt(equipment_losses[,c("Date", "Russia_IMV", "Ukraine_IFV")], id.var="Date")
+imv_melt <- melt(equipment_losses[,c("Date", "Russia_IMV", "Ukraine_IMV")], id.var="Date")
 imv_melt$Date <- as.Date(imv_melt$Date, format="%m/%d/%Y")
 colnames(imv_melt) <- c("Date", "Country", "IMV")
 imv_melt$Country <- gsub("_IMV", "", imv_melt$Country)
