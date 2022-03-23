@@ -621,10 +621,10 @@ current_percent_total_tanks <- ggplot(data=percent_tanks, mapping=aes(Date, Tank
   scale_x_date(date_labels = "%m/%d") +
   scale_y_continuous(labels = percent) +
   labs(y = "Tank Gains/Losses [% of total tanks]") +
-  ggtitle(paste0("Proportional tanks gained or lost through ", Sys.Date())) +
+  ggtitle(paste0("Proportion of total tanks gained or lost through ", Sys.Date())) +
   theme_light()
 
-ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_tanks_baseline.jpg", current_percent_total_tanks, device="jpg", width=6, height=5)
+ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_tanks_baseline.jpg", current_percent_total_tanks, device="jpg", width=6, height=5, dpi=600)
 
 ### Percent Loss estimate per common request
 ### Deployed Tanks sourced from https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html
@@ -684,7 +684,7 @@ current_percent_deployed_tanks <- ggplot(data=percent_tanks, mapping=aes(Date, T
   scale_x_date(date_labels = "%m/%d") +
   scale_y_continuous(labels = percent) +
   labs(y = "Tank Gains/Losses [% of deployed tanks]") +
-  ggtitle(paste0("Proportional deployed tanks gained or lost through ", Sys.Date())) +
+  ggtitle(paste0("Proportion of deployed tanks gained or lost through ", Sys.Date())) +
   theme_light()
 
 ggsave("~/Github/Russia-Ukraine/Plots/current_percent_deployed_tanks_baseline.jpg", current_percent_deployed_tanks, device="jpg", width=6, height=5)
