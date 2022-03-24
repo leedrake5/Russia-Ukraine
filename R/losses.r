@@ -235,7 +235,7 @@ ratio_plot <- ggplot(data=all_types, aes(Date, Ratio, colour=Country, shape=Coun
 geom_point() +
 stat_smooth(method="loess") +
 scale_x_date(date_labels = "%m/%d") +
-scale_y_continuous("Total Equipment Lost", limits=c(-0.2, 1), labels=scales::percent, breaks=seq(0, 1, 0.25)) +
+scale_y_continuous("Total Equipment Lost", limits=c(-0.2, 1.1), labels=scales::percent, breaks=seq(0, 1, 0.25)) +
 ggtitle(paste0("Total equipment lost through ", Sys.Date())) +
 facet_wrap(~Type, nrow=2, ncol=2) +
 theme_light() +
