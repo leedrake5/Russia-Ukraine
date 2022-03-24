@@ -574,7 +574,7 @@ percent_tanks <- equipment_losses  %>%
          Ukraine = Ukraine / UT) %>%
   pivot_longer(cols = c("Russia", "Ukraine"),
                names_to = "Country",
-               values_to = "Tanks") 
+               values_to = "Tanks")
   
   
   percent_tanks <- percent_tanks %>% group_by(Country) %>%
@@ -785,3 +785,34 @@ current_percent_total_armor <- ggplot(data=percent_armor, mapping=aes(Date, Armo
   theme_light()
 
 ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_armor_baseline.jpg", current_percent_total_armor, device="jpg", width=6, height=5, dpi=600)
+
+###Relative Absolute Changes
+###Percent AFV Baseline Adjusted
+absolute_units <- equipment_losses  %>%
+  select(Date, Russia_Total = Russia_Total, Ukraine_Total = Ukraine_Total, Russia_Capture=Ukraine_Captured, Ukraine_Capture=Russia_Captured) %>%
+  mutate(Date = mdy(Date),
+         Russia_Total_Adjusted = Russia_Total - Ukraine_Capture,
+         Ukraine_Total_Adjusted = Ukraine_Total - Russia_Capture,
+         Russia = Russia_Capture - Russia_Total_Adjusted,
+         Ukraine = Ukraine_Capture - Ukraine_Total_Adjusted) %>%
+  pivot_longer(cols = c("Russia", "Ukraine"),
+               names_to = "Country",
+               values_to = "Net")
+  
+  
+absolute_units <- absolute_units %>% group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Net - lag(Net, default = first(Net)))
+    
+    
+current_absolute_total <- ggplot(data=absolute_units, mapping=aes(Date, Net, colour=Country, shape=Country)) +
+  geom_col(data=absolute_units, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
+  geom_point() +
+  stat_smooth(method="gam") +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous(breaks = scales::pretty_breaks(n=10)) +
+  labs(y = "Absolute Equipment Gains/Losses") +
+  ggtitle(paste0("Equipment gained or lost through ", Sys.Date())) +
+  theme_light()
+
+ggsave("~/Github/Russia-Ukraine/Plots/current_absolute_total.jpg", current_absolute_total, device="jpg", width=6, height=5, dpi=600)
