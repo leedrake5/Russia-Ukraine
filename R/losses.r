@@ -598,8 +598,8 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_tanks.jpg", current_
 percent_tanks <- equipment_losses  %>%
   select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
   mutate(Date = mdy(Date),
-         RT = 13300 - Russia_Tanks + Russia_Capture,
-         UT = 2100 - Ukraine_Tanks + Ukraine_Capture,
+         RT = 13300,
+         UT = 2100,
          Russia = Russia_Capture - Russia_Tanks,
          Ukraine = Ukraine_Capture - Ukraine_Tanks,
          Russia =  Russia / RT,
@@ -661,8 +661,8 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_deployed_tanks.jpg", curre
 percent_tanks <- equipment_losses  %>%
   select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
   mutate(Date = mdy(Date),
-         RT = 2840 - Russia_Tanks + Russia_Capture,
-         UT = 2100 - Ukraine_Tanks + Ukraine_Capture,
+         RT = 2840,
+         UT = 2100,
          Russia = Russia_Capture - Russia_Tanks,
          Ukraine = Ukraine_Capture - Ukraine_Tanks,
          Russia =  Russia / RT,
@@ -721,3 +721,67 @@ percent_afv <- equipment_losses  %>%
   theme_light()
 
 ggsave("~/Github/Russia-Ukraine/Plots/current_percent_afv.jpg", current_percent_afv, device="jpg", width=6, height=5)
+
+###Percent AFV Baseline Adjusted
+percent_afv<- equipment_losses  %>%
+  select(Date, Russia_AFV = Russia_AFV, Ukraine_AFV = Ukraine_AFV, Russia_Capture=Russia_AFV_Capture, Ukraine_Capture=Ukraine_AFV_Capture) %>%
+  mutate(Date = mdy(Date),
+         RT = 20000,
+         UT = 2870,
+         Russia = Russia_Capture - Russia_AFV,
+         Ukraine = Ukraine_Capture - Ukraine_AFV,
+         Russia =  Russia / RT,
+         Ukraine = Ukraine / UT) %>%
+  pivot_longer(cols = c("Russia", "Ukraine"),
+               names_to = "Country",
+               values_to = "AFV")
+  
+  
+  percent_afv <- percent_afv %>% group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = AFV - lag(AFV, default = first(AFV)))
+    
+    
+current_percent_total_afv <- ggplot(data=percent_afv, mapping=aes(Date, AFV, colour=Country, shape=Country)) +
+  geom_col(data=percent_afv, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
+  geom_point() +
+  stat_smooth(method="gam") +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous(labels = percent) +
+  labs(y = "AFV Gains/Losses [% of total AFVs]") +
+  ggtitle(paste0("Proportion of total AFVs gained or lost through ", Sys.Date())) +
+  theme_light()
+
+ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_afv_baseline.jpg", current_percent_total_afv, device="jpg", width=6, height=5, dpi=600)
+
+###Percent Armor Baseline Adjusted
+percent_armor <- equipment_losses  %>%
+  select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Tank_Capture=Russia_Tank_Capture, Ukraine_Tank_Capture=Ukraine_Tank_Capture, Russia_AFV = Russia_AFV, Ukraine_AFV = Ukraine_AFV, Russia_AFV_Capture=Russia_AFV_Capture, Ukraine_AFV_Capture=Ukraine_AFV_Capture) %>%
+  mutate(Date = mdy(Date),
+         RT = 20000 + 13300,
+         UT = 2870 + 2100,
+         Russia = (Russia_AFV_Capture + Ukraine_AFV_Capture) - (Russia_AFV + Russia_Tanks),
+         Ukraine = (Ukraine_AFV_Capture + Ukraine_Tank_Capture) - (Ukraine_AFV+Ukraine_Tanks),
+         Russia =  Russia / RT,
+         Ukraine = Ukraine / UT) %>%
+  pivot_longer(cols = c("Russia", "Ukraine"),
+               names_to = "Country",
+               values_to = "Armor")
+  
+  
+percent_armor <- percent_armor %>% group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Armor - lag(Armor, default = first(Armor)))
+    
+    
+current_percent_total_armor <- ggplot(data=percent_armor, mapping=aes(Date, Armor, colour=Country, shape=Country)) +
+  geom_col(data=percent_armor, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
+  geom_point() +
+  stat_smooth(method="gam") +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous(labels = percent) +
+  labs(y = "Armor Gains/Losses [% of total Armor]") +
+  ggtitle(paste0("Proportion of total Armor gained or lost through ", Sys.Date())) +
+  theme_light()
+
+ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_armor_baseline.jpg", current_percent_total_armor, device="jpg", width=6, height=5, dpi=600)

@@ -52,6 +52,9 @@ This graph, however, highlights the challenges Ukraine still faces. When the she
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_deployed_tanks.jpg?)
 If we consider estimates of [deployed Russian tanks](https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html) instead of their total (2,840 vs. 2,100 for Ukraine), the picture is not as dire for Ukraine. This estimate likely is closer to the battlefont picture, as not all Russian tanks could be deployed at once, though Russia can sustain attrition longer than Ukraine. Note that this estimate factors in verified tank captures by both Russia and Ukraine. 
 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_total_tanks_baseline.jpg?)
+If we consider estimates of [deployed Russian tanks](https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html) fixed to their total inventory, it is clear that Ukraine is adding to its tank fleet near the rate Russia is losing theirs. Though note that this measure assumes Russia has the capability to use all 13,300 of its tanks in Ukraine if needed. 
+
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_deployed_tanks_baseline.jpg?)
 If we consider estimates of [deployed Russian tanks](https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html) fixed to their starting number, the picture is considerably more positive for Ukraine. Instead of recording only losses, this fixes the baseline (2,840 for Russia vs. 2,100 for Ukraine) and factors both tank losses and gains (e.g. captures). By this metric Russia has lost well over 5% of its tanks while Ukraine has supplemented its by 2% (e.g. captured more than it has lost).
 
@@ -63,6 +66,9 @@ Armored Fighting Vehicles also see parity in losses in the first 4 days of the w
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_afv.jpg?)
 When normalized to standing inventory, Russia's losses are a less significant fraction of their total inventory compared to Ukraine. This higlhights the steep challenge Ukraine faces. In general, Ukraine loses 1 AFV for every 3 it takes from Russia. This ratio has to get to 4 or higher to be sustainble. 
+
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_afv_tanks_baseline.jpg?)
+If we consider estimates of [deployed Russian tanks](https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html) fixed to their total inventory, Ukraine is adding modestly to its AFV inventory at the same rate which Russia is losing its AFV. 
 
 ## Infantry Fighting Vehicles (IFV)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_ifv.jpg?)
@@ -90,6 +96,10 @@ Ukranians sustained higher rates of loss of anti-air systems through the first w
 ## Armor
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_armor.jpg?)
 Russian and Ukranian armor losses were equivalent in the first three days of the war, with Russian losses significantly outpacing Ukranians since. This calculaton includes both tanks and armored fighting vehicles.
+
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_armor_tanks_baseline.jpg?)
+If we consider estimates of [deployed Russian tanks](https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html) fixed to their total inventory, Ukraine is adding modestly to its armor inventory at the same rate which Russia is losing its Armor. 
+
 
 ## Infantry
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_infantry.jpg?)
