@@ -8,6 +8,8 @@ Data is drawn from [this public google sheet](https://docs.google.com/spreadshee
 
 Points (red = Russia, blue = Ukraine) represent cumulative losses for each day, bar's represent daily losses. The line repreents a general additive model smooth on cumulative losses to date; the shaded grey band represents the 95% confidence interval based on extant variation (e.g. point scatter). A wider grey band means more uncertainty, a narrower grey band means less uncertainty. 
 
+Please keep in mind that this is empirical, not inteptetive, analysis. A concern raised about the available data is that it undercounts Ukrainian losses. This is possible not because of bias (pro-Russian sources are monitered as well) but because areas under Russian control are less likely to have photo documentation. Fog of war is very real. There is no attempt here to use a modifier to adjust numbers - analysis is strictly empirical. Any bias in the origional data will be reflected in the following analyses.
+
 ## Total Equipment Losses
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_total.jpg?)
 Ukranian and Russian equipment losses started off equivalent, but Russians quickly began to lose more equipment by the third day of the war. 
