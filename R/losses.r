@@ -10,7 +10,7 @@ library(scales)
 library(rvest)
 
 
-equipment_losses <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0")
+equipment_losses <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Origional")
 
 ###Refugees
 refugees = equipment_losses[,c("Date", "UNHCR Ukraine Refugees")]
