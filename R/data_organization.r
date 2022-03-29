@@ -107,7 +107,7 @@ mar_12 <- data.frame(oryx_scrape(link="https://web.archive.org/web/2022031218114
 write.csv(mar_12, "~/GitHub/Russia-Ukraine/Dates Raw/Mar122022.csv")
 
 
-###From https://github.com/scarnecchia/scrape_oryx/releases/tag/v1.2.0
+
 #' totals_by_type
 #' @description Gets data by system category.
 #'
@@ -174,9 +174,10 @@ totals_by_type <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on
     ) %>%
     dplyr::rename(equipment_type = equipment)
     totals_df$Date <- date
-    
+
   return(totals_df)
 }
+
 
 totals_fold <- function(totals_df=NULL, link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", date=NULL){   
     if(is.null(totals_df)){
@@ -217,13 +218,45 @@ totals_fold <- function(totals_df=NULL, link="https://www.oryxspioenkop.com/2022
 }
 
 dates = seq(as.Date("2022-02-24"), Sys.Date(), by="days")
-links = c("https://web.archive.org/web/20220224231142/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", "https://web.archive.org/web/20220225233528/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", "https://web.archive.org/web/20220226185336/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", "https://web.archive.org/web/20220227175728/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", "https://web.archive.org/web/20220228231935/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", "https://web.archive.org/web/20220301185329/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220302205559/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220303195154/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220304235636/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220305211400/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220306205522/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220307164915/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220308204303/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220309213817/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220310201012/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220311205005/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220312181142/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220313095112/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220314190653/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220315165310/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220316152314/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220317193934/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220318215226/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220319212345/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220320235959/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220321190729/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220322151602/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220323143821/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220324190934/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220325192145/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://web.archive.org/web/20220326183518/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html","https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html")
+links = c("https://web.archive.org/web/20220224231142/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220225233528/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220226185336/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220227175728/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220228231935/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220301185329/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220302205559/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220303195154/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220304235636/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220305211400/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220306205522/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220307164915/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220308204303/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220309213817/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220310201012/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220311205005/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220312181142/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220313095112/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220314190653/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220315165310/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220316152314/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220317193934/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220318215226/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220319212345/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220320235959/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220321190729/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220322151602/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220323143821/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220324190934/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220325192145/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220326183518/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220327235658/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html")
     
 
 
 date_frame <- data.frame(Dates=dates, Links=links)
 
-list_of_lists <- pblapply(seq(1, nrow(date_frame), 1), function(x) totals_by_type(link=date_frame[x, "Links"], date=date_frame[x,"Dates"]), cl=18)
+list_of_lists <- pbapply::pblapply(seq(1, nrow(date_frame), 1), function(x) totals_by_type(link=date_frame[x, "Links"], date=date_frame[x,"Dates"]), cl=18)
 
 current_frame <- data.table::rbindlist(list_of_lists, use.names=T, fill=T)
 results <- totals_fold(totals_df=current_frame)
