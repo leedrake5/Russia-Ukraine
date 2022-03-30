@@ -9,11 +9,17 @@ library(lubridate)
 library(scales)
 library(rvest)
 
-
 equipment_losses <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Origional")
+equipment_totals <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Totals")
+equipment_destroyed <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Destroyed")
+equipment_damaged <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Damaged")
+equipment_captures <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Captures")
+equipment_captures <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Captures")
+equipment_synthetic <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Synthetic")
+
 
 ###Refugees
-refugees = equipment_losses[,c("Date", "UNHCR Ukraine Refugees")]
+refugees = equipment_synthetic[,c("Date", "UNHCR Ukraine Refugees")]
 refugees$Date <- as.Date(refugees$Date, format="%m/%d/%Y")
 colnames(refugees) <- c("Date", "Refugees")
 refugees <- refugees %>%
@@ -518,7 +524,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_logistics.jpg", current_logistics,
 
 ###Analysis
 empty_columns <- colSums(is.na(equipment_losses) | equipment_losses == "") == nrow(equipment_losses)
-equipment_totals <- equipment_losses[,!empty_columns]
+equipment_totals <- equipment_losses[,c("Date", "Russia_Total", "Ukraine_Total", "Russia_Destroyed", "Ukraine_Destroyed", "Russia_Damaged", "Ukraine_Damaged", "Russia_Abandoned", "Ukraine_Abandoned", "Russia_Captured", "Ukraine_Captured", "Russia_Tanks", "Ukraine_Tanks", "Russia_Tank_Capture", "Ukraine_Tank_Capture", "Russia_AFV", "Ukraine_AFV", "Russia_AFV_Capture", "Ukraine_AFV_Capture", "Russia_IFV", "Ukraine_IFV", "Russia_APC", "Ukraine_APC", "Russia_IMV", "Ukraine_IMV", "Ukraine_Engineering", "Russia_Engineering", "Russia_Coms", "Ukraine_Coms", "Russia_Vehicles", "Ukraine_Vehicles", "Russia_Aircraft", "Ukraine_Aircraft", "Russia_Infantry", "Ukraine_Infantry", "Russia_Logistics", "Ukraine_Logistics", "Russia_Armor", "Ukraine_Armor", "Russia_Antiair", "Ukraine_Antiair", "UNHCR Ukraine Refugees")]
 equipment_totals <- equipment_totals[complete.cases(equipment_totals),]
 equipment_totals <- equipment_totals[nrow(equipment_totals),]
 
@@ -536,9 +542,6 @@ equipment_ratios <- data.frame(Total=equipment_totals[,"Russia_Total"]/equipment
     Engineering=equipment_totals[,"Russia_Coms"]/equipment_totals[,"Ukraine_Coms"],
     Vehicles=equipment_totals[,"Russia_Vehicles"]/equipment_totals[,"Ukraine_Vehicles"],
     Aircraft=equipment_totals[,"Russia_Aircraft"]/equipment_totals[,"Ukraine_Aircraft"],
-    MANPAD=equipment_totals[,"Russia_MANPAD"]/equipment_totals[,"Ukraine_MANPAD"],
-    SAM=equipment_totals[,"Russia_SAM"]/equipment_totals[,"Ukraine_SAM"],
-    SPAAG=equipment_totals[,"Russia_SPAAG"]/equipment_totals[,"Ukraine_SPAAG"],
     Infantry=equipment_totals[,"Russia_Infantry"]/equipment_totals[,"Ukraine_Infantry"],
     Logistics=equipment_totals[,"Russia_Logistics"]/equipment_totals[,"Ukraine_Logistics"],
     Armor=equipment_totals[,"Russia_Armor"]/equipment_totals[,"Ukraine_Armor"],
@@ -567,7 +570,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_unit_type.jpg", unit_type, device=
 ### Total Tanks sourced from https://inews.co.uk/news/world/russia-tanks-how-many-putin-armoured-forces-ukraine-nato-explained-1504470
 percent_tanks <- equipment_losses  %>%
   select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
-  mutate(Date = mdy(Date),
+  mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 13300 - Russia + Russia_Capture,
          UT = 2100 - Ukraine + Ukraine_Capture,
          Russia =  Russia / RT,
@@ -597,7 +600,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_tanks.jpg", current_
 ###Percent Tanks Baseline Adjusted
 percent_tanks <- equipment_losses  %>%
   select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
-  mutate(Date = mdy(Date),
+    mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 13300,
          UT = 2100,
          Russia = Russia_Capture - Russia_Tanks,
@@ -630,7 +633,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_tanks_baseline.jpg",
 ### Deployed Tanks sourced from https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html
 percent_tanks <- equipment_losses  %>%
   select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
-  mutate(Date = mdy(Date),
+    mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 2840 - Russia + Russia_Capture,
          UT = 2100 - Ukraine + Ukraine_Capture,
          Russia =  Russia / RT,
@@ -660,7 +663,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_deployed_tanks.jpg", curre
 ###Percent Tanks Baseline Adjusted
 percent_tanks <- equipment_losses  %>%
   select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
-  mutate(Date = mdy(Date),
+    mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 2840,
          UT = 2100,
          Russia = Russia_Capture - Russia_Tanks,
@@ -695,7 +698,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_deployed_tanks_baseline.jp
 ### Total Tanks sourced from https://inews.co.uk/news/world/russia-tanks-how-many-putin-armoured-forces-ukraine-nato-explained-1504470
 percent_afv <- equipment_losses  %>%
   select(Date, Russia = Russia_AFV, Ukraine = Ukraine_AFV, Russia_Capture = Russia_AFV_Capture, Ukraine_Capture = Ukraine_AFV_Capture) %>%
-  mutate(Date = mdy(Date),
+    mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 20000 - Russia + Russia_Capture,
          UT = 2870 - Ukraine + Ukraine_Capture,
          Russia =  Russia / RT,
@@ -725,7 +728,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_afv.jpg", current_percent_
 ###Percent AFV Baseline Adjusted
 percent_afv<- equipment_losses  %>%
   select(Date, Russia_AFV = Russia_AFV, Ukraine_AFV = Ukraine_AFV, Russia_Capture=Russia_AFV_Capture, Ukraine_Capture=Ukraine_AFV_Capture) %>%
-  mutate(Date = mdy(Date),
+    mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 20000,
          UT = 2870,
          Russia = Russia_Capture - Russia_AFV,
@@ -757,7 +760,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_afv_baseline.jpg", c
 ###Percent Armor Baseline Adjusted
 percent_armor <- equipment_losses  %>%
   select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Tank_Capture=Russia_Tank_Capture, Ukraine_Tank_Capture=Ukraine_Tank_Capture, Russia_AFV = Russia_AFV, Ukraine_AFV = Ukraine_AFV, Russia_AFV_Capture=Russia_AFV_Capture, Ukraine_AFV_Capture=Ukraine_AFV_Capture) %>%
-  mutate(Date = mdy(Date),
+    mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 20000 + 13300,
          UT = 2870 + 2100,
          Russia = (Russia_AFV_Capture + Ukraine_AFV_Capture) - (Russia_AFV + Russia_Tanks),
@@ -790,7 +793,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_armor_baseline.jpg",
 ###Percent AFV Baseline Adjusted
 absolute_units <- equipment_losses  %>%
   select(Date, Russia_Total = Russia_Total, Ukraine_Total = Ukraine_Total, Russia_Capture=Ukraine_Captured, Ukraine_Capture=Russia_Captured) %>%
-  mutate(Date = mdy(Date),
+    mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          Russia_Total_Adjusted = Russia_Total - Ukraine_Capture,
          Ukraine_Total_Adjusted = Ukraine_Total - Russia_Capture,
          Russia = Russia_Capture - Russia_Total_Adjusted,
@@ -816,3 +819,4 @@ current_absolute_total <- ggplot(data=absolute_units, mapping=aes(Date, Net, col
   theme_light()
 
 ggsave("~/Github/Russia-Ukraine/Plots/current_absolute_total.jpg", current_absolute_total, device="jpg", width=6, height=5, dpi=600)
+

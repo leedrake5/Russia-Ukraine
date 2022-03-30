@@ -106,6 +106,7 @@ write.csv(mar_11, "~/GitHub/Russia-Ukraine/Dates Raw/Mar112022.csv")
 mar_12 <- data.frame(oryx_scrape(link="https://web.archive.org/web/20220312181142/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", class_guide_file="~/GitHub/scrape_oryx/classes.csv"), Date="03/12/2022")
 write.csv(mar_12, "~/GitHub/Russia-Ukraine/Dates Raw/Mar122022.csv")
 
+source("~/GitHub/scrape_oryx/R/functions.R")
 
 
 #' totals_by_type
@@ -118,7 +119,7 @@ totals_by_type <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on
         date <- format(Sys.Date(), "%m/%d/%Y")
      }
     
-  heads <-
+    heads <-
     get_data(
       link,
       "article div"
@@ -146,18 +147,19 @@ totals_by_type <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on
     totals[l, "equipment"] <-
       heads[l] %>% stringr::str_remove_all(" \\(.*\\)")
     totals[l, "destroyed"] <-
-      heads[l] %>% stringr::str_extract("destroyed: ...") %>%
+      heads[l] %>% stringr::str_extract("destroyed: \\d+") %>%
       stringr::str_remove_all("[:alpha:]|[:punct:]")
     totals[l, "abandoned"] <-
-      heads[l] %>% stringr::str_extract("(abandoned|aboned): ...") %>%
+      heads[l] %>% stringr::str_extract("(abandoned|aboned): \\d+") %>%
       stringr::str_remove_all("[:alpha:]|[:punct:]")
     totals[l, "captured"] <-
-      heads[l] %>% stringr::str_extract("captured: ...") %>%
+      heads[l] %>% stringr::str_extract("captured: \\d+") %>%
       stringr::str_remove_all("[:alpha:]|[:punct:]")
     totals[l, "damaged"] <-
-      heads[l] %>% stringr::str_extract("damaged: ...") %>%
+      heads[l] %>% stringr::str_extract("damaged: \\d+") %>%
       stringr::str_remove_all("[:alpha:]|[:punct:]")
   }
+
 
   totals_df <- totals %>%
     dplyr::mutate(
@@ -173,10 +175,12 @@ totals_by_type <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on
       equipment = replace(equipment, ukr_pos, "All Types")
     ) %>%
     dplyr::rename(equipment_type = equipment)
+    totals_df <- as.data.frame(totals_df)
     totals_df$Date <- date
-
+    
   return(totals_df)
 }
+
 
 
 totals_fold <- function(totals_df=NULL, link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", date=NULL){   
@@ -184,35 +188,44 @@ totals_fold <- function(totals_df=NULL, link="https://www.oryxspioenkop.com/2022
       totals_df <- totals_by_type(link=link, date=date) 
     }
     
+    totals_df <- totals_df[complete.cases(totals_df),]
 
       
     totals_df$equipment_type[totals_df$equipment_type %in% "All Types"] <- "Total"
     totals_df$equipment_type <- gsub(" ", "_", totals_df$equipment_type)
     totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Station"] <- "Communications_Stations"
+    totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Vehicles"] <- "Communications_Stations"
         totals_df$equipment_type[totals_df$equipment_type %in% "Engineering_Vehicles"] <- "Engineering_Vehicles_And_Equipment"
         totals_df$equipment_type[totals_df$equipment_type %in% "Mine-resistant_ambush_protected"] <- "Mine-Resistant_Ambush_Protected"
         totals_df$equipment_type[totals_df$equipment_type %in% "Mine-resistant_Ambush_Protected"] <- "Mine-Resistant_Ambush_Protected"
         totals_df$equipment_type[totals_df$equipment_type %in% "Self-propelled_Anti-Aircraft_Guns"] <- "Self-Propelled_Anti-Aircraft_Guns"
         totals_df$equipment_type[totals_df$equipment_type %in% "Self-propelled_artillery"] <- "Self-Propelled_Artillery"
-        totals_df$equipment_type[totals_df$equipment_type %in% "Surface-to-air_missile_systems"] <- "Surface-To-Air_Missile_Systems" 
-        totals_df$equipment_type[totals_df$equipment_type %in% "Anti-tank_Guided_Missiles"] <- "Anti-Tank_Guided_Missiles"   
-        totals_df$equipment_type[totals_df$equipment_type %in% "Artillery"] <- "Towed_Artillery"    
+        totals_df$equipment_type[totals_df$equipment_type %in% "Surface-to-air_missile_systems"] <- "Surface-To-Air_Missile_Systems"
+        totals_df$equipment_type[totals_df$equipment_type %in% "Anti-tank_Guided_Missiles"] <- "Anti-Tank_Guided_Missiles"
+        totals_df$equipment_type[totals_df$equipment_type %in% "Artillery"] <- "Towed_Artillery"
+        totals_df$equipment_type[totals_df$equipment_type %in% "Mortars"] <- "Heavy_Mortars"
     colnames(totals_df) <- c("Country", "EquipmentType", "Destroyed", "Abandoned", "Captured", "Damaged", "Quantity", "Date")
-    totals_df$Type <- paste0(totals_df$Country, "_", totals_df$EquipmentType)  
+    totals_df$Type <- gsub("\n", "", paste0(totals_df$Country, "_", totals_df$EquipmentType))
+    totals_df$Type[totals_df$Type %in% "Ukraine_Surface-to-air_missile_systems"] <- "Ukraine_Surface-To-Air_Missile_Systems"
     totals_formatted <- reshape2::dcast(data=totals_df, formula=Date~Type, value.var="Quantity", fun.aggregate = mean)
-    totals_formatted <- totals_formatted[,!colnames(totals_formatted) %in% c("Russia_\n", "Ukraine_\n")]
+    totals_formatted <- totals_formatted[,!colnames(totals_formatted) %in% c("Russia_", "Ukraine_")]
+    colnames(totals_formatted) <- gsub("\n", "", colnames(totals_formatted))
     totals_formatted[is.na(totals_formatted)] <- 0
     destroyed_formatted <- reshape2::dcast(data=totals_df, formula=Date~Type, value.var="Destroyed", fun.aggregate = mean)
-    destroyed_formatted <- destroyed_formatted[,!colnames(destroyed_formatted) %in% c("Russia_\n", "Ukraine_\n")]
+    destroyed_formatted <- destroyed_formatted[,!colnames(destroyed_formatted) %in% c("Russia_", "Ukraine_")]
+    colnames(destroyed_formatted) <- gsub("\n", "", colnames(destroyed_formatted))
     destroyed_formatted[is.na(destroyed_formatted)] <- 0
     damaged_formatted <- reshape2::dcast(data=totals_df, formula=Date~Type, value.var="Damaged", fun.aggregate = mean)
-    damaged_formatted <- damaged_formatted[,!colnames(damaged_formatted) %in% c("Russia_\n", "Ukraine_\n")]
+    damaged_formatted <- damaged_formatted[,!colnames(damaged_formatted) %in% c("Russia_", "Ukraine_")]
+    colnames(damaged_formatted) <- gsub("\n", "", colnames(damaged_formatted))
     damaged_formatted[is.na(damaged_formatted)] <- 0
     captured_formatted <- reshape2::dcast(data=totals_df, formula=Date~Type, value.var="Captured", fun.aggregate = mean)
-    captured_formatted <- captured_formatted[,!colnames(captured_formatted) %in% c("Russia_\n", "Ukraine_\n")]
+    captured_formatted <- captured_formatted[,!colnames(captured_formatted) %in% c("Russia_", "Ukraine_")]
+    colnames(captured_formatted) <- gsub("\n", "", colnames(captured_formatted))
     captured_formatted[is.na(captured_formatted)] <- 0
     abandoned_formatted <- reshape2::dcast(data=totals_df, formula=Date~Type, value.var="Abandoned", fun.aggregate = mean)  
-    abandoned_formatted <- abandoned_formatted[,!colnames(abandoned_formatted) %in% c("Russia_\n", "Ukraine_\n")] 
+    abandoned_formatted <- abandoned_formatted[,!colnames(abandoned_formatted) %in% c("Russia_", "Ukraine_")]
+    colnames(abandoned_formatted) <- gsub("\n", "", colnames(abandoned_formatted))
     abandoned_formatted[is.na(abandoned_formatted)] <- 0
       return(list(Totals=totals_formatted, Destroyed=destroyed_formatted, Damaged=damaged_formatted, Captured=captured_formatted, Abandoned=abandoned_formatted))  
 }
@@ -250,21 +263,37 @@ links = c("https://web.archive.org/web/20220224231142/https://www.oryxspioenkop.
 "https://web.archive.org/web/20220325192145/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
 "https://web.archive.org/web/20220326183518/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
 "https://web.archive.org/web/20220327235658/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220329122252/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
 "https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html")
     
 
 
 date_frame <- data.frame(Dates=dates, Links=links)
 
-list_of_lists <- pbapply::pblapply(seq(1, nrow(date_frame), 1), function(x) totals_by_type(link=date_frame[x, "Links"], date=date_frame[x,"Dates"]), cl=18)
+list_of_lists <- pbapply::pblapply(seq(1, nrow(date_frame), 1), function(x) totals_by_type(link=date_frame[x, "Links"], date=date_frame[x,"Dates"]))
+list_of_lists[[33]] <- data.frame(read.csv("/Users/lee/GitHub/oryx_data/totals_by_type_0328.csv"))
+list_of_lists[[33]]$Date <- as.Date("2022-03-28")
+names(list_of_lists) <- dates
 
-current_frame <- data.table::rbindlist(list_of_lists, use.names=T, fill=T)
+for(i in names(list_of_lists)){
+    write.csv(list_of_lists[[i]], paste0("~/GitHub/Russia-Ukraine/data/", i, ".csv"))
+}
+current_frame <- data.table::rbindlist(list_of_lists, use.names=TRUE, fill=TRUE)
 results <- totals_fold(totals_df=current_frame)
 
+result_list <- list()
+for(i in dates[1:length(dates)-1]){
+    result_list[[as.character(as.Date(i, format="%Y-%m-%d", origin="1970-01-01"))]] <- read.csv(paste0("~/GitHub/Russia-Ukraine/data/byType/", as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), ".csv"))[,-1]
+}
+result_list[[as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01"))]] <- totals_by_type(link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", date=as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01")))
+write.csv(result_list[[as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01"))]], paste0("~/GitHub/Russia-Ukraine/data/byType/", as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01")), ".csv"))
+
+current_frame <- data.table::rbindlist(result_list, use.names=TRUE, fill=TRUE)
+results <- totals_fold(totals_df=current_frame)
 
 googleSheetPush <- function(results, sheet_url="https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0"){
 
-  
+    #googlesheets4::gs4_auth()
 
   gsheet_totals <- googlesheets4::sheet_write(ss=sheet_url, data=results$Totals, sheet="Totals")
     gsheet_destroyed <- googlesheets4::sheet_write(ss=sheet_url, data=results$Destroyed, sheet="Destroyed")
@@ -274,8 +303,27 @@ googleSheetPush <- function(results, sheet_url="https://docs.google.com/spreadsh
 
 }
 
+googleSheetPush(results)
 
+daily_update <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", to_return=NULL){
+    
+    result_list <- list()
+    for(i in dates[1:length(dates)-1]){
+        result_list[[as.character(as.Date(i, format="%Y-%m-%d", origin="1970-01-01"))]] <- read.csv(paste0("~/GitHub/Russia-Ukraine/data/byType/", as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), ".csv"))[,-1]
+    }
+    result_list[[as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01"))]] <- totals_by_type(link=link, date=as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01")))
+    write.csv(result_list[[as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01"))]], paste0("~/GitHub/Russia-Ukraine/data/byType/", as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01")), ".csv"))
 
+    current_frame <- data.table::rbindlist(result_list, use.names=TRUE, fill=TRUE)
+    results <- totals_fold(totals_df=current_frame)
+    
+    googleSheetPush(results)
+    
+    if(!is.null(to_return)){
+        return(results)
+    }
+    
+}
 
 
 

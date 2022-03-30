@@ -1,0 +1,46 @@
+"","country","equipment_type","destroyed","abandoned","captured","damaged","type_total","Date"
+"1","Russia","All Types",348,147,365,10,870,2022-03-07
+"2","Russia","Tanks",40,26,68,2,136,2022-03-07
+"3","Russia","Armoured Fighting Vehicles",30,16,39,0,85,2022-03-07
+"4","Russia","Infantry Fighting Vehicles",49,25,52,0,126,2022-03-07
+"5","Russia","Armoured Personnel Carriers",16,10,28,0,54,2022-03-07
+"6","Russia","Mine-Resistant Ambush Protected",2,0,2,0,4,2022-03-07
+"7","Russia","Infantry Mobility Vehicles",18,2,11,1,32,2022-03-07
+"8","Russia","Communications Stations",2,4,2,0,8,2022-03-07
+"9","Russia","Engineering Vehicles",11,10,15,0,36,2022-03-07
+"10","Russia","Anti-Tank Guided Missiles",0,0,47,0,47,2022-03-07
+"11","Russia","Man-Portable Air Defence Systems
+",0,0,16,0,16,2022-03-07
+"12","Russia","Heavy Mortars",0,0,3,0,3,2022-03-07
+"13","Russia","Towed Artillery",4,3,17,0,24,2022-03-07
+"14","Russia","Self-Propelled Artillery",4,9,7,0,20,2022-03-07
+"15","Russia","Multiple Rocket Launchers",8,2,9,0,19,2022-03-07
+"16","Russia","Self-propelled Anti-Aircraft Guns",5,2,0,0,7,2022-03-07
+"17","Russia","Surface-To-Air Missile Systems",10,3,9,1,23,2022-03-07
+"18","Russia","Radars",1,0,0,0,1,2022-03-07
+"19","Russia","Jammers And Deception Systems",0,0,0,1,1,2022-03-07
+"20","Russia","Aircraft",11,0,0,0,11,2022-03-07
+"21","Russia","Unmanned Aerial Vehicles",1,0,1,0,2,2022-03-07
+"22","Russia","Helicopters",8,2,0,1,11,2022-03-07
+"23","Russia","Logistics Trains",2,0,0,0,2,2022-03-07
+"24","Russia","Trucks, Vehicles and Jeeps",128,35,92,6,261,2022-03-07
+"25","Ukraine","All Types",93,44,108,4,249,2022-03-07
+"26","Ukraine","Tanks",14,10,21,0,45,2022-03-07
+"27","Ukraine","Armoured Fighting Vehicles",8,11,14,0,33,2022-03-07
+"28","Ukraine","Infantry Fighting Vehicles",0,8,16,0,24,2022-03-07
+"29","Ukraine","Armoured Personnel Carriers",3,2,11,0,16,2022-03-07
+"30","Ukraine","Infantry Mobility Vehicles",2,1,14,0,17,2022-03-07
+"31","Ukraine","Engineering Vehicles",0,0,1,0,1,2022-03-07
+"32","Ukraine","Anti-tank Guided Missiles",0,0,32,0,32,2022-03-07
+"33","Ukraine","Man-Portable Air Defence Systems
+",0,0,14,0,14,2022-03-07
+"34","Ukraine","Towed Artillery",1,3,1,0,5,2022-03-07
+"35","Ukraine","Self-Propelled Artillery",3,1,3,0,7,2022-03-07
+"36","Ukraine","Multiple Rocket Launchers",0,0,2,0,2,2022-03-07
+"37","Ukraine","Anti-Aircraft Guns",0,0,1,0,1,2022-03-07
+"38","Ukraine","Surface-To-Air Missile Systems
+",8,0,0,0,8,2022-03-07
+"39","Ukraine","Radars",3,0,0,2,5,2022-03-07
+"40","Ukraine","Aircraft",8,0,0,0,8,2022-03-07
+"41","Ukraine","Naval Ships",1,0,0,0,1,2022-03-07
+"42","Ukraine","Trucks, Vehicles and Jeeps",30,6,26,2,64,2022-03-07
