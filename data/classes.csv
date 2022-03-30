@@ -1,23 +1,185 @@
 system,class
-(Unknown) vehicle,"Trucks, Vehicles, and Jeeps"
-120mm 2B11/2S12,Heavy Mortars
-120mm 2B11/2S12A,Heavy Mortars
-120mm 2B16 Nona-K howitzer,Towed Artillery
-120mm 2S9 Nona,Self-Propelled Artillery
-122mm 2B17 Tornado-G,Multiple Rocket Launchers
-122mm 2S1 Gvozdika,Self-Propelled Artillery
-122mm BM-21 'Grad',Multiple Rocket Launchers
-122mm D-30 howitzer 2A18,Towed Artillery
-152mm 2A65 Msta-B howitzer,Towed Artillery
-152mm 2S19 Msta-S,Self-Propelled Artillery
-152mm 2S3 Akatsiya,Self-Propelled Artillery
+An-225,Aircraft
+An-26 transport aircraft,Aircraft
+MiG-29 fighter aircraft,Aircraft
+Su-25 attack aircraft,Aircraft
+Su-25 close air support aircraft,Aircraft
+Su-27 fighter aircraft,Aircraft
+Su-30SM multirole aircraft,Aircraft
+Su-34 strike aircraft,Aircraft
+23mm ZU-23,Anti-Aircraft Guns
+9M111 Fagot,Anti-Tank Guided Missiles
+9M113 Konkurs,Anti-Tank Guided Missiles
+9M113M Konkurs-M,Anti-Tank Guided Missiles
+9M114 Kokon,Anti-Tank Guided Missiles
+9М131F Metis-M1,Anti-Tank Guided Missiles
+FGM-148 Javelin,Anti-Tank Guided Missiles
+MBT LAW 'NLAW',Anti-Tank Guided Missiles
+RK-3 Corsar,Anti-Tank Guided Missiles
+9М131 Metis-M,Anti-Tank Guided Missiles
+9М133 Kornet,Anti-Tank Guided Missiles
+-BMD 2.00,Armoured Fighting Vehicles
 1V119 artillery battalion fire direction vehicle,Armoured Fighting Vehicles
 1V13 battery fire control center,Armoured Fighting Vehicles
+1V18 'Klyon-1' artillery command and forward observer vehicle,Armoured Fighting Vehicles
+2S1 with ZU-23 AA gun,Armoured Fighting Vehicles
+9P148 Konkurs ATGM carrier,Armoured Fighting Vehicles
+9P149 Shturm-S ATGM carrier,Armoured Fighting Vehicles
+BMP-1Khs,Armoured Fighting Vehicles
+BRDM-2,Armoured Fighting Vehicles
+BREM-1 ARV,Armoured Fighting Vehicles
+BRM-1K,Armoured Fighting Vehicles
+BSEM-4K,Armoured Fighting Vehicles
+MT-LB,Armoured Fighting Vehicles
+MT-LB Ambulance,Armoured Fighting Vehicles
+MT-LB with ZU-23 AA gun,Armoured Fighting Vehicles
+MT-LBM 6MB,Armoured Fighting Vehicles
+MT-LBu,Armoured Fighting Vehicles
+R-149MA1 unified command and staff vehicle,Armoured Fighting Vehicles
+R-149MA3 command and staff vehicle,Armoured Fighting Vehicles
+SNAR-10 battlefield surveillance radar,Armoured Fighting Vehicles
+TZM-T reloader vehicle (for TOS-1A),Armoured Fighting Vehicles
+Unknown AFV,Armoured Fighting Vehicles
+Unknown BTR,Armoured Fighting Vehicles
+Unknown BTR-D/BMD-2,Armoured Fighting Vehicles
+Vepr MRAP,Armoured Fighting Vehicles
+Vityaz DT-30 articulated tracked carrier,Armoured Fighting Vehicles
+1V119 artillery fire direction vehicle,Armoured Fighting Vehicles
+1V14 battery command and forward observer vehicle,Armoured Fighting Vehicles
+9S470M1 (or variant thereof) command post (for Buk-M1/2),Armoured Fighting Vehicles
+BMD-1KSh-A command vehicle,Armoured Fighting Vehicles
+R-149MA1 command and staff vehicle,Armoured Fighting Vehicles
+Unknown BTR-80/BTR-82A,Armoured Fighting Vehicles
+AT105A 'Saxon',Armoured Personnel Carriers
+BTR-60,Armoured Personnel Carriers
+BTR-70,Armoured Personnel Carriers
+BTR-80,Armoured Personnel Carriers
+BTR-D,Armoured Personnel Carriers
+BTR-MDM 'Rakushka',Armoured Personnel Carriers
+Barnaul-T 9С932-1 automated system for air defence units,Communications Stations
+KamAZ 6x6,Communications Stations
+MP-2IM signals vehicle,Communications Stations
+R-166-0.5 signals vehicle,Communications Stations
+R-419L1 communications station,Communications Stations
+Unknown communications station,Communications Stations
+Unknown communications station based on the KamAZ 6x6,Communications Stations
+P-260-U signal vehicle (for Redut-2US signal and communications system),Communications Stations
+BAT-2 heavy engineering vehicle,Engineering Vehicles
+BREM-1 armoured recovery vehicle,Engineering Vehicles
+BREM-Ch ''BREM-4'' armoured recovery vehicle,Engineering Vehicles
+BREM-K armoured recovery vehicle,Engineering Vehicles
+BTR-D APC with UR-67 mine clearing charge,Engineering Vehicles
+GMZ-3 minelayer,Engineering Vehicles
+IMR-2 combat engineering vehicle,Engineering Vehicles
+KamAZ-5350 with crane,Engineering Vehicles
+KamAZ-5350 with EOV-3523 excavator,Engineering Vehicles
+KamAZ-5350 with KS-45719-7M crane,Engineering Vehicles
+MTU-72 bridge layer,Engineering Vehicles
+PMP floating bridge,Engineering Vehicles
+PTS-3 tracked amphibious transport,Engineering Vehicles
+REM-KL armoured recovery vehicle,Engineering Vehicles
+TMM-3 bridge layer,Engineering Vehicles
+UR-77 'Meterorit' mine clearing vehicle,Engineering Vehicles
+Ural-4320 Wrecker,Engineering Vehicles
+BMK-130M/BMK-150 towing and motor boat,Engineering Vehicles
+BMK-150 towing and motor boat,Engineering Vehicles
+MDK-3 trench-digging vehicle,Engineering Vehicles
+Pontoon bridge,Engineering Vehicles
+PP-2005 floating bridge,Engineering Vehicles
+RKhM 'Kashalot',Engineering Vehicles
+TMM-3M1 bridge layer,Engineering Vehicles
+Ural-4320 KET-L,Engineering Vehicles
+Ural-4320 KT-L,Engineering Vehicles
+Ural-4320 with crane,Engineering Vehicles
+120mm 2B11/2S12,Heavy Mortars
+120mm 2B11/2S12A,Heavy Mortars
+Ka-52 'Alligator' attack helicopter,Helicopters
+Mi-24 attack helicopter,Helicopters
+Mi-24V/P attack helicopter,Helicopters
+Mi-28 attack helicopter,Helicopters
+Mi-35M attack helicopter,Helicopters
+Mi-8 transport helicopter,Helicopters
+Unknown Mi-24/35 attack helicopter,Helicopters
+Unknown helicopter,Helicopters
+BMD-4M,Infantry Fighting Vehicles
+BMP-1 BM,Infantry Fighting Vehicles
+BMP-1(P),Infantry Fighting Vehicles
+BMP-2,Infantry Fighting Vehicles
+BMP-2K,Infantry Fighting Vehicles
+BMP-3,Infantry Fighting Vehicles
+BTR-3,Infantry Fighting Vehicles
+BTR-4,Infantry Fighting Vehicles
+BTR-82A,Infantry Fighting Vehicles
+-BMD 2.00,Infantry Fighting Vehicles
+BMP-1TS,Infantry Fighting Vehicles
+Unknown BMP-1/2,Infantry Fighting Vehicles
+GAZ Tigr-M,Infantry Mobility Vehicles
+HMMWV,Infantry Mobility Vehicles
+Iveco LMV 'Rys',Infantry Mobility Vehicles
+Kozak-2,Infantry Mobility Vehicles
+Novator,Infantry Mobility Vehicles
+Varta,Infantry Mobility Vehicles
+GAZ Tigr,Infantry Mobility Vehicles
+Kozak-2M1,Infantry Mobility Vehicles
+KrAZ Cobra,Infantry Mobility Vehicles
+KrAZ Spartan,Infantry Mobility Vehicles
+R-330BMV Borisoglebsk-2B,Jammers and Deception Systems
+1RL257 Krasukha-4 command post,Jammers and Deception Systems
+R-330ZH Zhitel,Jammers and Deception Systems
+Torn(-MDM),Jammers and Deception Systems
+Fuel train,Logistics Trains
+9K310 Igla-1,Man-Portable Air Defense Systems
+9K333 Verba,Man-Portable Air Defense Systems
+9K38 Igla,Man-Portable Air Defense Systems
+K-4386 Typhoon-VDV,Mine-Resistant Ambush Protected (MRAP) Vehicles
+K-53949 'Linza',Mine-Resistant Ambush Protected (MRAP) Vehicles
+K-53949 Typhoon-K,Mine-Resistant Ambush Protected (MRAP) Vehicles
+KamAZ-63968 'Typhoon',Mine-Resistant Ambush Protected (MRAP) Vehicles
+122mm 2B17 Tornado-G,Multiple Rocket Launchers
+122mm BM-21 'Grad',Multiple Rocket Launchers
 220mm BM-27 'Uragan',Multiple Rocket Launchers
 220mm TOS-1A,Multiple Rocket Launchers
-23mm ZU-23,Anti-Aircraft Guns
+Island-class patrol boat P190 Slovyansk,Naval Ships
+Krivak III class frigate 'Hetman Sahaydachniy',Naval Ships
+Gyurza-M class gunboat,Naval Ships
+Island class patrol boat P190 Slovyansk,Naval Ships
+Project 03160 Raptor class patrol boat,Naval Ships
+Project 1171 Tapir class landing ship 'Saratov (BDK-65)',Naval Ships
+Project 775 Ropucha class landing ship,Naval Ships
+Sapphire search and rescue vessel (Operated by the Maritime Search and Rescue Service of Ukraine),Naval Ships
+Small patrol boats (Sea Guard),Naval Ships
+Sorum class seagoing tugboat 'Korets' ''A830 or P186'',Naval Ships
+Zhuk class patrol boat (Sea Guard),Naval Ships
+1L22 'Parol',Radars
+9S18М1(-3) (for Buk-M3),Radars
+P-14 'Tall King',Radars
+P-35/37 'Bar Lock',Radars
+PRV-13 'Odd Pair',Radars
+1L261 (for 1L260 Zoopark-1M counter-battery radar complex),Radars
+30N6 'Flap Lid' (for S-300PS),Radars
+36D6 'Tin Shield',Radars
+5N63-1 'Flap Lid' on 40V6M mast (for S-300PT),Radars
+5N66M 'Clam Shell' on 40V6M mast (for S-300PT),Radars
+AN/TPQ-36 lightweight counter mortar radar,Radars
+AN/TPQ-49 lightweight counter mortar radar,Radars
+Fara ground surveillance radar,Radars
+P-19 'Flat Face B',Radars
 2K22M1 Tunguska,Self-Propelled Anti-Aircraft Guns
-2S1 with ZU-23 AA gun,Armoured Fighting Vehicles
+BTR-ZD 'Skrezhet',Self-Propelled Anti-Aircraft Guns
+ZSU-23-4 'Shilka',Self-Propelled Anti-Aircraft Guns
+120mm 2S9 Nona,Self-Propelled Artillery
+122mm 2S1 Gvozdika,Self-Propelled Artillery
+152mm 2S19 Msta-S,Self-Propelled Artillery
+152mm 2S3 Akatsiya,Self-Propelled Artillery
+120mm 2S23 Nona-SVK,Self-Propelled Artillery
+120mm 2S34 Khosta,Self-Propelled Artillery
+120mm BTR-3M2,Self-Propelled Artillery
+152mm 2S33 Msta-SM2,Self-Propelled Artillery
+152mm 2S5 Giatsint-S,Self-Propelled Artillery
+203mm 2S7 Pion,Self-Propelled Artillery
+Unknown SPG,Self-Propelled Artillery
+5P85D (launcher for S-300PS),Surface-To-Air Missile Systems
+5P85S (launcher for S-300PS),Surface-To-Air Missile Systems
 9A310M1 TELAR (for Buk-M1-2),Surface-To-Air Missile Systems
 9A310M2 TELAR (for Buk-M2),Surface-To-Air Missile Systems
 9A330 Tor TLAR (for 9K330 Tor-M),Surface-To-Air Missile Systems
@@ -25,88 +187,17 @@ system,class
 9A331M TLAR (for 9K332 Tor-M2),Surface-To-Air Missile Systems
 9A39M1 TEL (for Buk-M1-2),Surface-To-Air Missile Systems
 9A39M2 TEL (for Buk-M2),Surface-To-Air Missile Systems
-9K33 Osa,"Trucks, Vehicles, and Jeeps"
-9K333 Verba,Man-Portable Air Defense Systems
 9K35 Strela-10,Surface-To-Air Missile Systems
-9K38 Igla,Man-Portable Air Defense Systems
-9M111 Fagot,Anti-Tank Guided Missiles
-9M113 Konkurs,Anti-Tank Guided Missiles
-9M113M Konkurs-M,Anti-Tank Guided Missiles
-9M114 Kokon,Anti-Tank Guided Missiles
-9P149 Shturm-S ATGM carrier,Armoured Fighting Vehicles
-9S18М1(-3) (for Buk-M3),Radars
-9T217 transloader (for 9K33 Osa),"Trucks, Vehicles, and Jeeps"
-9T452 transporter-loader (for BM-27 'Uragan' MRL),"Trucks, Vehicles, and Jeeps"
-9М131F Metis-M1,Anti-Tank Guided Missiles
-An-26 transport aircraft,Aircraft
-Armoured SUV,"Trucks, Vehicles, and Jeeps"
-Barnaul-T 9С932-1 automated system for air defence units,Communications Stations
-BAT-2 heavy engineering vehicle,Engineering Vehicles
--BMD 2.00,Armoured Fighting Vehicles
-BMD-4M,Infantry Fighting Vehicles
-BMP-1(P),Infantry Fighting Vehicles
-BMP-1Khs,Armoured Fighting Vehicles
-BMP-2,Infantry Fighting Vehicles
-BMP-2K,Infantry Fighting Vehicles
-BMP-3,Infantry Fighting Vehicles
-BREM-1 armoured recovery vehicle,Engineering Vehicles
-BREM-Ch ''BREM-4'' armoured recovery vehicle,Engineering Vehicles
-BREM-K armoured recovery vehicle,Engineering Vehicles
-BRM-1K,Armoured Fighting Vehicles
-BTR-80,Armoured Personnel Carriers
-BTR-82A,Infantry Fighting Vehicles
-BTR-D,Armoured Personnel Carriers
-BTR-D APC with UR-67 mine clearing charge,Engineering Vehicles
-BTR-MDM 'Rakushka',Armoured Personnel Carriers
-BTR-ZD 'Skrezhet',Self-Propelled Anti-Aircraft Guns
-E95M target drone (likely used as unmanned bait in order for Ukraine to reveal the location of air defence systems),Unmanned Aerial Vehicles
-Eleron-3 reconnaissance UAV,Unmanned Aerial Vehicles
-Forpost reconnaissance UAV,Unmanned Aerial Vehicles
-Fuel train,Logistics Trains
-GAZ Sobol,"Trucks, Vehicles, and Jeeps"
-GAZ Tigr-M,Infantry Mobility Vehicles
-GAZ-3308,"Trucks, Vehicles, and Jeeps"
-GAZ-66,"Trucks, Vehicles, and Jeeps"
-GMZ-3 minelayer,Engineering Vehicles
-IMR-2 combat engineering vehicle,Engineering Vehicles
-Iveco LMV 'Rys',Infantry Mobility Vehicles
-K-4386 Typhoon-VDV,Mine-Resistant Ambush Protected (MRAP) Vehicles
-K-53949 'Linza',Mine-Resistant Ambush Protected (MRAP) Vehicles
-K-53949 Typhoon-K,Mine-Resistant Ambush Protected (MRAP) Vehicles
-Ka-52 'Alligator' attack helicopter,Helicopters
-KamAZ 4x4,"Trucks, Vehicles, and Jeeps"
-KamAZ 6x6,Communications Stations
-KamAZ Avtozaks,"Trucks, Vehicles, and Jeeps"
-KamAZ with armoured cabin,"Trucks, Vehicles, and Jeeps"
-KamAZ-5350 with crane,Engineering Vehicles
-KamAZ-5350 with EOV-3523 excavator,Engineering Vehicles
-KamAZ-5350 with KS-45719-7M crane,Engineering Vehicles
-KamAZ-6350 8x8 artillery tractor,"Trucks, Vehicles, and Jeeps"
-KamAZ-63968 'Typhoon',Mine-Resistant Ambush Protected (MRAP) Vehicles
-Mi-24V/P attack helicopter,Helicopters
-Mi-28 attack helicopter,Helicopters
-Mi-35M attack helicopter,Helicopters
-Mi-8 transport helicopter,Helicopters
-MP-2IM signals vehicle,Communications Stations
-MT-LB,Armoured Fighting Vehicles
-MT-LB Ambulance,Armoured Fighting Vehicles
-MT-LB with ZU-23 AA gun,Armoured Fighting Vehicles
-MT-LBM 6MB,Armoured Fighting Vehicles
-MT-LBu,Armoured Fighting Vehicles
-MTU-72 bridge layer,Engineering Vehicles
-Orlan-10 reconnaissance UAV,Unmanned Aerial Vehicles
+Buk-M1,Surface-To-Air Missile Systems
 Pantsir-S1,Surface-To-Air Missile Systems
-PMP floating bridge,Engineering Vehicles
-PTS-3 tracked amphibious transport,Engineering Vehicles
-R-149MA1 unified command and staff vehicle,Armoured Fighting Vehicles
-R-149MA3 command and staff vehicle,Armoured Fighting Vehicles
-R-166-0.5 signals vehicle,Communications Stations
-R-330BMV Borisoglebsk-2B,Jammers and Deception Systems
-R-419L1 communications station,Communications Stations
-REM-KL armoured recovery vehicle,Engineering Vehicles
-Su-25 close air support aircraft,Aircraft
-Su-30SM multirole aircraft,Aircraft
-Su-34 strike aircraft,Aircraft
+5P851A (launcher for S-300PT),Surface-To-Air Missile Systems
+9A310M1 TELAR (for Buk-M1),Surface-To-Air Missile Systems
+9A310M1-2 TELAR (for Buk-M1-2),Surface-To-Air Missile Systems
+9A316 TEL (for Buk-M2),Surface-To-Air Missile Systems
+9A317 TELAR (for Buk-M2),Surface-To-Air Missile Systems
+9A330 Tor TLAR (for 9K330 Tor),Surface-To-Air Missile Systems
+9A39M1-2 TEL (for Buk-M1-2),Surface-To-Air Missile Systems
+Unknown Buk SAM system,Surface-To-Air Missile Systems
 T-64BV,Tanks
 T-72A,Tanks
 T-72AV,Tanks
@@ -119,73 +210,63 @@ T-80BVM,Tanks
 T-80U,Tanks
 T-80UK,Tanks
 T-90A,Tanks
-TMM-3 bridge layer,Engineering Vehicles
-TZM-T reloader vehicle (for TOS-1A),Armoured Fighting Vehicles
-UAZ Patriot,"Trucks, Vehicles, and Jeeps"
-UAZ-23632,"Trucks, Vehicles, and Jeeps"
-UAZ-469,"Trucks, Vehicles, and Jeeps"
-Unknown AFV,Armoured Fighting Vehicles
-Unknown BTR-D/BMD-2,Armoured Fighting Vehicles
-Unknown communications station,Communications Stations
-Unknown communications station based on the KamAZ 6x6,Communications Stations
-Unknown Mi-24/35 attack helicopter,Helicopters
 Unknown tank,Tanks
-Unknown truck,"Trucks, Vehicles, and Jeeps"
-UR-77 'Meterorit' mine clearing vehicle,Engineering Vehicles
-Ural Federal,"Trucks, Vehicles, and Jeeps"
-Ural-4320,"Trucks, Vehicles, and Jeeps"
-Ural-4320 Wrecker,Engineering Vehicles
-Ural-43206,"Trucks, Vehicles, and Jeeps"
-Ural-542301 tank transporter,"Trucks, Vehicles, and Jeeps"
-Vityaz DT-30 articulated tracked carrier,Armoured Fighting Vehicles
-ZALA Aero KUB-BLA loitering munition ,Unmanned Aerial Vehicles
-ZiL-131,"Trucks, Vehicles, and Jeeps"
+T-64B1M,Tanks
+T-72AMT,Tanks
+T-80UM2,Tanks
 100mm MT-12 anti-tank gun,Towed Artillery
+120mm 2B16 Nona-K howitzer,Towed Artillery
 122mm D-30 howitzer,Towed Artillery
+122mm D-30 howitzer 2A18,Towed Artillery
 152mm 2A36 Giatsint-B field-gun,Towed Artillery
-1L22 'Parol',Radars
-1V18 'Klyon-1' artillery command and forward observer vehicle,Armoured Fighting Vehicles
-5P85D (launcher for S-300PS),Surface-To-Air Missile Systems
-5P85S (launcher for S-300PS),Surface-To-Air Missile Systems
-9K310 Igla-1,Man-Portable Air Defense Systems
-9P148 Konkurs ATGM carrier,Armoured Fighting Vehicles
-An-225,Aircraft
-AT105A 'Saxon',Armoured Personnel Carriers
-BMP-1 BM,Infantry Fighting Vehicles
-BRDM-2,Armoured Fighting Vehicles
-BREM-1 ARV,Armoured Fighting Vehicles
-BSEM-4K,Armoured Fighting Vehicles
-BTR-3,Infantry Fighting Vehicles
-BTR-4,Infantry Fighting Vehicles
-BTR-60,Armoured Personnel Carriers
-BTR-70,Armoured Personnel Carriers
-Buk-M1,Surface-To-Air Missile Systems
-FGM-148 Javelin,Anti-Tank Guided Missiles
-HMMWV,Infantry Mobility Vehicles
-Island-class patrol boat P190 Slovyansk,Naval Ships
+152mm 2A65 Msta-B howitzer,Towed Artillery
+Unknown towed artillery,Towed Artillery
+(Unknown) vehicle,"Trucks, Vehicles, and Jeeps"
+9K33 Osa,"Trucks, Vehicles, and Jeeps"
+9T217 transloader (for 9K33 Osa),"Trucks, Vehicles, and Jeeps"
+9T452 transporter-loader (for BM-27 'Uragan' MRL),"Trucks, Vehicles, and Jeeps"
+Armoured SUV,"Trucks, Vehicles, and Jeeps"
+GAZ Sobol,"Trucks, Vehicles, and Jeeps"
+GAZ-3308,"Trucks, Vehicles, and Jeeps"
+GAZ-66,"Trucks, Vehicles, and Jeeps"
 KamAZ,"Trucks, Vehicles, and Jeeps"
-Kozak-2,Infantry Mobility Vehicles
+KamAZ 4x4,"Trucks, Vehicles, and Jeeps"
+KamAZ Avtozaks,"Trucks, Vehicles, and Jeeps"
+KamAZ with armoured cabin,"Trucks, Vehicles, and Jeeps"
+KamAZ-6350 8x8 artillery tractor,"Trucks, Vehicles, and Jeeps"
 KrAZ-5233,"Trucks, Vehicles, and Jeeps"
 KrAZ-6322,"Trucks, Vehicles, and Jeeps"
-Krivak III class frigate 'Hetman Sahaydachniy',Naval Ships
-Leleka-100 reconnaissance UAV,Unmanned Aerial Vehicles
 MAZ,"Trucks, Vehicles, and Jeeps"
 MAZ-537,"Trucks, Vehicles, and Jeeps"
-MBT LAW 'NLAW',Anti-Tank Guided Missiles
-Mi-24 attack helicopter,Helicopters
-MiG-29 fighter aircraft,Aircraft
-Novator,Infantry Mobility Vehicles
-P-14 'Tall King',Radars
-P-35/37 'Bar Lock',Radars
-PRV-13 'Odd Pair',Radars
-RK-3 Corsar,Anti-Tank Guided Missiles
-SNAR-10 battlefield surveillance radar,Armoured Fighting Vehicles
-Su-25 attack aircraft,Aircraft
-Su-27 fighter aircraft,Aircraft
-Tu-141 reconnaissance UAV,Unmanned Aerial Vehicles
+UAZ Patriot,"Trucks, Vehicles, and Jeeps"
+UAZ-23632,"Trucks, Vehicles, and Jeeps"
 UAZ-452,"Trucks, Vehicles, and Jeeps"
-Unknown BTR,Armoured Fighting Vehicles
+UAZ-469,"Trucks, Vehicles, and Jeeps"
+Unknown truck,"Trucks, Vehicles, and Jeeps"
+Ural Federal,"Trucks, Vehicles, and Jeeps"
 Ural-375D,"Trucks, Vehicles, and Jeeps"
-Varta,Infantry Mobility Vehicles
-Vepr MRAP,Armoured Fighting Vehicles
-ZSU-23-4 'Shilka',Self-Propelled Anti-Aircraft Guns
+Ural-4320,"Trucks, Vehicles, and Jeeps"
+Ural-43206,"Trucks, Vehicles, and Jeeps"
+Ural-542301 tank transporter,"Trucks, Vehicles, and Jeeps"
+ZiL-131,"Trucks, Vehicles, and Jeeps"
+Civilian KamAZ 6x6 converted for military use,"Trucks, Vehicles, and Jeeps"
+KamAZ 8x8,"Trucks, Vehicles, and Jeeps"
+KrAZ-22B,"Trucks, Vehicles, and Jeeps"
+KrAZ-255B,"Trucks, Vehicles, and Jeeps"
+KrAZ-260,"Trucks, Vehicles, and Jeeps"
+Unknown vehicle,"Trucks, Vehicles, and Jeeps"
+Ural-63704-0010 Tornado-U,"Trucks, Vehicles, and Jeeps"
+ZiL-130,"Trucks, Vehicles, and Jeeps"
+ZiL-157,"Trucks, Vehicles, and Jeeps"
+E95M target drone (likely used as unmanned bait in order for Ukraine to reveal the location of air defence systems),Unmanned Aerial Vehicles
+Eleron-3 reconnaissance UAV,Unmanned Aerial Vehicles
+Forpost reconnaissance UAV,Unmanned Aerial Vehicles
+Leleka-100 reconnaissance UAV,Unmanned Aerial Vehicles
+Orlan-10 reconnaissance UAV,Unmanned Aerial Vehicles
+Tu-141 reconnaissance UAV,Unmanned Aerial Vehicles
+ZALA Aero KUB-BLA loitering munition ,Unmanned Aerial Vehicles
+A1-SM Fury reconnaissance UAV,Unmanned Aerial Vehicles
+Bayraktar TB2 UCAV,Unmanned Aerial Vehicles
+UJ-22 reconnaissance UAV,Unmanned Aerial Vehicles
+Weaponised VTOL UAV,Unmanned Aerial Vehicles
+ZALA Aero KUB-BLA loitering munition,Unmanned Aerial Vehicles

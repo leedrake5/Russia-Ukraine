@@ -1,3 +1,5 @@
+####byType
+
 source("~/GitHub/scrape_oryx/R/functions.R")
 
 oryx_scrape <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", class_guide_file="~/GitHub/scrape_oryx/classes.csv", return="Raw"){
@@ -325,6 +327,200 @@ daily_update <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on-e
     
 }
 
+###By Equipment
+source("~/GitHub/scrape_oryx/R/functions.R")
 
+#' scrape_data
+#' @description Gets data by system.
+#'
+#' @return a tibble
+#' @export
+scrape_data <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", date=NULL, remove=NULL) {
+    
+    if(is.null(date)){
+        date <- format(Sys.Date(), "%m/%d/%Y")
+     }
+    materiel <-
+    get_data(
+      link,
+      "article"
+    ) %>%
+    rvest::html_elements("li")
 
+  # Retreive the start position of each country
+  country_pos <- materiel %>% rvest::html_text2() %>%
+    # T-64BV is the first row in the tank list and marks the beginning of each country
+    stringr::str_which("T-64BV")
+
+  #' Run Program
+  data <-
+    tibble::tibble(
+      country = character(),
+      origin = character(),
+      system = character(),
+      status = character(),
+      url = character()
+    )
+
+  counter = 0
+  for (a in seq_along(materiel)) {
+    status <- materiel[[a]] %>% rvest::html_elements("a")
+    for (b in seq_along(status)) {
+      counter = counter + 1
+      data[counter, 1] <-
+        ifelse(a < country_pos[2], "Russia", "Ukraine")
+      data[counter, 2] <- extract_origin(materiel, a)
+      data[counter, 3] <- extract_system(materiel, a)
+      data[counter, 4] <- extract_status(status, b)
+      data[counter, 5] <- extract_url(status, b)
+    }
+  }
+
+  data <- data %>%
+    dplyr::mutate(status = stringr::str_extract_all(status, "destroyed|captured|abandoned|damaged")) %>%
+    tidyr::unnest_longer(status) %>%
+    dplyr::mutate(date_recorded = as.Date(lubridate::today())) %>%
+    trim_all()
+
+  data <- create_keys(data) %>%
+    dplyr::group_by(matID) %>%
+    dplyr::filter(date_recorded == min(date_recorded)) %>%
+    dplyr::ungroup()
+    
+    data <- as.data.frame(data)
+    data$Date <- date
+    
+    if(!is.null(remove)){
+        data$url <- gsub(remove, "", data$url)
+    }
+
+  return(data)
+
+}
+
+total_by_system_wide <- function(indsn, date=NULL){
+    if(is.null(date)){
+        date <- unique(indsn$Date)
+    }
+    tidy_frame <- indsn %>% dplyr::select(country, system, status) %>%
+    dplyr::group_by(country, system, status) %>%
+    dplyr::summarise(count = n()) %>%
+    tidyr::pivot_wider(names_from = status, values_from = count) %>%
+    dplyr::ungroup() %>%
+    dplyr::mutate(dplyr::across(where(is.numeric), ~ tidyr::replace_na(.x, 0)),
+                  total = destroyed + captured + damaged + abandoned)
+    tidy_frame$Date <- date
+    return(tidy_frame)
+}
+
+test <- scrape_data()
+test_2 <- total_by_system_wide(test)
+classes <- read.csv("/Users/lee/GitHub/Russia-Ukraine/data/classes.csv")
+
+classes_2 <- merge(classes, data.frame(system=unique(test_2$system)), by="system", all=TRUE)
+classes_2[is.na(classes_2)] <- ""
+write.csv(classes_2, "~/Desktop/classes2.csv")
+
+dates = seq(as.Date("2022-02-24"), Sys.Date(), by="days")
+dates <- dates[1:32]
+links = c("https://web.archive.org/web/20220224231142/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220225233528/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220226185336/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220227175728/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220228231935/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220301185329/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220302205559/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220303195154/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220304235636/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220305211400/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220306205522/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220307164915/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220308204303/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220309213817/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220310201012/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220311205005/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220312181142/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220313095112/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220314190653/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220315165310/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220316152314/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220317193934/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220318215226/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220319212345/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220320235959/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220321190729/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220322151602/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220323143821/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220324190934/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220325192145/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220326183518/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html",
+"https://web.archive.org/web/20220327235658/https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html")
+    
+web_prefix_remove <- c("https://web.archive.org/web/20220224231142/",
+"https://web.archive.org/web/20220225233528/",
+"https://web.archive.org/web/20220226185336/",
+"https://web.archive.org/web/20220227175728/",
+"https://web.archive.org/web/20220228231935/",
+"https://web.archive.org/web/20220301185329/",
+"https://web.archive.org/web/20220302205559/",
+"https://web.archive.org/web/20220303195154/",
+"https://web.archive.org/web/20220304235636/",
+"https://web.archive.org/web/20220305211400/",
+"https://web.archive.org/web/20220306205522/",
+"https://web.archive.org/web/20220307164915/",
+"https://web.archive.org/web/20220308204303/",
+"https://web.archive.org/web/20220309213817/",
+"https://web.archive.org/web/20220310201012/",
+"https://web.archive.org/web/20220311205005/",
+"https://web.archive.org/web/20220312181142/",
+"https://web.archive.org/web/20220313095112/",
+"https://web.archive.org/web/20220314190653/",
+"https://web.archive.org/web/20220315165310/",
+"https://web.archive.org/web/20220316152314/",
+"https://web.archive.org/web/20220317193934/",
+"https://web.archive.org/web/20220318215226/",
+"https://web.archive.org/web/20220319212345/",
+"https://web.archive.org/web/20220320235959/",
+"https://web.archive.org/web/20220321190729/",
+"https://web.archive.org/web/20220322151602/",
+"https://web.archive.org/web/20220323143821/",
+"https://web.archive.org/web/20220324190934/",
+"https://web.archive.org/web/20220325192145/",
+"https://web.archive.org/web/20220326183518/",
+"https://web.archive.org/web/20220327235658/")
+
+date_frame <- data.frame(Dates=dates, Links=links, Remove=web_prefix_remove)
+
+raw_list <- pbapply::pblapply(seq(1, nrow(date_frame), 1), function(x) scrape_data(link=date_frame[x, "Links"], date=date_frame[x,"Dates"], remove=date_frame[x,"Remove"]), cl=18)
+names(raw_list) <- dates
+raw_list[["2022-03-28"]] <- read.csv("/Users/lee/GitHub/Russia-Ukraine/data/bySystem/Raw/Full/2022-03-28.csv")
+raw_list[["2022-03-29"]] <- read.csv("/Users/lee/GitHub/Russia-Ukraine/data/bySystem/Raw/Full/2022-03-29.csv")
+raw_list[["2022-03-30"]] <- scrape_data()
+names(raw_list) <- dates
+for(i in names(raw_list)){
+    write.csv(raw_list[[i]], paste0("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Full/", i, ".csv"))
+}
+
+tidy_list <- pbapply::pblapply(raw_list, total_by_system_wide)
+for(i in names(tidy_list)){
+    write.csv(tidy_list[[i]], paste0("~/GitHub/Russia-Ukraine/data/bySystem/Totals/Full/", i, ".csv"))
+}
+
+raw_mod_list <- list()
+for(i in names(raw_list)){
+    raw_mod_list[[i]] <- raw_list[[i]][, !colnames(raw_list[[i]]) %in% c("Date", "date_recorded")]
+}
+
+for(i in 2:length(raw_mod_list)){
+    raw_mod_list[[names(raw_mod_list)[i]]] <- raw_mod_list[[i]][!raw_mod_list[[i]]$url %in% raw_list[[i-1]]$url,]
+}
+for(i in names(raw_mod_list)){
+    raw_mod_list[[i]]$Date <- i
+    write.csv(raw_mod_list[[i]], paste0("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Daily/", i, ".csv"))
+}
+
+daily_tidy_list <- pbapply::pblapply(raw_mod_list, total_by_system_wide)
+for(i in names(tidy_list)){
+    write.csv(tidy_list[[i]], paste0("~/GitHub/Russia-Ukraine/data/bySystem/Totals/Full/", i, ".csv"))
+}
 
