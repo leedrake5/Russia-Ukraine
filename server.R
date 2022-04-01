@@ -39,10 +39,10 @@ shinyServer(function(input, output, session) {
         
         all_of_them <- unique(daily_frame[daily_frame$class %in% input$classes,]$system)
         
-        if(input$useallclasses==TRUE){
+        if(input$useallsystems==TRUE){
             all_of_them
-        } else if(input$useallclasses==FALSE){
-            sort(table(all_of_them), decreasing = TRUE)[1]
+        } else if(input$useallsystems==FALSE){
+            names(sort(table(all_of_them), decreasing = TRUE)[1])
         }
         
     })
