@@ -402,9 +402,9 @@ total_by_system_wide <- function(indsn, date=NULL){
     if(is.null(date)){
         date <- unique(indsn$Date)
     }
-    tidy_frame <- indsn %>% dplyr::select(country, system, status) %>%
+    tidy_frame <- indsn %>% dplyr::select(country, system, status, Date) %>%
     dplyr::group_by(country, system, status) %>%
-    dplyr::summarise(count = n()) %>%
+    dplyr::summarise(count = dplyr::n(), na.rm=TRUE) %>%
     tidyr::pivot_wider(names_from = status, values_from = count) %>%
     dplyr::ungroup() %>%
     dplyr::mutate(dplyr::across(where(is.numeric), ~ tidyr::replace_na(.x, 0)),
@@ -524,3 +524,10 @@ for(i in names(tidy_list)){
     write.csv(tidy_list[[i]], paste0("~/GitHub/Russia-Ukraine/data/bySystem/Totals/Full/", i, ".csv"))
 }
 
+daily_list <- list()
+
+for(i in dates){
+    
+    daily_list[[i]] <- read.csv(paste0("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Daily/", i, ".csv"))
+    
+}
