@@ -13,6 +13,8 @@ library(shinythemes)
 library(DT)
 library(R.utils)
 
+full_data <- read.csv(paste0("data/bySystem/Raw/Full/", Sys.Date(), ".csv"))
+
 dates = seq(as.Date("2022-02-24"), Sys.Date(), by="days")
 
 
@@ -37,8 +39,21 @@ total_by_system_wide <- function(indsn){
     dplyr::group_by(country, system, class, status, Date) %>%
     dplyr::summarise(count = dplyr::n()) %>%
     tidyr::pivot_wider(names_from = status, values_from = count) %>%
-    dplyr::ungroup() %>%
-    dplyr::mutate(dplyr::across(where(is.numeric), ~ tidyr::replace_na(.x, 0)),
+    dplyr::ungroup()
+    
+    if(!"destroyed" %in% names(tidy_frame)){
+        tidy_frame$destroyed <- 0
+    }
+    if(!"captured" %in% names(tidy_frame)){
+        tidy_frame$captured <- 0
+    }
+    if(!"abandoned" %in% names(tidy_frame)){
+        tidy_frame$abandoned <- 0
+    }
+    if(!"damaged" %in% names(tidy_frame)){
+        tidy_frame$damaged <- 0
+    }
+    tidy_frame <- tidy_frame %>% dplyr::mutate(dplyr::across(where(is.numeric), ~ tidyr::replace_na(.x, 0)),
                   total = destroyed + captured + damaged + abandoned)
                   
     return(tidy_frame)
@@ -50,8 +65,21 @@ date_crunch <- function(indsn){
     dplyr::group_by(country, status, Date) %>%
     dplyr::summarise(count = dplyr::n()) %>%
     tidyr::pivot_wider(names_from = status, values_from = count) %>%
-    dplyr::ungroup() %>%
-    dplyr::mutate(dplyr::across(where(is.numeric), ~ tidyr::replace_na(.x, 0)),
+    dplyr::ungroup()
+    
+    if(!"destroyed" %in% names(tidy_frame)){
+        tidy_frame$destroyed <- 0
+    }
+    if(!"captured" %in% names(tidy_frame)){
+        tidy_frame$captured <- 0
+    }
+    if(!"abandoned" %in% names(tidy_frame)){
+        tidy_frame$abandoned <- 0
+    }
+    if(!"damaged" %in% names(tidy_frame)){
+        tidy_frame$damaged <- 0
+    }
+    tidy_frame <- tidy_frame %>% dplyr::mutate(dplyr::across(where(is.numeric), ~ tidyr::replace_na(.x, 0)),
                   total = destroyed + captured + damaged + abandoned)
                   
     return(tidy_frame)

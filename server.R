@@ -6,6 +6,12 @@ shinyServer(function(input, output, session) {
         daily_frame
     })
     
+    theFullData <- reactive({
+        full_data <- as.data.frame(full_data)
+        full_data$Date <- as.Date(full_data$Date, format="%Y-%m-%d", origin="1970-01-01")
+        full_data
+    })
+    
     theCountries <- reactive({
         
         unique(daily_frame$country)
@@ -37,7 +43,9 @@ shinyServer(function(input, output, session) {
     
     theSystemsSelected <- reactive({
         
-        all_of_them <- unique(daily_frame[daily_frame$class %in% input$classes,]$system)
+        selected <- input$classes
+        
+        all_of_them <- unique(daily_frame[daily_frame$class %in% selected ,]$system)
         
         if(input$useallsystems==TRUE){
             all_of_them
@@ -80,6 +88,7 @@ shinyServer(function(input, output, session) {
         
     })
     
+    
     dataRawRussia <- reactive({
         
         the_data <- theData()
@@ -102,26 +111,40 @@ shinyServer(function(input, output, session) {
         table
     }, escape=FALSE)
     
+    dataFullRussia <- reactive({
+        
+        the_data <- dataRawRussia()
+        the_data <- the_data[the_data$country %in% "Russia",]
+        the_outcomes <- input$outcomes
+        the_classes <- input$classes
+        the_systems <- input$systems
+        
+        the_data_mod <- the_data[the_data$system %in% the_systems,]
+        
+        the_data_mod
+        
+    })
+    
     dataModRussia <- reactive({
         
         the_outcomes <- input$outcomes
         the_classes <- input$classes
         the_systems <- input$sytems
         
-        the_data_mod <- dataRawRussia()
-        
-        
-        
+        the_data_mod <- dataFullRussia()
+        the_data_mod <- the_data_mod[order(the_data_mod$Date), ]
         
         the_data_tidy <- date_crunch(the_data_mod)
-        
+        the_data_tidy <- the_data_tidy[order(the_data_tidy$Date), ]
+
         if(length(the_outcomes) < 4){
             
             the_data_tidy <- the_data_tidy %>% dplyr::rowwise() %>%
             dplyr::mutate(total = sum(dplyr::c_across(the_outcomes)))
             
         }
-        
+        the_data_tidy <- the_data_tidy[order(the_data_tidy$Date), ]
+
         #the_data_list <- split(the_data_tidy, f=the_data_tidy$class)
         
         #data_class_list <- list()
@@ -139,7 +162,8 @@ shinyServer(function(input, output, session) {
         mutate(total_count = cumsum(total)) %>%
         mutate(cum_rolling10 = rollapplyr(total, width = 10, FUN = sum, partial = TRUE)) %>%
         drop_na(total_count)
-        
+        data_class_frame <- data_class_frame[order(data_class_frame$Date), ]
+
         data_class_frame
     })
     
@@ -166,6 +190,19 @@ shinyServer(function(input, output, session) {
         table
     }, escape=FALSE)
     
+    dataFullUkraine <- reactive({
+        
+        the_data <- theFullData()
+        the_data <- the_data[the_data$country %in% "Ukraine",]
+        the_outcomes <- input$outcomes
+        the_classes <- input$classes
+        the_systems <- input$systems
+
+        the_data_mod <- the_data[the_data$system %in% the_systems,]
+        
+        the_data_mod
+        
+    })
     
     dataModUkraine <- reactive({
         
@@ -174,16 +211,19 @@ shinyServer(function(input, output, session) {
         the_systems <- input$sytems
         
         the_data_mod <- dataRawUkraine()
-        
+        the_data_mod <- the_data_mod[order(the_data_mod$Date), ]
+
         the_data_tidy <- date_crunch(the_data_mod)
-        
+        the_data_tidy <- the_data_tidy[order(the_data_tidy$Date), ]
+
         if(length(the_outcomes) < 4){
             
             the_data_tidy <- the_data_tidy %>% dplyr::rowwise() %>%
             dplyr::mutate(total = sum(dplyr::c_across(the_outcomes)))
             
         }
-        
+        the_data_tidy <- the_data_tidy[order(the_data_tidy$Date), ]
+
         #the_data_list <- split(the_data_tidy, f=the_data_tidy$class)
         
         #data_class_list <- list()
@@ -201,7 +241,8 @@ shinyServer(function(input, output, session) {
         mutate(total_count = cumsum(total)) %>%
         mutate(cum_rolling10 = rollapplyr(total, width = 10, FUN = sum, partial = TRUE)) %>%
         drop_na(total_count)
-        
+        data_class_frame <- data_class_frame[order(data_class_frame$Date), ]
+
         data_class_frame
     })
     
@@ -212,6 +253,8 @@ shinyServer(function(input, output, session) {
         ukraine <- dataModUkraine()
         
         data_merged <- as.data.frame(rbindlist(list(russia, ukraine), use.names=TRUE, fill=TRUE))
+        
+        data_merged <- data_merged[order(data_merged$Date), ]
         
         data_merged
         

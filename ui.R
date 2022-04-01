@@ -20,7 +20,7 @@ uiOutput("systemsui")
 
 mainPanel(
 tabsetPanel(
-tabPanel("Plot", plotOutput("bulkplot")),
+tabPanel("Plot", plotOutput("bulkplot", width="1200px", height="800px")),
 tabPanel("Russia", dataTableOutput("russiaunits")),
 tabPanel("Ukraine", dataTableOutput("ukraineunits"))
 )

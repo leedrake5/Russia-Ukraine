@@ -261,4 +261,4 @@ tidy_systems <- total_by_system_wide(systems)
 write.csv(tidy_systems, paste0("/Users/lee/GitHub/Russia-Ukraine/data/bySystem/Totals/Full/", Sys.Date(), ".csv"))
 
 daily_update()
-source("~/GitHub/Russia-Ukraine/R/losses.r")
+source("~/GitHub/Russia-Ukraine/R/Automation/losses.r")
