@@ -11,6 +11,9 @@ library(rvest)
 
 source("~/GitHub/scrape_oryx/R/functions.R")
 
+source("~/GitHub/Russia-Ukraine/R/Automation/back.r")
+
+
 #' totals_by_type
 #' @description Gets data by system category.
 #'
@@ -132,7 +135,6 @@ totals_fold <- function(totals_df=NULL, link="https://www.oryxspioenkop.com/2022
       return(list(Totals=totals_formatted, Destroyed=destroyed_formatted, Damaged=damaged_formatted, Captured=captured_formatted, Abandoned=abandoned_formatted))
 }
 
-googlesheets4::gs4_auth(email=TRUE)
 
 googleSheetPush <- function(results, sheet_url="https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0"){
 

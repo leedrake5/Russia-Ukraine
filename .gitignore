@@ -4,3 +4,6 @@
 R/automation.log
 *.log
 R/automation.log
+
+R/Automation/back.json
+R/Automation/back.r
