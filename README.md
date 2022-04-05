@@ -43,7 +43,7 @@ These data are gathered by the United Nations High Commissioner on Refugees (UNH
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/refugees_total.jpg?)
 
-Refugee outflows peaked on the 7th of March, but migration continues to be heavy. Refugees are primarily destined for Poland initially, though other nearby countries such as Moldova and Hungary are taking large numbers as well. This only counts migration out of Ukraine - internal displacement of [over 14% of Ukranians, or nearly 6.3 million people](https://www.aljazeera.com/news/2022/3/17/un-says-more-than-700-civilians-killed-ukraine-liveblog) has occured since the conflict began. All together almost 22% of Ukraine's population, or more than 1 out of every 5 Ukrainians, has had to move since the war began. 
+Refugee outflows peaked on the 7th of March, but migration continues to be heavy. Refugees are primarily destined for Poland initially, though other nearby countries such as Moldova and Hungary are taking large numbers as well. This only counts migration out of Ukraine - internal displacement of [7.1 million people](https://displacement.iom.int/reports/ukraine-internal-displacement-report-general-population-survey-round-2-24-march-1-april) has occured since the conflict began. All together over 25% of Ukraine's population, or more than 1 out of every 4 Ukrainians, has had to move since the war began. 
 
 
 
