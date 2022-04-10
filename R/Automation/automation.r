@@ -100,6 +100,7 @@ totals_fold <- function(totals_df=NULL, link="https://www.oryxspioenkop.com/2022
     totals_df$equipment_type <- gsub(" ", "_", totals_df$equipment_type)
     totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Station"] <- "Communications_Stations"
     totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Vehicles"] <- "Communications_Stations"
+    totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Stations"] <- "Command_Posts_And_Communications_Stations"
         totals_df$equipment_type[totals_df$equipment_type %in% "Engineering_Vehicles"] <- "Engineering_Vehicles_And_Equipment"
         totals_df$equipment_type[totals_df$equipment_type %in% "Mine-resistant_ambush_protected"] <- "Mine-Resistant_Ambush_Protected"
         totals_df$equipment_type[totals_df$equipment_type %in% "Mine-resistant_Ambush_Protected"] <- "Mine-Resistant_Ambush_Protected"
