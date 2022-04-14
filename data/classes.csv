@@ -35,8 +35,10 @@ MT-LB Ambulance,Armoured Fighting Vehicles
 MT-LB with ZU-23 AA gun,Armoured Fighting Vehicles
 MT-LBM 6MB,Armoured Fighting Vehicles
 MT-LBu,Armoured Fighting Vehicles
-R-149MA1 unified command and staff vehicle,Armoured Fighting Vehicles
-R-149MA3 command and staff vehicle,Armoured Fighting Vehicles
+APE-5 command post,Command Posts and Communication Stations
+R-145BM1 command vehicle,Command Posts and Communication Stations
+R-149MA1 unified command and staff vehicle,Command Posts and Communication Stations
+R-149MA3 command and staff vehicle,Command Posts and Communication Stations
 SNAR-10 battlefield surveillance radar,Armoured Fighting Vehicles
 TZM-T reloader vehicle (for TOS-1A),Armoured Fighting Vehicles
 Unknown AFV,Armoured Fighting Vehicles
@@ -46,9 +48,9 @@ Vepr MRAP,Armoured Fighting Vehicles
 Vityaz DT-30 articulated tracked carrier,Armoured Fighting Vehicles
 1V119 artillery fire direction vehicle,Armoured Fighting Vehicles
 1V14 battery command and forward observer vehicle,Armoured Fighting Vehicles
-9S470M1 (or variant thereof) command post (for Buk-M1/2),Armoured Fighting Vehicles
-BMD-1KSh-A command vehicle,Armoured Fighting Vehicles
-R-149MA1 command and staff vehicle,Armoured Fighting Vehicles
+9S470M1 (or variant thereof) command post (for Buk-M1/2),Command Posts and Communication Stations
+BMD-1KSh-A command vehicle,Command Posts and Communication Stations
+R-149MA1 command and staff vehicle,Command Posts and Communication Stations
 Unknown BTR-80/BTR-82A,Armoured Fighting Vehicles
 AT105A 'Saxon',Armoured Personnel Carriers
 BTR-60,Armoured Personnel Carriers
@@ -56,14 +58,14 @@ BTR-70,Armoured Personnel Carriers
 BTR-80,Armoured Personnel Carriers
 BTR-D,Armoured Personnel Carriers
 BTR-MDM 'Rakushka',Armoured Personnel Carriers
-Barnaul-T 9С932-1 automated system for air defence units,Communications Stations
-KamAZ 6x6,Communications Stations
-MP-2IM signals vehicle,Communications Stations
-R-166-0.5 signals vehicle,Communications Stations
-R-419L1 communications station,Communications Stations
-Unknown communications station,Communications Stations
-Unknown communications station based on the KamAZ 6x6,Communications Stations
-P-260-U signal vehicle (for Redut-2US signal and communications system),Communications Stations
+Barnaul-T 9С932-1 automated system for air defence units,Command Posts and Communication Stations
+KamAZ 6x6,Command Posts and Communication Stations
+MP-2IM signals vehicle,Command Posts and Communication Stations
+R-166-0.5 signals vehicle,Command Posts and Communication Stations
+R-419L1 communications station,Command Posts and Communication Stations
+Unknown communications station,Command Posts and Communication Stations
+Unknown communications station based on the KamAZ 6x6,Command Posts and Communication Stations
+P-260-U signal vehicle (for Redut-2US signal and communications system),Command Posts and Communication Stations
 BAT-2 heavy engineering vehicle,Engineering Vehicles
 BREM-1 armoured recovery vehicle,Engineering Vehicles
 BREM-Ch ''BREM-4'' armoured recovery vehicle,Engineering Vehicles
