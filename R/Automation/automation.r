@@ -8,25 +8,33 @@ library(tidyverse)
 library(lubridate)
 library(scales)
 library(rvest)
+library(do)
 
 source("~/GitHub/scrape_oryx/R/functions.R")
 
 source("~/GitHub/Russia-Ukraine/R/Automation/back.r")
 
-
 #' totals_by_type
 #' @description Gets data by system category.
 #'
 #' @return a tibble
-totals_by_type <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", date=NULL) {
+create_by_type <- function(country, date=NULL) {
     
     if(is.null(date)){
         date <- format(Sys.Date(), "%m/%d/%Y")
      }
     
-    heads <-
+  if (country == "Russia") {
+    url <-
+      russia_url
+  } else {
+    url <-
+      ukraine_url
+  }
+
+  heads <-
     get_data(
-      link,
+      url,
       "article div"
     ) %>%
     rvest::html_elements("h3") %>%
@@ -36,8 +44,7 @@ totals_by_type <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on
   heads <- heads[nchar(heads) > 0]
 
   # Get the positons of the Russia and Ukraine headers
-  rus_pos <- heads %>% stringr::str_which("Russia") %>% as.double()
-  ukr_pos <- heads %>% stringr::str_which("Ukraine") %>% as.double()
+  pos <- heads %>% stringr::str_which(country) %>% as.double()
 
   totals <- tibble(
     country = character(),
@@ -66,31 +73,40 @@ totals_by_type <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on
   }
 
 
-  totals_df <- totals %>%
+  country_df <- totals %>%
     dplyr::mutate(
       dplyr::across(destroyed:damaged, ~ as.double(tidyr::replace_na(.x, "0"))),
       type_total = destroyed + abandoned + captured + damaged,
-      row_id = 1:n(),
-      country = dplyr::case_when(row_id < ukr_pos ~ "Russia",
-                                 row_id >= ukr_pos ~ "Ukraine")
+      row_id = 1:n()
     ) %>%
-    select(-row_id) %>%
+    dplyr::mutate(country = tidyr::replace_na(country, !!!country)) %>%
+    #select(-row_id) %>%
     dplyr::mutate(
-      equipment = replace(equipment, rus_pos, "All Types"),
-      equipment = replace(equipment, ukr_pos, "All Types")
+      equipment = replace(equipment, pos, "All Types"),
     ) %>%
     dplyr::rename(equipment_type = equipment)
-    totals_df <- as.data.frame(totals_df)
-    totals_df$Date <- date
     
+    country_df <- as.data.frame(country_df)
+    country_df$Date <- date
+
+  return(country_df)
+}
+
+totals_by_type <- function(date=NULL) {
+  russia <- create_by_type("Russia", date=date)
+  ukraine <- create_by_type("Ukraine",date=date)
+
+  totals_df <- russia %>%
+    dplyr::bind_rows(ukraine, .id=NULL)
+
   return(totals_df)
 }
 
 
 
-totals_fold <- function(totals_df=NULL, link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", date=NULL){
+totals_fold <- function(totals_df=NULL, russia_link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", ukraine_link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html", date=NULL){
     if(is.null(totals_df)){
-      totals_df <- totals_by_type(link=link, date=date)
+      totals_df <- totals_by_type(russia_link=russia_link, ukraine_link=ukraine_link, date=date)
     }
     
     totals_df <- totals_df[complete.cases(totals_df),]
@@ -150,17 +166,20 @@ googleSheetPush <- function(results, sheet_url="https://docs.google.com/spreadsh
 }
 
 
-daily_update <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", to_return=NULL){
+daily_update <- function(russia_link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", ukraine_link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html", to_return=NULL){
     dates = seq(as.Date("2022-02-24"), Sys.Date(), by="days")
     
     result_list <- list()
     for(i in dates[1:length(dates)-1]){
         result_list[[as.character(as.Date(i, format="%Y-%m-%d", origin="1970-01-01"))]] <- read.csv(paste0("~/GitHub/Russia-Ukraine/data/byType/", as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), ".csv"))[,-1]
     }
-    result_list[[as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01"))]] <- totals_by_type(link=link, date=as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01")))
+    result_list[[as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01"))]] <- totals_by_type(date=as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01")))
     write.csv(result_list[[as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01"))]], paste0("~/GitHub/Russia-Ukraine/data/byType/", as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01")), ".csv"))
 
     current_frame <- data.table::rbindlist(result_list, use.names=TRUE, fill=TRUE)
+    current_frame <- as.data.frame(current_frame)
+    current_frame <- current_frame[,colnames(current_frame)[!colnames(current_frame) %in% "row_id"]]
+    current_frame <- as.data.table(current_frame)
     results <- totals_fold(totals_df=current_frame)
     
     googleSheetPush(results)
@@ -171,29 +190,30 @@ daily_update <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on-e
     
 }
 
-#' scrape_data
-#' @description Gets data by system.
-#'
-#' @return a tibble
-#' @export
-scrape_data <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", date=NULL, remove=NULL) {
+russia_link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html"
+ukraine_link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html"
+russia_url = russia_link
+ukraine_url = ukraine_link
+
+scrape_data <- function(country, date=NULL) {
     
     if(is.null(date)){
         date <- format(Sys.Date(), "%m/%d/%Y")
      }
-    materiel <-
-    get_data(
-      link,
-      "article"
-    ) %>%
+    
+  if (country == "Russia") {
+    url <-
+      russia_url
+  } else {
+    url <-
+      ukraine_url
+  }
+
+  materiel <-
+    get_data(url,
+             "article") %>%
     rvest::html_elements("li")
 
-  # Retreive the start position of each country
-  country_pos <- materiel %>% rvest::html_text2() %>%
-    # T-64BV is the first row in the tank list and marks the beginning of each country
-    stringr::str_which("T-64BV")
-
-  #' Run Program
   data <-
     tibble::tibble(
       country = character(),
@@ -208,8 +228,7 @@ scrape_data <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on-eu
     status <- materiel[[a]] %>% rvest::html_elements("a")
     for (b in seq_along(status)) {
       counter = counter + 1
-      data[counter, 1] <-
-        ifelse(a < country_pos[2], "Russia", "Ukraine")
+      data[counter, 1] <- country
       data[counter, 2] <- extract_origin(materiel, a)
       data[counter, 3] <- extract_system(materiel, a)
       data[counter, 4] <- extract_status(status, b)
@@ -222,14 +241,136 @@ scrape_data <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on-eu
     tidyr::unnest_longer(status) %>%
     dplyr::mutate(date_recorded = as.Date(lubridate::today())) %>%
     trim_all()
+    
+    data <- as.data.frame(data)
+    data$Date <- date
+    
+    return(data)
+}
+
+create_data <- function() {
+  russia <- scrape_data("Russia")
+  ukraine <- scrape_data("Ukraine")
+
+  data <- russia %>%
+    dplyr::bind_rows(ukraine) %>%
+    dplyr::select(country, origin, system, status, url, date_recorded)
 
   data <- create_keys(data) %>%
     dplyr::group_by(matID) %>%
     dplyr::filter(date_recorded == min(date_recorded)) %>%
     dplyr::ungroup()
+
+  return(data)
+
+}
+
+#' scrape_data
+#' @description Gets data by system.
+#'
+#' @return a tibble
+#' @export
+scrape_data <- function(russia_link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", ukraine_link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html", date=NULL, remove=NULL) {
     
-    data <- as.data.frame(data)
-    data$Date <- date
+    create_data()
+        
+}
+
+#' scrape_data
+#' @description Gets data by system.
+#'
+#' @return a tibble
+#' @export
+scrape_data <- function(russia_link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", ukraine_link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html", date=NULL, remove=NULL) {
+    
+    if(is.null(date)){
+        date <- format(Sys.Date(), "%m/%d/%Y")
+     }
+    russia_materiel <-
+      get_data(
+        russia_link,
+        "article"
+      ) %>%
+      rvest::html_elements("li")
+      
+      ukraine_materiel <-
+        get_data(
+        ukraine_link,
+          "article"
+        ) %>%
+        rvest::html_elements("li")
+        
+        materiel <- c(russia_materiel, ukraine_materiel)
+
+    # Retreive the start position of each country
+    country_pos <- materiel %>% rvest::html_text2() %>%
+      # T-64BV is the first row in the tank list and marks the beginning of each country
+      stringr::str_which("T-64BV")
+
+    #' Run Program
+    data <-
+      tibble::tibble(
+        country = character(),
+        origin = character(),
+        system = character(),
+        status = character(),
+        url = character()
+      )
+
+    counter = 0
+    for (a in seq_along(materiel)) {
+      status <- materiel[[a]] %>% rvest::html_elements("a")
+      for (b in seq_along(status)) {
+        counter = counter + 1
+        data[counter, 1] <-
+          ifelse(a < country_pos[2], "Russia", "Ukraine")
+        data[counter, 2] <- extract_origin(materiel, a)
+        data[counter, 3] <- extract_system(materiel, a)
+        data[counter, 4] <- extract_status(status, b)
+        data[counter, 5] <- extract_url(status, b)
+      }
+    }
+
+    data <- data %>%
+      dplyr::mutate(status = stringr::str_extract_all(status, "destroyed|captured|abandoned|damaged")) %>%
+      tidyr::unnest_longer(status) %>%
+      dplyr::mutate(date_recorded = as.Date(lubridate::today())) %>%
+      trim_all()
+
+    #previous <- get_inputfile("totals_by_system") %>%
+    #  trim_all() %>%
+    #  dplyr::mutate(date_recorded = as.Date(date_recorded))
+
+    #check <- data %>%
+    #  dplyr::anti_join(previous, by = c("url")) %>%
+    #  dplyr::mutate(date_recorded = as.Date(date_recorded))
+
+    #if (nrow(check) > 0) {
+    #  data <-
+    #    check %>% dplyr::bind_rows(readr::read_csv(
+    #      glue::glue("inputfiles/totals_by_system{lubridate::today()}.csv")
+    #    )) %>%
+    #    dplyr::arrange(country, system, date_recorded)
+
+    #data <- check %>% dplyr::bind_rows(get_inputfile("totals_by_system")) %>%
+    #  dplyr::arrange(country, system, date_recorded)
+
+    #previous %>% readr::write_csv("inputfiles/totals_by_system.csv.bak")
+
+    #data %>% readr::write_csv(glue::glue("inputfiles/totals_by_system{lubridate::today()+1}.csv"))
+
+    #} else {
+    #  logr::put("No new data")
+    #  data <- previous
+    #}
+
+    data <- create_keys(data) %>%
+      dplyr::group_by(matID) %>%
+      dplyr::filter(date_recorded == min(date_recorded)) %>%
+      dplyr::ungroup()
+      
+      data <- as.data.frame(data)
+      data$Date <- date
     
     if(!is.null(remove)){
         data$url <- gsub(remove, "", data$url)

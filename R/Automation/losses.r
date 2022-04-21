@@ -1,3 +1,5 @@
+detach("package:do", unload=TRUE)
+
 library(ggplot2)
 library(RCurl)
 library(reshape2)
