@@ -339,7 +339,7 @@ scale_x_date(date_labels = "%m/%d") +
 scale_y_continuous("Artillery Lost") +
 ggtitle(paste0("Artillery lost through ", Sys.Date())) +
 theme_light()
-ggsave("~/Github/Russia-Ukraine/Plots/current_artillery.jpg", current_tanks, device="jpg", width=6, height=5)
+ggsave("~/Github/Russia-Ukraine/Plots/current_artillery.jpg", current_artillery, device="jpg", width=6, height=5)
 
 
 ####Infantry Fighting Vehicles (AFVs)
