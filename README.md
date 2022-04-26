@@ -81,7 +81,7 @@ If we consider estimates of [deployed Russian AFV](https://en.as.com/en/2022/02/
 
 ## Artillery
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_artillery.jpg?)
-Ukranian's lost more Infrantry Fighting Vehicles in the first two days of the war, with Russian losses acellerating linearly until the end of the second week. 
+The ratio of Russian to Ukrainian artillery losses is 3:1, though Russia's losses have plateued since the first week of April. 
 
 
 ## Infantry Fighting Vehicles (IFV)
