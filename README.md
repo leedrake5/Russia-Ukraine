@@ -78,6 +78,12 @@ When normalized to standing inventory, Russia's losses are a less significant fr
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_total_afv_baseline.jpg?)
 If we consider estimates of [deployed Russian AFV](https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html) fixed to their total inventory, Ukraine is adding modestly to its AFV inventory at the same rate which Russia is losing its AFV. 
 
+
+## Artillery
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_artillery.jpg?)
+Ukranian's lost more Infrantry Fighting Vehicles in the first two days of the war, with Russian losses acellerating linearly until the end of the second week. 
+
+
 ## Infantry Fighting Vehicles (IFV)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_ifv.jpg?)
 Ukranian's lost more Infrantry Fighting Vehicles in the first two days of the war, with Russian losses acellerating linearly until the end of the second week. 

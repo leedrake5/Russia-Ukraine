@@ -299,6 +299,7 @@ ggtitle(paste0("Tanks lost through ", Sys.Date())) +
 theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/current_tanks.jpg", current_tanks, device="jpg", width=6, height=5)
 
+
 ####Armored Fighting Vehicles (AFVs)
 afv_melt <- melt(equipment_losses[,c("Date", "Russia_AFV", "Ukraine_AFV")], id.var="Date")
 afv_melt$Date <- as.Date(afv_melt$Date, format="%m/%d/%Y")
@@ -318,6 +319,28 @@ scale_y_continuous("Armored Fighting Vehicles Lost") +
 ggtitle(paste0("AFV lost through ", Sys.Date())) +
 theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/current_afv.jpg", current_afv, device="jpg", width=6, height=5)
+
+
+####Artillery
+artillery_melt <- melt(equipment_losses[,c("Date", "Russia_Artillery", "Ukraine_Artillery")], id.var="Date")
+artillery_melt$Date <- as.Date(artillery_melt$Date, format="%m/%d/%Y")
+colnames(artillery_melt) <- c("Date", "Country", "Artillery")
+artillery_melt$Country <- gsub("_Artillery", "", artillery_melt$Country)
+artillery_melt <- artillery_melt %>%
+    group_by(Country) %>%
+    arrange(Date) %>%
+    mutate(Daily = Artillery - lag(Artillery, default = first(Artillery)))
+
+current_artillery <- ggplot(artillery_melt, aes(Date, Artillery, colour=Country, shape=Country)) +
+geom_col(data=artillery_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
+geom_point() +
+stat_smooth(method="gam") +
+scale_x_date(date_labels = "%m/%d") +
+scale_y_continuous("Artillery Lost") +
+ggtitle(paste0("Artillery lost through ", Sys.Date())) +
+theme_light()
+ggsave("~/Github/Russia-Ukraine/Plots/current_artillery.jpg", current_tanks, device="jpg", width=6, height=5)
+
 
 ####Infantry Fighting Vehicles (AFVs)
 ifv_melt <- melt(equipment_losses[,c("Date", "Russia_IFV", "Ukraine_IFV")], id.var="Date")
