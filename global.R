@@ -160,3 +160,56 @@ totals_by_type <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on
 }
 
 
+dupeySample <- function(seed=1, strength_ru=180, strength_ukr=77, strength_modifier=0.2, strength_lock=FALSE, terrain_ru=1.4, terrain_ukr=1.5, terrain_modifier=0.1, season_ru=1.1, season_ukr=1.1, season_modifier=0.1, posture_ru=1.5, posture_ukr=1.5, posture_modifier=0.1, air_ru=0.8, air_ukr=1, air_modifier=0.1, morale_ru=0.8, morale_ukr=1, morale_modifier=0.2){
+    
+    set.seed(seed)
+    ru_rand_strength <- rnorm(1, strength_ru, strength_ru*strength_modifier)
+    if(strength_lock==TRUE){
+        if(ru_rand_strength>strength_ru){
+            ru_rand_strength <- strength_ru - (ru_rand_strength-strength_ru)
+        }
+    }
+    ru_rand_terrain <- rnorm(1, terrain_ru, terrain_modifier)
+    ru_rand_season <- rnorm(1, season_ru, season_modifier)
+    ru_rand_posture <- rnorm(1, posture_ru, posture_modifier)
+    ru_rand_air <- rnorm(1, air_ru, air_modifier)
+    ru_rand_morale <- rnorm(1, morale_ru, morale_modifier)
+    if(ru_rand_morale > 1){
+        ru_rand_morale <- 1
+    }
+    ukr_rand_strength <- rnorm(1, strength_ukr, strength_ukr*strength_modifier)
+    if(strength_lock==TRUE){
+        if(ukr_rand_strength>strength_ru){
+            ukr_rand_strength <- strength_ukr - (ukr_rand_strength-strength_ukr)
+        }
+    }
+    ukr_rand_terrain <- rnorm(1, terrain_ukr, terrain_modifier)
+    ukr_rand_season <- rnorm(1, season_ukr, season_modifier)
+    ukr_rand_posture <- rnorm(1, posture_ukr, posture_modifier)
+    ukr_rand_air <- rnorm(1, air_ukr, air_modifier)
+    ukr_rand_morale <- rnorm(1, morale_ukr, morale_modifier)
+    if(ukr_rand_morale > 1){
+        ukr_rand_morale <- 1
+    }
+    ru_outcome <-  ru_rand_strength + ru_rand_terrain + ru_rand_season + ru_rand_posture + ru_rand_air + ru_rand_morale
+    ukr_outcome <- ukr_rand_strength + ukr_rand_terrain + ukr_rand_season + ukr_rand_posture + ukr_rand_air + ukr_rand_morale
+    
+    outcome <- ru_outcome/ukr_outcome
+    
+    return(list(Outcome=outcome, Russian_Strength=ru_rand_strength, Russian_Terrain=ru_rand_terrain, Russian_Posture=ru_rand_posture, Russian_Air=ru_rand_air, Russian_Morale=ru_rand_morale, Ukrainian_Strength=ukr_rand_strength, Ukrainian_Terrain=ukr_rand_terrain, Ukrainian_Posture=ukr_rand_posture, Ukrainian_Air=ukr_rand_air, Ukrainian_Morale=ukr_rand_morale))
+}
+
+#outcome_list <- NULL
+#outcome_list <- pbapply::pblapply(1:100000, function(x) dupeySample(seed=x, strength_modifier=50, morale_ru=0.8), cl=8)
+
+#just_outcomes <- sapply(outcome_list, function(x) x[[1]])
+
+#ggplot() +
+#geom_vline(xintercept=1, lty=2) +
+#geom_density(aes(x=just_outcomes), fill="grey80", alpha=0.5) +
+#scale_x_continuous("Dupoy's Ratio", limits=c(0, 5)) +
+#theme_light()
+
+#table(just_outcomes>1)
+
+
