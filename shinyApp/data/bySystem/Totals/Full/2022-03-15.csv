@@ -1,0 +1,228 @@
+"","country","system","captured","destroyed","abandoned","damaged","total","Date"
+"1","Russia","(Unknown) vehicle",1,4,0,0,5,2022-03-15
+"2","Russia","120mm 2B11/2S12",4,0,0,0,4,2022-03-15
+"3","Russia","120mm 2B11/2S12A",1,0,0,0,1,2022-03-15
+"4","Russia","120mm 2B16 Nona-K howitzer",1,0,1,0,2,2022-03-15
+"5","Russia","120mm 2S34 Khosta",1,0,0,0,1,2022-03-15
+"6","Russia","120mm 2S9 Nona",3,1,1,0,5,2022-03-15
+"7","Russia","122mm 2B17 Tornado-G",0,1,0,0,1,2022-03-15
+"8","Russia","122mm 2S1 Gvozdika",1,1,1,0,3,2022-03-15
+"9","Russia","122mm BM-21 'Grad'",9,5,4,1,19,2022-03-15
+"10","Russia","122mm D-30 howitzer 2A18",3,1,3,0,7,2022-03-15
+"11","Russia","152mm 2A65 Msta-B howitzer",0,3,1,2,6,2022-03-15
+"12","Russia","152mm 2S19 Msta-S",4,4,9,0,17,2022-03-15
+"13","Russia","152mm 2S3 Akatsiya",1,2,2,0,5,2022-03-15
+"14","Russia","1V119 artillery battalion fire direction vehicle",2,1,0,0,3,2022-03-15
+"15","Russia","1V13 battery fire control center",1,0,1,0,2,2022-03-15
+"16","Russia","220mm BM-27 'Uragan'",0,2,1,0,3,2022-03-15
+"17","Russia","220mm TOS-1A",1,0,0,0,1,2022-03-15
+"18","Russia","23mm ZU-23",2,0,0,0,2,2022-03-15
+"19","Russia","2K22M1 Tunguska",0,2,5,1,8,2022-03-15
+"20","Russia","2S1 with ZU-23 AA gun",1,0,0,0,1,2022-03-15
+"21","Russia","9A310M1 TELAR (for Buk-M1-2)",0,2,0,1,3,2022-03-15
+"22","Russia","9A310M2 TELAR (for Buk-M2)",0,3,0,0,3,2022-03-15
+"23","Russia","9A330 Tor TLAR (for 9K330 Tor-M)",2,0,2,1,5,2022-03-15
+"24","Russia","9A331 TLAR (for 9K331 Tor-M1)",1,2,1,0,4,2022-03-15
+"25","Russia","9A331M TLAR (for 9K332 Tor-M2)",1,1,0,0,2,2022-03-15
+"26","Russia","9A39M1 TEL (for Buk-M1-2)",0,1,0,0,1,2022-03-15
+"27","Russia","9A39M2 TEL (for Buk-M2)",0,1,0,0,1,2022-03-15
+"28","Russia","9K33 Osa",2,2,2,1,7,2022-03-15
+"29","Russia","9K333 Verba",1,0,0,0,1,2022-03-15
+"30","Russia","9K35 Strela-10",1,0,3,0,4,2022-03-15
+"31","Russia","9K38 Igla",4,0,0,0,4,2022-03-15
+"32","Russia","9M111 Fagot",3,0,0,0,3,2022-03-15
+"33","Russia","9M113 Konkurs",14,0,0,0,14,2022-03-15
+"34","Russia","9M113M Konkurs-M",1,0,0,0,1,2022-03-15
+"35","Russia","9M114 Kokon",0,0,2,0,2,2022-03-15
+"36","Russia","9P149 Shturm-S ATGM carrier",0,1,2,0,3,2022-03-15
+"37","Russia","9S18М1(-3) (for Buk-M3)",0,1,0,0,1,2022-03-15
+"38","Russia","9T217 transloader (for 9K33 Osa)",1,1,0,0,2,2022-03-15
+"39","Russia","9T452 transporter-loader (for BM-27 'Uragan' MRL)",0,1,0,0,1,2022-03-15
+"40","Russia","9М131 Metis-M",1,0,0,0,1,2022-03-15
+"41","Russia","9М131F Metis-M1",1,0,0,0,1,2022-03-15
+"42","Russia","An-26 transport aircraft",0,1,0,0,1,2022-03-15
+"43","Russia","Armoured SUV",1,0,0,1,2,2022-03-15
+"44","Russia","Barnaul-T 9С932-1 automated system for air defence units",2,0,1,0,3,2022-03-15
+"45","Russia","BAT-2 heavy engineering vehicle",0,1,0,0,1,2022-03-15
+"46","Russia","BMD-1KSh-A command vehicle",0,1,0,0,1,2022-03-15
+"47","Russia","BMD-2",27,15,5,2,49,2022-03-15
+"48","Russia","BMD-4M",7,4,1,0,12,2022-03-15
+"49","Russia","BMP-1(P)",7,9,0,0,16,2022-03-15
+"50","Russia","BMP-1Khs",0,0,1,0,1,2022-03-15
+"51","Russia","BMP-2",18,35,13,5,71,2022-03-15
+"52","Russia","BMP-2K",0,0,1,0,1,2022-03-15
+"53","Russia","BMP-3",9,11,0,1,21,2022-03-15
+"54","Russia","BREM-1 armoured recovery vehicle",1,0,0,0,1,2022-03-15
+"55","Russia","BREM-Ch ''BREM-4'' armoured recovery vehicle",1,0,0,0,1,2022-03-15
+"56","Russia","BREM-K armoured recovery vehicle",2,0,0,0,2,2022-03-15
+"57","Russia","BRM-1K",0,3,0,0,3,2022-03-15
+"58","Russia","BTR-80",18,14,4,1,37,2022-03-15
+"59","Russia","BTR-82A",8,14,7,3,32,2022-03-15
+"60","Russia","BTR-D",12,5,8,0,25,2022-03-15
+"61","Russia","BTR-D APC with UR-67 mine clearing charge",1,0,0,0,1,2022-03-15
+"62","Russia","BTR-MDM 'Rakushka'",4,0,0,0,4,2022-03-15
+"63","Russia","BTR-ZD 'Skrezhet'",1,0,0,0,1,2022-03-15
+"64","Russia","E95M target drone (likely used as unmanned bait in order for Ukraine to reveal the location of air defence systems)",1,0,0,0,1,2022-03-15
+"65","Russia","Eleron-3 reconnaissance UAV",2,0,0,0,2,2022-03-15
+"66","Russia","Forpost reconnaissance UAV",0,1,0,0,1,2022-03-15
+"67","Russia","Fuel train",0,2,0,0,2,2022-03-15
+"68","Russia","GAZ Sobol",0,1,1,0,2,2022-03-15
+"69","Russia","GAZ Tigr-M",13,16,1,1,31,2022-03-15
+"70","Russia","GAZ-3308",0,0,2,0,2,2022-03-15
+"71","Russia","GAZ-66",4,1,1,0,6,2022-03-15
+"72","Russia","GMZ-3 minelayer",1,0,0,0,1,2022-03-15
+"73","Russia","IMR-2 combat engineering vehicle",0,1,2,0,3,2022-03-15
+"74","Russia","Iveco LMV 'Rys'",1,5,1,0,7,2022-03-15
+"75","Russia","K-53949 'Linza'",1,0,0,0,1,2022-03-15
+"76","Russia","K-53949 Typhoon-K",2,1,1,0,4,2022-03-15
+"77","Russia","Ka-52 'Alligator' attack helicopter",0,2,2,2,6,2022-03-15
+"78","Russia","KamAZ 4x4",1,0,1,0,2,2022-03-15
+"79","Russia","KamAZ 6x6",53,68,20,7,148,2022-03-15
+"80","Russia","KamAZ Avtozaks",1,2,1,0,4,2022-03-15
+"81","Russia","KamAZ with armoured cabin",0,1,2,0,3,2022-03-15
+"82","Russia","KamAZ-5350 with crane",0,1,0,0,1,2022-03-15
+"83","Russia","KamAZ-5350 with EOV-3523 excavator",3,2,0,0,5,2022-03-15
+"84","Russia","KamAZ-5350 with KS-45719-7M crane",0,1,0,0,1,2022-03-15
+"85","Russia","KamAZ-6350 8x8 artillery tractor",2,2,0,2,6,2022-03-15
+"86","Russia","KamAZ-63968 'Typhoon'",2,2,0,0,4,2022-03-15
+"87","Russia","Mi-24V/P attack helicopter",0,2,0,0,2,2022-03-15
+"88","Russia","Mi-28 attack helicopter",0,1,0,0,1,2022-03-15
+"89","Russia","Mi-35M attack helicopter",0,2,0,0,2,2022-03-15
+"90","Russia","Mi-8 transport helicopter",0,3,0,0,3,2022-03-15
+"91","Russia","MP-2IM signals vehicle",0,0,1,0,1,2022-03-15
+"92","Russia","MT-LB",38,18,16,0,72,2022-03-15
+"93","Russia","MT-LB Ambulance",0,1,0,0,1,2022-03-15
+"94","Russia","MT-LB with ZU-23 AA gun",0,2,0,0,2,2022-03-15
+"95","Russia","MT-LBM 6MB",0,0,1,0,1,2022-03-15
+"96","Russia","MT-LBu",3,3,3,0,9,2022-03-15
+"97","Russia","MTU-72 bridge layer",1,0,0,0,1,2022-03-15
+"98","Russia","Orlan-10 reconnaissance UAV",1,1,0,0,2,2022-03-15
+"99","Russia","Pantsir-S1",3,2,1,0,6,2022-03-15
+"100","Russia","PMP floating bridge",0,2,0,0,2,2022-03-15
+"101","Russia","PTS-3 tracked amphibious transport",0,0,2,0,2,2022-03-15
+"102","Russia","R-149MA1 unified command and staff vehicle",3,1,3,1,8,2022-03-15
+"103","Russia","R-149MA3 command and staff vehicle",2,0,0,1,3,2022-03-15
+"104","Russia","R-166-0.5 signals vehicle",0,1,1,0,2,2022-03-15
+"105","Russia","R-330BMV Borisoglebsk-2B",1,0,0,1,2,2022-03-15
+"106","Russia","R-419L1 communications station",0,0,1,0,1,2022-03-15
+"107","Russia","REM-KL armoured recovery vehicle",1,0,0,0,1,2022-03-15
+"108","Russia","Su-25 close air support aircraft",0,5,0,1,6,2022-03-15
+"109","Russia","Su-30SM multirole aircraft",0,2,0,0,2,2022-03-15
+"110","Russia","Su-34 strike aircraft",0,4,0,0,4,2022-03-15
+"111","Russia","T-64BV",2,0,0,1,3,2022-03-15
+"112","Russia","T-72A",5,2,0,0,7,2022-03-15
+"113","Russia","T-72AV",1,2,0,0,3,2022-03-15
+"114","Russia","T-72B",20,8,6,3,37,2022-03-15
+"115","Russia","T-72B Obr. 1989",1,1,2,0,4,2022-03-15
+"116","Russia","T-72B3",5,5,4,1,15,2022-03-15
+"117","Russia","T-72B3 Obr. 2016",29,24,5,1,59,2022-03-15
+"118","Russia","T-80BV",3,1,2,0,6,2022-03-15
+"119","Russia","T-80BVM",9,4,1,0,14,2022-03-15
+"120","Russia","T-80U",19,7,14,1,41,2022-03-15
+"121","Russia","T-80UK",0,1,1,0,2,2022-03-15
+"122","Russia","T-90A",5,8,4,0,17,2022-03-15
+"123","Russia","TMM-3 bridge layer",6,1,3,1,11,2022-03-15
+"124","Russia","TZM-T reloader vehicle (for TOS-1A)",2,0,0,0,2,2022-03-15
+"125","Russia","UAZ Patriot",0,0,1,0,1,2022-03-15
+"126","Russia","UAZ-23632",2,0,0,0,2,2022-03-15
+"127","Russia","UAZ-469",1,1,0,0,2,2022-03-15
+"128","Russia","Unknown AFV",1,11,1,0,13,2022-03-15
+"129","Russia","Unknown BTR-D/BMD-2",0,9,0,0,9,2022-03-15
+"130","Russia","Unknown communications station",0,1,0,0,1,2022-03-15
+"131","Russia","Unknown communications station based on the KamAZ 6x6",1,0,0,1,2,2022-03-15
+"132","Russia","Unknown Mi-24/35 attack helicopter",0,2,0,1,3,2022-03-15
+"133","Russia","Unknown tank",0,9,1,2,12,2022-03-15
+"134","Russia","Unknown truck",5,17,2,3,27,2022-03-15
+"135","Russia","UR-77 'Meterorit' mine clearing vehicle",3,1,1,0,5,2022-03-15
+"136","Russia","Ural Federal",0,1,3,0,4,2022-03-15
+"137","Russia","Ural-4320",49,50,14,3,116,2022-03-15
+"138","Russia","Ural-4320 Wrecker",1,0,0,1,2,2022-03-15
+"139","Russia","Ural-43206",9,4,2,0,15,2022-03-15
+"140","Russia","Ural-542301 tank transporter",0,0,1,0,1,2022-03-15
+"141","Russia","Ural-63704-0010 Tornado-U",0,0,1,0,1,2022-03-15
+"142","Russia","Vityaz DT-30 articulated tracked carrier",0,1,1,0,2,2022-03-15
+"143","Russia","ZALA Aero KUB-BLA loitering munition",0,2,0,0,2,2022-03-15
+"144","Russia","ZiL-131",0,2,2,0,4,2022-03-15
+"145","Ukraine","100mm MT-12 anti-tank gun",2,0,1,0,3,2022-03-15
+"146","Ukraine","122mm 2S1 Gvozdika",3,5,1,0,9,2022-03-15
+"147","Ukraine","122mm D-30 howitzer",0,1,0,0,1,2022-03-15
+"148","Ukraine","152mm 2A36 Giatsint-B field-gun",0,0,1,0,1,2022-03-15
+"149","Ukraine","152mm 2A65 Msta-B howitzer",0,0,2,0,2,2022-03-15
+"150","Ukraine","1L22 'Parol'",0,1,0,1,2,2022-03-15
+"151","Ukraine","1V18 'Klyon-1' artillery command and forward observer vehicle",1,0,0,0,1,2022-03-15
+"152","Ukraine","220mm BM-27 'Uragan'",2,0,0,0,2,2022-03-15
+"153","Ukraine","23mm ZU-23",1,0,0,0,1,2022-03-15
+"154","Ukraine","5P85D (launcher for S-300PS)",0,1,0,0,1,2022-03-15
+"155","Ukraine","5P85S (launcher for S-300PS)",0,1,1,0,2,2022-03-15
+"156","Ukraine","9K310 Igla-1",5,0,0,0,5,2022-03-15
+"157","Ukraine","9K33 Osa",0,5,0,0,5,2022-03-15
+"158","Ukraine","9K35 Strela-10",0,1,1,0,2,2022-03-15
+"159","Ukraine","9K38 Igla",3,0,0,0,3,2022-03-15
+"160","Ukraine","9M111 Fagot",2,0,0,0,2,2022-03-15
+"161","Ukraine","9M113 Konkurs",2,0,0,0,2,2022-03-15
+"162","Ukraine","9P148 Konkurs ATGM carrier",1,2,0,0,3,2022-03-15
+"163","Ukraine","9T452 transporter-loader (for BM-27 'Uragan' MRL)",0,1,0,0,1,2022-03-15
+"164","Ukraine","An-26 transport aircraft",0,1,0,0,1,2022-03-15
+"165","Ukraine","AT105A 'Saxon'",1,0,0,0,1,2022-03-15
+"166","Ukraine","BAT-2 heavy engineering vehicle",1,0,0,0,1,2022-03-15
+"167","Ukraine","BMP-1 BM",0,1,0,0,1,2022-03-15
+"168","Ukraine","BMP-1(P)",2,5,5,1,13,2022-03-15
+"169","Ukraine","BMP-1Khs",0,1,0,0,1,2022-03-15
+"170","Ukraine","BMP-2",1,1,1,0,3,2022-03-15
+"171","Ukraine","BRDM-2",10,4,8,0,22,2022-03-15
+"172","Ukraine","BREM-1 ARV",1,0,0,0,1,2022-03-15
+"173","Ukraine","BRM-1K",3,0,0,1,4,2022-03-15
+"174","Ukraine","BSEM-4K",0,1,0,0,1,2022-03-15
+"175","Ukraine","BTR-3",2,2,0,0,4,2022-03-15
+"176","Ukraine","BTR-4",11,7,2,0,20,2022-03-15
+"177","Ukraine","BTR-60",4,0,0,0,4,2022-03-15
+"178","Ukraine","BTR-70",4,0,1,0,5,2022-03-15
+"179","Ukraine","BTR-80",4,4,0,0,8,2022-03-15
+"180","Ukraine","Buk-M1",0,1,0,0,1,2022-03-15
+"181","Ukraine","FGM-148 Javelin",5,0,0,0,5,2022-03-15
+"182","Ukraine","GAZ-66",8,6,3,3,20,2022-03-15
+"183","Ukraine","Gyurza-M class gunboat",2,0,0,0,2,2022-03-15
+"184","Ukraine","HMMWV",1,1,0,1,3,2022-03-15
+"185","Ukraine","Island-class patrol boat P190 Slovyansk",0,1,0,0,1,2022-03-15
+"186","Ukraine","KamAZ",0,1,0,0,1,2022-03-15
+"187","Ukraine","Kozak-2",3,1,1,1,6,2022-03-15
+"188","Ukraine","KrAZ Cobra",0,1,0,0,1,2022-03-15
+"189","Ukraine","KrAZ-5233",1,0,0,0,1,2022-03-15
+"190","Ukraine","KrAZ-6322",8,1,0,1,10,2022-03-15
+"191","Ukraine","Krivak III class frigate 'Hetman Sahaydachniy'",0,1,0,0,1,2022-03-15
+"192","Ukraine","Leleka-100 reconnaissance UAV",2,0,0,0,2,2022-03-15
+"193","Ukraine","MAZ",1,8,2,1,12,2022-03-15
+"194","Ukraine","MAZ-537",1,1,0,0,2,2022-03-15
+"195","Ukraine","MBT LAW 'NLAW'",8,0,0,0,8,2022-03-15
+"196","Ukraine","Mi-24 attack helicopter",0,1,0,0,1,2022-03-15
+"197","Ukraine","MiG-29 fighter aircraft",0,1,0,0,1,2022-03-15
+"198","Ukraine","MT-LB",1,2,1,0,4,2022-03-15
+"199","Ukraine","MT-LB Ambulance",0,0,1,0,1,2022-03-15
+"200","Ukraine","MT-LB with ZU-23 AA gun",1,0,0,0,1,2022-03-15
+"201","Ukraine","MT-LBu",1,1,1,1,4,2022-03-15
+"202","Ukraine","Novator",1,0,0,1,2,2022-03-15
+"203","Ukraine","P-14 'Tall King'",0,0,0,1,1,2022-03-15
+"204","Ukraine","P-35/37 'Bar Lock'",0,1,0,0,1,2022-03-15
+"205","Ukraine","PRV-13 'Odd Pair'",0,1,0,0,1,2022-03-15
+"206","Ukraine","RK-3 Corsar",2,0,0,0,2,2022-03-15
+"207","Ukraine","Small patrol boats (Sea Guard)",6,0,0,0,6,2022-03-15
+"208","Ukraine","SNAR-10 battlefield surveillance radar",1,0,0,0,1,2022-03-15
+"209","Ukraine","Sorum-class seagoing tugboat 'Korets' ''A830 or P186''",1,0,0,0,1,2022-03-15
+"210","Ukraine","Su-25 attack aircraft",0,3,0,0,3,2022-03-15
+"211","Ukraine","Su-27 fighter aircraft",0,3,0,0,3,2022-03-15
+"212","Ukraine","T-64BV",22,19,7,2,50,2022-03-15
+"213","Ukraine","T-72AV",0,2,0,0,2,2022-03-15
+"214","Ukraine","T-80BV",2,0,1,1,4,2022-03-15
+"215","Ukraine","Tu-141 reconnaissance UAV",0,4,0,0,4,2022-03-15
+"216","Ukraine","UAZ-452",1,0,0,0,1,2022-03-15
+"217","Ukraine","UAZ-469",1,0,0,0,1,2022-03-15
+"218","Ukraine","Unknown AFV",0,1,0,0,1,2022-03-15
+"219","Ukraine","Unknown BTR",0,0,1,0,1,2022-03-15
+"220","Ukraine","Unknown truck",1,4,2,1,8,2022-03-15
+"221","Ukraine","Ural-375D",1,0,0,0,1,2022-03-15
+"222","Ukraine","Ural-4320",1,6,0,0,7,2022-03-15
+"223","Ukraine","Varta",10,1,0,0,11,2022-03-15
+"224","Ukraine","Vepr MRAP",1,0,0,0,1,2022-03-15
+"225","Ukraine","Zhuk class patrol boat (Sea Guard)",2,0,0,0,2,2022-03-15
+"226","Ukraine","ZiL-131",10,5,2,0,17,2022-03-15
+"227","Ukraine","ZSU-23-4 'Shilka'",1,0,0,0,1,2022-03-15

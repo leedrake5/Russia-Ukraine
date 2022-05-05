@@ -1,5 +1,105 @@
 shinyServer(function(input, output, session) {
     
+    
+    
+    output$russia_strength_modifier_ui <- renderUI({
+        if(input$russia_strength_modifier_type=="Absolute"){
+            sliderInput("russia_strength_modifier", "Russian Absolute Strength Modifier", min=2, max=150, value=30, step=1)
+        } else if(input$russia_strength_modifier_type=="Relative"){
+            sliderInput("russia_strength_modifier", "Russian Relative Strength Modifier", min=0.01, max=1, value=0.33, step=0.01)
+        }
+    })
+    
+    output$ukraine_strength_modifier_ui <- renderUI({
+        if(input$ukraine_strength_modifier_type=="Absolute"){
+            sliderInput("ukraine_strength_modifier", "Ukrainian Absolute Strength Modifier", min=2, max=50, value=20, step=1)
+        } else if(input$ukraine_strength_modifier_type=="Relative"){
+            sliderInput("ukraine_strength_modifier", "Ukrainian Relative Strength Modifier", min=0.01, max=1, value=0.33, step=0.01)
+        }
+    })
+    
+    dupoyReSampler <- reactive({
+        
+        my.cores <- parallel::detectCores()
+        
+        pbapply::pblapply(1:input$iterations, function(x)
+            dupuySample(seed=x, strength_ru=input$russia_strength, strength_ukr=input$ukraine_strength, ru_strength_modifier=input$russia_strength_modifier, ru_strength_lock=!input$russian_reinforcements, ukr_strength_modifier=input$ukraine_strength_modifier, ukr_strength_lock=!input$ukraine_reinforcements, terrain_ru=input$russia_terrain, terrain_ukr=input$ukraine_terrain, ru_terrain_modifier=input$russia_terrain_modifier, ukr_terrain_modifier=input$ukraine_terrain_modifier, season_ru=input$russia_season, season_ukr=input$ukraine_season, ru_season_modifier=input$russia_season_modifier, ukr_season_modifier=input$ukraine_season_modifier, posture_ru=input$russia_posture, posture_ukr=input$ukraine_posture, ru_posture_modifier=input$russia_posture_modifier, ukr_posture_modifier=input$ukraine_posture_modifier, air_ru=input$russia_air, air_ukr=input$ukraine_air, ru_air_modifier=input$russia_air_modifier, ukr_air_modifier=input$ukraine_air_modifier, morale_ru=input$russia_morale, morale_ukr=input$ukraine_morale, ru_morale_modifier=input$russia_morale_modifier, ukr_morale_modifier=input$ukraine_morale_modifier), cl=1)
+    })
+    
+    simulation_results <- reactiveValues()
+    
+    observeEvent(input$run, {
+        
+        simulation_results$simulation <<- dupoyReSampler()
+        
+    })
+    
+    simulationOutcomes <- reactive({
+        
+        sapply(simulation_results$simulation, function(x) x[[1]])
+        
+    })
+    
+    dupuyDensityPlot <- reactive({
+        
+        just_outcomes <- simulationOutcomes()
+        
+        ggplot() +
+        geom_vline(xintercept=1, lty=2) +
+        geom_density(aes(x=just_outcomes), fill="grey80", alpha=0.5) +
+        scale_x_continuous("Dupuy's Ratio", limits=c(0, 5)) +
+        theme_light()
+        
+    })
+    
+    output$outcome_densities <- renderPlot({
+        
+        dupuyDensityPlot()
+        
+    })
+    
+    output$downloadDensity <- downloadHandler(
+    filename = function() { "Dupoy_Density_Plot.jpg" },
+    content = function(file) {
+        ggsave(file,dupuyDensityPlot(),  device="jpg",  dpi=300)
+    }
+    )
+    
+    
+    outcomeTable <- reactive({
+        
+        data.frame(Outcome=round(sapply(simulation_results$simulation, function(x) x[["Outcome"]]), 1),
+        Russian_Outcome=round(sapply(simulation_results$simulation, function(x) x[["Russian_Outcome"]]), 1),
+        Ukranian_Outcome=round(sapply(simulation_results$simulation, function(x) x[["Ukranian_Outcome"]]), 1),
+        Russian_Strength=round(sapply(simulation_results$simulation, function(x) x[["Russian_Strength"]]), 1),
+        Russian_Terrain=round(sapply(simulation_results$simulation, function(x) x[["Russian_Terrain"]]), 1),
+        Russian_Posture=round(sapply(simulation_results$simulation, function(x) x[["Russian_Posture"]]), 1),
+        Russian_Air=round(sapply(simulation_results$simulation, function(x) x[["Russian_Air"]]), 1),
+        Russian_Morale=round(sapply(simulation_results$simulation, function(x) x[["Russian_Morale"]]), 1),
+        Ukrainian_Strength=round(sapply(simulation_results$simulation, function(x) x[["Ukrainian_Strength"]]), 1),
+        Ukrainian_Terrain=round(sapply(simulation_results$simulation, function(x) x[["Ukrainian_Terrain"]]), 1),
+        Ukrainian_Posture=round(sapply(simulation_results$simulation, function(x) x[["Ukrainian_Posture"]]), 1),
+        Ukrainian_Air=round(sapply(simulation_results$simulation, function(x) x[["Ukrainian_Air"]]), 1),
+        Ukrainian_Morale=round(sapply(simulation_results$simulation, function(x) x[["Ukrainian_Morale"]]), 1))
+        
+    })
+    
+    output$outcome_table <- renderDataTable({
+        
+        outcomeTable()
+        
+    })
+    
+    output$downloadOutcomes <- downloadHandler(
+    filename = function() { "Dupoy_Outcomes.csv" },
+    content = function(file) {
+        write.csv(outcomeTable(), file)
+    }
+    )
+    
+    
+    
+    
     theData <- reactive({
         daily_frame <- as.data.frame(daily_frame)
         daily_frame$Date <- as.Date(daily_frame$Date, format="%Y-%m-%d", origin="1970-01-01")

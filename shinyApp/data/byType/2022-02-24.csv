@@ -1,0 +1,28 @@
+"","country","equipment_type","destroyed","abandoned","captured","damaged","type_total","Date"
+"1","Russia","All Types",0,0,0,0,0,2022-02-24
+"2","Russia","Tanks",1,0,0,0,1,2022-02-24
+"3","Russia","Armoured Fighting Vehicles",3,0,2,0,5,2022-02-24
+"4","Russia","Infantry Fighting Vehicles",0,0,1,0,1,2022-02-24
+"5","Russia","Mine-resistant ambush protected",0,0,1,0,1,2022-02-24
+"6","Russia","Infantry Mobility Vehicles",1,0,0,1,2,2022-02-24
+"7","Russia","Engineering Vehicles",1,0,2,0,3,2022-02-24
+"8","Russia","Surface-to-air missile systems",1,0,0,0,1,2022-02-24
+"9","Russia","Aircraft",2,0,0,0,2,2022-02-24
+"10","Russia","Helicopters",1,0,0,1,2,2022-02-24
+"11","Russia","Trucks, Vehicles and Jeeps",1,0,6,2,9,2022-02-24
+"12","Ukraine","All Types",0,0,0,0,0,2022-02-24
+"13","Ukraine","Tanks",1,0,0,0,1,2022-02-24
+"14","Ukraine","Armoured Fighting Vehicles",0,1,1,0,2,2022-02-24
+"15","Ukraine","
+",0,0,0,0,0,2022-02-24
+"16","Ukraine","Infantry Fighting Vehicles",0,3,2,0,5,2022-02-24
+"17","Ukraine","Armoured Personnel Carriers",0,1,1,0,2,2022-02-24
+"18","Ukraine","Infantry Mobility Vehicles",1,0,0,0,1,2022-02-24
+"19","Ukraine","Self-Propelled Artillery",0,0,2,0,2,2022-02-24
+"20","Ukraine","Surface-to-air missile systems
+",1,0,0,0,1,2022-02-24
+"21","Ukraine","Radars",3,0,0,2,5,2022-02-24
+"22","Ukraine","
+",0,0,0,0,0,2022-02-24
+"23","Ukraine","Aircraft",2,0,0,0,2,2022-02-24
+"24","Ukraine","Trucks, Vehicles and Jeeps",5,0,11,0,16,2022-02-24

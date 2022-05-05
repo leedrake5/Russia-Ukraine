@@ -1,6 +1,6 @@
 list.of.packages <- c("shinythemes", "ggplot2", "scales", "data.table", "magrittr", "dplyr", "tidyr", "lubridate", "zoo", "DT", "R.utils")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
-if(length(new.packages)) lapply(new.packages, function(x) install.packages(x, repos="http://cran.rstudio.com/", dep = TRUE, ask=FALSE, type="binary"))
+#if(length(new.packages)) lapply(new.packages, function(x) install.packages(x, repos="http://cran.rstudio.com/", dep = TRUE, ask=FALSE, type="binary"))
 
 library(ggplot2)
 library(data.table)
@@ -12,10 +12,15 @@ library(zoo)
 library(shinythemes)
 library(DT)
 library(R.utils)
+library(pbapply)
+library(parallel)
+shiny::devmode(TRUE)
+options(shiny.fullstacktrace=TRUE)
 
-full_data <- read.csv(paste0("data/bySystem/Raw/Full/", Sys.Date(), ".csv"))
 
-dates = seq(as.Date("2022-02-24"), Sys.Date(), by="days")
+full_data <- read.csv(paste0("data/bySystem/Raw/Full/", Sys.Date()-1, ".csv"))
+
+dates = seq(as.Date("2022-02-24"), Sys.Date()-1, by="days")
 
 
 daily_list <- list()
@@ -160,34 +165,42 @@ totals_by_type <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on
 }
 
 
-dupeySample <- function(seed=1, strength_ru=180, strength_ukr=77, strength_modifier=0.2, strength_lock=FALSE, terrain_ru=1.4, terrain_ukr=1.5, terrain_modifier=0.1, season_ru=1.1, season_ukr=1.1, season_modifier=0.1, posture_ru=1.5, posture_ukr=1.5, posture_modifier=0.1, air_ru=0.8, air_ukr=1, air_modifier=0.1, morale_ru=0.8, morale_ukr=1, morale_modifier=0.2){
+dupuySample <- function(seed=1, strength_ru=180, strength_ukr=77, ru_strength_modifier=0.2, ru_strength_lock=FALSE, ukr_strength_modifier=0.2, ukr_strength_lock=FALSE, terrain_ru=1.4, terrain_ukr=1.5, ru_terrain_modifier=0.1, ukr_terrain_modifier=0.1, season_ru=1.1, season_ukr=1.1, ru_season_modifier=0.1, ukr_season_modifier=0.1, posture_ru=1.5, posture_ukr=1.5, ru_posture_modifier=0.1, ukr_posture_modifier=0.1, air_ru=0.8, air_ukr=1, ru_air_modifier=0.1, ukr_air_modifier=0.1, morale_ru=0.8, morale_ukr=1, ru_morale_modifier=0.2, ukr_morale_modifier=0.2){
     
     set.seed(seed)
-    ru_rand_strength <- rnorm(1, strength_ru, strength_ru*strength_modifier)
-    if(strength_lock==TRUE){
+    if(ru_strength_modifier<=1){
+        ru_rand_strength <- rnorm(1, strength_ru, strength_ru*ru_strength_modifier)
+    } else if(ru_strength_modifier>1){
+        ru_rand_strength <- rnorm(1, strength_ru, ru_strength_modifier)
+    }
+    if(ru_strength_lock==TRUE){
         if(ru_rand_strength>strength_ru){
             ru_rand_strength <- strength_ru - (ru_rand_strength-strength_ru)
         }
     }
-    ru_rand_terrain <- rnorm(1, terrain_ru, terrain_modifier)
-    ru_rand_season <- rnorm(1, season_ru, season_modifier)
-    ru_rand_posture <- rnorm(1, posture_ru, posture_modifier)
-    ru_rand_air <- rnorm(1, air_ru, air_modifier)
-    ru_rand_morale <- rnorm(1, morale_ru, morale_modifier)
+    ru_rand_terrain <- rnorm(1, terrain_ru, ru_terrain_modifier)
+    ru_rand_season <- rnorm(1, season_ru, ru_season_modifier)
+    ru_rand_posture <- rnorm(1, posture_ru, ru_posture_modifier)
+    ru_rand_air <- rnorm(1, air_ru, ru_air_modifier)
+    ru_rand_morale <- rnorm(1, morale_ru, ru_morale_modifier)
     if(ru_rand_morale > 1){
         ru_rand_morale <- 1
     }
-    ukr_rand_strength <- rnorm(1, strength_ukr, strength_ukr*strength_modifier)
-    if(strength_lock==TRUE){
+    if(ukr_strength_modifier<=1){
+        ukr_rand_strength <- rnorm(1, strength_ukr, strength_ukr*ukr_strength_modifier)
+    } else if(ukr_strength_modifier>1){
+        ukr_rand_strength <- rnorm(1, strength_ukr, ukr_strength_modifier)
+    }
+    if(ukr_strength_lock==TRUE){
         if(ukr_rand_strength>strength_ru){
             ukr_rand_strength <- strength_ukr - (ukr_rand_strength-strength_ukr)
         }
     }
-    ukr_rand_terrain <- rnorm(1, terrain_ukr, terrain_modifier)
-    ukr_rand_season <- rnorm(1, season_ukr, season_modifier)
-    ukr_rand_posture <- rnorm(1, posture_ukr, posture_modifier)
-    ukr_rand_air <- rnorm(1, air_ukr, air_modifier)
-    ukr_rand_morale <- rnorm(1, morale_ukr, morale_modifier)
+    ukr_rand_terrain <- rnorm(1, terrain_ukr, ukr_terrain_modifier)
+    ukr_rand_season <- rnorm(1, season_ukr, ukr_season_modifier)
+    ukr_rand_posture <- rnorm(1, posture_ukr, ukr_posture_modifier)
+    ukr_rand_air <- rnorm(1, air_ukr, ukr_air_modifier)
+    ukr_rand_morale <- rnorm(1, morale_ukr, ukr_morale_modifier)
     if(ukr_rand_morale > 1){
         ukr_rand_morale <- 1
     }
@@ -196,7 +209,7 @@ dupeySample <- function(seed=1, strength_ru=180, strength_ukr=77, strength_modif
     
     outcome <- ru_outcome/ukr_outcome
     
-    return(list(Outcome=outcome, Russian_Strength=ru_rand_strength, Russian_Terrain=ru_rand_terrain, Russian_Posture=ru_rand_posture, Russian_Air=ru_rand_air, Russian_Morale=ru_rand_morale, Ukrainian_Strength=ukr_rand_strength, Ukrainian_Terrain=ukr_rand_terrain, Ukrainian_Posture=ukr_rand_posture, Ukrainian_Air=ukr_rand_air, Ukrainian_Morale=ukr_rand_morale))
+    return(list(Outcome=outcome, Russian_Outcome=ru_outcome, Ukranian_Outcome=ukr_outcome, Russian_Strength=ru_rand_strength, Russian_Terrain=ru_rand_terrain, Russian_Posture=ru_rand_posture, Russian_Air=ru_rand_air, Russian_Morale=ru_rand_morale, Ukrainian_Strength=ukr_rand_strength, Ukrainian_Terrain=ukr_rand_terrain, Ukrainian_Posture=ukr_rand_posture, Ukrainian_Air=ukr_rand_air, Ukrainian_Morale=ukr_rand_morale))
 }
 
 #outcome_list <- NULL
