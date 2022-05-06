@@ -5,7 +5,6 @@ library(RCurl)
 library(reshape2)
 library(data.table)
 library(gsheet)
-library(dplyr)
 library(tidyverse)
 library(lubridate)
 library(scales)
@@ -14,6 +13,7 @@ library(sf)
 library(mapview)
 library(raster)
 library(ggmap)
+library(dplyr)
 
 equipment_losses <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Origional")
 equipment_totals <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Totals")
@@ -598,7 +598,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_unit_type.jpg", unit_type, device=
 ### Percent Loss estimate per common request
 ### Total Tanks sourced from https://inews.co.uk/news/world/russia-tanks-how-many-putin-armoured-forces-ukraine-nato-explained-1504470
 percent_tanks <- equipment_losses  %>%
-  select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
+  dplyr::select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
   mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 13300 - Russia + Russia_Capture,
          UT = 2100 - Ukraine + Ukraine_Capture,
@@ -628,7 +628,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_tanks.jpg", current_
 
 ###Percent Tanks Baseline Adjusted
 percent_tanks <- equipment_losses  %>%
-  select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
+  dplyr::select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
     mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 13300,
          UT = 2100,
@@ -661,7 +661,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_tanks_baseline.jpg",
 ### Percent Loss estimate per common request
 ### Deployed Tanks sourced from https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html
 percent_tanks <- equipment_losses  %>%
-  select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
+  dplyr::select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
     mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 2840 - Russia + Russia_Capture,
          UT = 2100 - Ukraine + Ukraine_Capture,
@@ -691,7 +691,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_deployed_tanks.jpg", curre
 
 ###Percent Tanks Baseline Adjusted
 percent_tanks <- equipment_losses  %>%
-  select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
+  dplyr::select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
     mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 2840,
          UT = 2100,
@@ -726,7 +726,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_deployed_tanks_baseline.jp
 ### Percent Loss estimate per common request
 ### Total Tanks sourced from https://inews.co.uk/news/world/russia-tanks-how-many-putin-armoured-forces-ukraine-nato-explained-1504470
 percent_afv <- equipment_losses  %>%
-  select(Date, Russia = Russia_AFV, Ukraine = Ukraine_AFV, Russia_Capture = Russia_AFV_Capture, Ukraine_Capture = Ukraine_AFV_Capture) %>%
+  dplyr::select(Date, Russia = Russia_AFV, Ukraine = Ukraine_AFV, Russia_Capture = Russia_AFV_Capture, Ukraine_Capture = Ukraine_AFV_Capture) %>%
     mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 20000 - Russia + Russia_Capture,
          UT = 2870 - Ukraine + Ukraine_Capture,
@@ -756,7 +756,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_afv.jpg", current_percent_
 
 ###Percent AFV Baseline Adjusted
 percent_afv<- equipment_losses  %>%
-  select(Date, Russia_AFV = Russia_AFV, Ukraine_AFV = Ukraine_AFV, Russia_Capture=Russia_AFV_Capture, Ukraine_Capture=Ukraine_AFV_Capture) %>%
+  dplyr::select(Date, Russia_AFV = Russia_AFV, Ukraine_AFV = Ukraine_AFV, Russia_Capture=Russia_AFV_Capture, Ukraine_Capture=Ukraine_AFV_Capture) %>%
     mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 20000,
          UT = 2870,
@@ -788,7 +788,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_afv_baseline.jpg", c
 
 ###Percent Armor Baseline Adjusted
 percent_armor <- equipment_losses  %>%
-  select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Tank_Capture=Russia_Tank_Capture, Ukraine_Tank_Capture=Ukraine_Tank_Capture, Russia_AFV = Russia_AFV, Ukraine_AFV = Ukraine_AFV, Russia_AFV_Capture=Russia_AFV_Capture, Ukraine_AFV_Capture=Ukraine_AFV_Capture) %>%
+  dplyr::select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Tank_Capture=Russia_Tank_Capture, Ukraine_Tank_Capture=Ukraine_Tank_Capture, Russia_AFV = Russia_AFV, Ukraine_AFV = Ukraine_AFV, Russia_AFV_Capture=Russia_AFV_Capture, Ukraine_AFV_Capture=Ukraine_AFV_Capture) %>%
     mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 20000 + 13300,
          UT = 2870 + 2100,
@@ -821,7 +821,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_armor_baseline.jpg",
 ###Relative Absolute Changes
 ###Percent AFV Baseline Adjusted
 absolute_units <- equipment_losses  %>%
-  select(Date, Russia_Total = Russia_Total, Ukraine_Total = Ukraine_Total, Russia_Capture=Ukraine_Captured, Ukraine_Capture=Russia_Captured) %>%
+  dplyr::select(Date, Russia_Total = Russia_Total, Ukraine_Total = Ukraine_Total, Russia_Capture=Ukraine_Captured, Ukraine_Capture=Russia_Captured) %>%
     mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          Russia_Total_Adjusted = Russia_Total - Ukraine_Capture,
          Ukraine_Total_Adjusted = Ukraine_Total - Russia_Capture,
@@ -850,44 +850,9 @@ current_absolute_total <- ggplot(data=absolute_units, mapping=aes(Date, Net, col
 ggsave("~/Github/Russia-Ukraine/Plots/current_absolute_total.jpg", current_absolute_total, device="jpg", width=6, height=5, dpi=600)
 
 ###Map
-btgs <- read.csv("https://raw.githubusercontent.com/simonhuwiler/uawardata/master/data/csv/btgs_current.csv")
-colnames(btgs)[3] <- "lon"
-firms <- read.csv("https://firms.modaps.eosdis.nasa.gov/data/active_fire/noaa-20-viirs-c2/csv/J1_VIIRS_C2_Russia_Asia_24h.csv")
-firms <- firms[firms$latitude < 52.3 & firms$latitude > 44.1 & firms$longitude < 40.3 & firms$latitude > 26,]
-colnames(firms)[1] <- "lat"
-colnames(firms)[2] <- "lon"
-raster_base <- raster(xmn=26, xmx=40.3, ymn=44.1, ymx=52.3, res=0.75, crs="+proj=longlat +datum=WGS84")
-
-firms_raster <- rasterize(firms[, c('longitude', 'latitude')], raster_base, firms[, 'bright_t31'], fun=mean)
-plot(firms_raster)
+ggmap::register_google(key = maps_key)
 
 
-
-firms_shapefile <-
-
-temp <- tempfile()
-download.file("https://firms.modaps.eosdis.nasa.gov/data/active_fire/noaa-20-viirs-c2/shapes/zips/J1_VIIRS_C2_Russia_Asia_24h.zip",temp)
-firms <- read_sf(unz(temp, "J1_VIIRS_C2_Russia_Asia_24h.shp"))
-unlink(temp)
-
-firms_shp <- read_sf("/Users/lee/Downloads/J1_VIIRS_C2_Russia_Asia_24h/J1_VIIRS_C2_Russia_Asia_24h.shp")
-r <- raster(extent(firms_shp)) # creates a raster with the extent of sp_df
-projection(r) <- proj4string(firms_shp) # uses the projection of the shapefile
-                                    # for the raster
-res(r)=10.0 # sets the resolution of the raster to 10 m
-
-r10 <- rasterize(firms_shp, field="BRIGHT_TI5", r) # converts sp_df to a raster
-                                              # assigning the last attribute
-                                              # variable in a cell (default)
-
-
-
-
-map <- mapview(btgs, xcol = "lng", ycol = "lat", crs = 4269, grid = FALSE) + mapview(firms, xcol = "longitude", ycol = "latitude", grid = FALSE)
-
-
-
-###Map
 btgs <- read.csv("https://raw.githubusercontent.com/simonhuwiler/uawardata/master/data/csv/btgs_current.csv")
 colnames(btgs)[3] <- "lon"
 colnames(btgs)[5] <- "Russian_BTGS"
