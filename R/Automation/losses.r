@@ -858,6 +858,7 @@ colnames(btgs)[3] <- "lon"
 colnames(btgs)[5] <- "Russian_BTGS"
 
 firms <- read.csv("https://firms.modaps.eosdis.nasa.gov/data/active_fire/noaa-20-viirs-c2/csv/J1_VIIRS_C2_Russia_Asia_24h.csv")
+write.csv(firms, paste0("~/GitHub/Russia-Ukraine/data/FIRMS/", Sys.Date(), ".csv"))
 firms <- firms[firms$latitude < 52.3 & firms$latitude > 44.1 & firms$longitude < 40.3 & firms$latitude > 26,]
 colnames(firms)[1] <- "lat"
 colnames(firms)[2] <- "lon"
