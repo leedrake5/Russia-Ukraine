@@ -10,6 +10,10 @@ library(tidyverse)
 library(lubridate)
 library(scales)
 library(rvest)
+library(sf)
+library(mapview)
+library(raster)
+library(ggmap)
 
 equipment_losses <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Origional")
 equipment_totals <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Totals")
@@ -845,3 +849,71 @@ current_absolute_total <- ggplot(data=absolute_units, mapping=aes(Date, Net, col
 
 ggsave("~/Github/Russia-Ukraine/Plots/current_absolute_total.jpg", current_absolute_total, device="jpg", width=6, height=5, dpi=600)
 
+###Map
+btgs <- read.csv("https://raw.githubusercontent.com/simonhuwiler/uawardata/master/data/csv/btgs_current.csv")
+colnames(btgs)[3] <- "lon"
+firms <- read.csv("https://firms.modaps.eosdis.nasa.gov/data/active_fire/noaa-20-viirs-c2/csv/J1_VIIRS_C2_Russia_Asia_24h.csv")
+firms <- firms[firms$latitude < 52.3 & firms$latitude > 44.1 & firms$longitude < 40.3 & firms$latitude > 26,]
+colnames(firms)[1] <- "lat"
+colnames(firms)[2] <- "lon"
+raster_base <- raster(xmn=26, xmx=40.3, ymn=44.1, ymx=52.3, res=0.75, crs="+proj=longlat +datum=WGS84")
+
+firms_raster <- rasterize(firms[, c('longitude', 'latitude')], raster_base, firms[, 'bright_t31'], fun=mean)
+plot(firms_raster)
+
+
+
+firms_shapefile <-
+
+temp <- tempfile()
+download.file("https://firms.modaps.eosdis.nasa.gov/data/active_fire/noaa-20-viirs-c2/shapes/zips/J1_VIIRS_C2_Russia_Asia_24h.zip",temp)
+firms <- read_sf(unz(temp, "J1_VIIRS_C2_Russia_Asia_24h.shp"))
+unlink(temp)
+
+firms_shp <- read_sf("/Users/lee/Downloads/J1_VIIRS_C2_Russia_Asia_24h/J1_VIIRS_C2_Russia_Asia_24h.shp")
+r <- raster(extent(firms_shp)) # creates a raster with the extent of sp_df
+projection(r) <- proj4string(firms_shp) # uses the projection of the shapefile
+                                    # for the raster
+res(r)=10.0 # sets the resolution of the raster to 10 m
+
+r10 <- rasterize(firms_shp, field="BRIGHT_TI5", r) # converts sp_df to a raster
+                                              # assigning the last attribute
+                                              # variable in a cell (default)
+
+
+
+
+map <- mapview(btgs, xcol = "lng", ycol = "lat", crs = 4269, grid = FALSE) + mapview(firms, xcol = "longitude", ycol = "latitude", grid = FALSE)
+
+
+
+###Map
+btgs <- read.csv("https://raw.githubusercontent.com/simonhuwiler/uawardata/master/data/csv/btgs_current.csv")
+colnames(btgs)[3] <- "lon"
+colnames(btgs)[5] <- "Russian_BTGS"
+
+firms <- read.csv("https://firms.modaps.eosdis.nasa.gov/data/active_fire/noaa-20-viirs-c2/csv/J1_VIIRS_C2_Russia_Asia_24h.csv")
+firms <- firms[firms$latitude < 52.3 & firms$latitude > 44.1 & firms$longitude < 40.3 & firms$latitude > 26,]
+colnames(firms)[1] <- "lat"
+colnames(firms)[2] <- "lon"
+firms$NASA <- "FIRMS"
+
+###Donbas
+donbass <- ggmap::get_map(location=c(lon=37.6, lat=49.5), source="google", maptype="roadmap", crop=FALSE, zoom=8)
+
+donbas_map <- ggmap(donbass) +
+geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
+geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
+ggtitle(paste0("Donbas and Kharkiv regions on ", Sys.Date()))
+
+ggsave("~/Github/Russia-Ukraine/Maps/donbas_map.jpg", donbas_map, device="jpg", width=6, height=5, dpi=600)
+
+###Kherson
+kherson <- ggmap::get_map(location=c(lon=32.4, lat=46.4), source="google", maptype="roadmap", crop=FALSE, zoom=8)
+
+kherson_map <- ggmap(kherson) +
+geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
+geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
+ggtitle(paste0("Kherson region on ", Sys.Date()))
+
+ggsave("~/Github/Russia-Ukraine/Maps/kherson_map.jpg", kherson_map, device="jpg", width=6, height=5, dpi=600)

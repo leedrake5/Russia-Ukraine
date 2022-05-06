@@ -16,6 +16,19 @@ Please keep in mind that this is empirical, not inteptetive, analysis. A concern
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_total.jpg?)
 Ukranian and Russian equipment losses started off equivalent, but Russians quickly began to lose more equipment by the third day of the war. 
 
+##Maps
+Map data is provided using a google maps base layer with troop locations from [Henry Schlottman](https://twitter.com/HN_Schlottman)'s [GitHub repo](https://github.com/simonhuwiler/uawardata). Fire data comes from [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov) VIIRS sattelite.  
+
+##Donbas and Kharkiv
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/donbas_map.jpg?)
+Russia has concentrated most of its combat forces in the Donbas attempting to breakthrough Ukranian lines established in 2014. FIRMS fire data indicates battles around Izyum, with some progress for Russia to the west. 
+
+##Kherson
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/kherson_map.jpg?)
+Kherson is an occupied city where the Russian advance was halted. FIRMS data does not indicate heavy combat in the area currently. 
+
+
+
 ## Destroyed Equipment
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_destroyed.jpg?)
 Destroyed Russian equipment outpaced destroyed Ukranian equipment by the second day of the war, though there are signs it is starting to taper. 
