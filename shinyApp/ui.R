@@ -52,10 +52,15 @@ sliderInput("ukraine_morale_modifier", "Ukrianian Morale Variance", min=0.1, max
 
 mainPanel(
 tabsetPanel(
-tabPanel("Plot", plotOutput("outcome_densities"),
+tabPanel("Ratio Plot", plotOutput("outcome_densities"),
 uiOutput("simulationresultsui"),
 tags$hr(),
 downloadButton("downloadDensity", "Download")
+),
+tabPanel("Strength Plot", plotOutput("outcome_strength"),
+uiOutput("simulationresults2ui"),
+tags$hr(),
+downloadButton("downloadStrength", "Download")
 ),
 tabPanel("Outcomes", dataTableOutput("outcome_table"),
 tags$hr(),

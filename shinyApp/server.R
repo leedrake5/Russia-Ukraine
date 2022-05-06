@@ -47,7 +47,19 @@ shinyServer(function(input, output, session) {
     
     simulationOutcomes <- reactive({
         
-        sapply(simulation_results$simulation, function(x) x[[1]])
+        sapply(simulation_results$simulation, function(x) x[["Outcome"]])
+        
+    })
+    
+    simulationRussianStrength <- reactive({
+        
+        sapply(simulation_results$simulation, function(x) x[["Russian_Outcome"]])
+        
+    })
+    
+    simulationUkrainianStrength <- reactive({
+        
+        sapply(simulation_results$simulation, function(x) x[["Ukranian_Outcome"]])
         
     })
     
@@ -64,6 +76,12 @@ shinyServer(function(input, output, session) {
     })
     
     output$simulationresultsui <- renderUI({
+        
+        renderText(paste0("Russian Breakthroughs: ", format(russianPositiveOutcomes(),big.mark=",",scientific=FALSE), ", Ukranian Holds: ", format(ukrainianPositiveOutcomes(),big.mark=",",scientific=FALSE)))
+        
+    })
+    
+    output$simulationresults2ui <- renderUI({
         
         renderText(paste0("Russian Breakthroughs: ", format(russianPositiveOutcomes(),big.mark=",",scientific=FALSE), ", Ukranian Holds: ", format(ukrainianPositiveOutcomes(),big.mark=",",scientific=FALSE)))
         
@@ -91,6 +109,33 @@ shinyServer(function(input, output, session) {
     filename = function() { "Dupoy_Density_Plot.jpg" },
     content = function(file) {
         ggsave(file,dupuyDensityPlot(),  device="jpg",  dpi=300)
+    }
+    )
+    
+    
+    dupuyStrengthPlot <- reactive({
+        
+        just_strength <- data.frame(Strength=c(simulationRussianStrength(), simulationUkrainianStrength()), Country=c(rep("Russia", input$iterations), rep("Ukraine", input$iterations)))
+        
+        
+        
+        ggplot() +
+        geom_density(data=just_strength, mapping=aes(x=Strength, colour=Country, fill=Country), alpha=0.5) +
+        scale_x_continuous("Dupuy Strength") +
+        theme_light()
+        
+    })
+    
+    output$outcome_strength <- renderPlot({
+        
+        dupuyStrengthPlot()
+        
+    })
+    
+    output$downloadStrength <- downloadHandler(
+    filename = function() { "Dupoy_Density_Strength_Plot.jpg" },
+    content = function(file) {
+        ggsave(file,dupuyStrengthPlot(),  device="jpg",  dpi=300)
     }
     )
     
