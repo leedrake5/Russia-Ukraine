@@ -20,10 +20,21 @@ shinyServer(function(input, output, session) {
     
     dupoyReSampler <- reactive({
         
-        my.cores <- parallel::detectCores()
         
-        pbapply::pblapply(1:input$iterations, function(x)
-            dupuySample(seed=x, strength_ru=input$russia_strength, strength_ukr=input$ukraine_strength, ru_strength_modifier=input$russia_strength_modifier, ru_strength_lock=!input$russian_reinforcements, ukr_strength_modifier=input$ukraine_strength_modifier, ukr_strength_lock=!input$ukraine_reinforcements, terrain_ru=input$russia_terrain, terrain_ukr=input$ukraine_terrain, ru_terrain_modifier=input$russia_terrain_modifier, ukr_terrain_modifier=input$ukraine_terrain_modifier, season_ru=input$russia_season, season_ukr=input$ukraine_season, ru_season_modifier=input$russia_season_modifier, ukr_season_modifier=input$ukraine_season_modifier, posture_ru=input$russia_posture, posture_ukr=input$ukraine_posture, ru_posture_modifier=input$russia_posture_modifier, ukr_posture_modifier=input$ukraine_posture_modifier, air_ru=input$russia_air, air_ukr=input$ukraine_air, ru_air_modifier=input$russia_air_modifier, ukr_air_modifier=input$ukraine_air_modifier, morale_ru=input$russia_morale, morale_ukr=input$ukraine_morale, ru_morale_modifier=input$russia_morale_modifier, ukr_morale_modifier=input$ukraine_morale_modifier), cl=1)
+        result <- list()
+        withProgress(
+              message='Please wait',
+              detail='Runing...',
+              value=0, {
+
+                for (i in 1:input$iterations) {
+                    
+                    result[[i]] <- dupuySample(seed=i, strength_ru=input$russia_strength, strength_ukr=input$ukraine_strength, ru_strength_modifier=input$russia_strength_modifier, ru_strength_lock=!input$russian_reinforcements, ukr_strength_modifier=input$ukraine_strength_modifier, ukr_strength_lock=!input$ukraine_reinforcements, terrain_ru=input$russia_terrain, terrain_ukr=input$ukraine_terrain, ru_terrain_modifier=input$russia_terrain_modifier, ukr_terrain_modifier=input$ukraine_terrain_modifier, season_ru=input$russia_season, season_ukr=input$ukraine_season, ru_season_modifier=input$russia_season_modifier, ukr_season_modifier=input$ukraine_season_modifier, posture_ru=input$russia_posture, posture_ukr=input$ukraine_posture, ru_posture_modifier=input$russia_posture_modifier, ukr_posture_modifier=input$ukraine_posture_modifier, air_ru=input$russia_air, air_ukr=input$ukraine_air, ru_air_modifier=input$russia_air_modifier, ukr_air_modifier=input$ukraine_air_modifier, morale_ru=input$russia_morale, morale_ukr=input$ukraine_morale, ru_morale_modifier=input$russia_morale_modifier, ukr_morale_modifier=input$ukraine_morale_modifier)
+                    incProgress(1/input$iterations, detail = paste("Resample ", i))
+                }
+              })
+              
+              result
     })
     
     simulation_results <- reactiveValues()
