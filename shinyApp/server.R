@@ -51,6 +51,24 @@ shinyServer(function(input, output, session) {
         
     })
     
+    russianPositiveOutcomes <- reactive({
+        
+        length(simulationOutcomes()[simulationOutcomes()>1])
+        
+    })
+    
+    ukrainianPositiveOutcomes <- reactive({
+        
+        length(simulationOutcomes()[simulationOutcomes()<=1])
+        
+    })
+    
+    output$simulationresultsui <- renderUI({
+        
+        renderText(paste0("Russian Breakthroughs: ", format(russianPositiveOutcomes(),big.mark=",",scientific=FALSE), ", Ukranian Holds: ", format(ukrainianPositiveOutcomes(),big.mark=",",scientific=FALSE)))
+        
+    })
+    
     dupuyDensityPlot <- reactive({
         
         just_outcomes <- simulationOutcomes()
