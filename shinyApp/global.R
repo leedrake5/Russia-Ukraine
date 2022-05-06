@@ -204,8 +204,8 @@ dupuySample <- function(seed=1, strength_ru=180, strength_ukr=77, ru_strength_mo
     if(ukr_rand_morale > 1){
         ukr_rand_morale <- 1
     }
-    ru_outcome <-  ru_rand_strength + ru_rand_terrain + ru_rand_season + ru_rand_posture + ru_rand_air + ru_rand_morale
-    ukr_outcome <- ukr_rand_strength + ukr_rand_terrain + ukr_rand_season + ukr_rand_posture + ukr_rand_air + ukr_rand_morale
+    ru_outcome <-  ru_rand_strength * ru_rand_terrain * ru_rand_season * ru_rand_posture * ru_rand_air * ru_rand_morale
+    ukr_outcome <- ukr_rand_strength * ukr_rand_terrain * ukr_rand_season * ukr_rand_posture * ukr_rand_air * ukr_rand_morale
     
     outcome <- ru_outcome/ukr_outcome
     
