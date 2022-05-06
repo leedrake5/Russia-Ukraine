@@ -18,9 +18,9 @@ shiny::devmode(TRUE)
 options(shiny.fullstacktrace=TRUE)
 
 
-full_data <- read.csv(paste0("data/bySystem/Raw/Full/", Sys.Date()-1, ".csv"))
+full_data <- read.csv(paste0("data/bySystem/Raw/Full/", as.Date("2022-05-04"), ".csv"))
 
-dates = seq(as.Date("2022-02-24"), Sys.Date()-1, by="days")
+dates = seq(as.Date("2022-02-24"), as.Date("2022-05-04"), by="days")
 
 
 daily_list <- list()
