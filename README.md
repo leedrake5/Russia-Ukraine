@@ -19,9 +19,17 @@ Ukranian and Russian equipment losses started off equivalent, but Russians quick
 ##Maps
 Map data is provided using a google maps base layer with troop locations from [Henry Schlottman](https://twitter.com/HN_Schlottman)'s [GitHub repo](https://github.com/simonhuwiler/uawardata). Fire data comes from [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov) VIIRS sattelite.  
 
+##Battle of Kyiv
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/battleofkyiv.gif?)
+The [Battle of Kyiv](https://en.wikipedia.org/wiki/Battle_of_Kyiv_(2022) concluded at the beginning of April 2022 in a Ukrainan victory. NASA FIRMS analysis indicates that the majority of detectible fire from fighting was in the last two weeks of the conflict (March 15th - April 1st).
+
 ##Donbas and Kharkiv
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/donbas_map.jpg?)
 Russia has concentrated most of its combat forces in the Donbas attempting to breakthrough Ukranian lines established in 2014. FIRMS fire data indicates battles around Izyum, with some progress for Russia to the west. 
+
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/battleofdonbas.gif?)
+The [Battle of the Donbas](https://en.wikipedia.org/wiki/Battle_of_Donbas_(2022) has only shown a distinct FIRMS signature since the first week of May, indicating heavy fires all around.
+
 
 ##Kherson
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/kherson_map.jpg?)
