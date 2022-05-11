@@ -8,7 +8,7 @@ Data is drawn from [this public google sheet](https://docs.google.com/spreadshee
 
 Data is pulled daily from Oryx's site using [Daniel Scarnecchia](https://github.com/scarnecchia)'s [scraper tool](https://github.com/scarnecchia/scrape_oryx), and then pushed to the public google sheet, where synthetic calculations are performed for equipment categories (to presere transparency). 
 
-Points (red = Russia, blue = Ukraine) represent cumulative losses for each day, bar's represent daily losses. The line repreents a general additive model smooth on cumulative losses to date; the shaded grey band represents the 95% confidence interval based on extant variation (e.g. point scatter). A wider grey band means more uncertainty, a narrower grey band means less uncertainty. 
+Points (red = Russia, blue = Ukraine) represent cumulative losses for each day, bars represent daily losses. The line repreents a general additive model smooth on cumulative losses to date; the shaded grey band represents the 95% confidence interval based on extant variation (e.g. point scatter). A wider grey band means more uncertainty, a narrower grey band means less uncertainty. 
 
 Please keep in mind that this is empirical, not inteptetive, analysis. A concern raised about the available data is that it undercounts Ukrainian losses. This is possible not just because of bias (note pro-Russian sources are monitered as well) but because areas under Russian control are less likely to have photo documentation. Fog of war is very real. There is no attempt here to use a modifier to adjust numbers - analysis is strictly empirical. Any bias in the origional data will be reflected in the following analyses.
 
@@ -35,6 +35,9 @@ The [Battle of the Donbas](https://en.wikipedia.org/wiki/Battle_of_Donbas_(2022)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/kherson_map.jpg?)
 Kherson is an occupied city where the Russian advance was halted. FIRMS data does not indicate heavy combat in the area currently. 
 
+## FIRMS Summary
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/firms_summary_plot.jpg?)
+Summing megawatts of energy radiated from regions of Ukraine helps highlight the independent war record. The Battle of Kyiv is clearly visible, with detectable fires concentrated in the last two weeks (March 15th - April 1st). The Battle of Donbas, following a repositioning of Russian forces, shows a more brief but just as intense spike in radiation confined to the first two weeks of May. 
 
 
 ## Destroyed Equipment

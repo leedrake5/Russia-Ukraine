@@ -1,4 +1,4 @@
-detach("package:do", unload=TRUE)
+tryCatch(detach("package:do", unload=TRUE), error=function(e) NULL)
 
 library(ggplot2)
 library(RCurl)
@@ -883,3 +883,47 @@ geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
 ggtitle(paste0("Kherson region on ", Sys.Date()))
 
 ggsave("~/Github/Russia-Ukraine/Maps/kherson_map.jpg", kherson_map, device="jpg", width=6, height=5, dpi=600)
+
+
+###FIRMS Analysis
+dates = seq(as.Date("2022-02-23"), Sys.Date(), by="days")
+
+firms_list <- list()
+for(i in dates){
+    firms_list[[as.character(i)]] <- data.table::fread(paste0("~/GitHub/Russia-Ukraine/data/FIRMS/",  as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), ".csv"))[,-1]
+}
+
+new_firms_frame <- as.data.frame(data.table::rbindlist(firms_list, use.names=TRUE, fill=TRUE))
+
+kyiv_firms <- new_firms_frame[new_firms_frame$latitude < 52 & new_firms_frame$latitude > 50 & new_firms_frame$longitude < 32 & new_firms_frame$longitude > 29,]
+kyiv_dates = seq(as.Date("2022-02-23"), as.Date("2022-04-01"), by="days")
+kyiv_date_firms <- list()
+kyiv_means_firms <- list()
+for(i in kyiv_dates){
+    kyiv_date_firms[[i]] <- kyiv_firms[as.Date(kyiv_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+    kyiv_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(kyiv_date_firms[[i]]$frp), Region="Kyiv")
+}
+kyiv_firms_summary <- as.data.frame(data.table::rbindlist(kyiv_means_firms))
+
+donbas_dates = seq(as.Date("2022-02-23"), Sys.Date(), by="days")
+donbas_firms <- new_firms_frame[new_firms_frame$latitude < 50 & new_firms_frame$latitude > 48.5 & new_firms_frame$longitude < 39 & new_firms_frame$longitude > 36,]
+donbas_date_firms <- list()
+donbas_means_firms <- list()
+for(i in donbas_dates){
+    donbas_date_firms[[i]] <- donbas_firms[as.Date(donbas_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+    donbas_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(donbas_date_firms[[i]]$frp), Region="Donbas")
+}
+donbas_firms_summary <- as.data.frame(data.table::rbindlist(donbas_means_firms))
+
+firms_summary <- as.data.frame(data.table::rbindlist(list(kyiv_firms_summary, donbas_firms_summary)))
+
+firms_summary_plot <- ggplot(firms_summary, aes(Date, FRP, colour=Region, lty=Region)) +
+geom_point() +
+geom_line() +
+#stat_smooth(method="gam") +
+scale_x_date(date_labels = "%m/%d") +
+scale_y_continuous("Total Fire Radiative Power (MegaWatts)", breaks=scales::pretty_breaks(n=10), labels=scales::comma) +
+ggtitle("FIRMS VIIRS I-Band 375 m Active Fire") +
+theme_light()
+
+ggsave("~/Github/Russia-Ukraine/Plots/firms_summary_plot.jpg", firms_summary_plot, device="jpg", width=6, height=5, dpi=600)
