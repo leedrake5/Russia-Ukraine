@@ -112,11 +112,13 @@ totals_fold <- function(totals_df=NULL, russia_link="https://www.oryxspioenkop.c
     totals_df <- totals_df[complete.cases(totals_df),]
 
       
-    totals_df$equipment_type[totals_df$equipment_type %in% "All Types"] <- "Total"
-    totals_df$equipment_type <- gsub(" ", "_", totals_df$equipment_type)
-    totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Station"] <- "Communications_Stations"
-    totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Vehicles"] <- "Communications_Stations"
-    totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Stations"] <- "Command_Posts_And_Communications_Stations"
+        totals_df$equipment_type[totals_df$equipment_type %in% "All Types"] <- "Total"
+        totals_df$equipment_type <- gsub(" ", "_", totals_df$equipment_type)
+        totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Station"] <- "Communications_Stations"
+        totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Vehicles"] <- "Communications_Stations"
+        totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Stations"] <- "Command_Posts_And_Communications_Stations"
+        totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Stations"] <- "Command_Posts_And_Communications_Stations"
+        totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Stations"] <- "Command_Posts_And_Communications_Stations"
         totals_df$equipment_type[totals_df$equipment_type %in% "Engineering_Vehicles"] <- "Engineering_Vehicles_And_Equipment"
         totals_df$equipment_type[totals_df$equipment_type %in% "Mine-resistant_ambush_protected"] <- "Mine-Resistant_Ambush_Protected"
         totals_df$equipment_type[totals_df$equipment_type %in% "Mine-resistant_Ambush_Protected"] <- "Mine-Resistant_Ambush_Protected"
@@ -129,6 +131,7 @@ totals_fold <- function(totals_df=NULL, russia_link="https://www.oryxspioenkop.c
     colnames(totals_df) <- c("Country", "EquipmentType", "Destroyed", "Abandoned", "Captured", "Damaged", "Quantity", "Date")
     totals_df$Type <- gsub("\n", "", paste0(totals_df$Country, "_", totals_df$EquipmentType))
     totals_df$Type[totals_df$Type %in% "Ukraine_Surface-to-air_missile_systems"] <- "Ukraine_Surface-To-Air_Missile_Systems"
+    totals_df$Type[totals_df$Type %in% "Ukraine_Radars"] <- "Ukraine_Radars_And_Communications_Equipment"
     totals_formatted <- reshape2::dcast(data=totals_df, formula=Date~Type, value.var="Quantity", fun.aggregate = mean)
     totals_formatted <- totals_formatted[,!colnames(totals_formatted) %in% c("Russia_", "Ukraine_")]
     colnames(totals_formatted) <- gsub("\n", "", colnames(totals_formatted))
