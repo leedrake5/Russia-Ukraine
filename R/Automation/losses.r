@@ -885,6 +885,17 @@ ggtitle(paste0("Kherson region on ", Sys.Date()))
 ggsave("~/Github/Russia-Ukraine/Maps/kherson_map.jpg", kherson_map, device="jpg", width=6, height=5, dpi=600)
 
 
+###Zaporizhizhia
+zaporizhizhia <- ggmap::get_map(location=c(lon=34.8, lat=47.8), source="google", maptype="roadmap", crop=FALSE, zoom=8)
+
+zaporizhizhia_map <- ggmap(zaporizhizhia) +
+geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
+geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
+ggtitle(paste0("Zaporizhizhia region on ", Sys.Date()))
+
+ggsave("~/Github/Russia-Ukraine/Maps/zaporizhizhia_map.jpg", zaporizhizhia_map, device="jpg", width=6, height=5, dpi=600)
+
+
 ###FIRMS Analysis
 dates = seq(as.Date("2022-02-23"), Sys.Date(), by="days")
 

@@ -30,10 +30,13 @@ Russia has concentrated most of its combat forces in the Donbas attempting to br
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/battleofdonbas.gif?)
 The [Battle of the Donbas](https://en.wikipedia.org/wiki/Battle_of_Donbas_(2022) has only shown a distinct FIRMS signature since the first week of May, indicating heavy fires all around.
 
-
 ## Kherson
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/kherson_map.jpg?)
 Kherson is an occupied city where the Russian advance was halted. FIRMS data does not indicate heavy combat in the area currently. 
+
+## Zaporizhizhia Oblast
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/zaporizhizhia_map.jpg?)
+Zaporizhizhia is a comparatively quiet region, but there are isolated artillery strikes around Russian BTGs and missle strikes in population centers. 
 
 ## FIRMS Summary
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/firms_summary_plot.jpg?)
