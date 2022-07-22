@@ -1,5 +1,31 @@
 tryCatch(detach("package:do", unload=TRUE), error=function(e) NULL)
 
+
+get_os <- function(){
+    sysinf <- Sys.info()
+    if (!is.null(sysinf)){
+        os <- sysinf['sysname']
+        if (os == 'Darwin')
+        os <- "osx"
+    } else { ## mystery machine
+        os <- .Platform$OS.type
+        if (grepl("^darwin", R.version$os))
+        os <- "osx"
+        if (grepl("linux-gnu", R.version$os))
+        os <- "linux"
+    }
+    tolower(os)
+}
+
+list.of.packages <- c("ggplot2", "RCurl", "reshape2", "data.table", "gsheet", "tidyverse", "lubridate", "scales", "rvest", "sf", "mapview", "raster", "ggmap", "dplyr")
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(get_os()!="linux"){
+    if(length(new.packages)) lapply(new.packages, function(x) install.packages(x, repos="http://cran.rstudio.com/", dep = TRUE, ask=FALSE, type="binary"))
+} else if(get_os()=="linux"){
+    if(length(new.packages)) lapply(new.packages, function(x) install.packages(x, repos="http://cran.rstudio.com/", dep = TRUE, ask=FALSE, type="source"))
+}
+
+
 library(ggplot2)
 library(RCurl)
 library(reshape2)
