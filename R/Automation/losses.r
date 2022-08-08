@@ -51,7 +51,7 @@ equipment_synthetic <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHb
 
 
 ###Refugees
-refugees = equipment_synthetic[,c("Date", "UNHCR Ukraine Refugees")]
+refugees = equipment_synthetic[,c("Date", "UNHCR_Ukraine_Border")]
 refugees$Date <- as.Date(refugees$Date, format="%m/%d/%Y")
 colnames(refugees) <- c("Date", "Refugees")
 refugees <- refugees %>%
@@ -63,10 +63,38 @@ geom_col(data=refugees, mapping=aes(Date, Daily), alpha=0.8, position = position
 geom_point() +
 stat_smooth(method="gam") +
 scale_x_date(date_labels = "%m/%d") +
-scale_y_continuous("Total Ukrainian Refugees", labels=scales::comma) +
-ggtitle(paste0("Total Ukrainian refugees through ", Sys.Date())) +
+scale_y_continuous("Total Ukrainian Border Crossings", labels=scales::comma) +
+ggtitle(paste0("Total Ukrainian border crossings through ", Sys.Date())) +
 theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/refugees_total.jpg", current_refugees, device="jpg", width=6, height=5)
+
+refugees = equipment_synthetic[,c("Date", "UNHCR_Ukraine_Refugees", "UNHCR_Returning_Ukraine_Refugees")]
+refugees$UNHCR_Ukraine_Refugees <- refugees$UNHCR_Ukraine_Refugees*-1
+colnames(refugees) <- c("Date", "Out of Ukraine", "Into Ukraine")
+refugees$Date <- as.Date(refugees$Date, format="%m/%d/%Y")
+refugees <- refugees %>% pivot_longer(cols = c("Out of Ukraine", "Into Ukraine"),
+             names_to = "Direction",
+             values_to = "Refugees")
+
+refugees <- refugees %>% group_by(Direction) %>%
+    arrange(Date) %>%
+    mutate(Daily = Refugees - lag(Refugees, default = first(Refugees)))
+
+current_refugees <- ggplot(refugees, aes(Date, Refugees, colour=Direction)) +
+geom_col(data=refugees, mapping=aes(Date, Daily), alpha=0.95, position = position_dodge(0.7)) +
+geom_point() +
+stat_smooth(method="gam") +
+scale_x_date(date_labels = "%m/%d") +
+scale_y_continuous("Total Ukrainian Border Crossings", labels=scales::comma) +
+ggtitle(paste0("Total Ukrainian border crossings through ", Sys.Date())) +
+scale_color_manual(values = RColorBrewer::brewer.pal(7,'Accent')) +
+theme_light() + guides(color=guide_legend(override.aes=list(fill=NA)))
+ggsave("~/Github/Russia-Ukraine/Plots/refugees_direction.jpg", current_refugees, device="jpg", width=6, height=5)
+
+
+#ggsave("~/Github/Russia-Ukraine/Plots/current_percent_deployed_tanks.jpg", current_percent_deployed_tanks, device="jpg", width=6, height=5)
+
+
 
 ####Totals
 total_melt <- melt(equipment_losses[,c("Date", "Russia_Total", "Ukraine_Total")], id.var="Date")
@@ -579,7 +607,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_logistics.jpg", current_logistics,
 
 ###Analysis
 empty_columns <- colSums(is.na(equipment_losses) | equipment_losses == "") == nrow(equipment_losses)
-equipment_totals <- equipment_losses[,c("Date", "Russia_Total", "Ukraine_Total", "Russia_Destroyed", "Ukraine_Destroyed", "Russia_Damaged", "Ukraine_Damaged", "Russia_Abandoned", "Ukraine_Abandoned", "Russia_Captured", "Ukraine_Captured", "Russia_Tanks", "Ukraine_Tanks", "Russia_Tank_Capture", "Ukraine_Tank_Capture", "Russia_AFV", "Ukraine_AFV", "Russia_AFV_Capture", "Ukraine_AFV_Capture", "Russia_IFV", "Ukraine_IFV", "Russia_APC", "Ukraine_APC", "Russia_IMV", "Ukraine_IMV", "Ukraine_Engineering", "Russia_Engineering", "Russia_Coms", "Ukraine_Coms", "Russia_Vehicles", "Ukraine_Vehicles", "Russia_Aircraft", "Ukraine_Aircraft", "Russia_Infantry", "Ukraine_Infantry", "Russia_Logistics", "Ukraine_Logistics", "Russia_Armor", "Ukraine_Armor", "Russia_Antiair", "Ukraine_Antiair", "UNHCR Ukraine Refugees")]
+equipment_totals <- equipment_losses[,c("Date", "Russia_Total", "Ukraine_Total", "Russia_Destroyed", "Ukraine_Destroyed", "Russia_Damaged", "Ukraine_Damaged", "Russia_Abandoned", "Ukraine_Abandoned", "Russia_Captured", "Ukraine_Captured", "Russia_Tanks", "Ukraine_Tanks", "Russia_Tank_Capture", "Ukraine_Tank_Capture", "Russia_AFV", "Ukraine_AFV", "Russia_AFV_Capture", "Ukraine_AFV_Capture", "Russia_IFV", "Ukraine_IFV", "Russia_APC", "Ukraine_APC", "Russia_IMV", "Ukraine_IMV", "Ukraine_Engineering", "Russia_Engineering", "Russia_Coms", "Ukraine_Coms", "Russia_Vehicles", "Ukraine_Vehicles", "Russia_Aircraft", "Ukraine_Aircraft", "Russia_Infantry", "Ukraine_Infantry", "Russia_Logistics", "Ukraine_Logistics", "Russia_Armor", "Ukraine_Armor", "Russia_Antiair", "Ukraine_Antiair")]
 equipment_totals <- equipment_totals[complete.cases(equipment_totals),]
 equipment_totals <- equipment_totals[nrow(equipment_totals),]
 
