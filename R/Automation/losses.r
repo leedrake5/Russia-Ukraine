@@ -955,7 +955,7 @@ dates = seq(as.Date("2022-02-23"), Sys.Date(), by="days")
 
 firms_list <- list()
 for(i in dates){
-    firms_list[[as.character(i)]] <- data.table::fread(paste0("~/GitHub/Russia-Ukraine/data/FIRMS/",  as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), ".csv"))[,-1]
+    tryCatch(firms_list[[as.character(i)]] <- data.table::fread(paste0("~/GitHub/Russia-Ukraine/data/FIRMS/",  as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), ".csv"))[,-1], error=function(e) NULL)
 }
 
 new_firms_frame <- as.data.frame(data.table::rbindlist(firms_list, use.names=TRUE, fill=TRUE))

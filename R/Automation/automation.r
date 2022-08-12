@@ -38,6 +38,8 @@ source("~/GitHub/scrape_oryx/R/functions.R")
 
 source("~/GitHub/Russia-Ukraine/R/Automation/back.r")
 
+googlesheets4::gs4_auth_configure(api_key=api_key)
+
 #' totals_by_type
 #' @description Gets data by system category.
 #'
