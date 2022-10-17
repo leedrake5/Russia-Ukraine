@@ -693,18 +693,18 @@ loss_type <- ggplot(equipment_ratios_t[equipment_ratios_t$Type %in% c("Destroyed
   geom_col() +
   scale_y_continuous("Ratio (Russian/Ukrainian Losses)") +
   ggtitle(paste0("Loss ratios lost through ", Sys.Date())) +
-  theme_light() + 
-  scale_fill_brewer(palette="Accent") + 
-  scale_color_brewer(palette="Accent")
+  theme_light()
+  #scale_fill_brewer(palette="Accent") +
+  #scale_color_brewer(palette="Accent")
 ggsave("~/Github/Russia-Ukraine/Plots/current_loss_type.jpg", loss_type, device="jpg", width=6, height=5)
 
 unit_type <- ggplot(equipment_ratios_t[equipment_ratios_t$Type %in% c("Aircraft", "Antiair", "Infantry", "Armor", "Vehicles", "Logistics"),], aes(Type, Ratio, colour=Type, fill=Type)) +
   geom_col() +
   scale_y_continuous("Ratio (Russian/Ukrainian Losses)") +
   ggtitle(paste0("Unit type ratios lost through ", Sys.Date())) +
-  theme_light() + 
-  scale_fill_brewer(palette="Accent") + 
-  scale_color_brewer(palette="Accent")
+  theme_light()
+  #scale_fill_brewer(palette="Accent") +
+  #scale_color_brewer(palette="Accent")
 ggsave("~/Github/Russia-Ukraine/Plots/current_unit_type.jpg", unit_type, device="jpg", width=6, height=5)
 
 
