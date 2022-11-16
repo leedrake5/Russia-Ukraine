@@ -998,7 +998,7 @@ firms$NASA <- "FIRMS"
 donbass <- ggmap::get_map(location=c(lon=37.6, lat=49.5), source="google", maptype="roadmap", crop=FALSE, zoom=8)
 
 donbas_map <- ggmap(donbass) +
-  geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
+  #geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
   geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
   ggtitle(paste0("Donbas and Kharkiv regions on ", Sys.Date())) + theme_light()
 
@@ -1008,7 +1008,7 @@ ggsave("~/Github/Russia-Ukraine/Maps/donbas_map.jpg", donbas_map, device="jpg", 
 kherson <- ggmap::get_map(location=c(lon=32.4, lat=46.4), source="google", maptype="roadmap", crop=FALSE, zoom=8)
 
 kherson_map <- ggmap(kherson) +
-  geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
+  #geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
   geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
   ggtitle(paste0("Kherson region on ", Sys.Date()))  + theme_light()
 
@@ -1019,7 +1019,7 @@ ggsave("~/Github/Russia-Ukraine/Maps/kherson_map.jpg", kherson_map, device="jpg"
 zaporizhizhia <- ggmap::get_map(location=c(lon=34.8, lat=47.8), source="google", maptype="roadmap", crop=FALSE, zoom=8)
 
 zaporizhizhia_map <- ggmap(zaporizhizhia) +
-  geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
+  #geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
   geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
   ggtitle(paste0("Zaporizhizhia region on ", Sys.Date()))  + theme_light()
 
