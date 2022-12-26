@@ -40,7 +40,7 @@ library(mapview)
 library(raster)
 library(ggmap)
 library(dplyr)
-
+library(zoo)
 
 country_colors <-   c("Russia" = "#E4181C", "Ukraine" = "#0057B8")
 
@@ -64,6 +64,11 @@ equipment_synthetic <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHb
 
 
 ###Refugees
+equipment_synthetic <- equipment_synthetic %>%
+    mutate(UNHCR_Ukraine_Border = na.approx(UNHCR_Ukraine_Border, na.rm=FALSE)) %>%
+    mutate(UNHCR_Ukraine_Refugees = na.approx(UNHCR_Ukraine_Refugees, na.rm=FALSE)) %>%
+    mutate(UNHCR_Returning_Ukraine_Refugees = na.approx(UNHCR_Returning_Ukraine_Refugees, na.rm=FALSE))
+
 refugees = equipment_synthetic[,c("Date", "UNHCR_Ukraine_Border")]
 refugees$Date <- as.Date(refugees$Date, format="%m/%d/%Y")
 colnames(refugees) <- c("Date", "Refugees")
