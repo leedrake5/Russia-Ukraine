@@ -137,7 +137,10 @@ totals_fold <- function(totals_df=NULL, russia_link="https://www.oryxspioenkop.c
     
     totals_df <- totals_df[complete.cases(totals_df),]
 
-      
+        totals_df$equipment_type <- as.vector(sapply(totals_df$equipment_type, function(x) strsplit(x, " (", fixed=TRUE)[[1]][1]))
+        totals_df <- totals_df[!grep(")", totals_df$equipment_type, fixed=TRUE),]
+        totals_df <- totals_df[!grep("(", totals_df$equipment_type, fixed=TRUE),]
+
         totals_df$equipment_type[totals_df$equipment_type %in% "All Types"] <- "Total"
         totals_df$equipment_type <- gsub(" ", "_", totals_df$equipment_type)
         totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Station"] <- "Communications_Stations"
