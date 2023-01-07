@@ -57,7 +57,7 @@ The degree to which Russians have lost more equipment (in every category type) i
 
 ## Equipment Net Changes
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_absolute_total.jpg?)
-This calculation subtracts units captured by each combatant with their other loss types (destroyed, damaged, and abandoned). It is arguable if a proportion of abandoned should be included as captures. Ukraine has a net positive change in equipment - meaning they've captured more than they've lost. Russia however has lost many more units than it has acquired from Ukraine. 
+This calculation subtracts units captured by each combatant with their other loss types (destroyed, damaged, and abandoned). It is arguable if a proportion of abandoned should be included as captures. Ukraine has a net positive change in equipment - meaning that known visible evidence has more cases of new captured eqipment that of losses. Russia however has lost many more units than it has acquired from Ukraine. 
 
 ## Ratios
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/ratio_grid.jpg?)
