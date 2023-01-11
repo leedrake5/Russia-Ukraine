@@ -4,6 +4,65 @@ theme = shinytheme("yeti"),
 
 tabsetPanel(
 
+
+
+
+tabPanel("Bulk Timeseries",
+sidebarLayout(
+sidebarPanel(width=3,
+
+#checkboxInput("useallclasses", "Use All Classes", value=TRUE),
+#checkboxInput("useallsystems", "Use All Systems", value=TRUE),
+uiOutput("classesui"),
+
+tags$hr(),
+
+uiOutput("outcomesui"),
+uiOutput("tanksui"),
+uiOutput("afvui"),
+uiOutput("apcui"),
+uiOutput("ifvui"),
+uiOutput("imvui"),
+uiOutput("spatmsui"),
+uiOutput("aircraftui"),
+uiOutput("helicoptersui"),
+uiOutput("aagui"),
+uiOutput("spaagui"),
+uiOutput("stamsui"),
+uiOutput("uavui"),
+uiOutput("ucavui"),
+uiOutput("ruavui"),
+uiOutput("jammersui"),
+uiOutput("radarsui"),
+uiOutput("taui"),
+uiOutput("spaui"),
+uiOutput("asveui"),
+uiOutput("mrlui"),
+uiOutput("cpcsui"),
+uiOutput("eveui"),
+uiOutput("trucksui"),
+uiOutput("navyui"),
+
+
+
+
+#uiOutput("systemsui")
+
+
+),
+
+mainPanel(
+tabsetPanel(
+#tabPanel("Debug", dataTableOutput("debug")),
+tabPanel("Plot", plotOutput("bulkplot", width="1200px", height="800px")),
+tabPanel("Russia", dataTableOutput("russiaunits")),
+tabPanel("Ukraine", dataTableOutput("ukraineunits"))
+)
+)
+
+)
+),
+
 tabPanel("Dupuy Resampler",
 
 sidebarLayout(
@@ -69,33 +128,5 @@ downloadButton("downloadOutcomes", "Download"))
 )
 )
 
-)),
-
-
-tabPanel("Bulk Timeseries",
-sidebarLayout(
-sidebarPanel(width=3,
-
-checkboxInput("useallclasses", "Use All Classes", value=TRUE),
-checkboxInput("useallsystems", "Use All Systems", value=TRUE),
-
-tags$hr(),
-
-uiOutput("outcomesui"),
-uiOutput("classesui"),
-uiOutput("systemsui")
-
-
-),
-
-mainPanel(
-tabsetPanel(
-tabPanel("Plot", plotOutput("bulkplot", width="1200px", height="800px")),
-tabPanel("Russia", dataTableOutput("russiaunits")),
-tabPanel("Ukraine", dataTableOutput("ukraineunits"))
-)
-)
-
-)
-)
+))
 )))

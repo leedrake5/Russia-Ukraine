@@ -176,13 +176,13 @@ shinyServer(function(input, output, session) {
     
     theData <- reactive({
         daily_frame <- as.data.frame(daily_frame)
-        daily_frame$Date <- as.Date(daily_frame$Date, format="%Y-%m-%d", origin="1970-01-01")
+        daily_frame$Date <- as.Date(daily_frame$Date, format="%m/%d/%Y", origin="1970-01-01")
         daily_frame
     })
     
     theFullData <- reactive({
         full_data <- as.data.frame(full_data)
-        full_data$Date <- as.Date(full_data$Date, format="%Y-%m-%d", origin="1970-01-01")
+        full_data$Date <- as.Date(full_data$Date, format="%m/%d/%Y", origin="1970-01-01")
         full_data
     })
     
@@ -200,11 +200,11 @@ shinyServer(function(input, output, session) {
     
     theClassesSelected <- reactive({
         
-        if(input$useallclasses==TRUE){
+        #if(input$useallclasses==TRUE){
             unique(daily_frame$class)
-        } else if(input$useallclasses==FALSE){
-            "Tanks"
-        }
+        #} else if(input$useallclasses==FALSE){
+            #"Tanks"
+        #}
         
         
     })
@@ -233,7 +233,7 @@ shinyServer(function(input, output, session) {
     
     theOutcomes <- reactive({
         
-        unique(daily_frame$status)
+        unique(daily_frame$status)[order(unique(daily_frame$status))]
         
     })
     
@@ -250,11 +250,429 @@ shinyServer(function(input, output, session) {
         
     })
     
-    output$classesui <- renderUI({
+    Classes <- reactive({
         
-        selectInput("classes", "Classes", choices=theClasses(), selected=theClassesSelected(), multiple=TRUE)
+        classes <- unique(theData()$class)
+        classes <- classes[!classes %in% c(NA, "NA", "Unknown", "Radars")]
+        
+        classes[order(classes)]
+        
         
     })
+    
+    output$classesui <- renderUI({
+        
+        selectInput("classes", "Equipment Types", choices=Classes(), selected=Classes(), multiple=TRUE)
+        
+    })
+    
+    tanksSelection <- reactive({
+        
+        if("Tanks" %in% input$classes){
+            unique(theData()[theData()$class %in% "Tanks", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$tanksui <- renderUI({
+        
+        selectInput("tanks", "Tanks", choices=unique(theData()[theData()$class %in% "Tanks", "system"]), selected=tanksSelection(), multiple=TRUE)
+        
+    })
+    
+    afvSelection <- reactive({
+        
+        if("Armoured Fighting Vehicles" %in% input$classes){
+            unique(theData()[theData()$class %in% "Armoured Fighting Vehicles", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$afvui <- renderUI({
+        
+        selectInput("afv", "Armoured Fighting Vehicles", choices=unique(theData()[theData()$class %in% "Armoured Fighting Vehicles", "system"]), selected=afvSelection(), multiple=TRUE)
+        
+    })
+    
+    apcSelection <- reactive({
+        
+        if("Armoured Personnel Carriers" %in% input$classes){
+            unique(theData()[theData()$class %in% "Armoured Personnel Carriers", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$apcui <- renderUI({
+        
+        selectInput("apc", "Armoured Personnel Carriers", choices=unique(theData()[theData()$class %in% "Armoured Personnel Carriers", "system"]), selected=apcSelection(), multiple=TRUE)
+        
+    })
+    
+    ifvSelection <- reactive({
+        
+        if("Infantry Fighting Vehicles" %in% input$classes){
+            unique(theData()[theData()$class %in% "Infantry Fighting Vehicles", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$ifvui <- renderUI({
+        
+        selectInput("ifv", "Infantry Fighting Vehicles", choices=unique(theData()[theData()$class %in% "Infantry Fighting Vehicles", "system"]), selected=ifvSelection(), multiple=TRUE)
+        
+    })
+    
+    imvSelection <- reactive({
+        
+        if("Infantry Mobility Vehicles" %in% input$classes){
+            unique(theData()[theData()$class %in% "Infantry Mobility Vehicles", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$imvui <- renderUI({
+        
+        selectInput("ifm", "Infantry Mobility Vehicles", choices=unique(theData()[theData()$class %in% "Infantry Mobility Vehicles", "system"]), selected=imvSelection(), multiple=TRUE)
+        
+    })
+    
+    spatmsSelection <- reactive({
+        
+        if("Self-Propelled Anti-Tank Missile Systems" %in% input$classes){
+            unique(theData()[theData()$class %in% "Self-Propelled Anti-Tank Missile Systems", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    
+    output$spatmsui <- renderUI({
+        
+        selectInput("spatms", "Self-Propelled Anti-Tank Missile Systems", choices=unique(theData()[theData()$class %in% "Self-Propelled Anti-Tank Missile Systems", "system"]), selected=spatmsSelection(), multiple=TRUE)
+        
+    })
+    
+    aircraftSelection <- reactive({
+        
+        if("Aircraft" %in% input$classes){
+            unique(theData()[theData()$class %in% "Aircraft", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$aircraftui <- renderUI({
+        
+        selectInput("aircraft", "Aircraft", choices=unique(theData()[theData()$class %in% "Aircraft", "system"]), selected=aircraftSelection(), multiple=TRUE)
+        
+    })
+    
+    helicoptersSelection <- reactive({
+        
+        if("Helicopters" %in% input$classes){
+            unique(theData()[theData()$class %in% "Helicopters", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$helicoptersui <- renderUI({
+        
+        selectInput("helicopters", "Helicopters", choices=unique(theData()[theData()$class %in% "Helicopters", "system"]), selected=helicoptersSelection(), multiple=TRUE)
+        
+    })
+    
+    aagSelection <- reactive({
+        
+        if("Anti-Aircraft Guns" %in% input$classes){
+            unique(theData()[theData()$class %in% "Anti-Aircraft Guns", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$aagui <- renderUI({
+        
+        selectInput("aag", "Anti-Aircraft Guns", choices=unique(theData()[theData()$class %in% "Anti-Aircraft Guns", "system"]), selected=aagSelection(), multiple=TRUE)
+        
+    })
+    
+    spaagSelection <- reactive({
+        
+        if("Self-Propelled Anti-Aircraft Guns" %in% input$classes){
+            unique(theData()[theData()$class %in% "Self-Propelled Anti-Aircraft Guns", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$spaagui <- renderUI({
+        
+        selectInput("spaag", "Self-Propelled Anti-Aircraft Guns", choices=unique(theData()[theData()$class %in% "Self-Propelled Anti-Aircraft Guns", "system"]), selected=spaagSelection(), multiple=TRUE)
+        
+    })
+    
+    stamsSelection <- reactive({
+        
+        if("Surface-To-Air Missile Systems" %in% input$classes){
+            unique(theData()[theData()$class %in% "Surface-To-Air Missile Systems", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$stamsui <- renderUI({
+        
+        selectInput("stams", "Surface-To-Air Missile Systems", choices=unique(theData()[theData()$class %in% "Surface-To-Air Missile Systems", "system"]), selected=stamsSelection(), multiple=TRUE)
+        
+    })
+    
+    uavSelection <- reactive({
+        
+        if("Unmanned Aerial Vehicles" %in% input$classes){
+            unique(theData()[theData()$class %in% "Unmanned Aerial Vehicles", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$uavui <- renderUI({
+        
+        selectInput("uav", "Unmanned Aerial Vehicles", choices=unique(theData()[theData()$class %in% "Unmanned Aerial Vehicles", "system"]), selected=unique(theData()[theData()$class %in% "Unmanned Aerial Vehicles", "system"]), multiple=TRUE)
+        
+    })
+    
+    ucavSelection <- reactive({
+        
+        if("Unmanned Combat Aerial Vehicles" %in% input$classes){
+            unique(theData()[theData()$class %in% "Unmanned Combat Aerial Vehicles", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$ucavui <- renderUI({
+        
+        selectInput("ucav", "Unmanned Combat Aerial Vehicles", choices=unique(theData()[theData()$class %in% "Unmanned Combat Aerial Vehicles", "system"]), selected=ucavSelection(), multiple=TRUE)
+        
+    })
+    
+    ruavSelection <- reactive({
+        
+        if("Reconnaissance Unmanned Aerial Vehicles" %in% input$classes){
+            unique(theData()[theData()$class %in% "Reconnaissance Unmanned Aerial Vehicles", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$ruavui <- renderUI({
+        
+        selectInput("ruav", "Reconnaissance Unmanned Aerial Vehicles", choices=unique(theData()[theData()$class %in% "Reconnaissance Unmanned Aerial Vehicles", "system"]), selected=ruavSelection(), multiple=TRUE)
+        
+    })
+    
+    jammersSelection <- reactive({
+        
+        if("Jammers And Deception Systems" %in% input$classes){
+            unique(theData()[theData()$class %in% "Jammers And Deception Systems", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$jammersui <- renderUI({
+        
+        selectInput("jammers", "Jammers And Deception Systems", choices=unique(theData()[theData()$class %in% "Jammers And Deception Systems", "system"]), selected=jammersSelection(), multiple=TRUE)
+        
+    })
+    
+    radarsSelection <- reactive({
+        
+        if("Radars And Communications Equipment" %in% input$classes){
+            unique(theData()[theData()$class %in% c("Radars", "Radars And Communications Equipment"), "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$radarsui <- renderUI({
+        
+        selectInput("radars", "Radars And Communications Equipment", choices=unique(theData()[theData()$class %in% c("Radars", "Radars And Communications Equipment"), "system"]), selected=radarsSelection(), multiple=TRUE)
+        
+    })
+    
+    taSelection <- reactive({
+        
+        if("Towed Artillery" %in% input$classes){
+            unique(theData()[theData()$class %in% "Towed Artillery", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    
+    output$taui <- renderUI({
+        
+        selectInput("ta", "Towed Artillery", choices=unique(theData()[theData()$class %in% "Towed Artillery", "system"]), selected=taSelection(), multiple=TRUE)
+        
+    })
+    
+    spaSelection <- reactive({
+        
+        if("Self-Propelled Artillery" %in% input$classes){
+            unique(theData()[theData()$class %in% "Self-Propelled Artillery", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$spaui <- renderUI({
+        
+        selectInput("spa", "Self-Propelled Artillery", choices=unique(theData()[theData()$class %in% "Self-Propelled Artillery", "system"]), selected=spaSelection(), multiple=TRUE)
+        
+    })
+    
+    asveSelection <- reactive({
+        
+        if("Artillery Support Vehicles And Equipment" %in% input$classes){
+            unique(theData()[theData()$class %in% "Artillery Support Vehicles And Equipment", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$asveui <- renderUI({
+        
+        selectInput("asve", "Artillery Support Vehicles And Equipment", choices=unique(theData()[theData()$class %in% "Artillery Support Vehicles And Equipment", "system"]), selected=asveSelection(), multiple=TRUE)
+        
+    })
+    
+    mrlSelection <- reactive({
+        
+        if("Multiple Rocket Launchers" %in% input$classes){
+            unique(theData()[theData()$class %in% "Multiple Rocket Launchers", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$mrlui <- renderUI({
+        
+        selectInput("mrl", "Multiple Rocket Launchers", choices=unique(theData()[theData()$class %in% "Multiple Rocket Launchers", "system"]), selected=mrlSelection(), multiple=TRUE)
+        
+    })
+    
+    cpcsSelection <- reactive({
+        
+        if("Command Posts And Communications Stations" %in% input$classes){
+            unique(theData()[theData()$class %in% "Command Posts And Communications Stations", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$cpcsui <- renderUI({
+        
+        selectInput("cpcs", "Command Posts And Communications Stations", choices=unique(theData()[theData()$class %in% "Command Posts And Communications Stations", "system"]), selected=cpcsSelection(), multiple=TRUE)
+        
+    })
+    
+    eveSelection <- reactive({
+        
+        if("Engineering Vehicles And Equipment" %in% input$classes){
+            unique(theData()[theData()$class %in% "Engineering Vehicles And Equipment", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    
+    output$eveui <- renderUI({
+        
+        selectInput("eve", "Engineering Vehicles And Equipment", choices=unique(theData()[theData()$class %in% "Engineering Vehicles And Equipment", "system"]), selected=eveSelection(), multiple=TRUE)
+        
+    })
+    
+    navySelection <- reactive({
+        
+        if("Naval Ships" %in% input$classes){
+            unique(theData()[theData()$class %in% "Naval Ships", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$navyui <- renderUI({
+        
+        selectInput("navy", "Naval Ships", choices=unique(theData()[theData()$class %in% "Naval Ships", "system"]), selected=navySelection(), multiple=TRUE)
+        
+    })
+    
+    trucksSelection <- reactive({
+        
+        if("Trucks, Vehicles and Jeeps" %in% input$classes){
+            unique(theData()[theData()$class %in% "Trucks, Vehicles and Jeeps", "system"])
+        } else {
+            NULL
+        }
+        
+    })
+    
+    output$trucksui <- renderUI({
+        
+        selectInput("trucks", "Trucks, Vehicles and Jeeps", choices=unique(theData()[theData()$class %in% "Trucks, Vehicles and Jeeps", "system"]), selected=trucksSelection(), multiple=TRUE)
+        
+    })
+    
+    
+    systemsToUse <- reactive({
+        
+        c(input$tanks, input$afv, input$apc, input$ifv, input$ifm, input$spatms, input$aircraft, input$helicopters, input$aag, input$spaag, input$stams, input$uav, input$ucav, input$ruav, input$jammers, input$radars, input$ta, input$spa, input$asve, input$mrl, input$cpcs, input$eve, input$navy, input$trucks)
+        
+    })
+    
+    outcomesToUse <- reactive({
+        
+        input$outcomes
+        
+    })
+    
+
+    
+    #output$classesui <- renderUI({
+        
+    #    selectInput("classes", "Classes", choices=theClasses(), selected=theClassesSelected(), multiple=TRUE)
+        
+    #})
     
     output$systemsui <- renderUI({
         
@@ -267,12 +685,13 @@ shinyServer(function(input, output, session) {
         
         the_data <- theData()
         the_data <- the_data[the_data$country %in% "Russia",]
-        the_outcomes <- input$outcomes
-        the_classes <- input$classes
-        the_systems <- input$systems
+        the_outcomes <- outcomesToUse()
+        the_systems <- systemsToUse()
         
         the_data_mod <- the_data[the_data$system %in% the_systems,]
-        
+        the_data_mod <- the_data[the_data$status %in% the_outcomes,]
+
+
         the_data_mod
         
     })
@@ -289,34 +708,27 @@ shinyServer(function(input, output, session) {
         
         the_data <- dataRawRussia()
         the_data <- the_data[the_data$country %in% "Russia",]
-        the_outcomes <- input$outcomes
-        the_classes <- input$classes
-        the_systems <- input$systems
+        the_outcomes <- outcomesToUse()
+        the_systems <- systemsToUse()
         
         the_data_mod <- the_data[the_data$system %in% the_systems,]
-        
+        the_data_mod <- the_data[the_data$status %in% the_outcomes,]
+
+
         the_data_mod
         
     })
     
     dataModRussia <- reactive({
         
-        the_outcomes <- input$outcomes
-        the_classes <- input$classes
-        the_systems <- input$sytems
+        the_outcomes <- outcomesToUse()
+        the_systems <- systemsToUse()
         
         the_data_mod <- dataFullRussia()
         the_data_mod <- the_data_mod[order(the_data_mod$Date), ]
         
         the_data_tidy <- date_crunch(the_data_mod)
         the_data_tidy <- the_data_tidy[order(the_data_tidy$Date), ]
-
-        if(length(the_outcomes) < 4){
-            
-            the_data_tidy <- the_data_tidy %>% dplyr::rowwise() %>%
-            dplyr::mutate(total = sum(dplyr::c_across(the_outcomes)))
-            
-        }
         the_data_tidy <- the_data_tidy[order(the_data_tidy$Date), ]
 
         #the_data_list <- split(the_data_tidy, f=the_data_tidy$class)
@@ -332,10 +744,19 @@ shinyServer(function(input, output, session) {
         
         #data_class_frame <- rbindlist(data_class_list, use.names=TRUE, fill=TRUE)
         
-        data_class_frame <-  the_data_tidy %>%
-        mutate(total_count = cumsum(total)) %>%
-        mutate(cum_rolling10 = rollapplyr(total, width = 10, FUN = sum, partial = TRUE)) %>%
-        drop_na(total_count)
+        #if(length(the_outcomes)==4){
+            data_class_frame <-  the_data_tidy %>%
+            mutate(total_count = cumsum(total)) %>%
+            mutate(cum_rolling10 = rollapplyr(total, width = 10, FUN = sum, partial = TRUE)) %>%
+            drop_na(total_count)
+        #} else if(length(the_outcomes) < 4){
+          #  data_class_frame <-  the_data_tidy %>%
+          #  dplyr::mutate(total = sum(dplyr::c_across(the_outcomes))) %>%
+          #  mutate(total_count = cumsum(total)) %>%
+          #  mutate(cum_rolling10 = rollapplyr(total, width = 10, FUN = sum, partial = TRUE)) %>%
+         #   drop_na(total_count)
+        #}
+        
         data_class_frame <- data_class_frame[order(data_class_frame$Date), ]
 
         data_class_frame
@@ -346,12 +767,13 @@ shinyServer(function(input, output, session) {
         
         the_data <- theData()
         the_data <- the_data[the_data$country %in% "Ukraine",]
-        the_outcomes <- input$outcomes
-        the_classes <- input$classes
-        the_systems <- input$systems
+        the_outcomes <- outcomesToUse()
+        the_systems <- systemsToUse()
 
         the_data_mod <- the_data[the_data$system %in% the_systems,]
-        
+        the_data_mod <- the_data[the_data$status %in% the_outcomes,]
+
+
         the_data_mod
         
     })
@@ -368,21 +790,21 @@ shinyServer(function(input, output, session) {
         
         the_data <- theFullData()
         the_data <- the_data[the_data$country %in% "Ukraine",]
-        the_outcomes <- input$outcomes
-        the_classes <- input$classes
-        the_systems <- input$systems
+        the_outcomes <- outcomesToUse()
+        the_systems <- systemsToUse()
 
         the_data_mod <- the_data[the_data$system %in% the_systems,]
-        
+        the_data_mod <- the_data[the_data$status %in% the_outcomes,]
+
+
         the_data_mod
         
     })
     
     dataModUkraine <- reactive({
         
-        the_outcomes <- input$outcomes
-        the_classes <- input$classes
-        the_systems <- input$sytems
+        the_outcomes <- outcomesToUse()
+        the_systems <- systemsToUse()
         
         the_data_mod <- dataRawUkraine()
         the_data_mod <- the_data_mod[order(the_data_mod$Date), ]
@@ -390,12 +812,7 @@ shinyServer(function(input, output, session) {
         the_data_tidy <- date_crunch(the_data_mod)
         the_data_tidy <- the_data_tidy[order(the_data_tidy$Date), ]
 
-        if(length(the_outcomes) < 4){
-            
-            the_data_tidy <- the_data_tidy %>% dplyr::rowwise() %>%
-            dplyr::mutate(total = sum(dplyr::c_across(the_outcomes)))
-            
-        }
+
         the_data_tidy <- the_data_tidy[order(the_data_tidy$Date), ]
 
         #the_data_list <- split(the_data_tidy, f=the_data_tidy$class)
@@ -411,10 +828,19 @@ shinyServer(function(input, output, session) {
         
         #data_class_frame <- rbindlist(data_class_list, use.names=TRUE, fill=TRUE)
         
-        data_class_frame <-  the_data_tidy %>%
-        mutate(total_count = cumsum(total)) %>%
-        mutate(cum_rolling10 = rollapplyr(total, width = 10, FUN = sum, partial = TRUE)) %>%
-        drop_na(total_count)
+        #if(length(the_outcomes)==4){
+            data_class_frame <-  the_data_tidy %>%
+            mutate(total_count = cumsum(total)) %>%
+            mutate(cum_rolling10 = rollapplyr(total, width = 10, FUN = sum, partial = TRUE)) %>%
+            drop_na(total_count)
+        #} else if(length(the_outcomes) < 4){
+          #  data_class_frame <-  the_data_tidy %>%
+          #  dplyr::mutate(total = sum(dplyr::c_across(the_outcomes))) %>%
+          #  mutate(total_count = cumsum(total)) %>%
+          #  mutate(cum_rolling10 = rollapplyr(total, width = 10, FUN = sum, partial = TRUE)) %>%
+         #   drop_na(total_count)
+        #}
+        
         data_class_frame <- data_class_frame[order(data_class_frame$Date), ]
 
         data_class_frame
@@ -434,6 +860,11 @@ shinyServer(function(input, output, session) {
         
     })
     
+    output$debug <- renderDataTable({
+        
+        dataMod()
+    })
+    
     bulkPlot <- reactive({
         
         data_class_frame <- dataMod()
@@ -444,6 +875,7 @@ shinyServer(function(input, output, session) {
         geom_point() +
         scale_x_date(date_labels = "%m/%d") +
         scale_y_continuous("Equipment Lost") +
+        scale_colour_manual(values = country_colors)  +
         theme_light()
         
     })

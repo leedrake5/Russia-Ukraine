@@ -17,25 +17,27 @@ library(parallel)
 shiny::devmode(TRUE)
 options(shiny.fullstacktrace=TRUE)
 
+country_colors <-   c("Russia" = "#E4181C", "Ukraine" = "#0057B8")
 
-full_data <- read.csv(paste0("data/bySystem/Raw/Full/", as.Date("2022-05-04"), ".csv"))
+full_data <- read.csv("data/2023-01-10.csv")
 
-dates = seq(as.Date("2022-02-24"), as.Date("2022-05-04"), by="days")
+dates = seq(as.Date("2022-02-24"), as.Date("2023-01-10"), by="days")
 
 
 daily_list <- list()
 
 for(i in dates){
     
-    daily_list[[as.Date(i, format="%Y-%m-%d", origin="1970-01-01")]] <- read.csv(paste0("data/bySystem/Raw/Daily/", as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), ".csv"))
+    daily_list[[as.character(as.Date(i, format="%Y-%m-%d", origin="1970-01-01"))]] <- read.csv(paste0("data/bySystem/Raw/Daily/", as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), ".csv"))
     
 }
 
 daily_frame <- rbindlist(daily_list, use.names=TRUE, fill=TRUE)
 
-daily_frame <- as.data.frame(merge(daily_frame, read.csv("data/classes.csv"), by="system", all=TRUE))
+daily_frame <- as.data.frame(merge(daily_frame, read.csv("data/classes.csv")[,-3], by="system", all=TRUE, fill=TRUE, allow.cartesian=TRUE))
 daily_frame <- daily_frame[,!colnames(daily_frame) %in% c("date_recorded", "X")]
 daily_frame <- daily_frame[!is.na(daily_frame$status),]
+daily_frame <- daily_frame[order(as.Date(daily_frame$Date, format="%m-%d-%Y")),]
 
 
 
@@ -96,7 +98,7 @@ date_crunch <- function(indsn){
 #' @description Gets data by system category.
 #'
 #' @return a tibble
-totals_by_type <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", date=NULL) {
+totals_by_type <- function(link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", date="01/10/2023") {
     
     if(is.null(date)){
         date <- format(Sys.Date(), "%m/%d/%Y")
