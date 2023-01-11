@@ -1,0 +1,52 @@
+,country,origin,system,status,url,sysID,imageID,statusID,matID,Date
+3,Russia,Soviet Union,T-72A,destroyed,https://i.postimg.cc/Fs5y8Zj7/43gd.png,2,3,3,7-233,03/10/2022
+4,Russia,Soviet Union,T-72A,captured,https://i.postimg.cc/Hk743jcQ/4311.jpg,2,4,2,7-242,03/10/2022
+5,Russia,Soviet Union,T-72A,captured,https://i.postimg.cc/tTk2850K/1d4.jpg,2,5,2,7-252,03/10/2022
+6,Russia,Soviet Union,T-72A,captured,https://i.postimg.cc/pLZK95pC/6652.jpg,2,6,2,7-262,03/10/2022
+33,Russia,Soviet Union,T-72B,captured,https://i.postimg.cc/h421Rsvr/4314.png,4,31,2,7-4312,03/10/2022
+34,Russia,Soviet Union,T-72B,captured,https://i.postimg.cc/mrk5cWy6/5700.png,4,32,2,7-4322,03/10/2022
+64,Russia,Russia,T-72B3 Obr. 2016,destroyed,https://i.postimg.cc/R0N4J5Np/546.jpg,7,62,3,7-7623,03/10/2022
+65,Russia,Russia,T-72B3 Obr. 2016,destroyed,https://i.postimg.cc/fRbh1njW/547.jpg,7,63,3,7-7633,03/10/2022
+139,Russia,Russia,T-80BVM,destroyed,https://i.postimg.cc/pdQwzGBj/7763.png,11,131,3,7-111313,03/10/2022
+140,Russia,Russia,T-80BVM,destroyed,https://i.postimg.cc/xdYHR8yF/f2h.png,11,132,3,7-111323,03/10/2022
+168,Russia,Russia,Unknown tank,destroyed,https://i.postimg.cc/Pq9dkXdz/d22.jpg,13,158,3,7-131583,03/10/2022
+196,Russia,Soviet Union,MT-LB,abandoned,https://i.postimg.cc/ZRgTChvT/f24.png,16,185,4,7-161854,03/10/2022
+228,Russia,Soviet Union,MT-LB,captured,https://i.postimg.cc/CxQFG5Cj/4369.png,16,217,2,7-162172,03/10/2022
+229,Russia,Soviet Union,MT-LB,captured,https://i.postimg.cc/d1sZW7M1/32g.jpg,16,218,2,7-162182,03/10/2022
+230,Russia,Soviet Union,MT-LB,captured,https://i.postimg.cc/GpjCvqdV/54h.png,16,219,2,7-162192,03/10/2022
+274,Russia,Russia,Unknown AFV,destroyed,https://i.postimg.cc/NMzzCDvd/4331.png,29,261,3,7-292613,03/10/2022
+304,Russia,Soviet Union,BMP-2,destroyed,https://i.postimg.cc/PfvwgJQJ/4f22.png,31,290,3,7-312903,03/10/2022
+305,Russia,Soviet Union,BMP-2,destroyed,https://i.postimg.cc/jSsg42Dg/213.png,31,291,3,7-312913,03/10/2022
+306,Russia,Soviet Union,BMP-2,destroyed,https://i.postimg.cc/JhDwp7rZ/n8.png,31,292,3,7-312923,03/10/2022
+340,Russia,Soviet Union,BMP-2,captured,https://i.postimg.cc/pVZrGVkh/Screenshot-9012.png,31,321,2,7-313212,03/10/2022
+360,Russia,Soviet Union,-BMD 2.00,destroyed,https://postimg.cc/9wdsG1Hh,34,340,3,7-343403,03/10/2022
+373,Russia,Soviet Union,-BMD 2.00,destroyed,https://i.postimg.cc/zXBnGNWH/54.jpg,34,352,3,7-343523,03/10/2022
+374,Russia,Soviet Union,-BMD 2.00,destroyed,https://i.postimg.cc/KYyhjSr2/36hj.png,34,353,3,7-343533,03/10/2022
+401,Russia,Soviet Union,-BMD 2.00,captured,https://i.postimg.cc/CxQFG5Cj/4369.png,34,217,2,7-342172,03/10/2022
+415,Russia,Russia,BTR-82A,destroyed,https://i.postimg.cc/MT1J21Pq/d21.jpg,36,391,3,7-363913,03/10/2022
+416,Russia,Russia,BTR-82A,destroyed,https://i.postimg.cc/Kzy5hDTG/4fs.png,36,392,3,7-363923,03/10/2022
+460,Russia,Soviet Union,BTR-80,captured,https://i.postimg.cc/qqpsFB3j/4313.png,37,432,2,7-374322,03/10/2022
+483,Russia,Soviet Union,BTR-D,captured,https://i.postimg.cc/VNsLBfRz/c2.png,38,453,2,7-384532,03/10/2022
+521,Russia,Russia,GAZ Tigr-M,captured,https://i.postimg.cc/9fgg8bGr/3f1.png,44,491,2,7-444912,03/10/2022
+546,Russia,Czech Republic,BREM-Ch ''BREM-4'' armoured recovery vehicle,captured,https://i.postimg.cc/q7tSgdkM/f32.jpg,57,515,2,7-575152,03/10/2022
+559,Russia,Soviet Union,TMM-3 bridge layer,captured,https://i.postimg.cc/y8cSr8c9/3321.png,60,527,2,7-605272,03/10/2022
+560,Russia,Soviet Union,TMM-3 bridge layer,captured,https://i.postimg.cc/bJJr8yDm/f6.png,60,528,2,7-605282,03/10/2022
+614,Russia,Soviet Union,152mm 2A65 Msta-B howitzer,abandoned,https://i.postimg.cc/13CTS2R9/431f.png,78,571,4,7-785714,03/10/2022
+629,Russia,Soviet Union,152mm 2S19 Msta-S,destroyed,https://i.postimg.cc/43R30CTS/350.png,82,585,3,7-825853,03/10/2022
+681,Russia,Russia,9A310M2 TELAR (for Buk-M2),destroyed,https://i.postimg.cc/Ssmvwcc0/4378.png,92,631,3,7-926313,03/10/2022
+683,Russia,Soviet Union,9A330 Tor TLAR (for 9K330 Tor-M),abandoned,https://i.postimg.cc/8PS5zQYB/4310.png,94,632,4,7-946324,03/10/2022
+686,Russia,Russia,9A331 TLAR (for 9K331 Tor-M1),abandoned,https://i.postimg.cc/Vsq8kSn5/4317.png,95,635,4,7-956354,03/10/2022
+687,Russia,Russia,9A331 TLAR (for 9K331 Tor-M1),destroyed,https://i.postimg.cc/Vsq8kSn5/4317.png,95,635,3,7-956353,03/10/2022
+688,Russia,Russia,9A331 TLAR (for 9K331 Tor-M1),captured,https://i.postimg.cc/kMY3gDcd/5425.png,95,636,2,7-956362,03/10/2022
+695,Russia,Russia,Pantsir-S1,captured,https://i.postimg.cc/5yy3byX2/43j.png,97,642,2,7-976422,03/10/2022
+702,Russia,Soviet Union,Su-25 close air support aircraft,destroyed,https://i.postimg.cc/zBCBJNs4/360.png,100,649,3,7-1006493,03/10/2022
+712,Russia,Russia,Eleron-3 reconnaissance UAV,captured,https://i.postimg.cc/hGsW7Rwk/36hp.png,106,659,2,7-1066592,03/10/2022
+722,Russia,Russia,Ka-52 'Alligator' attack helicopter,destroyed,https://ren.tv/news/v-rossii/949310-dva-cheloveka-pogibli-pri-krushenii-vertoleta-v-rostovskoi-oblasti,111,669,3,7-1116693,03/10/2022
+735,Russia,Soviet Union,9T217 transloader (for 9K33 Osa),destroyed,https://i.postimg.cc/bJq11m9D/4320.png,116,680,3,7-1166803,03/10/2022
+842,Russia,Russia,KamAZ 4x4,captured,https://i.postimg.cc/15s6XY76/Screenshot-9011.png,123,781,2,7-1237812,03/10/2022
+970,Russia,Soviet Union,UAZ-469,captured,https://i.postimg.cc/CxsxqBbv/c1.png,128,897,2,7-1288972,03/10/2022
+997,Russia,Russia,Unknown truck,captured,https://i.postimg.cc/VNsLBfRz/c2.png,131,453,2,7-1314532,03/10/2022
+1016,Ukraine,Soviet Union,T-64BV,destroyed,https://i.postimg.cc/8zC4rW64/321.png,1,939,3,380-19393,03/10/2022
+1065,Ukraine,Soviet Union,BRDM-2,captured,https://i.postimg.cc/Y0pYBKNR/325.png,133,984,2,380-1339842,03/10/2022
+1107,Ukraine,Ukraine,BTR-4,captured,https://i.postimg.cc/DzFNDmJb/j1.png,138,1023,2,380-13810232,03/10/2022
+1108,Ukraine,Ukraine,BTR-4,captured,https://i.postimg.cc/8zL3tL5S/j2.png,138,1024,2,380-13810242,03/10/2022

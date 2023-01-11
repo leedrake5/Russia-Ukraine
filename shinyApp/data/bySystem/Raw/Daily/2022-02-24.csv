@@ -1,0 +1,69 @@
+,country,origin,system,status,url,sysID,imageID,statusID,matID,Date
+1,Russia,Russia,T-80BVM,destroyed,https://i.postimg.cc/2y474krg/336.png,1,1,1,NA,02/24/2022
+2,Russia,Soviet Union,MT-LB,destroyed,https://i.postimg.cc/0QPGdgX4/6658.png,2,2,1,NA,02/24/2022
+3,Russia,Soviet Union,MT-LB,captured,https://i.postimg.cc/P5M1XV5z/58.png,2,3,2,NA,02/24/2022
+4,Russia,Soviet Union,MT-LB,captured,https://i.postimg.cc/hjqg1p15/680.png,2,4,2,NA,02/24/2022
+5,Russia,Soviet Union,MT-LB with ZU-23 AA gun,destroyed,https://postimg.cc/kVDPCNz0,3,5,1,NA,02/24/2022
+6,Russia,Soviet Union,9P149 Shturm-S ATGM carrier,destroyed,https://i.postimg.cc/DwY6rjLd/659.png,4,6,1,NA,02/24/2022
+7,Russia,Soviet Union,BMP-2,captured,https://i.postimg.cc/T1HJcX0f/776.png,5,7,2,NA,02/24/2022
+8,Russia,Russia,KamAZ-63968 Typhoon,captured,https://i.postimg.cc/D0LLthjn/663.png,6,8,2,NA,02/24/2022
+9,Russia,Russia,GAZ Tigr-M,destroyed,https://i.postimg.cc/W1VpzFcv/5578.png,7,9,1,NA,02/24/2022
+10,Russia,Russia,GAZ Tigr-M,damaged,https://i.postimg.cc/ZKDrDbck/85.png,7,10,3,NA,02/24/2022
+11,Russia,Soviet Union,IMR-2 combat engineering vehicle,destroyed,https://i.postimg.cc/xdbysNZ7/5548.png,8,11,1,NA,02/24/2022
+12,Russia,Soviet Union,TMM-3 bridge layer,captured,https://i.postimg.cc/FRhY7mzP/75.png,9,12,2,NA,02/24/2022
+13,Russia,Russia,KamAZ-5350 with EOV-3523 excavator,captured,https://i.postimg.cc/bvhJB8xz/774.png,10,13,2,NA,02/24/2022
+14,Russia,Russia,Tor-M2,destroyed,https://i.postimg.cc/5tS4wn32/578.png,11,14,1,NA,02/24/2022
+15,Russia,Soviet Union,Su-25 strike aircraft,destroyed,https://tass.ru/armiya-i-opk/13840645,12,15,1,NA,02/24/2022
+16,Russia,Soviet Union,An-26 transport aircraft,destroyed,https://i.postimg.cc/R0ppMFNQ/448.png,13,16,1,NA,02/24/2022
+17,Russia,Russia,Ka-52 'Alligator',destroyed,https://i.postimg.cc/PJGKCtCv/658.png,14,17,1,NA,02/24/2022
+18,Russia,Russia,Ka-52 'Alligator',damaged,https://i.postimg.cc/kXX8gFLx/769.png,14,18,3,NA,02/24/2022
+19,Russia,Soviet Union,GAZ-66,captured,https://i.postimg.cc/ncy3jWxy/55488.png,15,19,2,NA,02/24/2022
+20,Russia,Russia,Ural-4320,damaged,https://postimg.cc/kVDPCNz0,16,5,3,NA,02/24/2022
+21,Russia,Russia,Ural-4320,captured,https://i.postimg.cc/Z5GKzh1D/r1.png,16,20,2,NA,02/24/2022
+22,Russia,Russia,Ural-4320,captured,https://i.postimg.cc/pXL1Kn3v/5583.png,16,21,2,NA,02/24/2022
+23,Russia,Russia,KamAZ,destroyed,https://i.postimg.cc/K8dLcdtV/h0.png,17,22,1,NA,02/24/2022
+24,Russia,Russia,KamAZ,damaged,https://i.postimg.cc/kGnW3KWg/880.png,17,23,3,NA,02/24/2022
+25,Russia,Russia,KamAZ,captured,https://i.postimg.cc/YSQ2ps72/r2.png,17,24,2,NA,02/24/2022
+26,Russia,Russia,KamAZ,captured,https://i.postimg.cc/VkXF0qmD/6599.png,17,25,2,NA,02/24/2022
+27,Russia,Russia,KamAZ,captured,https://i.postimg.cc/Bbj44g2S/5580.png,17,26,2,NA,02/24/2022
+28,Ukraine,Soviet Union,T-64BV,destroyed,https://i.postimg.cc/mgntjg7P/763.png,18,27,1,NA,02/24/2022
+29,Ukraine,Soviet Union,BRM-1K,captured,https://i.postimg.cc/ZnMyg04W/6669.jpg,19,28,2,NA,02/24/2022
+30,Ukraine,Soviet Union,MT-LBu,damaged,https://i.postimg.cc/ZYHxJ6rp/Screenshot-8036.png,20,29,3,NA,02/24/2022
+31,Ukraine,Soviet Union,MT-LBu,abandoned,https://i.postimg.cc/ZYHxJ6rp/Screenshot-8036.png,20,29,4,NA,02/24/2022
+32,Ukraine,Soviet Union,BMP-1,destroyed,https://i.postimg.cc/7hc1JGgw/558.jpg,21,30,1,NA,02/24/2022
+33,Ukraine,Soviet Union,BMP-1,abandoned,https://i.postimg.cc/nzYYjDN8/Screenshot-8035.png,21,31,4,NA,02/24/2022
+34,Ukraine,Soviet Union,BMP-1,abandoned,https://i.postimg.cc/8cZRwV1t/Screenshot-8037.png,21,32,4,NA,02/24/2022
+35,Ukraine,Soviet Union,BMP-1,abandoned,https://i.postimg.cc/vTY7Wmd4/Screenshot-8038.png,21,33,4,NA,02/24/2022
+36,Ukraine,Ukraine,BTR-4,destroyed,https://i.postimg.cc/W42RL0Ld/5554.png,22,34,1,NA,02/24/2022
+37,Ukraine,Ukraine,BTR-4,destroyed,https://i.postimg.cc/bYFbd2PW/6658.png,22,35,1,NA,02/24/2022
+38,Ukraine,Ukraine,BTR-4,captured,https://i.postimg.cc/tCP3NpHR/c1.png,22,36,2,NA,02/24/2022
+39,Ukraine,Ukraine,BTR-4,captured,https://i.postimg.cc/htB9C6SL/c2.png,22,37,2,NA,02/24/2022
+40,Ukraine,Soviet Union,BTR-70,captured,https://i.postimg.cc/9FS2wLRZ/Screenshot-8016.png,23,38,2,NA,02/24/2022
+41,Ukraine,Soviet Union,BTR-70,abandoned,https://i.postimg.cc/RCWcTD3F/579.png,23,39,4,NA,02/24/2022
+42,Ukraine,Ukraine,Kozak-2,destroyed,https://i.postimg.cc/L6pqJk7y/58.png,24,40,1,NA,02/24/2022
+43,Ukraine,Soviet Union,122mm 2S1 Gvozdika,captured,https://i.postimg.cc/x1nDQ4cP/Screenshot-8055.png,25,41,2,NA,02/24/2022
+44,Ukraine,Soviet Union,122mm 2S1 Gvozdika,captured,https://postimg.cc/dh3pzgQm,25,42,2,NA,02/24/2022
+45,Ukraine,Soviet Union,5P85D (launcher for S-300PS),destroyed,https://i.postimg.cc/50rg9crH/4488.png,26,43,1,NA,02/24/2022
+46,Ukraine,Soviet Union,P-14 'Tall King',damaged,https://i.postimg.cc/rpWmrPLb/57.png,27,44,3,NA,02/24/2022
+47,Ukraine,Soviet Union,P-35/37 'Bar Lock',destroyed,https://i.postimg.cc/WpShQwBk/5547.png,28,45,1,NA,02/24/2022
+48,Ukraine,Soviet Union,PRV-13 'Odd Pair',destroyed,https://i.postimg.cc/pXwx79Lj/557.png,29,46,1,NA,02/24/2022
+49,Ukraine,Soviet Union,1L22 'Parol',destroyed,https://i.postimg.cc/SRjk0C96/6659.png,30,47,1,NA,02/24/2022
+50,Ukraine,Soviet Union,1L22 'Parol',damaged,https://postimg.cc/9Dcvz02c,30,48,3,NA,02/24/2022
+51,Ukraine,Soviet Union,Su-27 fighter aircraft,destroyed,https://i.postimg.cc/XYtMphyC/5h.png,31,49,1,NA,02/24/2022
+52,Ukraine,Soviet Union,An-26 transport aircraft,destroyed,https://i.postimg.cc/rmdB2PLQ/489.png,13,50,1,NA,02/24/2022
+53,Ukraine,Ukraine,KrAZ-260,destroyed,https://i.postimg.cc/0QMkBhwk/Screenshot-8021.png,32,51,1,NA,02/24/2022
+54,Ukraine,Ukraine,KrAZ-260,captured,https://postimg.cc/0zzW9YYS,32,52,2,NA,02/24/2022
+55,Ukraine,Ukraine,KrAZ-260,captured,https://postimg.cc/G9jSKh34,32,53,2,NA,02/24/2022
+56,Ukraine,Ukraine,KrAZ-260,captured,https://postimg.cc/v4CPT4hN,32,54,2,NA,02/24/2022
+57,Ukraine,Ukraine,KrAZ-260,captured,https://postimg.cc/dLpRmzC7,32,55,2,NA,02/24/2022
+58,Ukraine,Ukraine,KrAZ-260,captured,https://postimg.cc/jC9nGySm,32,56,2,NA,02/24/2022
+59,Ukraine,Soviet Union,ZiL-131,destroyed,https://i.postimg.cc/t4mkVgHr/36.png,33,57,1,NA,02/24/2022
+60,Ukraine,Soviet Union,Ural-375D,captured,https://i.postimg.cc/FKC8wRyc/Screenshot-8025.png,34,58,2,NA,02/24/2022
+61,Ukraine,Soviet Union,KamAZ,destroyed,https://i.postimg.cc/6pr9sdqZ/Screenshot-8019.png,17,59,1,NA,02/24/2022
+62,Ukraine,Soviet Union,GAZ-66,destroyed,https://postimg.cc/PP20VdH5,15,60,1,NA,02/24/2022
+63,Ukraine,Soviet Union,GAZ-66,captured,https://i.postimg.cc/9MGPZgQM/Screenshot-8017.png,15,61,2,NA,02/24/2022
+64,Ukraine,Soviet Union,GAZ-66,captured,https://i.postimg.cc/1RVZrFkD/Screenshot-8053.png,15,62,2,NA,02/24/2022
+65,Ukraine,Soviet Union,GAZ-66,captured,https://i.postimg.cc/jdz0Gbd5/Screenshot-8054.png,15,63,2,NA,02/24/2022
+66,Ukraine,Soviet Union,UAZ-469,captured,https://i.postimg.cc/tgpMs65F/Screenshot-8026.png,35,64,2,NA,02/24/2022
+67,Ukraine,Ukraine,Unknown truck,destroyed,https://i.postimg.cc/vBdfY7td/Screenshot-8019.png,36,65,1,NA,02/24/2022
+68,Ukraine,Ukraine,Unknown truck,destroyed,https://i.postimg.cc/jScSwHTb/Screenshot-8020.png,36,66,1,NA,02/24/2022
