@@ -260,9 +260,19 @@ shinyServer(function(input, output, session) {
         
     })
     
+    classesToUse <- reactive({
+        
+        if(input$dropall){
+            NULL
+        } else {
+            Classes()
+        }
+        
+    })
+    
     output$classesui <- renderUI({
         
-        selectInput("classes", "Equipment Types", choices=Classes(), selected=Classes(), multiple=TRUE)
+        selectInput("classes", "Equipment Types", choices=Classes(), selected=classesToUse(), multiple=TRUE)
         
     })
     
@@ -443,6 +453,7 @@ shinyServer(function(input, output, session) {
         
     })
     
+
     uavSelection <- reactive({
         
         if("Unmanned Aerial Vehicles" %in% input$classes){
@@ -455,7 +466,7 @@ shinyServer(function(input, output, session) {
     
     output$uavui <- renderUI({
         
-        selectInput("uav", "Unmanned Aerial Vehicles", choices=unique(theData()[theData()$class %in% "Unmanned Aerial Vehicles", "system"]), selected=unique(theData()[theData()$class %in% "Unmanned Aerial Vehicles", "system"]), multiple=TRUE)
+        selectInput("uav", "Unmanned Aerial Vehicles", choices=unique(theData()[theData()$class %in% "Unmanned Aerial Vehicles", "system"]), selected=uavSelection(), multiple=TRUE)
         
     })
     
@@ -689,7 +700,7 @@ shinyServer(function(input, output, session) {
         the_systems <- systemsToUse()
         
         the_data_mod <- the_data[the_data$system %in% the_systems,]
-        the_data_mod <- the_data[the_data$status %in% the_outcomes,]
+        the_data_mod <- the_data_mod[the_data_mod$status %in% the_outcomes,]
 
 
         the_data_mod
@@ -712,7 +723,7 @@ shinyServer(function(input, output, session) {
         the_systems <- systemsToUse()
         
         the_data_mod <- the_data[the_data$system %in% the_systems,]
-        the_data_mod <- the_data[the_data$status %in% the_outcomes,]
+        the_data_mod <- the_data_mod[the_data_mod$status %in% the_outcomes,]
 
 
         the_data_mod
@@ -771,7 +782,7 @@ shinyServer(function(input, output, session) {
         the_systems <- systemsToUse()
 
         the_data_mod <- the_data[the_data$system %in% the_systems,]
-        the_data_mod <- the_data[the_data$status %in% the_outcomes,]
+        the_data_mod <- the_data_mod[the_data_mod$status %in% the_outcomes,]
 
 
         the_data_mod
@@ -794,7 +805,7 @@ shinyServer(function(input, output, session) {
         the_systems <- systemsToUse()
 
         the_data_mod <- the_data[the_data$system %in% the_systems,]
-        the_data_mod <- the_data[the_data$status %in% the_outcomes,]
+        the_data_mod <- the_data_mod[the_data_mod$status %in% the_outcomes,]
 
 
         the_data_mod

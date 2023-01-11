@@ -13,6 +13,7 @@ sidebarPanel(width=3,
 
 #checkboxInput("useallclasses", "Use All Classes", value=TRUE),
 #checkboxInput("useallsystems", "Use All Systems", value=TRUE),
+checkboxInput("dropall", "Start From Scratch", value=FALSE),
 uiOutput("classesui"),
 
 tags$hr(),
