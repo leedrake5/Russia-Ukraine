@@ -20,7 +20,7 @@ Map data is provided using a google maps base layer with troop locations from [H
 
 ## Battle of Kyiv
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/battleofkyiv.gif?)
-The [Battle of Kyiv](https://en.wikipedia.org/wiki/Battle_of_Kyiv_(2022) concluded at the beginning of April 2022 in a Ukrainan victory. NASA FIRMS analysis indicates that the majority of detectible fire from fighting was in the last two weeks of the conflict (March 15th - April 1st).
+The [Battle of Kyiv](https://en.wikipedia.org/wiki/Battle_of_Kyiv_\(2022\)) concluded at the beginning of April 2022 in a Ukrainan victory. NASA FIRMS analysis indicates that the majority of detectible fire from fighting was in the last two weeks of the conflict (March 15th - April 1st).
 
 ## Donbas and Kharkiv
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/donbas_map.jpg?)
