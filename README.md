@@ -9,18 +9,18 @@ Data is pulled daily from Oryx's site using [Daniel Scarnecchia](https://github.
 
 Points (red = Russia, blue = Ukraine) represent cumulative losses for each day, bars represent daily losses. The line represents a general additive model smooth on cumulative losses to date; the shaded grey band represents the 95% confidence interval based on extant variation (e.g. point scatter). A wider grey band means more uncertainty, a narrower grey band means less uncertainty. 
 
-Please keep in mind that this is empirical, not interpretive, analysis. A concern raised about the available data is that it undercounts Ukrainian losses. This is possible not just because of bias (note pro-Russian sources are monitored as well) but because areas under Russian control are less likely to have photo documentation. Fog of war is very real. There is no attempt here to use a modifier to adjust numbers - analysis is strictly empirical. Any bias in the origional data will be reflected in the following analyses.
+Please keep in mind that this is empirical, not interpretive, analysis. A concern raised about the available data is that it undercounts Ukrainian losses. This is possible not just because of bias (note that pro-Russian sources are monitored as well) but because areas under Russian control are less likely to have photo documentation. Fog of war is very real. There is no attempt here to use a modifier to adjust numbers - analysis is strictly empirical. Any bias in the original data will be reflected in the following analyses.
 
 ## Total Equipment Losses
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_total.jpg?)
-Ukranian and Russian equipment losses started off equivalent, but Russians quickly began to lose more equipment by the third day of the war. 
+Ukranian and Russian equipment losses started of equivalent, but Russians quickly began to lose more equipment by the third day of the war. 
 
 ## Maps
-Map data is provided using a google maps base layer with troop locations from [Henry Schlottman](https://twitter.com/HN_Schlottman)'s [GitHub repo](https://github.com/simonhuwiler/uawardata). Fire data comes from [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov) VIIRS satellite.  
+Map data is provided using a Google maps base layer with troop locations from [Henry Schlottman](https://twitter.com/HN_Schlottman)'s [GitHub repo](https://github.com/simonhuwiler/uawardata). Fire data comes from [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov) VIIRS satellite.  
 
 ## Battle of Kyiv
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/battleofkyiv.gif?)
-The [Battle of Kyiv](https://en.wikipedia.org/wiki/Battle_of_Kyiv_\(2022\)) concluded at the beginning of April 2022 in a Ukrainan victory. NASA FIRMS analysis indicates that the majority of detectible fire from fighting was in the last two weeks of the conflict (March 15th - April 1st).
+The [Battle of Kyiv](https://en.wikipedia.org/wiki/Battle_of_Kyiv_\(2022\)) concluded at the beginning of April 2022 in a Ukrainian victory. NASA FIRMS analysis indicates that the majority of detectible fire from fighting was in the last two weeks of the conflict (March 15th - April 1st).
 
 ## Donbas and Kharkiv
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/donbas_map.jpg?)
@@ -53,7 +53,7 @@ Ukranians abandoned equipment more readily in the early days fo the war, but by 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_captured.jpg?)
 Russians have seen a much higher rate of equipment capture since the start of the war, with a sharp increase in the second week, though this has begun to taper by the start of the third week. 
 
-The degree to which Russians have lost more equipment (in every category type) is very striking. It is certainly possible this is a product of Ukranians focusing on documenting Russian losses, though this can't be a complete explanation. 
+The degree to which Russians have lost more equipment (in every category type) is very striking. It is partially a product of Ukrainians focusing on documenting Russian losses, though this can't be a complete explanation. 
 
 ## Equipment Net Changes
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_absolute_total.jpg?)
