@@ -45,7 +45,7 @@ Zaporizhzhia is a comparatively quiet region, but there are isolated artillery s
 This includes Kyiv and the Donbas. Summing megawatts of energy radiated from regions of Ukraine helps highlight the independent war record. The Battle of Kyiv is clearly visible, with detectable fires concentrated in the last two weeks (March 15th - April 1st). The Battle of Donbas, following a repositioning of Russian forces, shows a more brief but just as intense spike in radiation confined to the first two weeks of May, followed by continues IR emissions into the fall. These IR emissions drop off rapidly following the successful Ukrainian Kharkiv offensive in the region in early September 2022. 
 
 ## Southern FIRMS Summary
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/north_firms_summary_plot.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/south_firms_summary_plot.jpg?)
 This region includes Kherson, Zaporizhizhia, and Crimea. Maximum IR activity occured in late summer 2022, with epidosodic increases likely related to specific attacks. 
 
 
