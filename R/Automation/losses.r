@@ -999,15 +999,25 @@ colnames(firms)[1] <- "lat"
 colnames(firms)[2] <- "lon"
 firms$NASA <- "FIRMS"
 
-###Donbas
-donbass <- ggmap::get_map(location=c(lon=37.6, lat=49.5), source="google", maptype="roadmap", crop=FALSE, zoom=8)
+###Northern Donbass
+north_donbass <- ggmap::get_map(location=c(lon=37.6, lat=49.5), source="google", maptype="roadmap", crop=FALSE, zoom=8)
 
-donbas_map <- ggmap(donbass) +
+north_donbas_map <- ggmap(north_donbass) +
   #geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
   geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
-  ggtitle(paste0("Donbas and Kharkiv regions on ", Sys.Date())) + theme_light()
+  ggtitle(paste0("Luhansk and Kharkiv regions on ", Sys.Date())) + theme_light()
 
-ggsave("~/Github/Russia-Ukraine/Maps/donbas_map.jpg", donbas_map, device="jpg", width=6, height=5, dpi=600)
+ggsave("~/Github/Russia-Ukraine/Maps/north_donbas_map.jpg", north_donbas_map, device="jpg", width=6, height=5, dpi=600)
+
+###Southern Donbass
+south_donbass <- ggmap::get_map(location=c(lon=37.0, lat=48.1), source="google", maptype="roadmap", crop=FALSE, zoom=8)
+
+south_donbas_map <- ggmap(south_donbass) +
+#geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
+geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
+ggtitle(paste0("Donetsk and Zaporizhizhia regions on ", Sys.Date())) + theme_light()
+
+ggsave("~/Github/Russia-Ukraine/Maps/south_donbas_map.jpg", south_donbas_map, device="jpg", width=6, height=5, dpi=600)
 
 ###Kherson
 kherson <- ggmap::get_map(location=c(lon=32.4, lat=46.4), source="google", maptype="roadmap", crop=FALSE, zoom=8)
@@ -1051,19 +1061,62 @@ for(i in kyiv_dates){
 }
 kyiv_firms_summary <- as.data.frame(data.table::rbindlist(kyiv_means_firms))
 
-donbas_dates = seq(as.Date("2022-02-23"), Sys.Date(), by="days")
-donbas_firms <- new_firms_frame[new_firms_frame$latitude < 50 & new_firms_frame$latitude > 48.5 & new_firms_frame$longitude < 39 & new_firms_frame$longitude > 36,]
-donbas_date_firms <- list()
-donbas_means_firms <- list()
-for(i in donbas_dates){
-  donbas_date_firms[[i]] <- donbas_firms[as.Date(donbas_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
-  donbas_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(donbas_date_firms[[i]]$frp), Region="Donbas")
+north_donbas_dates = seq(as.Date("2022-02-23"), Sys.Date(), by="days")
+north_donbas_firms <- new_firms_frame[new_firms_frame$latitude < 50 & new_firms_frame$latitude > 48.5 & new_firms_frame$longitude < 39 & new_firms_frame$longitude > 36,]
+north_donbas_date_firms <- list()
+north_donbas_means_firms <- list()
+for(i in north_donbas_dates){
+  north_donbas_date_firms[[i]] <- north_donbas_firms[as.Date(north_donbas_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+  north_donbas_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(north_donbas_date_firms[[i]]$frp), Region="North Donbas")
 }
-donbas_firms_summary <- as.data.frame(data.table::rbindlist(donbas_means_firms))
+north_donbas_firms_summary <- as.data.frame(data.table::rbindlist(north_donbas_means_firms))
 
-firms_summary <- as.data.frame(data.table::rbindlist(list(kyiv_firms_summary, donbas_firms_summary)))
+south_donbas_dates = seq(as.Date("2022-02-23"), Sys.Date(), by="days")
+south_donbas_firms <- new_firms_frame[new_firms_frame$latitude < 48.5 & new_firms_frame$latitude > 46.5 & new_firms_frame$longitude < 39 & new_firms_frame$longitude > 36,]
+south_donbas_date_firms <- list()
+south_donbas_means_firms <- list()
+for(i in south_donbas_dates){
+  south_donbas_date_firms[[i]] <- south_donbas_firms[as.Date(south_donbas_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+  south_donbas_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(south_donbas_date_firms[[i]]$frp), Region="South Donbas")
+}
+south_donbas_firms_summary <- as.data.frame(data.table::rbindlist(south_donbas_means_firms))
 
-firms_summary_plot <- ggplot(firms_summary, aes(Date, FRP, colour=Region, lty=Region)) +
+zaporizhizhia_dates = seq(as.Date("2022-02-23"), Sys.Date(), by="days")
+zaporizhizhia_firms <- new_firms_frame[new_firms_frame$latitude < 47.3 & new_firms_frame$latitude > 46.0 & new_firms_frame$longitude < 37 & new_firms_frame$longitude > 34.2,]
+zaporizhizhia_date_firms <- list()
+zaporizhizhia_means_firms <- list()
+for(i in zaporizhizhia_dates){
+    zaporizhizhia_date_firms[[i]] <- zaporizhizhia_firms[as.Date(zaporizhizhia_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+    zaporizhizhia_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(zaporizhizhia_date_firms[[i]]$frp), Region="Zaporizhizhia")
+}
+zaporizhizhia_firms_summary <- as.data.frame(data.table::rbindlist(zaporizhizhia_means_firms))
+
+
+kherson_dates = seq(as.Date("2022-02-23"), Sys.Date(), by="days")
+kherson_firms <- new_firms_frame[new_firms_frame$latitude < 47.3 & new_firms_frame$latitude > 45.5 & new_firms_frame$longitude < 34.2 & new_firms_frame$longitude > 32.6,]
+kherson_date_firms <- list()
+kherson_means_firms <- list()
+for(i in kherson_dates){
+    kherson_date_firms[[i]] <- kherson_firms[as.Date(kherson_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+    kherson_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(kherson_date_firms[[i]]$frp), Region="Kherson")
+}
+kherson_firms_summary <- as.data.frame(data.table::rbindlist(kherson_means_firms))
+
+crimea_dates = seq(as.Date("2022-02-23"), Sys.Date(), by="days")
+crimea_firms <- new_firms_frame[new_firms_frame$latitude < 47.3 & new_firms_frame$latitude > 44.3 & new_firms_frame$longitude < 34.2 & new_firms_frame$longitude > 33.4,]
+crimea_date_firms <- list()
+crimea_means_firms <- list()
+for(i in crimea_dates){
+    crimea_date_firms[[i]] <- crimea_firms[as.Date(kherson_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+    crimea_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(crimea_date_firms[[i]]$frp), Region="Crimea")
+}
+crimea_firms_summary <- as.data.frame(data.table::rbindlist(crimea_means_firms))
+
+
+
+north_firms_summary <- as.data.frame(data.table::rbindlist(list(kyiv_firms_summary, north_donbas_firms_summary, south_donbas_firms_summary)))
+
+north_firms_summary_plot <- ggplot(north_firms_summary, aes(Date, FRP, colour=Region, lty=Region)) +
   geom_point() +
   geom_line() +
   #stat_smooth(method="gam") +
@@ -1072,4 +1125,18 @@ firms_summary_plot <- ggplot(firms_summary, aes(Date, FRP, colour=Region, lty=Re
   ggtitle("FIRMS VIIRS I-Band 375 m Active Fire") +
   theme_light()
 
-ggsave("~/Github/Russia-Ukraine/Plots/firms_summary_plot.jpg", firms_summary_plot, device="jpg", width=6, height=5, dpi=600)
+ggsave("~/Github/Russia-Ukraine/Plots/north_firms_summary_plot.jpg", north_firms_summary_plot, device="jpg", width=6, height=5, dpi=600)
+
+
+south_firms_summary <- as.data.frame(data.table::rbindlist(list(zaporizhizhia_firms_summary, kherson_firms_summary, crimea_firms_summary)))
+
+south_firms_summary_plot <- ggplot(south_firms_summary, aes(Date, FRP, colour=Region, lty=Region)) +
+  geom_point() +
+  geom_line() +
+  #stat_smooth(method="gam") +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous("Total Fire Radiative Power (MegaWatts)", breaks=scales::pretty_breaks(n=10), labels=scales::comma) +
+  ggtitle("FIRMS VIIRS I-Band 375 m Active Fire") +
+  theme_light()
+
+ggsave("~/Github/Russia-Ukraine/Plots/south_firms_summary_plot.jpg", south_firms_summary_plot, device="jpg", width=6, height=5, dpi=600)
