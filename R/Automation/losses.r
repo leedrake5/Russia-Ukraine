@@ -1,5 +1,4 @@
 tryCatch(detach("package:do", unload=TRUE), error=function(e) NULL)
-source("")
 
 get_os <- function(){
   sysinf <- Sys.info()
