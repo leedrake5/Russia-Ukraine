@@ -785,8 +785,8 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_tanks_baseline.jpg",
 percent_tanks <- equipment_losses  %>%
   dplyr::select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
   mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
-         RT = 2840 - Russia + Russia_Capture,
-         UT = 2100 - Ukraine + Ukraine_Capture,
+         RT = 2840 + Russia_Capture,
+         UT = 2100 + Ukraine_Capture,
          Russia =  Russia / RT,
          Ukraine = Ukraine / UT) %>%
   pivot_longer(cols = c("Russia", "Ukraine"),
