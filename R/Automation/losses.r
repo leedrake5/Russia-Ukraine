@@ -138,6 +138,24 @@ current_total <-
   scale_fill_manual(values = country_colors)
 ggsave("~/Github/Russia-Ukraine/Plots/current_total.jpg", current_total, device="jpg", width=6, height=5)
 
+####Totals Ratio
+total_ratio_frame <- data.frame(Date=equipment_losses$Date, Ratio=equipment_losses$Russia_Total/equipment_losses$Ukraine_Total)
+total_ratio_frame$Date <- as.Date(total_ratio_frame$Date, format="%m/%d/%Y")
+total_ratio_frame <- total_ratio_frame %>%
+  arrange(Date) %>%
+  mutate(Daily = Ratio - lag(Ratio, default = first(Ratio)))
+
+current_ratio <-
+  ggplot(total_ratio_frame, aes(Date, Ratio)) +
+  geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
+  geom_point(show.legend=FALSE, size=0.1) +
+  geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous("Total Equipment Loss Ratio") +
+  ggtitle(paste0("Total equipment loss ratio through ", Sys.Date())) +
+  theme_light() 
+ggsave("~/Github/Russia-Ukraine/Plots/current_ratio.jpg", current_ratio, device="jpg", width=6, height=5)
+
 ####Destroyed
 destroyed_melt <- melt(equipment_losses[,c("Date", "Russia_Destroyed", "Ukraine_Destroyed")], id.var="Date")
 destroyed_melt$Date <- as.Date(destroyed_melt$Date, format="%m/%d/%Y")

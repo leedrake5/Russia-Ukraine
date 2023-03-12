@@ -17,6 +17,9 @@ Lastly, if you would like to make edits to descriptions of these data feel free 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_total.jpg?)
 Ukranian and Russian equipment losses started of equivalent, but Russians quickly began to lose more equipment by the third day of the war. 
 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_ratio.jpg?)
+The evolving ratio of losses increased sharply to Ukraine's favor, though early swings are impacted by Oryx and his team keeping up with data. The ratio stabilized around ~3.5 for most of the first few months of fighting, and reached as high as 4:1 following the Kharkiv Offensive. After that ratios declined to ~3.12 by the start of 2023. 
+
 ## Maps
 Map data is provided using a Google maps base layer with troop locations from [Henry Schlottman](https://twitter.com/HN_Schlottman)'s [GitHub repo](https://github.com/simonhuwiler/uawardata). Fire data comes from [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov) VIIRS satellite.  
 
@@ -47,6 +50,8 @@ This includes Kyiv and the Donbas. Summing megawatts of energy radiated from reg
 ## Southern FIRMS Summary
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/south_firms_summary_plot.jpg?)
 This region includes Kherson, Zaporizhizhia, and Crimea. Maximum IR activity occured in late summer 2022, with epidosodic increases likely related to specific attacks. 
+
+An extended discussion of how to evaluate these analyses are [here](https://bleedrake.medium.com/what-does-satellite-infrared-data-tell-us-about-the-evolving-russian-strategy-in-its-ukraine-99672ae8e4cd). In general, the fire radiative power plots (FRP) are a useful guide to activity, with the lull in IR emissions in late 2022/early 2023 representing a change in how Russia used its artillery. 
 
 
 ## Destroyed Equipment
