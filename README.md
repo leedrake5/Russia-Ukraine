@@ -58,15 +58,32 @@ An extended discussion of how to evaluate these analyses are [here](https://blee
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_destroyed.jpg?)
 Destroyed Russian equipment outpaced destroyed Ukranian equipment by the second day of the war, though there are signs it is starting to taper. 
 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/destroyed_ratio.jpg?)
+The ratio of destroyed equipment was north of 4:1 until after the Kharkiv Offensive, after which it starts descending to its present value of ~3.1:1
+
 ## Abandoned Equipment
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_abandoned.jpg?)
 Ukranians abandoned equipment more readily in the early days fo the war, but by the third day this rate plateaued. Russian abandonments increased sharply on the third day, and began to taper at the end of the first week.
+
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/abandoned_ratio.jpg?)
+Russian equipment abandonment spiled to a ratio of 9:1 in summer of 2022 before lowering to near 5:1, where it has remained until spring of 2023. 
 
 ## Captured Equipment
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_captured.jpg?)
 Russians have seen a much higher rate of equipment capture since the start of the war, with a sharp increase in the second week, though this has begun to taper by the start of the third week. 
 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/captured_ratio.jpg?)
+Capture ratios are fairly stable at 2.5:1 untl the Kharkiv Offensive in early September 2022, after which they increase to almost 3.5:1. Since then, this metric has been trending downward in the range of ~3.1:1
+
+## Damaged Equipment
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_damaged.jpg?)
+Damaged equipment for Russia has been a more or less linear increase as the war has worn on. Ukraine initially had low visually confirmed damages until after its Kharkiv Offensive, after which it rise at a rate comparable to Russia's. 
+
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/damaged_ratio.jpg?)
+The damaged ratio is Ukraine's least favorable metric - damages fluctuated around 3:1 until after the Kharkiv Offensive, where it fell below 2:1.
+
 The degree to which Russians have lost more equipment (in every category type) is very striking. It is partially a product of Ukrainians focusing on documenting Russian losses, though this can't be a complete explanation. 
+
 
 ## Equipment Net Changes
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_absolute_total.jpg?)

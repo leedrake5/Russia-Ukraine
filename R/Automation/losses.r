@@ -151,9 +151,9 @@ current_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Total Equipment Loss Ratio") +
+  scale_y_continuous("Total Equipment Loss Ratio Ru:Ukr") +
   ggtitle(paste0("Total equipment loss ratio through ", Sys.Date())) +
-  theme_light() 
+  theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/current_ratio.jpg", current_ratio, device="jpg", width=6, height=5)
 
 ####Destroyed
@@ -179,6 +179,23 @@ current_destroyed <- ggplot(destroyed_melt, aes(Date, Destroyed, colour=Country)
   scale_fill_manual(values = country_colors)
 ggsave("~/Github/Russia-Ukraine/Plots/current_destroyed.jpg", current_destroyed, device="jpg", width=6, height=5)
 
+destroyed_ratio_frame <- data.frame(Date=equipment_losses$Date, Ratio=equipment_losses$Russia_Destroyed/equipment_losses$Ukraine_Destroyed)
+destroyed_ratio_frame$Date <- as.Date(destroyed_ratio_frame$Date, format="%m/%d/%Y")
+destroyed_ratio_frame <- destroyed_ratio_frame %>%
+  arrange(Date) %>%
+  mutate(Daily = Ratio - lag(Ratio, default = first(Ratio)))
+
+destroyed_ratio <-
+  ggplot(destroyed_ratio_frame, aes(Date, Ratio)) +
+  geom_col(data=destroyed_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
+  geom_point(show.legend=FALSE, size=0.1) +
+  geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous("Destroyed Equipment Loss Ratio Ru:Ukr") +
+  ggtitle(paste0("Destroyed equipment loss ratio through ", Sys.Date())) +
+  theme_light()
+ggsave("~/Github/Russia-Ukraine/Plots/destroyed_ratio.jpg", destroyed_ratio, device="jpg", width=6, height=5)
+
 ####Abandoned
 abandoned_melt <- melt(equipment_losses[,c("Date", "Russia_Abandoned", "Ukraine_Abandoned")], id.var="Date")
 abandoned_melt$Date <- as.Date(abandoned_melt$Date, format="%m/%d/%Y")
@@ -201,6 +218,24 @@ current_abandoned <- ggplot(abandoned_melt, aes(Date, Abandoned, colour=Country)
   scale_fill_manual(values = country_colors)
 ggsave("~/Github/Russia-Ukraine/Plots/current_abandoned.jpg", current_abandoned, device="jpg", width=6, height=5)
 
+abandoned_ratio_frame <- data.frame(Date=equipment_losses$Date, Ratio=equipment_losses$Russia_Abandoned/equipment_losses$Ukraine_Abandoned)
+abandoned_ratio_frame$Date <- as.Date(abandoned_ratio_frame$Date, format="%m/%d/%Y")
+abandoned_ratio_frame <- abandoned_ratio_frame %>%
+  arrange(Date) %>%
+  mutate(Daily = Ratio - lag(Ratio, default = first(Ratio)))
+
+abandoned_ratio <-
+  ggplot(abandoned_ratio_frame, aes(Date, Ratio)) +
+  geom_col(data=destroyed_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
+  geom_point(show.legend=FALSE, size=0.1) +
+  geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous("Abandoned Equipment Loss Ratio Ru:Ukr") +
+  ggtitle(paste0("Abandoned equipment loss ratio through ", Sys.Date())) +
+  theme_light()
+ggsave("~/Github/Russia-Ukraine/Plots/abandoned_ratio.jpg", abandoned_ratio, device="jpg", width=6, height=5)
+
+
 ####Captured
 captured_melt <- melt(equipment_losses[,c("Date", "Russia_Captured", "Ukraine_Captured")], id.var="Date")
 captured_melt$Date <- as.Date(captured_melt$Date, format="%m/%d/%Y")
@@ -222,6 +257,63 @@ current_captured <- ggplot(captured_melt, aes(Date, Captured, colour=Country)) +
   scale_colour_manual(values = country_colors)  + 
   scale_fill_manual(values = country_colors)
 ggsave("~/Github/Russia-Ukraine/Plots/current_captured.jpg", current_captured, device="jpg", width=6, height=5)
+
+captured_ratio_frame <- data.frame(Date=equipment_losses$Date, Ratio=equipment_losses$Russia_Captured/equipment_losses$Ukraine_Captured)
+captured_ratio_frame$Date <- as.Date(captured_ratio_frame$Date, format="%m/%d/%Y")
+captured_ratio_frame <- captured_ratio_frame %>%
+  arrange(Date) %>%
+  mutate(Daily = Ratio - lag(Ratio, default = first(Ratio)))
+
+captured_ratio <-
+  ggplot(captured_ratio_frame, aes(Date, Ratio)) +
+  geom_col(data=destroyed_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
+  geom_point(show.legend=FALSE, size=0.1) +
+  geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous("Captured Equipment Loss Ratio Ru:Ukr") +
+  ggtitle(paste0("Captured equipment loss ratio through ", Sys.Date())) +
+  theme_light()
+ggsave("~/Github/Russia-Ukraine/Plots/captured_ratio.jpg", captured_ratio, device="jpg", width=6, height=5)
+
+####Damaged
+damaged_melt <- melt(equipment_losses[,c("Date", "Russia_Damaged", "Ukraine_Damaged")], id.var="Date")
+damaged_melt$Date <- as.Date(damaged_melt$Date, format="%m/%d/%Y")
+colnames(damaged_melt) <- c("Date", "Country", "Damaged")
+damaged_melt$Country <- gsub("_Damaged", "", damaged_melt$Country)
+damaged_melt <- damaged_melt %>%
+  group_by(Country) %>%
+  arrange(Date) %>%
+  mutate(Daily = Damaged - lag(Damaged, default = first(Damaged)))
+
+current_damaged <- ggplot(damaged_melt, aes(Date, Damaged, colour=Country)) +
+  geom_col(data=damaged_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
+  geom_point(show.legend=FALSE, size=0.1) +
+  geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous("Total Equipment Damaged") +
+  ggtitle(paste0("Total equipment damaged through ", Sys.Date())) +
+  theme_light() +
+  scale_colour_manual(values = country_colors)  +
+  scale_fill_manual(values = country_colors)
+ggsave("~/Github/Russia-Ukraine/Plots/current_damaged.jpg", current_damaged, device="jpg", width=6, height=5)
+
+damaged_ratio_frame <- data.frame(Date=equipment_losses$Date, Ratio=equipment_losses$Russia_Damaged/equipment_losses$Ukraine_Damaged)
+damaged_ratio_frame$Date <- as.Date(damaged_ratio_frame$Date, format="%m/%d/%Y")
+damaged_ratio_frame <- damaged_ratio_frame %>%
+  arrange(Date) %>%
+  mutate(Daily = Ratio - lag(Ratio, default = first(Ratio)))
+
+damaged_ratio <-
+  ggplot(damaged_ratio_frame, aes(Date, Ratio)) +
+  geom_col(data=destroyed_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
+  geom_point(show.legend=FALSE, size=0.1) +
+  geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
+  scale_x_date(date_labels = "%m/%d") +
+  scale_y_continuous("Damaged Equipment Loss Ratio Ru:Ukr") +
+  ggtitle(paste0("Damaged equipment loss ratio through ", Sys.Date())) +
+  theme_light()
+ggsave("~/Github/Russia-Ukraine/Plots/damaged_ratio.jpg", damaged_ratio, device="jpg", width=6, height=5)
+
 
 
 ###All together now
