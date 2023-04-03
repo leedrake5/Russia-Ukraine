@@ -1,5 +1,5 @@
 ,country,equipment_type,destroyed,abandoned,captured,damaged,type_total,row_id,Date
-1,Russia,All Types,6712,384,2845,301,9943,1,2023-04-01
+1,Russia,All Types,6412,384,2845,301,9943,1,2023-04-01
 2,Russia,Tanks,1155,100,553,100,1908,2,2023-04-01
 3,Russia,Armoured Fighting Vehicles,516,28,264,13,821,3,2023-04-01
 4,Russia,Infantry Fighting Vehicles,1465,124,610,68,2267,4,2023-04-01
