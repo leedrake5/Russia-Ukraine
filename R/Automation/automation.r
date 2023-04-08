@@ -132,7 +132,7 @@ totals_by_type <- function(date=NULL) {
 
 totals_fold <- function(totals_df=NULL, russia_link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html", ukraine_link="https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html", date=NULL){
     if(is.null(totals_df)){
-      totals_df <- totals_by_type(russia_link=russia_link, ukraine_link=ukraine_link, date=date)
+      totals_df <- totals_by_type(date=date)
     }
     
     totals_df <- totals_df[complete.cases(totals_df),]
@@ -143,6 +143,7 @@ totals_fold <- function(totals_df=NULL, russia_link="https://www.oryxspioenkop.c
 
         totals_df$equipment_type[totals_df$equipment_type %in% "All Types"] <- "Total"
         totals_df$equipment_type <- gsub(" ", "_", totals_df$equipment_type)
+        totals_df$equipment_type[totals_df$equipment_type %in% "Trucks,_Vehicles,_and_Jeeps"] <- "Trucks,_Vehicles_and_Jeeps"
         totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Station"] <- "Communications_Stations"
         totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Vehicles"] <- "Communications_Stations"
         totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Stations"] <- "Command_Posts_And_Communications_Stations"
