@@ -24,22 +24,7 @@ full_data <- read.csv("data/2023-04-20.csv")
 dates = seq(as.Date("2022-02-24"), as.Date("2023-04-20"), by="days")
 
 
-daily_list <- list()
-
-for(i in dates){
-    
-    daily_list[[as.character(as.Date(i, format="%Y-%m-%d", origin="1970-01-01"))]] <- read.csv(paste0("data/bySystem/Raw/Daily/", as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), ".csv"))
-    
-}
-
-daily_frame <- rbindlist(daily_list, use.names=TRUE, fill=TRUE)
-
-daily_frame <- as.data.frame(merge(daily_frame, read.csv("data/classes.csv")[,-1], by="system", all=TRUE, fill=TRUE, allow.cartesian=TRUE))
-daily_frame <- daily_frame[,!colnames(daily_frame) %in% c("date_recorded", "X")]
-daily_frame <- daily_frame[!is.na(daily_frame$status),]
-daily_frame <- daily_frame[order(as.Date(daily_frame$Date, format="%m-%d-%Y")),]
-
-
+daily_frame <- read.csv("data/daily_frame.csv")
 
 total_by_system_wide <- function(indsn){
     tidy_frame <- indsn %>% dplyr::select(country, system, class, status, Date) %>%

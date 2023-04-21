@@ -188,7 +188,7 @@ shinyServer(function(input, output, session) {
     
     theCountries <- reactive({
         
-        unique(daily_frame$country)
+        unique(daily_frame$origin)
         
     })
     
@@ -249,6 +249,8 @@ shinyServer(function(input, output, session) {
         selectInput("outcomes", "Status", choices=theOutcomes(), selected=theOutcomes(), multiple=TRUE)
         
     })
+    
+
     
     Classes <- reactive({
         
@@ -677,6 +679,12 @@ shinyServer(function(input, output, session) {
         
     })
     
+    countriesToUse <- reactive({
+        
+        input$countries
+        
+    })
+    
 
     
     #output$classesui <- renderUI({
@@ -698,9 +706,11 @@ shinyServer(function(input, output, session) {
         the_data <- the_data[the_data$country %in% "Russia",]
         the_outcomes <- outcomesToUse()
         the_systems <- systemsToUse()
-        
+        the_countries <- countriesToUse()
+
         the_data_mod <- the_data[the_data$system %in% the_systems,]
         the_data_mod <- the_data_mod[the_data_mod$status %in% the_outcomes,]
+        the_data_mod <- the_data_mod[the_data_mod$origin %in% the_countries,]
 
 
         the_data_mod
@@ -721,9 +731,11 @@ shinyServer(function(input, output, session) {
         the_data <- the_data[the_data$country %in% "Russia",]
         the_outcomes <- outcomesToUse()
         the_systems <- systemsToUse()
+        the_countries <- countriesToUse()
         
         the_data_mod <- the_data[the_data$system %in% the_systems,]
         the_data_mod <- the_data_mod[the_data_mod$status %in% the_outcomes,]
+        the_data_mod <- the_data_mod[the_data_mod$origin %in% the_countries,]
 
 
         the_data_mod
@@ -734,7 +746,8 @@ shinyServer(function(input, output, session) {
         
         the_outcomes <- outcomesToUse()
         the_systems <- systemsToUse()
-        
+        the_countries <- countriesToUse()
+
         the_data_mod <- dataFullRussia()
         the_data_mod <- the_data_mod[order(the_data_mod$Date), ]
         
@@ -780,9 +793,11 @@ shinyServer(function(input, output, session) {
         the_data <- the_data[the_data$country %in% "Ukraine",]
         the_outcomes <- outcomesToUse()
         the_systems <- systemsToUse()
+        the_countries <- countriesToUse()
 
         the_data_mod <- the_data[the_data$system %in% the_systems,]
         the_data_mod <- the_data_mod[the_data_mod$status %in% the_outcomes,]
+        the_data_mod <- the_data_mod[the_data_mod$origin %in% the_countries,]
 
 
         the_data_mod
@@ -803,9 +818,11 @@ shinyServer(function(input, output, session) {
         the_data <- the_data[the_data$country %in% "Ukraine",]
         the_outcomes <- outcomesToUse()
         the_systems <- systemsToUse()
+        the_countries <- countriesToUse()
 
         the_data_mod <- the_data[the_data$system %in% the_systems,]
         the_data_mod <- the_data_mod[the_data_mod$status %in% the_outcomes,]
+        the_data_mod <- the_data_mod[the_data_mod$origin %in% the_countries,]
 
 
         the_data_mod
@@ -816,7 +833,8 @@ shinyServer(function(input, output, session) {
         
         the_outcomes <- outcomesToUse()
         the_systems <- systemsToUse()
-        
+        the_countries <- countriesToUse()
+
         the_data_mod <- dataRawUkraine()
         the_data_mod <- the_data_mod[order(the_data_mod$Date), ]
 

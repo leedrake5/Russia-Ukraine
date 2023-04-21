@@ -19,6 +19,7 @@ uiOutput("classesui"),
 tags$hr(),
 
 uiOutput("outcomesui"),
+uiOutput("countriesui"),
 uiOutput("tanksui"),
 uiOutput("afvui"),
 uiOutput("apcui"),
