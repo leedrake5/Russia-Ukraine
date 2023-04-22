@@ -885,6 +885,11 @@ shinyServer(function(input, output, session) {
         
         data_merged <- data_merged[order(data_merged$Date), ]
         
+        data_merged <- data_merged %>%
+          group_by(country) %>%
+          arrange(Date) %>%
+          mutate(Daily = total_count - lag(total_count, default = first(total_count)))
+        
         data_merged
         
     })
@@ -900,9 +905,10 @@ shinyServer(function(input, output, session) {
         
         
         ggplot(data_class_frame, aes(Date, total_count, colour=country, shape=country)) +
+        geom_col(data=data_class_frame, mapping=aes(Date, Daily, colour=country,  fill=country), alpha=0.8, position = position_dodge(0.7)) +
         stat_smooth(method="gam") +
         geom_point() +
-        scale_x_date(date_labels = "%m/%d") +
+        scale_x_date("", date_labels = "%m/%d") +
         scale_y_continuous("Equipment Lost") +
         scale_colour_manual(values = country_colors)  +
         theme_light()
@@ -914,8 +920,54 @@ shinyServer(function(input, output, session) {
         bulkPlot()
         
     })
-
     
+    ratioPlot <- reactive({
+        
+       russia_frame <- dataMod()[dataMod()$country %in% "Russia",c("Date", "total_count")]
+       colnames(russia_frame) <- c("Date", "Russia")
+       ukraine_frame <- dataMod()[dataMod()$country %in% "Ukraine",c("Date", "total_count")]
+       colnames(ukraine_frame) <- c("Date", "Ukraine")
+       total_ratio_frame <- merge(russia_frame, ukraine_frame, by="Date")
+       total_ratio_frame$Ratio <- total_ratio_frame$Russia/total_ratio_frame$Ukraine
+        
+
+        total_ratio_frame$Date <- as.Date(total_ratio_frame$Date, format="%m/%d/%Y")
+        total_ratio_frame <- total_ratio_frame %>%
+          arrange(Date) %>%
+          mutate(Daily = Ratio - lag(Ratio, default = first(Ratio)))
+
+        
+        
+        ggplot(total_ratio_frame, aes(Date, Ratio)) +
+        geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
+        geom_point(show.legend=FALSE, size=0.1) +
+        geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, aes(color="Ratio")) +
+        scale_x_date(date_labels = "%m/%d") +
+        scale_y_continuous("Ratio Ru:Ukr") +
+        scale_color_manual(values = NA) +
+        theme_light() +
+        theme( legend.title = element_blank())
+        
+        
+    })
+    
+    output$ratioplot <- renderPlot({
+        
+        ratioPlot()
+        
+    })
+    
+    comboPlot <- reactive({
+        
+        cowplot::plot_grid(bulkPlot(), ratioPlot(), rel_heights = c(2,1), ncol=1, align="hv")
+        
+    })
+
+    output$comboplot <- renderPlot({
+        
+        tryCatch(comboPlot(), error=function(e) NULL)
+        
+    })
     
     
     

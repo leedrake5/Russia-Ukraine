@@ -56,7 +56,8 @@ uiOutput("navyui"),
 mainPanel(
 tabsetPanel(
 #tabPanel("Debug", dataTableOutput("debug")),
-tabPanel("Plot", plotOutput("bulkplot", width="1200px", height="800px")),
+tabPanel("Plot",
+    plotOutput("comboplot", height=800)),
 tabPanel("Russia", dataTableOutput("russiaunits")),
 tabPanel("Ukraine", dataTableOutput("ukraineunits"))
 )

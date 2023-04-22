@@ -1,4 +1,4 @@
-list.of.packages <- c("shinythemes", "ggplot2", "scales", "data.table", "magrittr", "dplyr", "tidyr", "lubridate", "zoo", "DT", "R.utils", "pbapply", "parallel", "shinythemes")
+list.of.packages <- c("shinythemes", "ggplot2", "scales", "data.table", "magrittr", "dplyr", "tidyr", "lubridate", "zoo", "DT", "R.utils", "pbapply", "parallel", "shinythemes", "cowplot")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 #if(length(new.packages)) lapply(new.packages, function(x) install.packages(x, repos="http://cran.rstudio.com/", dep = TRUE, ask=FALSE, type="binary"))
 
@@ -16,6 +16,7 @@ library(pbapply)
 library(parallel)
 shiny::devmode(TRUE)
 options(shiny.fullstacktrace=TRUE)
+library(cowplot)
 
 country_colors <-   c("Russia" = "#E4181C", "Ukraine" = "#0057B8")
 
