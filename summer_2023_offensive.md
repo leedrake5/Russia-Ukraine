@@ -26,36 +26,6 @@ Lastly, if you would like to make edits to descriptions of these data feel free 
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_ratio.jpg?)
 
-## Maps
-Map data is provided using a Google maps base layer with troop locations from [Henry Schlottman](https://twitter.com/HN_Schlottman)'s [GitHub repo](https://github.com/simonhuwiler/uawardata). Fire data comes from [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov) VIIRS satellite.  
-
-## North Donbas and Kharkiv
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/north_donbas_map.jpg?)
-Russia has concentrated most of its combat forces in the Donbas attempting to breakthrough Ukranian lines established in 2014. FIRMS fire data indicates battles around Izyum, with some progress for Russia to the west. 
-
-## South Donbas and Zaporizhizhia
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/south_donbas_map.jpg?)
-Russia has been using light infantry attacks against Ukranian settlements such as Bahkmut, resulting in much lower IR emissions compared to earlier fighting. 
-
-## Kherson
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/kherson_map.jpg?)
-Kherson is an occupied city where the Russian advance was halted. FIRMS data does not indicate heavy combat in the area currently. 
-
-## Zaporizhzhia Oblast
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/zaporizhizhia_map.jpg?)
-Zaporizhzhia is a comparatively quiet region, but there are isolated artillery strikes around Russian BTGs and missile strikes in population centers. 
-
-## Northern FIRMS Summary
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//north_firms_summary_plot.jpg?)
-This includes Kyiv and the Donbas. Summing megawatts of energy radiated from regions of Ukraine helps highlight the independent war record. The Battle of Kyiv is clearly visible, with detectable fires concentrated in the last two weeks (March 15th - April 1st). The Battle of Donbas, following a repositioning of Russian forces, shows a more brief but just as intense spike in radiation confined to the first two weeks of May, followed by continues IR emissions into the fall. These IR emissions drop off rapidly following the successful Ukrainian Kharkiv offensive in the region in early September 2022. 
-
-## Southern FIRMS Summary
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//south_firms_summary_plot.jpg?)
-This region includes Kherson, Zaporizhizhia, and Crimea. Maximum IR activity occured in late summer 2022, with epidosodic increases likely related to specific attacks. 
-
-An extended discussion of how to evaluate these analyses are [here](https://bleedrake.medium.com/what-does-satellite-infrared-data-tell-us-about-the-evolving-russian-strategy-in-its-ukraine-99672ae8e4cd). In general, the fire radiative power Plots_2023-06-01/ (FRP) are a useful guide to activity, with the lull in IR emissions in late 2022/early 2023 representing a change in how Russia used its artillery. 
-
-
 ## Destroyed Equipment
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_destroyed.jpg?)
 
@@ -152,3 +122,33 @@ By grouping synthetic vehicles, we can see how different systems have been prior
 These ratio Plots_2023-06-01/ use Russian equipment losses as the numerator and Ukranian losses as the denominator. The higher the bar, the higher the proportion of Russian losses. 
 ## Unit Type
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_unit_type.jpg?)
+
+
+## Maps
+Map data is provided using a Google maps base layer with troop locations from [Henry Schlottman](https://twitter.com/HN_Schlottman)'s [GitHub repo](https://github.com/simonhuwiler/uawardata). Fire data comes from [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov) VIIRS satellite.  
+
+## North Donbas and Kharkiv
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/north_donbas_map.jpg?)
+Russia has concentrated most of its combat forces in the Donbas attempting to breakthrough Ukranian lines established in 2014. FIRMS fire data indicates battles around Izyum, with some progress for Russia to the west. 
+
+## South Donbas and Zaporizhizhia
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/south_donbas_map.jpg?)
+Russia has been using light infantry attacks against Ukranian settlements such as Bahkmut, resulting in much lower IR emissions compared to earlier fighting. 
+
+## Kherson
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/kherson_map.jpg?)
+Kherson is an occupied city where the Russian advance was halted. FIRMS data does not indicate heavy combat in the area currently. 
+
+## Zaporizhzhia Oblast
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/zaporizhizhia_map.jpg?)
+Zaporizhzhia is a comparatively quiet region, but there are isolated artillery strikes around Russian BTGs and missile strikes in population centers. 
+
+## Northern FIRMS Summary
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//north_firms_summary_plot.jpg?)
+This includes Kyiv and the Donbas. Summing megawatts of energy radiated from regions of Ukraine helps highlight the independent war record. The Battle of Kyiv is clearly visible, with detectable fires concentrated in the last two weeks (March 15th - April 1st). The Battle of Donbas, following a repositioning of Russian forces, shows a more brief but just as intense spike in radiation confined to the first two weeks of May, followed by continues IR emissions into the fall. These IR emissions drop off rapidly following the successful Ukrainian Kharkiv offensive in the region in early September 2022. 
+
+## Southern FIRMS Summary
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//south_firms_summary_plot.jpg?)
+This region includes Kherson, Zaporizhizhia, and Crimea. Maximum IR activity occured in late summer 2022, with epidosodic increases likely related to specific attacks. 
+
+An extended discussion of how to evaluate these analyses are [here](https://bleedrake.medium.com/what-does-satellite-infrared-data-tell-us-about-the-evolving-russian-strategy-in-its-ukraine-99672ae8e4cd). In general, the fire radiative power Plots_2023-06-01/ (FRP) are a useful guide to activity, with the lull in IR emissions in late 2022/early 2023 representing a change in how Russia used its artillery. 
