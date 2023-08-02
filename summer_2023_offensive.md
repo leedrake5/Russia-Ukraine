@@ -1,3 +1,9 @@
+---
+title: Summer 2023 Offensive
+layout: template
+filename: summer_2023_offensive.md
+--- 
+
 # Summer 2023 Counteroffensive
 The following plots are based on the main project file, though they start their indexing at June 1st to match the current offensive. 
 

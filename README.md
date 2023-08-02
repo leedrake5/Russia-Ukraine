@@ -11,7 +11,7 @@ Points (red = Russia, blue = Ukraine) represent cumulative losses for each day, 
 
 Please keep in mind that this is empirical, not interpretive, analysis. A concern raised about the available data is that it undercounts Ukrainian losses. This is possible not just because of bias (note that pro-Russian sources are monitored as well) but because areas under Russian control are less likely to have photo documentation. Fog of war is very real. There is no attempt here to use a modifier to adjust numbers - analysis is strictly empirical. Any bias in the original data will be reflected in the following analyses.
 
-Lastly, if you would like to make edits to descriptions of these data feel free to create a pull request or a new issue. If you are interested in the summer 2023 Ukrainian offensive, [please see here](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/summer_2023_offensive.md).
+Lastly, if you would like to make edits to descriptions of these data feel free to create a pull request or a new issue. If you are interested in the summer 2023 Ukrainian offensive, [please see here](summer_2023_offensive.md).
 
 ## Total Equipment Losses
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_total.jpg?)
