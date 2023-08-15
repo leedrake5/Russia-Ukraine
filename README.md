@@ -109,7 +109,8 @@ Refugees are primarily destined for Poland initially, though other nearby countr
 
 ## Tanks
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_tanks.jpg?)
-Tank losses were equivalent in the first four days of the war, with Russian tank loses increasing sharply thereafter, though a jump in Ukranian tank losses can be seen at the start of the second week of the war. 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/tank_ratio.jpg?)
+Tank losses were equivalent in the first four days of the war, with Russian tank loses increasing sharply thereafter, though a jump in Ukranian tank losses can be seen at the start of the second week of the war. Russian tank losses have remained above 3:1 since the start of the war. 
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_total_tanks.jpg?)
 This graph, however, highlights the challenges Ukraine still faces. When the sheer scale of [Russian tanks](https://inews.co.uk/news/world/russia-tanks-how-many-putin-armoured-forces-ukraine-nato-explained-1504470) are considered (13,300 vs. 2,100 for Ukraine), the steep Russian losses are not yet bringing parity. In general, Ukraine loses 1 tank for every 3 it takes from Russia. This ratio has to get to 4 or higher to be sustainable. Note that this estimate factors in verified tank captures by both Russia and Ukraine. 
@@ -125,7 +126,8 @@ If we consider estimates of [deployed Russian tanks](https://en.as.com/en/2022/0
 
 ## Armored Fighting Vehicles (AFV)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_afv.jpg?)
-Armored Fighting Vehicles also see parity in losses in the first 4 days of the war, though Russian losses increase less dramatically than is seen with tanks. Note that this estimate factors in verified AFV captures by both Russia and Ukraine. 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/afv_ratio.jpg?)
+Armored Fighting Vehicles also see parity in losses in the first 4 days of the war, though Russian losses increase less dramatically than is seen with tanks. Note that this estimate factors in verified AFV captures by both Russia and Ukraine. The ratio has remained 3:1 since the start of 2023.
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_afv.jpg?)
 When normalized to standing inventory, Russia's losses are a less significant fraction of their total inventory compared to Ukraine. This highlights the steep challenge Ukraine faces. In general, Ukraine loses 1 AFV for every 3 it takes from Russia. This ratio has to get to 4 or higher to be sustainable. 
@@ -135,49 +137,58 @@ If we consider estimates of [deployed Russian AFV](https://en.as.com/en/2022/02/
 
 ## Artillery
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_artillery.jpg?)
-The ratio of Russian to Ukrainian artillery losses is 3:1, though Russia's losses have plateaued since the first week of April. 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/artillery_ratio.jpg?)
+The ratio of Russian to Ukrainian artillery losses is less than 3:1 since the start of 2023.
 
 ## Infantry Fighting Vehicles (IFV)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_ifv.jpg?)
-Ukraine lost more Infantry Fighting Vehicles in the first two days of the war, with Russian losses accelerating linearly until the end of the second week. 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/ifv_ratio.jpg?)
+Ukraine lost more Infantry Fighting Vehicles in the first two days of the war, with Russian losses accelerating linearly until the end of the second week. The ratio has drifted down from 5:1 to 3:1 for the duration of the conflict. 
 
 ## Armored Personnel Carriers (APC)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_apc.jpg?)
-Ukraine lost more Armored Personnel Carriers in the first two days of the war, with Russian losses accelerating linearly until the end of the second week, though the differential is less dramatic than with AFVs.
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/apc_ratio.jpg?)
+Ukraine lost more Armored Personnel Carriers in the first two days of the war, with Russian losses accelerating linearly until the end of the second week, though the differential is less dramatic than with AFVs. The ratio has seen a secular decline since, and is approaching 1:1.
 
 ## Infantry Mobility Vehicles (IMV)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_imv.jpg?)
-Infantry Mobility Vehicle losses are more or less equivalent between Ukranian and Russian forces through the first two weeks of the war. 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/imv_ratio.jpg?)
+Infantry Mobility Vehicle losses are more or less equivalent between Ukranian and Russian forces through the first two weeks of the war. Ukraine has steadily lost more as the war has continued. 
 
 # Synthetic Equipment Losses
 "Synthetic" refers to a combination of vehicle types to form a theme - such as aircraft (fighters + helicopters + drones) or anti-aircraft (SAM + MANPADS), etc. 
 
 ## Aircraft
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_aircraft.jpg?)
-Ukraine has lost aircraft linearly, while Russia lost them almost exponentially in the first two weeks of the war, though there are signs this is tapering sharply. This calculation includes fighters, helicopters, and drones. 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/aircraft_ratio.jpg?)
+Ukraine has lost aircraft linearly, while Russia lost them almost exponentially in the first two weeks of the war, though this tapered sharply and recently passed below a 2:1 loss ratio. This calculation includes fighters, helicopters, and drones. 
 
 ## Anti-air
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_antiair.jpg?)
-Ukraine sustained higher rates of loss of anti-air systems through the first week of the war, though Russian losses have since outpaced them by the second week of the war. This calculation includes MANPADS, SAMs, self-propelled anti-aircraft guns, radar, and jamming systems. 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/antiair_ratio.jpg?)
+Ukraine sustained higher rates of loss of anti-air systems through the first week of the war, though Russian losses have since outpaced them by the second week of the war. Losses of these systems has been near 1:1 for most of the conflict. This calculation includes SAMs, self-propelled anti-aircraft guns, radar, and jamming systems. 
 
 ## Armor
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_armor.jpg?)
-Russian and Ukranian armor losses were equivalent in the first three days of the war, with Russian losses significantly outpacing Ukraine's since. This calculation includes both tanks and armored fighting vehicles.
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/armor_ratio.jpg?)
+Russian and Ukranian armor losses were equivalent in the first three days of the war, with Russian losses significantly outpacing Ukraine's since by more than a 3:1 ratio. This calculation includes both tanks and armored fighting vehicles.
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_percent_total_armor_baseline.jpg?)
 If we consider estimates of [deployed Russian armor](https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html) fixed to their total inventory, Ukraine is adding modestly to its armor inventory at the same rate which Russia is losing its Armor. 
 
 ## Infantry
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_infantry.jpg?)
-Infantry losses were higher among Ukranians at the start of the war, with Russian losses increasing sharply since then. Ukranian losses taper in the second week. This calculation includes infantry fighting vehicles, armored personnel carriers, and infantry mobility vehicles.
+Infantry losses were higher among Ukranians at the start of the war, with Russian losses increasing sharply early in the conflict. Ukranian losses taper in the second week. The secular trend has been downward, with the ratio approaching 2:1. This calculation includes infantry fighting vehicles, armored personnel carriers, and infantry mobility vehicles.
 
 ## Vehicles (standard transportation)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_vehicles.jpg?)
-Ukraine lost more vehicles on the first day, with Russian losses accelerating since then. This calculation includes all non-specialized vehicle types. 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/vehicle_ratio.jpg?)
+Ukraine lost more vehicles on the first day, with Russian losses accelerating early on. This calculation includes all non-specialized vehicle types. 
 
 ## Logistics Systems
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_logistics.jpg?)
-Ukraine has lost few logistics systems, while Russian losses increased linearly until the end of the second when they began to taper. This calculation includes engineering and communications vehicles.
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/logistics_ratio.jpg?)
+Ukraine has lost few logistics systems, while Russian losses increased linearly until the end of the second week when they began to taper. This ratio remains heavily assymetrical near 10:1. This calculation includes engineering and communications vehicles.
 
 #Analysis
 By grouping synthetic vehicles, we can see how different systems have been prioritized by Russia or Ukraine, providing a glimpse into strategy. 

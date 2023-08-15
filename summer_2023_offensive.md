@@ -62,6 +62,7 @@ This plot shows the ratios of losses (e.g. proportion of total) for Russia and U
 
 ## Tanks
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_tanks.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//tank_ratio.jpg?)
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_percent_total_tanks.jpg?)
 
@@ -73,6 +74,7 @@ This plot shows the ratios of losses (e.g. proportion of total) for Russia and U
 
 ## Armored Fighting Vehicles (AFV)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_afv.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//afv_ratio.jpg?)
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_percent_afv.jpg?)
 
@@ -81,38 +83,48 @@ If we consider estimates of [deployed Russian AFV](https://en.as.com/en/2022/02/
 
 ## Artillery
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_artillery.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//artillery_ratio.jpg?)
 
 ## Infantry Fighting Vehicles (IFV)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_ifv.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//ifv_ratio.jpg?)
 
 ## Armored Personnel Carriers (APC)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_apc.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//apc_ratio.jpg?)
 
 ## Infantry Mobility Vehicles (IMV)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_imv.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//imv_ratio.jpg?)
 
 # Synthetic Equipment Losses
 "Synthetic" refers to a combination of vehicle types to form a theme - such as aircraft (fighters + helicopters + drones) or anti-aircraft (SAM + MANPADS), etc. 
 
 ## Aircraft
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_aircraft.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//aircraft_ratio.jpg?)
 
 ## Anti-air
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_antiair.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//antiair_ratio.jpg?)
 
 ## Armor
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_armor.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//armor_ratio.jpg?)
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_percent_total_armor_baseline.jpg?)
 
 ## Infantry
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_infantry.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//infantry_ratio.jpg?)
 
 ## Vehicles (standard transportation)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_vehicles.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//vehicle_ratio.jpg?)
 
 ## Logistics Systems
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//current_logistics.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots_2023-06-01//logistics_ratio.jpg?)
 
 #Analysis
 By grouping synthetic vehicles, we can see how different systems have been prioritized by Russia or Ukraine, providing a glimpse into strategy. 
