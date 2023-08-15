@@ -556,6 +556,8 @@ current_artillery <- ggplot(artillery_melt, aes(Date, Artillery, colour=Country)
 ggsave("~/Github/Russia-Ukraine/Plots_2023-06-01/current_artillery.jpg", current_artillery, device="jpg", width=6, height=5)
 
 
+
+
 ####Infantry Fighting Vehicles (AFVs)
 ifv_melt <- melt(equipment_losses[,c("Date", "Russia_IFV", "Ukraine_IFV")], id.var="Date")
 ifv_melt$Date <- as.Date(ifv_melt$Date, format="%m/%d/%Y")
