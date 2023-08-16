@@ -18,11 +18,11 @@ Lastly, if you would like to make edits to descriptions of these data feel free 
 
 In addition to this main page, specific periods of the war have been isolated and treated seperatly, you can find them here: 
 
-1. [Russian Invasion](1_invasion_2022.md).
-2. [Russian Donbass Offensive](2_donbass_2022.md).
-3. [Ukrainian Kharkiv/Kherson Offensives](3_kharkiv_kherson_2022.md).
-4. [Russian Winter 2023 Offensive](4_winter_2023_offensive.md).
-5. [Ukrainian Summer 2023 Offensive (current)](5_summer_2023_offensive.md).
+1. [Russian Invasion](1_invasion_2022.md)
+2. [Russian Donbass Offensive](2_donbass_2022.md)
+3. [Ukrainian Kharkiv/Kherson Offensives](3_kharkiv_kherson_2022.md)
+4. [Russian Winter 2023 Offensive](4_winter_2023_offensive.md)
+5. [Ukrainian Summer 2023 Offensive (current)](5_summer_2023_offensive.md)
 
 ## Total Equipment Losses
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_total.jpg?)
