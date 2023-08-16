@@ -157,7 +157,7 @@ current_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Total Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Total Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Total equipment loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/current_ratio.jpg", current_ratio, device="jpg", width=6, height=5)
@@ -197,7 +197,7 @@ destroyed_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Destroyed Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Destroyed Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Destroyed equipment loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/destroyed_ratio.jpg", destroyed_ratio, device="jpg", width=6, height=5)
@@ -236,7 +236,7 @@ abandoned_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Abandoned Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Abandoned Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Abandoned equipment loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/abandoned_ratio.jpg", abandoned_ratio, device="jpg", width=6, height=5)
@@ -276,7 +276,7 @@ captured_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Captured Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Captured Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Captured equipment loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/captured_ratio.jpg", captured_ratio, device="jpg", width=6, height=5)
@@ -315,7 +315,7 @@ damaged_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Damaged Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Damaged Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Damaged equipment loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/damaged_ratio.jpg", damaged_ratio, device="jpg", width=6, height=5)
@@ -521,7 +521,7 @@ tank_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Tank Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Tank Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Tank loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/tank_ratio.jpg", tank_ratio, device="jpg", width=6, height=5)
@@ -561,7 +561,7 @@ afv_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("AFV Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("AFV Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("AFV loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/afv_ratio.jpg", afv_ratio, device="jpg", width=6, height=5)
@@ -603,7 +603,7 @@ artillery_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Artillery Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Artillery Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Artillery loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/artillery_ratio.jpg", artillery_ratio, device="jpg", width=6, height=5)
@@ -644,7 +644,7 @@ ifv_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("IFV Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("IFV Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("IFV loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/ifv_ratio.jpg", ifv_ratio, device="jpg", width=6, height=5)
@@ -724,7 +724,7 @@ imv_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("IMV Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("IMV Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("IMV loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/imv_ratio.jpg", imv_ratio, device="jpg", width=6, height=5)
@@ -765,7 +765,7 @@ ev_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Engineering Vehicle Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Engineering Vehicle Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Engineering vehicle loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/ev_ratio.jpg", ev_ratio, device="jpg", width=6, height=5)
@@ -806,7 +806,7 @@ vehicle_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Vehicle Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Vehicle Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Vehicle loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/vehicle_ratio.jpg", vehicle_ratio, device="jpg", width=6, height=5)
@@ -847,7 +847,7 @@ aircraft_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Aircraft Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Aircraft Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Aircraft loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/aircraft_ratio.jpg", aircraft_ratio, device="jpg", width=6, height=5)
@@ -887,7 +887,7 @@ antiair_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Anti-Air Systems Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Anti-Air Systems Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Anti-air system loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/antiair_ratio.jpg", antiair_ratio, device="jpg", width=6, height=5)
@@ -927,7 +927,7 @@ infantry_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Anti-Air Systems Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Anti-Air Systems Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Anti-air system loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/infantry_ratio.jpg", infantry_ratio, device="jpg", width=6, height=5)
@@ -967,7 +967,7 @@ armor_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Armor Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Armor Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Armor loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/armor_ratio.jpg", armor_ratio, device="jpg", width=6, height=5)
@@ -1007,7 +1007,7 @@ logistics_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%m/%d") +
-  scale_y_continuous("Logistics Systems Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Logistics Systems Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Logistics systems loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/logistics_ratio.jpg", logistics_ratio, device="jpg", width=6, height=5)
@@ -1044,7 +1044,7 @@ equipment_ratios_t <- data.frame(Type=gsub("Russia_", "", names(equipment_ratios
 
 loss_type <- ggplot(equipment_ratios_t[equipment_ratios_t$Type %in% c("Destroyed", "Abandoned", "Captured"),], aes(Type, Ratio, colour=Type, fill=Type)) +
   geom_col() +
-  scale_y_continuous("Ratio (Russian/Ukrainian Losses)", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Ratio (Russian/Ukrainian Losses)", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Loss ratios lost through ", Sys.Date())) +
   theme_light()
   #scale_fill_brewer(palette="Accent") +
@@ -1053,7 +1053,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/current_loss_type.jpg", loss_ty
 
 unit_type <- ggplot(equipment_ratios_t[equipment_ratios_t$Type %in% c("Aircraft", "Antiair", "Artillery", "Infantry", "Armor", "Vehicles", "Logistics"),], aes(Type, Ratio, colour=Type, fill=Type)) +
   geom_col() +
-  scale_y_continuous("Ratio (Russian/Ukrainian Losses)", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  scale_y_continuous("Ratio (Russian/Ukrainian Losses)", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Unit type ratios lost through ", Sys.Date())) +
   theme_light()
   #scale_fill_brewer(palette="Accent") +
