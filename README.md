@@ -1,4 +1,6 @@
 # Russia-Ukraine War
+
+##Methods
 Using data from [Oryx's site](https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html), I've put together a quick tracker to visualize equipment losses since [Russia's February 24th invasion of Ukraine](https://en.wikipedia.org/wiki/Russo-Ukrainian_War). This is only equipment that is independently verified, as noted by Oryx:
 
 > This list only includes destroyed vehicles and equipment of which photo or videographic evidence is available. Therefore, the amount of equipment destroyed is significantly higher than recorded here. Small arms, munitions, civilian vehicles, trailers and derelict equipment (including aircraft) are not included in this list. All possible effort has gone into discerning the status of equipment between captured or abandoned. Many of the entries listed as 'abandoned' will likely end up captured or destroyed. Similarly, some of the captured equipment might be destroyed if it can't be recovered. ATGMs and MANPADS are included in the list but not included in the ultimate count. The Soviet flag is used when the equipment in question was produced prior to 1991. 
@@ -11,7 +13,16 @@ Points (red = Russia, blue = Ukraine) represent cumulative losses for each day, 
 
 Please keep in mind that this is empirical, not interpretive, analysis. A concern raised about the available data is that it undercounts Ukrainian losses. This is possible not just because of bias (note that pro-Russian sources are monitored as well) but because areas under Russian control are less likely to have photo documentation. Fog of war is very real. There is no attempt here to use a modifier to adjust numbers - analysis is strictly empirical. Any bias in the original data will be reflected in the following analyses.
 
-Lastly, if you would like to make edits to descriptions of these data feel free to create a pull request or a new issue. If you are interested in the summer 2023 Ukrainian offensive, [please see here](summer_2023_offensive.md).
+Lastly, if you would like to make edits to descriptions of these data feel free to create a pull request or a new issue. 
+
+
+In addition to this main page, specific periods of the war have been isolated and treated seperatly, you can find them here: 
+
+1. [Russian Invasion](1_invasion_2022.md).
+2. [Russian Donbass Offensive](2_donbass_2022.md).
+3. [Ukrainian Kharkiv/Kherson Offensives](3_kharkiv_kherson_2022.md).
+4. [Russian Winter 2023 Offensive](4_winter_2023_offensive.md).
+5. [Ukrainian Summer 2023 Offensive (current)](5_summer_2023_offensive.md).
 
 ## Total Equipment Losses
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_total.jpg?)
@@ -188,7 +199,7 @@ Ukraine lost more vehicles on the first day, with Russian losses accelerating ea
 ## Logistics Systems
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_logistics.jpg?)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/logistics_ratio.jpg?)
-Ukraine has lost few logistics systems, while Russian losses increased linearly until the end of the second week when they began to taper. This ratio remains heavily assymetrical near 10:1. This calculation includes engineering and communications vehicles.
+Ukraine has lost few logistics systems, while Russian losses increased linearly until the end of the second week when they began to taper. This ratio remains heavily assymetrical at over 6:1. This calculation includes engineering and communications vehicles.
 
 #Analysis
 By grouping synthetic vehicles, we can see how different systems have been prioritized by Russia or Ukraine, providing a glimpse into strategy. 

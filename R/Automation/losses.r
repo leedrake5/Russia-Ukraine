@@ -1040,7 +1040,7 @@ equipment_ratios_t <- data.frame(Type=gsub("Russia_", "", names(equipment_ratios
 
 loss_type <- ggplot(equipment_ratios_t[equipment_ratios_t$Type %in% c("Destroyed", "Abandoned", "Captured"),], aes(Type, Ratio, colour=Type, fill=Type)) +
   geom_col() +
-  scale_y_continuous("Ratio (Russian/Ukrainian Losses)") +
+  scale_y_continuous("Ratio (Russian/Ukrainian Losses)", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Loss ratios lost through ", Sys.Date())) +
   theme_light()
   #scale_fill_brewer(palette="Accent") +
@@ -1049,7 +1049,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_loss_type.jpg", loss_type, device=
 
 unit_type <- ggplot(equipment_ratios_t[equipment_ratios_t$Type %in% c("Aircraft", "Antiair", "Artillery", "Infantry", "Armor", "Vehicles", "Logistics"),], aes(Type, Ratio, colour=Type, fill=Type)) +
   geom_col() +
-  scale_y_continuous("Ratio (Russian/Ukrainian Losses)") +
+  scale_y_continuous("Ratio (Russian/Ukrainian Losses)", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Unit type ratios lost through ", Sys.Date())) +
   theme_light()
   #scale_fill_brewer(palette="Accent") +
