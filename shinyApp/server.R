@@ -908,7 +908,7 @@ shinyServer(function(input, output, session) {
         geom_col(data=data_class_frame, mapping=aes(Date, Daily, colour=country,  fill=country), alpha=0.8, position = position_dodge(0.7)) +
         stat_smooth(method="gam") +
         geom_point() +
-        scale_x_date("", date_labels = "%m/%d") +
+        scale_x_date("", date_labels = "%Y/%m/%d") +
         scale_y_continuous("Equipment Lost") +
         scale_colour_manual(values = country_colors)  +
         theme_light()
@@ -942,7 +942,7 @@ shinyServer(function(input, output, session) {
         geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
         geom_point(show.legend=FALSE, size=0.1) +
         geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, aes(color="Ratio")) +
-        scale_x_date(date_labels = "%m/%d") +
+        scale_x_date(date_labels = "%Y/%m/%d") +
         scale_y_continuous("Ratio Ru:Ukr") +
         scale_color_manual(values = NA) +
         theme_light() +

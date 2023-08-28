@@ -1,0 +1,735 @@
+,country,system,abandoned,captured,damaged,destroyed,total,Date
+14,Russia,APA-80 engine starting vehicle,0,0,0,1,1,08/28/2023
+1,Russia,(Unknown) truck,2,11,6,133,152,08/28/2023
+214,Russia,(Unknown) vehicle,0,0,3,33,36,08/28/2023
+451,Ukraine,100mm BS-3 anti-tank gun,0,2,0,1,3,08/28/2023
+164,Russia,100mm MT-12 anti-tank gun,0,8,1,14,23,08/28/2023
+474,Ukraine,100mm MT-12 anti-tank gun,0,11,1,6,18,08/28/2023
+481,Ukraine,105mm L119 howitzer,0,0,2,0,2,08/28/2023
+89,Russia,120mm 2B16 Nona-K gun mortar,2,8,1,2,13,08/28/2023
+392,Ukraine,120mm 2B16 Nona-K gun mortar,0,0,0,1,1,08/28/2023
+197,Russia,120mm 2S23 Nona-SVK,0,3,0,1,4,08/28/2023
+92,Russia,120mm 2S34 Khosta,0,2,0,0,2,08/28/2023
+189,Russia,120mm 2S9 Nona,0,5,2,26,33,08/28/2023
+520,Ukraine,120mm 2S9 Nona,0,0,0,3,3,08/28/2023
+482,Ukraine,120mm Alakran mortar carrier,0,0,0,2,2,08/28/2023
+455,Ukraine,120mm Bars-8MMK,0,0,0,2,2,08/28/2023
+483,Ukraine,120mm BRM-1K with 2S9 Nona turret,0,0,0,2,2,08/28/2023
+454,Ukraine,120mm BTR-3M2,0,2,0,1,3,08/28/2023
+393,Ukraine,120mm self-propelled gun <U+041C>1064<U+0410>3,0,0,0,1,1,08/28/2023
+112,Russia,122mm 2B17 Tornado-G,0,8,3,8,19,08/28/2023
+173,Russia,122mm 2B26 Grad-K,0,0,1,2,3,08/28/2023
+236,Russia,122mm 2S1 Gvozdika,2,8,3,53,66,08/28/2023
+562,Ukraine,122mm 2S1 Gvozdika,0,12,11,47,70,08/28/2023
+222,Russia,122mm 9P138 Grad-1,0,1,2,4,7,08/28/2023
+394,Ukraine,122mm Bastion-1,0,0,0,1,1,08/28/2023
+107,Russia,122mm BM-21 Grad,3,32,13,87,135,08/28/2023
+456,Ukraine,122mm BM-21 Grad,0,5,8,23,36,08/28/2023
+230,Russia,122mm D-30 howitzer,2,16,5,29,52,08/28/2023
+564,Ukraine,122mm D-30 howitzer,0,2,4,4,10,08/28/2023
+521,Ukraine,122mm RM-70,0,0,1,2,3,08/28/2023
+395,Ukraine,130mm M-46 field gun,0,0,1,0,1,08/28/2023
+104,Russia,152mm 2A36 Giatsint-B field-gun,0,8,4,24,36,08/28/2023
+460,Ukraine,152mm 2A36 Giatsint-B field-gun,1,1,2,3,7,08/28/2023
+85,Russia,152mm 2A65 Msta-B howitzer,1,32,13,55,101,08/28/2023
+461,Ukraine,152mm 2A65 Msta-B howitzer,2,1,1,2,6,08/28/2023
+98,Russia,152mm 2S19 Msta-S,4,33,9,85,131,08/28/2023
+462,Ukraine,152mm 2S19 Msta-S,0,0,2,2,4,08/28/2023
+463,Ukraine,152mm 2S3 Akatsiya,0,4,7,23,34,08/28/2023
+105,Russia,152mm 2S3(M) Akatsiya,2,30,5,88,125,08/28/2023
+188,Russia,152mm 2S33 Msta-SM2,0,15,3,11,29,08/28/2023
+210,Russia,152mm 2S5 Giatsint-S,0,5,4,28,37,08/28/2023
+464,Ukraine,152mm 2S5 Giatsint-S,0,2,0,1,3,08/28/2023
+106,Russia,152mm D-20 gun-howitzer,0,2,4,12,18,08/28/2023
+465,Ukraine,152mm D-20 gun-howitzer,0,1,1,7,9,08/28/2023
+396,Ukraine,152mm ShKH vz. 77 DANA,0,0,1,0,1,08/28/2023
+466,Ukraine,155mm AHS Krab,0,0,3,18,21,08/28/2023
+484,Ukraine,155mm AS-90,0,0,0,2,2,08/28/2023
+540,Ukraine,155mm Caesar,0,0,2,2,4,08/28/2023
+467,Ukraine,155mm FH-70 howitzer,0,0,2,2,4,08/28/2023
+468,Ukraine,155mm M109A3/A4/A5//A6L,0,0,13,19,32,08/28/2023
+469,Ukraine,155mm M777A2 howitzer,0,0,30,33,63,08/28/2023
+397,Ukraine,155mm Panzerhaubitze 2000,0,0,1,0,1,08/28/2023
+398,Ukraine,155mm ShKH Zuzana 2,0,0,0,1,1,08/28/2023
+470,Ukraine,155mm TRF1 howitzer,0,0,0,1,1,08/28/2023
+399,Ukraine,1B44-1 (RPMK-1) radiosonde weather radar,0,0,0,1,1,08/28/2023
+2,Russia,1L119 Nebo-SVU VHF multi-functional radar,0,0,0,1,1,08/28/2023
+119,Russia,1L219 (for Zoopark counter-battery radar complex),0,0,1,1,2,08/28/2023
+477,Ukraine,"1L22 'Parol': (1, destroyed)",0,1,1,2,4,08/28/2023
+126,Russia,1L259 Zoopark-1,0,0,0,2,2,08/28/2023
+120,Russia,1L261 (for 1L260 Zoopark-1M counter-battery radar complex),0,2,2,5,9,08/28/2023
+121,Russia,1L262E Rtut-BM,0,0,0,1,1,08/28/2023
+122,Russia,1L271 Aistyonok portable mortar locating reconnaissance radar,0,1,0,2,3,08/28/2023
+3,Russia,1RL239 Ark-1(M) counter-battery radar,0,0,0,1,1,08/28/2023
+123,Russia,1RL257 Krasukha-4 (command post),0,1,0,0,1,08/28/2023
+4,Russia,1V1003 command and observation vehicle (for 1V198 artillery fire control system),0,1,0,0,1,08/28/2023
+5,Russia,1V110 BM-21 Grad battery command vehicle,0,1,0,1,2,08/28/2023
+124,Russia,1V119 artillery fire direction vehicle,0,8,0,2,10,08/28/2023
+485,Ukraine,1V13 battery command and forward observer vehicle,0,0,0,2,2,08/28/2023
+125,Russia,1V13(M) battery fire control center,3,12,1,8,24,08/28/2023
+116,Russia,1V14 battery command and forward observer vehicle,1,13,1,5,20,08/28/2023
+478,Ukraine,1V14 battery command and forward observer vehicle,0,1,0,5,6,08/28/2023
+479,Ukraine,1V15 battery command and forward observer vehicle,0,2,0,0,2,08/28/2023
+127,Russia,1V15M fire control and observation vehicle,0,0,0,2,2,08/28/2023
+6,Russia,1V16 battalion fire direction vehicle,0,1,0,0,1,08/28/2023
+400,Ukraine,1V16M artillery battalion command and staff vehicle,0,0,0,1,1,08/28/2023
+128,Russia,1V18 'Klyon-1' artillery command and forward observer vehicle,0,0,0,2,2,08/28/2023
+480,Ukraine,1V18 'Klyon-1' artillery command and forward observer vehicle,0,8,0,0,8,08/28/2023
+513,Ukraine,203mm 2S7 Pion,0,2,5,2,9,08/28/2023
+101,Russia,203mm 2S7(M) Malka,0,1,1,13,15,08/28/2023
+161,Russia,220mm BM-27 Uragan,0,8,1,45,54,08/28/2023
+515,Ukraine,220mm BM-27 Uragan,0,3,0,2,5,08/28/2023
+401,Ukraine,220mm Bureviy,0,0,0,1,1,08/28/2023
+162,Russia,220mm TOS-1A,0,3,3,3,9,08/28/2023
+402,Ukraine,23mm 23 ItK 61,0,1,0,0,1,08/28/2023
+516,Ukraine,23mm ZU-23,0,3,0,0,3,08/28/2023
+113,Russia,23mm ZU-23-2,0,14,1,3,18,08/28/2023
+165,Russia,240mm 2S4 Tyulpan,0,0,1,19,20,08/28/2023
+7,Russia,2F77M transloading vehicle for 2K22M Tunguska-M,0,1,1,0,2,08/28/2023
+403,Ukraine,2K22M Tunguska-M,0,1,0,0,1,08/28/2023
+97,Russia,2K22M1 Tunguska,3,1,2,8,14,08/28/2023
+172,Russia,2S1 with ZU-23 AA gun,0,1,0,0,1,08/28/2023
+8,Russia,300mm BM-30 Smerch,0,0,0,1,1,08/28/2023
+539,Ukraine,36D6 'Tin Shield',0,1,2,11,14,08/28/2023
+129,Russia,48Ya6-K1 Podlet-K1 low-altitude S-band surveillance radar,0,0,0,2,2,08/28/2023
+9,Russia,55K6A command post for S-400,0,0,0,1,1,08/28/2023
+404,Ukraine,5N63-1 'Flap Lid A' on 40V6M mast (for S-300PT),0,1,0,0,1,08/28/2023
+552,Ukraine,5N63S 'Flap Lid B' (for S-300PS),0,0,0,13,13,08/28/2023
+553,Ukraine,5N66M 'Clam Shell' on 40V6M mast (for S-300PT),1,1,0,1,3,08/28/2023
+554,Ukraine,5P851A (Launcher for S-300PT-1A),0,0,0,28,28,08/28/2023
+555,Ukraine,5P85D (launcher for S-300PS),0,1,0,1,2,08/28/2023
+556,Ukraine,5P85D/S (launcher for S-300PS),0,0,1,16,17,08/28/2023
+557,Ukraine,5P85S (launcher for S-300PS),0,1,1,9,11,08/28/2023
+174,Russia,5P85SD/SM (launcher for S-300 PMU(-1)),0,0,0,2,2,08/28/2023
+198,Russia,5P85SM2-01 (launcher for S-400),0,0,0,3,3,08/28/2023
+405,Ukraine,79K6 'Pelikan' 3D surveillance radar,0,0,0,1,1,08/28/2023
+406,Ukraine,80mm B-8 makeshift MRL,0,0,0,1,1,08/28/2023
+240,Russia,82mm 2B9 Vasilek automatic gun mortar,0,4,0,4,8,08/28/2023
+242,Russia,82mm 2B9 Vasilek MT-LB-based automatic gun mortar,0,0,0,1,1,08/28/2023
+10,Russia,92N6A multi-functional radar,0,0,0,1,1,08/28/2023
+566,Ukraine,9A310M1 TELAR (for Buk-M1),0,1,2,10,13,08/28/2023
+102,Russia,9A310M1-2 TELAR (for Buk-M1-2),0,0,3,12,15,08/28/2023
+251,Russia,9A316 TEL (for Buk-M2),0,3,0,1,4,08/28/2023
+252,Russia,9A317 TELAR (for Buk-M2),0,1,1,9,11,08/28/2023
+253,Russia,9A330 Tor TLAR (for 9K330 Tor),0,6,5,2,13,08/28/2023
+407,Ukraine,9A330 Tor TLAR (for 9K330 Tor),0,0,1,0,1,08/28/2023
+254,Russia,9A331 TLAR (for 9K331 Tor-M1),1,2,0,6,9,08/28/2023
+255,Russia,9A331M TLAR (for 9K332 Tor-M2),1,2,7,9,19,08/28/2023
+567,Ukraine,9A39M1 TEL (for Buk-M1),0,0,0,2,2,08/28/2023
+256,Russia,9A39M1-2 TEL (for Buk-M1-2),0,0,0,5,5,08/28/2023
+130,Russia,9A83M2 (launcher for S-300V4),0,0,0,2,2,08/28/2023
+11,Russia,9A84-2 (launcher for S-300V4),0,0,0,1,1,08/28/2023
+257,Russia,9K33 Osa,1,4,3,7,15,08/28/2023
+568,Ukraine,9K33 Osa,0,3,3,11,17,08/28/2023
+131,Russia,9K331MDT Tor-M2DT,0,0,0,2,2,08/28/2023
+258,Russia,9K35 Strela-10,2,4,2,20,28,08/28/2023
+569,Ukraine,9K35 Strela-10,1,0,3,17,21,08/28/2023
+259,Russia,9P148 Konkurs,0,1,1,2,4,08/28/2023
+570,Ukraine,9P148 Konkurs ATGM carrier,1,9,0,6,16,08/28/2023
+193,Russia,9P149 Shturm-S,3,18,1,12,34,08/28/2023
+571,Ukraine,9P149 Shturm-S ATGM carrier,0,2,1,1,4,08/28/2023
+260,Russia,9P163M-1 Kornet-T,0,0,0,2,2,08/28/2023
+12,Russia,9S18 'Tube Arm' radar variant for the Buk missile system,0,0,0,1,1,08/28/2023
+13,Russia,9S18 Kupol TUBE ARM search and acquisition radar (for Buk-M2),0,0,0,1,1,08/28/2023
+261,Russia,9S18<U+041C>1(-2) (for Buk-M2),0,1,0,0,1,08/28/2023
+262,Russia,9S18<U+041C>1(-3) (for Buk-M3),0,0,0,1,1,08/28/2023
+263,Russia,9S36 (for Buk-M2),0,1,0,2,3,08/28/2023
+264,Russia,9S470M1 (or variant thereof) command post (for Buk-M1/2),0,1,0,1,2,08/28/2023
+408,Ukraine,9S470M1 command vehicle for Buk-M1,0,0,0,1,1,08/28/2023
+265,Russia,"9S932-2 intelligence, control and command vehicle (for Barnaul-T)",0,1,0,0,1,08/28/2023
+266,Russia,9T217 transloader (for 9K33 Osa),0,2,0,2,4,08/28/2023
+572,Ukraine,9T217 transloader (for 9K33 Osa),0,0,0,4,4,08/28/2023
+267,Russia,9T244 transloader (for 9A330/1 Tor),0,2,2,3,7,08/28/2023
+211,Russia,9T452 transporter-loader (for BM-27 'Uragan' MRL),0,11,0,24,35,08/28/2023
+573,Ukraine,9T452 transporter-loader (for BM-27 'Uragan' MRL),0,0,0,2,2,08/28/2023
+574,Ukraine,A1-SM Fury,0,17,0,22,39,08/28/2023
+413,Ukraine,AeroVironment Quantix Recon UAV,0,1,0,0,1,08/28/2023
+582,Ukraine,AeroVironment RQ-20 Puma,0,3,1,3,7,08/28/2023
+583,Ukraine,Airbus H225 transport helicopter,0,0,0,1,1,08/28/2023
+409,Ukraine,AK-04-9A 'Porosha' airfield air conditioner based on KamAZ-5320,0,0,0,1,1,08/28/2023
+584,Ukraine,Alvis 4 'Mamba',0,1,1,2,4,08/28/2023
+231,Russia,AMN-590951,1,3,1,3,8,08/28/2023
+575,Ukraine,AMX-10 RC(R),1,1,0,1,3,08/28/2023
+576,Ukraine,AMZ Dzik-2,0,1,1,0,2,08/28/2023
+269,Russia,An-26 transport aircraft,0,0,0,1,1,08/28/2023
+585,Ukraine,An-26 transport aircraft,0,0,0,2,2,08/28/2023
+410,Ukraine,AN-MPQ-64 Sentinel,0,0,0,1,1,08/28/2023
+577,Ukraine,AN/TPQ-36 weapons location radar,0,0,1,2,3,08/28/2023
+578,Ukraine,AN/TPQ-37 weapons location radar,0,0,0,2,2,08/28/2023
+579,Ukraine,AN/TPQ-49 lightweight counter mortar radar,0,1,0,0,1,08/28/2023
+522,Ukraine,AN/TPQ-50 counterbattery radar,0,0,0,3,3,08/28/2023
+268,Russia,APE-5 command post,0,0,0,5,5,08/28/2023
+586,Ukraine,Armed pickup truck,0,0,0,3,3,08/28/2023
+587,Ukraine,Armed tactical buggy,0,0,0,1,1,08/28/2023
+588,Ukraine,Armoured Volkswagen Amarok pickup truck,0,1,1,0,2,08/28/2023
+175,Russia,ARS-14 decontamination and degassing vehicle,0,2,0,1,3,08/28/2023
+523,Ukraine,ARS-14 decontamination and degassing vehicle,0,3,0,0,3,08/28/2023
+411,Ukraine,ARTHUR counter-battery radar,0,0,0,1,1,08/28/2023
+580,Ukraine,ASU-1 Valkyrja,0,2,0,22,24,08/28/2023
+457,Ukraine,AT105A Saxon,0,9,0,5,14,08/28/2023
+581,Ukraine,ATF Dingo,1,0,2,4,7,08/28/2023
+412,Ukraine,ATs-10-260 Fuel Tanker,0,0,0,1,1,08/28/2023
+176,Russia,Auriga-1.2V portable satellite communications station,0,1,0,2,3,08/28/2023
+414,Ukraine,Avenger UCAV,0,0,0,1,1,08/28/2023
+286,Russia,Barnaul-T 9<U+0421>932-1 automated system for air defence units,0,4,0,2,6,08/28/2023
+270,Russia,BAT-2 heavy engineering vehicle,0,3,1,3,7,08/28/2023
+589,Ukraine,BAT-2 heavy engineering vehicle,0,2,1,1,4,08/28/2023
+487,Ukraine,Bayraktar Mini,0,1,0,1,2,08/28/2023
+614,Ukraine,Bayraktar TB2 UCAV,0,0,0,21,21,08/28/2023
+417,Ukraine,Bergepanzer 2 ARV,0,0,1,0,1,08/28/2023
+590,Ukraine,BMC Kirpi,4,2,6,14,26,08/28/2023
+90,Russia,BMD-1KSh-A command vehicle,0,4,0,8,12,08/28/2023
+272,Russia,BMD-4M,1,12,6,62,81,08/28/2023
+273,Russia,BMK-130M/BMK-150 towing and motor boat,0,1,0,0,1,08/28/2023
+274,Russia,BMK-460 towing and motor boat,6,0,0,2,8,08/28/2023
+592,Ukraine,BMK-460 towing and motor boat,0,0,1,0,1,08/28/2023
+177,Russia,BMK-MO towing and motor boat,0,2,2,0,4,08/28/2023
+132,Russia,BMK-MT towing and motor boat,0,0,0,2,2,08/28/2023
+593,Ukraine,BMM-4C Ambulance,0,2,0,1,3,08/28/2023
+594,Ukraine,BMM-70 Ambulance,0,0,0,2,2,08/28/2023
+133,Russia,BMM-80 ambulance,0,0,0,2,2,08/28/2023
+199,Russia,BMO-T,0,1,0,3,4,08/28/2023
+213,Russia,BMP-1(P),31,92,46,291,460,08/28/2023
+595,Ukraine,BMP-1(P),22,47,15,221,305,08/28/2023
+275,Russia,BMP-1AM,5,8,9,16,38,08/28/2023
+81,Russia,BMP-1KSh command and staff vehicle,0,3,0,7,10,08/28/2023
+596,Ukraine,BMP-1KSh command and staff vehicle,0,0,0,2,2,08/28/2023
+597,Ukraine,BMP-1TS,0,0,0,1,1,08/28/2023
+598,Ukraine,BMP-1U 'Shkval',0,1,0,0,1,08/28/2023
+276,Russia,BMP-2 675-sb3KDZ,0,2,1,5,8,08/28/2023
+249,Russia,BMP-2(K),53,224,66,564,907,08/28/2023
+471,Ukraine,BMP-2(K),9,23,8,114,154,08/28/2023
+117,Russia,BMP-2M Berezhok,0,7,2,10,19,08/28/2023
+277,Russia,BMP-3,15,60,36,171,282,08/28/2023
+278,Russia,BMP-3 688M sb. 3KDZ,3,1,6,10,20,08/28/2023
+134,Russia,BMPT Terminator,0,0,1,1,2,08/28/2023
+415,Ukraine,BMR-2 mine-clearing tank,1,0,0,0,1,08/28/2023
+488,Ukraine,Boeing Insitu ScanEagle 2,0,1,0,1,2,08/28/2023
+615,Ukraine,Bogdan-2251 ambulance pickup truck,0,4,0,11,15,08/28/2023
+616,Ukraine,Bogdan-5316,0,0,1,7,8,08/28/2023
+617,Ukraine,Bogdan-63172,2,2,2,22,28,08/28/2023
+618,Ukraine,Bogdan-63172 'Kozak',0,1,0,2,3,08/28/2023
+200,Russia,BPM-97 Vystrel,0,3,0,1,4,08/28/2023
+201,Russia,BRDM-2,0,1,0,3,4,08/28/2023
+599,Ukraine,BRDM-2,0,22,0,37,59,08/28/2023
+135,Russia,BRDM-2-based ZS-82 PsyOps vehicle,0,1,0,1,2,08/28/2023
+600,Ukraine,BRDM-2L1,0,17,1,24,42,08/28/2023
+136,Russia,BRDM-2RKhb chemical reconnaissance vehicle,0,2,0,0,2,08/28/2023
+601,Ukraine,BRDM-2RKhb chemical reconnaissance vehicle,0,2,0,6,8,08/28/2023
+194,Russia,BREM-1 armoured recovery vehicle,5,16,1,15,37,08/28/2023
+602,Ukraine,BREM-1 armoured recovery vehicle,0,1,1,4,6,08/28/2023
+279,Russia,BREM-2 armoured recovery vehicle,0,1,0,0,1,08/28/2023
+280,Russia,BREM-Ch ''BREM-4'' armoured recovery vehicle,1,1,0,2,4,08/28/2023
+486,Ukraine,BREM-Ch ''BREM-4'' armoured recovery vehicle,0,0,0,2,2,08/28/2023
+178,Russia,BREM-D armoured recovery vehicle,0,2,0,1,3,08/28/2023
+281,Russia,BREM-K armoured recovery vehicle,0,3,0,0,3,08/28/2023
+15,Russia,BREM-L armoured recovery vehicle,0,0,0,1,1,08/28/2023
+166,Russia,BRM-1(K) reconnaissance vehicle,1,9,2,13,25,08/28/2023
+544,Ukraine,BRM-1(K) reconnaissance vehicle,4,12,3,24,43,08/28/2023
+16,Russia,BRM-1K Obr. 2021,0,1,0,0,1,08/28/2023
+603,Ukraine,BTR-3,0,10,1,27,38,08/28/2023
+563,Ukraine,BTR-4,5,24,7,50,86,08/28/2023
+17,Russia,BTR-60PB,0,0,1,0,1,08/28/2023
+604,Ukraine,BTR-60PB,0,7,1,12,20,08/28/2023
+605,Ukraine,BTR-60PU-12 air defence command vehicle,0,1,0,1,2,08/28/2023
+18,Russia,BTR-60PU-12command vehicle,0,1,0,0,1,08/28/2023
+518,Ukraine,BTR-7,0,13,0,6,19,08/28/2023
+202,Russia,BTR-70,0,1,0,3,4,08/28/2023
+606,Ukraine,BTR-70,0,11,3,13,27,08/28/2023
+607,Ukraine,BTR-70DI-02 'Svityaz' command and staff vehicle,0,1,0,0,1,08/28/2023
+282,Russia,BTR-70M,0,1,0,1,2,08/28/2023
+608,Ukraine,BTR-70M,2,1,0,4,7,08/28/2023
+111,Russia,BTR-80,5,55,3,103,166,08/28/2023
+453,Ukraine,BTR-80,1,30,5,62,98,08/28/2023
+19,Russia,BTR-80 with 57mm UB-32 unguided aircraft rocket pods,0,0,1,0,1,08/28/2023
+20,Russia,BTR-80-based ZS-88 PsyOps vehicle,0,0,0,1,1,08/28/2023
+609,Ukraine,BTR-80M,0,2,0,0,2,08/28/2023
+215,Russia,BTR-82A(M),10,122,26,309,467,08/28/2023
+238,Russia,BTR-D,6,21,3,49,79,08/28/2023
+610,Ukraine,BTR-D,0,1,0,1,2,08/28/2023
+283,Russia,BTR-MDM Rakushka,0,8,2,12,22,08/28/2023
+284,Russia,BTR-ZD Skrezhet,0,2,0,1,3,08/28/2023
+416,Ukraine,BTR-ZD Skrezhet,0,1,0,1,2,08/28/2023
+559,Ukraine,BTS-4 armoured recovery vehicle,1,2,1,4,8,08/28/2023
+611,Ukraine,BTS-4 ARV with ZU-23 AA gun,0,1,0,0,1,08/28/2023
+285,Russia,BTS-4A armoured recovery vehicle,0,1,1,0,2,08/28/2023
+524,Ukraine,Bukovel-AD EW system,0,0,0,3,3,08/28/2023
+619,Ukraine,Bushmaster Protected Mobility Vehicle,0,0,3,5,8,08/28/2023
+612,Ukraine,BVP M-80A,0,0,3,3,6,08/28/2023
+490,Ukraine,Chaklun,0,1,0,1,2,08/28/2023
+287,Russia,Civilian KamAZ 6x6 converted for military use,0,1,0,1,2,08/28/2023
+21,Russia,Command vehicle for Podlet-K1 low-altitude S-band surveillance radar,0,0,0,1,1,08/28/2023
+491,Ukraine,Control station for the TB2 UCAV,0,0,0,1,1,08/28/2023
+489,Ukraine,CV9040C,0,1,2,0,3,08/28/2023
+492,Ukraine,DAF YAD 4442 NT,0,0,0,2,2,08/28/2023
+737,Ukraine,downgraded Mowag Eagle II,0,0,0,1,1,08/28/2023
+22,Russia,ED2x30-T400-3RA mobile generator,0,0,1,0,1,08/28/2023
+23,Russia,Eleron 10,0,0,0,1,1,08/28/2023
+24,Russia,Eleron T-16,0,1,0,0,1,08/28/2023
+203,Russia,Eleron T28ME,0,1,0,3,4,08/28/2023
+288,Russia,Eleron-3,0,22,0,10,32,08/28/2023
+620,Ukraine,EOS-C VTOL,0,0,0,1,1,08/28/2023
+137,Russia,Fara ground surveillance radar,0,2,0,0,2,08/28/2023
+622,Ukraine,FlyEye,0,1,0,3,4,08/28/2023
+565,Ukraine,FMTV M1083A1P2,1,0,1,7,9,08/28/2023
+418,Ukraine,Ford Ranger,0,1,1,0,2,08/28/2023
+204,Russia,Forpost,0,0,0,4,4,08/28/2023
+25,Russia,Forpost-RU,0,0,0,1,1,08/28/2023
+621,Ukraine,FV103 Spartan,0,1,0,2,3,08/28/2023
+289,Russia,GAZ Sobol,1,0,0,1,2,08/28/2023
+290,Russia,GAZ Tigr,1,7,0,7,15,08/28/2023
+99,Russia,GAZ Tigr-M,0,31,7,103,141,08/28/2023
+291,Russia,GAZ-3308,2,2,0,2,6,08/28/2023
+493,Ukraine,GAZ-3308,0,1,0,1,2,08/28/2023
+292,Russia,GAZ-3344-20 'Aleut' articulated tracked carrier,0,0,0,2,2,08/28/2023
+26,Russia,GAZ-3937 Vodnik,0,1,0,0,1,08/28/2023
+27,Russia,GAZ-51,0,1,0,0,1,08/28/2023
+494,Ukraine,GAZ-53,0,2,0,0,2,08/28/2023
+495,Ukraine,GAZ-63,0,0,0,2,2,08/28/2023
+293,Russia,GAZ-66,0,13,0,23,36,08/28/2023
+452,Ukraine,GAZ-66,3,28,6,64,101,08/28/2023
+623,Ukraine,GAZ-66 tanker,0,0,0,1,1,08/28/2023
+294,Russia,GMZ-3 minelayer,0,3,0,1,4,08/28/2023
+624,Ukraine,GMZ-3 minelayer,0,2,1,1,4,08/28/2023
+28,Russia,Granat-3,0,0,0,1,1,08/28/2023
+223,Russia,Granat-4,0,2,0,4,6,08/28/2023
+29,Russia,Grifon-12,0,1,0,0,1,08/28/2023
+625,Ukraine,GT-MU AFV converted to APC,0,1,0,0,1,08/28/2023
+626,Ukraine,Gyurza-M-class gunboat,0,3,1,1,5,08/28/2023
+627,Ukraine,HMMWV Ambulance,0,7,5,2,14,08/28/2023
+628,Ukraine,Husky Tactical Support Vehicle,1,2,5,12,20,08/28/2023
+139,Russia,Il-22 airborne command post,0,0,1,1,2,08/28/2023
+631,Ukraine,Il-76 transport aircraft,0,1,0,1,2,08/28/2023
+629,Ukraine,IMR-2 combat engineering vehicle,1,1,1,5,8,08/28/2023
+170,Russia,IMR-2(M) combat engineering vehicle,5,12,3,12,32,08/28/2023
+295,Russia,IMR-3M combat engineering vehicle,0,1,1,0,2,08/28/2023
+630,Ukraine,INKAS Titan-S,0,0,0,3,3,08/28/2023
+632,Ukraine,International M1224 MaxxPro,5,2,8,41,56,08/28/2023
+419,Ukraine,IRM 'Zhuk' engineer reconnaissance vehicle,0,1,0,0,1,08/28/2023
+138,Russia,ISDM Zemledeliye remote mine-laying system,0,0,0,2,2,08/28/2023
+633,Ukraine,Island-class patrol boat P190 Slovyansk,0,0,0,1,1,08/28/2023
+525,Ukraine,ITEC Skif,0,1,0,2,3,08/28/2023
+634,Ukraine,Iveco LMV,0,0,1,8,9,08/28/2023
+296,Russia,Iveco LMV Rys,1,5,5,23,34,08/28/2023
+420,Ukraine,Iveco Magirus 90-16 AW 4x4,0,0,0,1,1,08/28/2023
+635,Ukraine,Jelcz P882 D53,0,0,0,2,2,08/28/2023
+86,Russia,K-53949 Linza,0,3,2,7,12,08/28/2023
+241,Russia,K-53949 Typhoon-K,0,1,0,7,8,08/28/2023
+636,Ukraine,K1Sh1 command and staff vehicle,0,1,0,0,1,08/28/2023
+297,Russia,Ka-52 'Alligator' attack helicopter,2,1,5,35,43,08/28/2023
+140,Russia,KamAZ 'Gorets' 3958,0,1,1,1,3,08/28/2023
+168,Russia,KamAZ 4x4,1,6,0,20,27,08/28/2023
+30,Russia,KamAZ 6x4,0,0,0,1,1,08/28/2023
+243,Russia,KamAZ 6x6,13,144,31,560,748,08/28/2023
+637,Ukraine,KamAZ 6x6,0,8,3,11,22,08/28/2023
+94,Russia,KamAZ 6x6 tanker,1,30,6,88,125,08/28/2023
+638,Ukraine,KamAZ 6x6 tanker,0,1,0,1,2,08/28/2023
+108,Russia,KamAZ 8x8,0,5,0,7,12,08/28/2023
+163,Russia,KamAZ Avtozaks,1,4,0,17,22,08/28/2023
+224,Russia,KamAZ KMV-10V boom crane truck,0,2,0,4,6,08/28/2023
+31,Russia,KamAZ tank low-loader,0,0,0,1,1,08/28/2023
+185,Russia,KamAZ with MM-501 armoured cabin,2,10,2,17,31,08/28/2023
+298,Russia,KamAZ-435029 Patrol-A,0,0,1,2,3,08/28/2023
+300,Russia,KamAZ-5350 with armoured cabin,0,5,2,6,13,08/28/2023
+299,Russia,KamAZ-5350 with EOV-3523 excavator,0,5,0,12,17,08/28/2023
+225,Russia,KamAZ-5350 with KS-45719-7M crane,0,2,0,4,6,08/28/2023
+301,Russia,KamAZ-6350 8x8 artillery tractor,0,0,2,13,15,08/28/2023
+32,Russia,KamAZ-63501 with KS-55729-7M 32-ton crane,0,0,0,1,1,08/28/2023
+302,Russia,KamAZ-63968 Typhoon,1,5,3,16,25,08/28/2023
+303,Russia,Korsar,0,0,0,1,1,08/28/2023
+639,Ukraine,Kozak-2,1,19,2,36,58,08/28/2023
+640,Ukraine,Kozak-2M1,1,7,2,16,26,08/28/2023
+641,Ukraine,Kozak-5,0,1,0,2,3,08/28/2023
+545,Ukraine,Kozak-7,0,0,1,4,5,08/28/2023
+642,Ukraine,KrAZ Cobra,0,6,1,6,13,08/28/2023
+546,Ukraine,KrAZ Cougar,0,3,0,2,5,08/28/2023
+643,Ukraine,KrAZ Spartan,0,1,0,9,10,08/28/2023
+422,Ukraine,KrAZ-214,0,0,0,1,1,08/28/2023
+304,Russia,KrAZ-255B,0,1,0,3,4,08/28/2023
+458,Ukraine,KrAZ-255B,0,2,0,11,13,08/28/2023
+526,Ukraine,KrAZ-255B pontoon bridge layer,0,1,0,2,3,08/28/2023
+305,Russia,KrAZ-255B tanker,0,1,1,5,7,08/28/2023
+306,Russia,KrAZ-255B with excavator,0,0,2,2,4,08/28/2023
+644,Ukraine,KrAZ-255B with excavator,0,1,0,1,2,08/28/2023
+423,Ukraine,KrAZ-255B with KS-3575 crane,0,0,0,1,1,08/28/2023
+645,Ukraine,KrAZ-260,0,3,0,0,3,08/28/2023
+33,Russia,KrAZ-260 KT-L recovery vehicle,0,0,0,1,1,08/28/2023
+244,Russia,KrAZ-260 tanker,0,1,1,2,4,08/28/2023
+646,Ukraine,KrAZ-5233,0,14,2,12,28,08/28/2023
+647,Ukraine,KrAZ-6322,0,12,0,20,32,08/28/2023
+424,Ukraine,KrAZ-6322 Master mobile workshop,0,1,0,0,1,08/28/2023
+648,Ukraine,KrAZ-6322 Raptor,0,5,0,3,8,08/28/2023
+425,Ukraine,KrAZ-6446,0,0,0,1,1,08/28/2023
+426,Ukraine,KrAZ-Forpost,0,0,0,1,1,08/28/2023
+649,Ukraine,KrAZ-MPV Shrek One,0,1,0,1,2,08/28/2023
+650,Ukraine,Krivak III-class frigate 'Hetman Sahaydachniy',0,0,0,1,1,08/28/2023
+421,Ukraine,KTO Rosomak,0,0,1,0,1,08/28/2023
+496,Ukraine,L-39 Albatros,0,0,0,1,1,08/28/2023
+651,Ukraine,Land Rover Defender,0,0,0,5,5,08/28/2023
+307,Russia,Lastochka-M,0,1,0,0,1,08/28/2023
+527,Ukraine,Launcher for S-300,0,0,0,3,3,08/28/2023
+179,Russia,Leer-2 electronic warfare system,0,0,0,3,3,08/28/2023
+34,Russia,Leer-3 electronic warfare system,0,1,0,0,1,08/28/2023
+652,Ukraine,Leleka-100,0,11,1,24,36,08/28/2023
+558,Ukraine,Leopard 2A4,0,0,4,2,6,08/28/2023
+653,Ukraine,Leopard 2A6,3,0,6,3,12,08/28/2023
+654,Ukraine,Leopard 2R mine-clearing tank,0,0,2,1,3,08/28/2023
+141,Russia,LuAZ-969,0,1,1,1,3,08/28/2023
+308,Russia,M-55S,0,0,1,1,2,08/28/2023
+655,Ukraine,M1114 and M1151 HMMWV,3,10,14,52,79,08/28/2023
+497,Ukraine,M1123 HMMWV,0,0,0,2,2,08/28/2023
+427,Ukraine,M1126 Stryker Infantry Carrier Vehicle,0,0,1,0,1,08/28/2023
+551,Ukraine,M113,3,7,11,36,57,08/28/2023
+498,Ukraine,M1132 Stryker Engineering Squad Vehicle,0,0,0,2,2,08/28/2023
+547,Ukraine,M113AS4,0,1,0,4,5,08/28/2023
+656,Ukraine,M113G3DK/G4DK,1,0,1,2,4,08/28/2023
+657,Ukraine,M1152 HMMWV,0,0,0,8,8,08/28/2023
+541,Ukraine,M1165 HMMWV,0,0,0,4,4,08/28/2023
+658,Ukraine,M2A2 Bradley ODS-SA,3,0,19,21,43,08/28/2023
+499,Ukraine,M88A1 armoured recovery vehicle,0,0,0,2,2,08/28/2023
+659,Ukraine,M998 HMMWV,0,11,1,2,14,08/28/2023
+666,Ukraine,Malloy Aeronautics T150 cargo UAV,0,2,0,0,2,08/28/2023
+529,Ukraine,Mara-2M,0,1,0,2,3,08/28/2023
+519,Ukraine,Mastiff Protected Patrol,2,3,8,11,24,08/28/2023
+428,Ukraine,MAZ AC-8-500A Tanker,0,0,0,1,1,08/28/2023
+309,Russia,MAZ TZ-500 tanker,0,0,0,3,3,08/28/2023
+429,Ukraine,MAZ TZ-500 tanker,0,0,0,1,1,08/28/2023
+500,Ukraine,MAZ-5337 fuel tanker,0,0,0,2,2,08/28/2023
+660,Ukraine,MAZ-537,0,1,0,2,3,08/28/2023
+310,Russia,MDK-3 trench-digging vehicle,0,1,1,1,3,08/28/2023
+661,Ukraine,MDK-3 trench-digging vehicle,0,1,0,0,1,08/28/2023
+667,Ukraine,Mercedes-Benz Unimog U1300L ambulance,0,0,0,2,2,08/28/2023
+315,Russia,Merlin-VR,0,0,0,1,1,08/28/2023
+668,Ukraine,Mi-14PS maritime helicopter,0,0,0,1,1,08/28/2023
+669,Ukraine,Mi-2 training helicopter,0,1,0,2,3,08/28/2023
+670,Ukraine,Mi-24 attack helicopter,0,0,1,1,2,08/28/2023
+316,Russia,Mi-24P attack helicopter,0,0,0,4,4,08/28/2023
+671,Ukraine,Mi-24P attack helicopter,0,0,0,2,2,08/28/2023
+317,Russia,Mi-24V/P/35M attack helicopter,0,0,2,1,3,08/28/2023
+318,Russia,Mi-28 attack helicopter,0,0,2,8,10,08/28/2023
+319,Russia,Mi-35M attack helicopter,0,0,1,9,10,08/28/2023
+320,Russia,Mi-8 transport helicopter,1,1,1,17,20,08/28/2023
+514,Ukraine,Mi-8 transport helicopter,0,0,1,19,20,08/28/2023
+216,Russia,Mi-8MTPR-1 electronic warfare helicopter,0,0,1,2,3,08/28/2023
+512,Ukraine,MiG-29 fighter aircraft,0,0,0,20,20,08/28/2023
+321,Russia,MiG-31BM fighter aircraft,0,0,0,1,1,08/28/2023
+662,Ukraine,MLS Shield,0,0,2,1,3,08/28/2023
+42,Russia,Mobile generator for Podlet-K1 low-altitude S-band surveillance radar,0,0,0,1,1,08/28/2023
+322,Russia,Mohajer-6,0,0,0,2,2,08/28/2023
+82,Russia,MP-1IM signals vehicle,0,3,0,7,10,08/28/2023
+142,Russia,MP-2IM signals vehicle,0,1,0,1,2,08/28/2023
+35,Russia,MPUS-K mobile command post,0,0,0,1,1,08/28/2023
+143,Russia,MSh-5350.1 command vehicle,0,1,0,1,2,08/28/2023
+311,Russia,MT-LB,22,130,22,271,445,08/28/2023
+663,Ukraine,MT-LB,1,8,1,41,51,08/28/2023
+36,Russia,MT-LB with 100mm MT-12 anti-tank gun,0,0,0,1,1,08/28/2023
+37,Russia,MT-LB with 14.5mm 2M-7 naval gun mount,0,1,0,0,1,08/28/2023
+38,Russia,MT-LB with 82-mm automatic mortar 2B9 Vasilek,0,0,1,0,1,08/28/2023
+39,Russia,MT-LB with AZP S-60 AA gun,0,0,0,1,1,08/28/2023
+430,Ukraine,MT-LB with BPU-1 turret,0,0,0,1,1,08/28/2023
+187,Russia,MT-LB with ZU-23 AA gun,0,11,1,19,31,08/28/2023
+664,Ukraine,MT-LB with ZU-23 AA gun,0,2,0,7,9,08/28/2023
+475,Ukraine,MT-LB-S Ambulance,1,5,0,13,19,08/28/2023
+312,Russia,MT-LBM 6MB,1,3,3,7,14,08/28/2023
+313,Russia,MT-LBu,1,5,0,10,16,08/28/2023
+665,Ukraine,MT-LBu,0,3,0,2,5,08/28/2023
+115,Russia,MT-LBVM and MT-LBVMK,8,92,4,80,184,08/28/2023
+431,Ukraine,MT-T multi-purpose tracked transporter,0,0,1,0,1,08/28/2023
+40,Russia,MTO-AG-3M,0,0,0,1,1,08/28/2023
+180,Russia,MTO-AT mobile workshop,0,1,0,2,3,08/28/2023
+528,Ukraine,MTO-AT mobile workshop,0,1,0,2,3,08/28/2023
+181,Russia,MTO-UB1 maintenance vehicle,0,2,0,1,3,08/28/2023
+41,Russia,MTO-UB2,0,0,0,1,1,08/28/2023
+182,Russia,MTP-A2 recovery vehicle,1,0,0,2,3,08/28/2023
+205,Russia,MTP-A2.1 recovery vehicle,0,2,0,2,4,08/28/2023
+314,Russia,MTU-72 bridge layer,0,1,0,1,2,08/28/2023
+144,Russia,MZA-M.1 battery charge and repair workshop,0,1,0,1,2,08/28/2023
+391,Russia,NA,0,0,2,3,5,08/28/2023
+672,Ukraine,NOTA,0,1,0,0,1,08/28/2023
+673,Ukraine,Novator,0,5,3,10,18,08/28/2023
+432,Ukraine,Oncilla,0,0,0,1,1,08/28/2023
+323,Russia,Orion,0,0,0,6,6,08/28/2023
+324,Russia,Orlan-10,0,64,0,87,151,08/28/2023
+326,Russia,Orlan-10 jamming UAV,0,3,0,2,5,08/28/2023
+43,Russia,Orlan-10 UAV control station,0,0,0,1,1,08/28/2023
+325,Russia,Orlan-10 UCAV,0,2,0,1,3,08/28/2023
+100,Russia,Orlan-20' ''Kartograf'',0,3,1,12,16,08/28/2023
+327,Russia,Orlan-30,0,4,0,3,7,08/28/2023
+501,Ukraine,Orlik,0,1,0,1,2,08/28/2023
+674,Ukraine,Oshkosh M-ATV,2,1,3,11,17,08/28/2023
+675,Ukraine,P-14 'Tall King',0,0,1,0,1,08/28/2023
+676,Ukraine,P-18 'Malakhit',0,1,0,4,5,08/28/2023
+677,Ukraine,P-18 'Spoon Rest D',0,1,0,5,6,08/28/2023
+145,Russia,P-18-2 2D VHF surveillance radar,0,0,0,2,2,08/28/2023
+678,Ukraine,P-18ML long-range VHF surveillance radar,0,0,1,0,1,08/28/2023
+44,Russia,P-18T,0,0,0,1,1,08/28/2023
+679,Ukraine,P-19 'Flat Face B',0,0,0,2,2,08/28/2023
+328,Russia,P-230T command vehicle,0,0,0,3,3,08/28/2023
+45,Russia,P-240 digital communications vehicle,0,0,0,1,1,08/28/2023
+46,Russia,P-260 Redut-2US communication system,0,0,0,1,1,08/28/2023
+329,Russia,P-260-U signals vehicle (for Redut-2US signal and communications system),0,1,0,1,2,08/28/2023
+680,Ukraine,P-35/37 'Bar Lock',0,0,0,1,1,08/28/2023
+146,Russia,Palantin electronic warfare system,0,0,0,2,2,08/28/2023
+532,Ukraine,Panthera T6,0,1,0,2,3,08/28/2023
+118,Russia,Pantsir-S1,1,2,3,14,20,08/28/2023
+686,Ukraine,Pbv 501A,0,1,0,5,6,08/28/2023
+681,Ukraine,PD-1,0,1,0,0,1,08/28/2023
+504,Ukraine,Penguin C,0,2,0,0,2,08/28/2023
+687,Ukraine,Peugeot P4,0,0,0,2,2,08/28/2023
+533,Ukraine,Pinzgauer Vector 718,0,0,2,1,3,08/28/2023
+91,Russia,PMP floating bridge,0,3,1,7,11,08/28/2023
+530,Ukraine,PMP floating bridge,0,1,0,2,3,08/28/2023
+332,Russia,Pontoon bridge,1,3,0,6,10,08/28/2023
+688,Ukraine,Pontoon bridge,0,0,0,1,1,08/28/2023
+689,Ukraine,Poseidon H10,0,0,0,1,1,08/28/2023
+330,Russia,PP-2005 floating bridge,7,4,3,12,26,08/28/2023
+331,Russia,PPRU-1(M) '9S80(-1)' 'Sborka' (for 9K35 Strela-10),0,1,0,1,2,08/28/2023
+690,Ukraine,Pr.304 Amur-class command ship 'Donbas' ''U-500'',0,0,0,1,1,08/28/2023
+435,Ukraine,Primoco One 150,0,0,0,1,1,08/28/2023
+333,Russia,Project 02510 BK-16E high-speed assault boat,0,0,0,1,1,08/28/2023
+217,Russia,Project 03160 Raptor-class patrol boat,0,0,2,3,5,08/28/2023
+334,Russia,Project 1164 Slava-class guided missile cruiser 'Moskva',0,0,0,1,1,08/28/2023
+335,Russia,Project 1171 Tapir-class landing ship 'Saratov (BDK-65)',0,0,0,1,1,08/28/2023
+336,Russia,Project 11770 Serna-class landing craft,0,0,0,1,1,08/28/2023
+436,Ukraine,Project 1258 Yevgenya-class minesweeper 'Henichesk',0,0,0,1,1,08/28/2023
+337,Russia,Project 22870 SB-739 Vasily Bekh rescue tug,0,0,0,1,1,08/28/2023
+50,Russia,Project 266M Natya-class minesweeper,0,0,1,0,1,08/28/2023
+691,Ukraine,Project 376 Yaroslavets-class general purpose tugboat,0,0,0,1,1,08/28/2023
+542,Ukraine,Project 50030 Kalkan class patrol boat (Sea Guard),0,4,0,0,4,08/28/2023
+437,Ukraine,Project 58181 Centaur-class fast assault boat,0,0,0,1,1,08/28/2023
+338,Russia,Project 775 Ropucha-class landing ship,0,0,2,0,2,08/28/2023
+502,Ukraine,PRP-3 with a BMD-2 turret,0,0,0,2,2,08/28/2023
+433,Ukraine,PRP-3 with a BMP-1 turret,0,0,0,1,1,08/28/2023
+47,Russia,PRP-4(M) artillery reconnaissance vehicle,0,0,0,1,1,08/28/2023
+48,Russia,PRP-4A Argus artillery reconnaissance vehicle,0,1,0,0,1,08/28/2023
+682,Ukraine,PRV-11 'Side Net',0,1,0,0,1,08/28/2023
+683,Ukraine,PRV-13 'Odd Pair',0,1,0,1,2,08/28/2023
+684,Ukraine,PRV-16 'Thin Skin B',0,0,0,2,2,08/28/2023
+434,Ukraine,PRV-16ML height-finder radar,0,0,0,1,1,08/28/2023
+503,Ukraine,PT-91 Twardy,0,0,0,2,2,08/28/2023
+109,Russia,PTS-2 tracked amphibious transport,4,4,1,8,17,08/28/2023
+685,Ukraine,PTS-2 tracked amphibious transport,0,1,0,0,1,08/28/2023
+49,Russia,PZM-2 trench-digging vehicle,0,1,0,0,1,08/28/2023
+531,Ukraine,PZM-2 trench-digging vehicle,0,0,1,2,3,08/28/2023
+692,Ukraine,R-142N command and staff vehicle,0,0,0,1,1,08/28/2023
+51,Russia,R-145BM command vehicle,0,1,0,0,1,08/28/2023
+693,Ukraine,R-145BM command vehicle,0,1,0,1,2,08/28/2023
+339,Russia,R-145BM1 command vehicle,0,1,0,4,5,08/28/2023
+52,Russia,R-145BMA command vehicle,0,1,0,0,1,08/28/2023
+114,Russia,R-149AKSh-1 command and signals vehicle,0,1,0,16,17,08/28/2023
+53,Russia,R-149BMRg command and signals vehicle,0,0,0,1,1,08/28/2023
+239,Russia,R-149MA1 command and staff vehicle,2,30,5,44,81,08/28/2023
+195,Russia,R-149MA3 command and staff vehicle,0,21,4,15,40,08/28/2023
+54,Russia,R-161 signals vehicle,0,0,0,1,1,08/28/2023
+340,Russia,R-166-0.5 signals vehicle,0,6,0,17,23,08/28/2023
+55,Russia,R-325BMV jamming station,0,0,0,1,1,08/28/2023
+341,Russia,R-330BMV and R-394BMV Borisoglebsk-2B,0,2,1,8,11,08/28/2023
+56,Russia,R-330M1P Diabazol,0,0,0,1,1,08/28/2023
+342,Russia,R-330ZH Zhitel,0,0,2,10,12,08/28/2023
+343,Russia,R-381T2M radio monitoring station from a modernised R-381TM Taran-M automatic signals intelligence complex,0,1,0,4,5,08/28/2023
+438,Ukraine,R-405M radio station vehicle,0,0,0,1,1,08/28/2023
+439,Ukraine,R-409A radio station vehicle,0,0,0,1,1,08/28/2023
+694,Ukraine,"R-410-7,5 tropospheric radio relay communication station",0,0,0,1,1,08/28/2023
+147,Russia,R-419L1 communications station,0,0,0,2,2,08/28/2023
+148,Russia,R-431AM antenna module for the Redut-2US communications system,0,0,0,2,2,08/28/2023
+149,Russia,R-439-MD2 SatCom Station,0,0,0,2,2,08/28/2023
+57,Russia,R-441 SatCom station,0,0,0,1,1,08/28/2023
+440,Ukraine,R-845 radio station,0,0,0,1,1,08/28/2023
+218,Russia,R-934B 'Sinitsa' automated jamming station,0,0,1,4,5,08/28/2023
+344,Russia,R-934UM,0,0,0,1,1,08/28/2023
+441,Ukraine,Radio relay station for the TB2 UCAV,0,0,0,1,1,08/28/2023
+58,Russia,RB-636AM2 Svet-KU EW system,0,1,0,0,1,08/28/2023
+245,Russia,REM-KL recovery vehicle,0,1,1,7,9,08/28/2023
+345,Russia,Remdiesel Z-STS Akhmat,1,1,2,8,12,08/28/2023
+346,Russia,Repeynik portable counter-UAS radar,0,0,0,1,1,08/28/2023
+695,Ukraine,RKhM 'Kashalot',0,2,0,1,3,08/28/2023
+246,Russia,RKhM-6 Povozka CBRN reconnaissance vehicle,0,1,0,8,9,08/28/2023
+150,Russia,RLK-MC-A (ROSC-1) counter-UAV system,0,0,0,2,2,08/28/2023
+560,Ukraine,Roshel Senator,0,2,2,3,7,08/28/2023
+59,Russia,RP-377LA Lorandit,0,0,0,1,1,08/28/2023
+697,Ukraine,Shark,0,1,0,4,5,08/28/2023
+348,Russia,Silok-01 counter-UAV system,0,1,1,2,4,08/28/2023
+561,Ukraine,Sisu XA-185,1,1,1,5,8,08/28/2023
+442,Ukraine,SkyGuard Aspide control station,0,0,0,1,1,08/28/2023
+696,Ukraine,SNAR-10 battlefield surveillance radar,0,2,0,1,3,08/28/2023
+347,Russia,SNAR-10M1 battlefield surveillance radar,0,1,2,0,3,08/28/2023
+60,Russia,Sobolyatnik 1L277 portable ground reconnaissance station,0,0,0,1,1,08/28/2023
+698,Ukraine,Sorum-class seagoing tugboat 'Korets' ''A830 or P186'',0,1,0,0,1,08/28/2023
+699,Ukraine,Spaitech Sparrow,0,3,0,1,4,08/28/2023
+700,Ukraine,Spectator-M1,0,2,0,3,5,08/28/2023
+505,Ukraine,ST-68U radar,0,0,0,2,2,08/28/2023
+701,Ukraine,Stenka-class patrol boat (Operated by the Sea Guard),0,0,0,1,1,08/28/2023
+534,Ukraine,Stormer HVM,0,0,3,0,3,08/28/2023
+349,Russia,Strizh-3 counter-UAV system,0,0,0,1,1,08/28/2023
+472,Ukraine,Su-24M strike aircraft,0,0,0,16,16,08/28/2023
+83,Russia,Su-24M/MR strike/tactical reconnaissance aircraft,0,0,3,4,7,08/28/2023
+61,Russia,Su-24MR tactical reconnaissance aircraft,0,0,0,1,1,08/28/2023
+443,Ukraine,Su-24MR tactical reconnaissance aircraft,0,0,0,1,1,08/28/2023
+186,Russia,Su-25 close air support aircraft,0,0,3,27,30,08/28/2023
+473,Ukraine,Su-25 close air support aircraft,0,0,1,15,16,08/28/2023
+702,Ukraine,Su-27 fighter aircraft,0,0,0,12,12,08/28/2023
+62,Russia,Su-27 multirole aircraft,0,0,1,0,1,08/28/2023
+87,Russia,Su-30SM multirole aircraft,0,0,1,8,9,08/28/2023
+350,Russia,Su-34 strike aircraft,0,0,0,20,20,08/28/2023
+63,Russia,Su-34M strike aircraft,0,0,0,1,1,08/28/2023
+206,Russia,Su-35S multirole aircraft,0,0,0,4,4,08/28/2023
+151,Russia,Supercam S150,0,1,0,1,2,08/28/2023
+351,Russia,Supercam S350,0,3,0,4,7,08/28/2023
+64,Russia,T-55A,0,0,1,0,1,08/28/2023
+65,Russia,T-62 Obr. 1967,0,1,0,0,1,08/28/2023
+229,Russia,T-62M,0,35,7,20,62,08/28/2023
+352,Russia,T-62M Obr. 2022,0,0,0,2,2,08/28/2023
+103,Russia,T-62MV,1,8,3,4,16,08/28/2023
+66,Russia,T-62MV Obr. 2022,0,0,0,1,1,08/28/2023
+703,Ukraine,T-64 mine-clearing tank,1,1,1,1,4,08/28/2023
+152,Russia,T-64A,0,0,0,2,2,08/28/2023
+353,Russia,T-64A,0,1,0,1,2,08/28/2023
+354,Russia,T-64B,0,2,1,1,4,08/28/2023
+704,Ukraine,T-64B1M,0,7,0,2,9,08/28/2023
+705,Ukraine,T-64BM 'Bulat',0,4,3,6,13,08/28/2023
+706,Ukraine,T-64BM2 'Bulat',0,0,1,4,5,08/28/2023
+228,Russia,T-64BV,2,5,6,48,61,08/28/2023
+707,Ukraine,T-64BV,9,54,30,151,244,08/28/2023
+708,Ukraine,T-64BV Zr. 2017,4,23,6,39,72,08/28/2023
+153,Russia,T-72 'Ural',1,0,1,1,3,08/28/2023
+535,Ukraine,T-72 'Ural',0,1,1,1,3,08/28/2023
+212,Russia,T-72A,5,11,5,23,44,08/28/2023
+709,Ukraine,T-72AMT,2,6,5,7,20,08/28/2023
+506,Ukraine,T-72AMT Zr.2022,1,0,1,1,3,08/28/2023
+84,Russia,T-72AV,0,4,1,6,11,08/28/2023
+710,Ukraine,T-72AV,3,8,5,18,34,08/28/2023
+355,Russia,T-72B,19,70,22,197,308,08/28/2023
+711,Ukraine,T-72B,0,8,3,31,42,08/28/2023
+247,Russia,T-72B Obr. 1989,8,21,9,57,95,08/28/2023
+207,Russia,T-72B Obr. 2022,2,0,2,2,6,08/28/2023
+191,Russia,T-72B3,18,84,49,196,347,08/28/2023
+183,Russia,T-72B3 Obr. 2014,0,1,0,1,2,08/28/2023
+356,Russia,T-72B3 Obr. 2016,6,102,15,113,236,08/28/2023
+184,Russia,T-72B3 Obr. 2022,0,0,0,3,3,08/28/2023
+171,Russia,T-72BA,0,16,3,11,30,08/28/2023
+548,Ukraine,T-72EA,0,1,0,4,5,08/28/2023
+712,Ukraine,T-72M/M1(R),7,9,8,40,64,08/28/2023
+67,Russia,T-80B,0,0,0,1,1,08/28/2023
+196,Russia,T-80BV,33,74,52,239,398,08/28/2023
+713,Ukraine,T-80BV,2,14,9,29,54,08/28/2023
+232,Russia,T-80BV Obr. 2022,1,0,1,6,8,08/28/2023
+250,Russia,T-80BVM,2,33,11,55,101,08/28/2023
+208,Russia,T-80BVM Obr. 2022,1,0,1,3,5,08/28/2023
+248,Russia,T-80U,9,40,5,40,94,08/28/2023
+357,Russia,T-80UE-1,0,4,0,2,6,08/28/2023
+358,Russia,T-80UK,1,1,0,1,3,08/28/2023
+359,Russia,T-80UM2,0,0,0,1,1,08/28/2023
+360,Russia,T-90A,3,9,2,20,34,08/28/2023
+68,Russia,T-90AK,0,1,0,0,1,08/28/2023
+192,Russia,T-90M,4,2,10,21,37,08/28/2023
+233,Russia,T-90S,1,1,1,4,7,08/28/2023
+363,Russia,Takhion,0,3,0,1,4,08/28/2023
+69,Russia,TDA-3 mobile smoke generator,0,0,0,1,1,08/28/2023
+361,Russia,TMM-3 bridge layer,1,17,4,10,32,08/28/2023
+536,Ukraine,TMM-3M1 bridge layer,0,2,0,1,3,08/28/2023
+364,Russia,Torn(-MDM),0,1,0,0,1,08/28/2023
+714,Ukraine,Triton-1,0,3,0,0,3,08/28/2023
+444,Ukraine,TRML-4D multi-functional radar (for IRIS-T SLM),0,0,1,0,1,08/28/2023
+154,Russia,Tu-22M3 strategic bomber,0,0,1,1,2,08/28/2023
+71,Russia,Tu-95MS strategic bomber,0,0,1,0,1,08/28/2023
+70,Russia,TZM 9T234-2 transporter-loader (for BM-30 Smerch),0,0,0,1,1,08/28/2023
+362,Russia,TZM-T reloader vehicle (for TOS-1A),1,4,0,3,8,08/28/2023
+219,Russia,UAZ Patriot jeep,0,1,0,3,4,08/28/2023
+365,Russia,UAZ-23632 pickup truck,0,3,0,4,7,08/28/2023
+366,Russia,UAZ-23632-148-64 armed pickup truck,0,0,0,5,5,08/28/2023
+72,Russia,UAZ-3151,0,0,0,1,1,08/28/2023
+73,Russia,UAZ-31514,0,1,0,0,1,08/28/2023
+507,Ukraine,UAZ-31514,0,0,0,2,2,08/28/2023
+234,Russia,UAZ-3303,0,1,0,6,7,08/28/2023
+88,Russia,UAZ-39094,0,1,1,10,12,08/28/2023
+220,Russia,UAZ-394511 <U+2018>Esaul<U+2019>,0,2,2,3,7,08/28/2023
+227,Russia,UAZ-452 van,2,14,7,40,63,08/28/2023
+538,Ukraine,UAZ-452 van,0,2,1,28,31,08/28/2023
+190,Russia,UAZ-469 jeep,1,13,3,18,35,08/28/2023
+715,Ukraine,UAZ-469 jeep,0,6,0,5,11,08/28/2023
+74,Russia,UAZ-515195 'Esaul',0,0,0,1,1,08/28/2023
+716,Ukraine,UJ-22,0,0,0,1,1,08/28/2023
+445,Ukraine,UMP-350 engine heater,0,1,0,0,1,08/28/2023
+549,Ukraine,UMS-1000 patrol boat (Sea Guard),0,5,1,0,6,08/28/2023
+446,Ukraine,UMS-600 patrol boat (Sea Guard),0,1,0,0,1,08/28/2023
+369,Russia,Unknown AFV,2,2,11,157,172,08/28/2023
+717,Ukraine,Unknown AFV,1,0,3,47,51,08/28/2023
+93,Russia,Unknown BMP-1/2,4,0,6,107,117,08/28/2023
+517,Ukraine,Unknown BMP-1/2,0,0,0,20,20,08/28/2023
+718,Ukraine,Unknown BTR,1,0,0,3,4,08/28/2023
+221,Russia,Unknown BTR-80/BTR-82A,3,0,4,42,49,08/28/2023
+370,Russia,Unknown BTR-D/BMD-2,0,0,0,10,10,08/28/2023
+371,Russia,Unknown Buk SAM system,0,0,0,4,4,08/28/2023
+375,Russia,Unknown communications station,0,0,0,1,1,08/28/2023
+376,Russia,Unknown communications station based on the KamAZ 6x6,0,0,0,5,5,08/28/2023
+155,Russia,Unknown EW system,0,0,0,2,2,08/28/2023
+377,Russia,Unknown fuel tanker,0,0,0,5,5,08/28/2023
+378,Russia,Unknown helicopter,0,0,0,3,3,08/28/2023
+543,Ukraine,Unknown HMMWV variant,0,0,0,4,4,08/28/2023
+719,Ukraine,Unknown IMV,0,0,1,5,6,08/28/2023
+156,Russia,Unknown MRL,0,0,0,2,2,08/28/2023
+447,Ukraine,Unknown patrol boat (Sea Guard),0,1,0,0,1,08/28/2023
+157,Russia,Unknown radar,0,0,0,1,1,08/28/2023
+722,Ukraine,Unknown reconnaissance UAV,0,1,0,1,2,08/28/2023
+372,Russia,Unknown SPG,0,0,3,8,11,08/28/2023
+720,Ukraine,Unknown SPG,0,0,1,9,10,08/28/2023
+508,Ukraine,Unknown T-64,0,0,0,2,2,08/28/2023
+373,Russia,Unknown T-72,2,3,15,83,103,08/28/2023
+721,Ukraine,Unknown T-72,0,0,1,11,12,08/28/2023
+374,Russia,Unknown T-80,1,1,1,4,7,08/28/2023
+167,Russia,Unknown tank,11,0,30,207,248,08/28/2023
+723,Ukraine,Unknown tank,0,0,1,34,35,08/28/2023
+75,Russia,Unknown Tor variant,0,0,1,0,1,08/28/2023
+379,Russia,Unknown towed artillery,0,0,2,9,11,08/28/2023
+476,Ukraine,Unknown towed artillery,0,0,5,11,16,08/28/2023
+724,Ukraine,Unknown truck,1,3,2,55,61,08/28/2023
+725,Ukraine,Unknown vehicle,0,0,0,35,35,08/28/2023
+367,Russia,UR-67 mine clearing charge on BTR-D APC,0,1,0,0,1,08/28/2023
+368,Russia,UR-77 'Meteorit' mine clearing vehicle,1,17,0,11,29,08/28/2023
+235,Russia,Ural Avtozaks,0,1,0,6,7,08/28/2023
+380,Russia,Ural Federal,0,7,0,20,27,08/28/2023
+459,Ukraine,Ural tanker,0,7,1,6,14,08/28/2023
+381,Russia,Ural-375D,0,0,0,1,1,08/28/2023
+450,Ukraine,Ural-375D,0,7,0,3,10,08/28/2023
+76,Russia,Ural-375D tanker,0,1,0,0,1,08/28/2023
+77,Russia,Ural-375D with 8T210 crane,0,1,0,0,1,08/28/2023
+237,Russia,Ural-4320,15,140,31,513,699,08/28/2023
+726,Ukraine,Ural-4320,0,9,2,39,50,08/28/2023
+382,Russia,Ural-4320 KET-L recovery vehicle,0,2,0,1,3,08/28/2023
+727,Ukraine,Ural-4320 KET-L recovery vehicle,0,0,0,1,1,08/28/2023
+383,Russia,Ural-4320 KT-L recovery vehicle,0,2,0,3,5,08/28/2023
+509,Ukraine,Ural-4320 KT-L recovery vehicle,0,0,0,2,2,08/28/2023
+110,Russia,Ural-4320 tanker,1,60,3,91,155,08/28/2023
+384,Russia,Ural-4320 with EOV-3521 excavator,0,1,0,3,4,08/28/2023
+385,Russia,Ural-4320 with KS-3574M3 or KS-3574M crane,0,1,0,3,4,08/28/2023
+96,Russia,Ural-43206,3,34,6,90,133,08/28/2023
+226,Russia,Ural-5323,0,3,0,3,6,08/28/2023
+386,Russia,Ural-542301 tank transporter,1,1,0,0,2,08/28/2023
+78,Russia,Ural-63501-AT,0,0,0,1,1,08/28/2023
+95,Russia,Ural-63704-0010 Tornado-U,1,5,2,5,13,08/28/2023
+209,Russia,Ural-VV,0,1,0,3,4,08/28/2023
+79,Russia,Uran-6 mine-clearing robotic system,0,0,0,1,1,08/28/2023
+728,Ukraine,VAB,3,0,5,6,14,08/28/2023
+729,Ukraine,Varta,0,24,2,10,36,08/28/2023
+730,Ukraine,Vepr,0,1,0,2,3,08/28/2023
+387,Russia,Vityaz DT-10PM articulated tracked carrier,0,0,0,1,1,08/28/2023
+388,Russia,Vityaz DT-30 articulated tracked carrier,0,3,2,1,6,08/28/2023
+448,Ukraine,Wisent 1 mine-clearing tank,0,0,0,1,1,08/28/2023
+510,Ukraine,Wolfhound Protected Patrol,0,0,0,2,2,08/28/2023
+731,Ukraine,YPR-765,6,3,9,27,45,08/28/2023
+389,Russia,ZALA 421-16<U+0415>,0,12,0,22,34,08/28/2023
+158,Russia,ZALA 421-16<U+0415>M,0,2,0,0,2,08/28/2023
+537,Ukraine,Zhuk-class patrol boat (Sea Guard),0,2,0,1,3,08/28/2023
+733,Ukraine,ZiL-130,0,1,0,6,7,08/28/2023
+511,Ukraine,ZiL-130 tanker,0,0,0,2,2,08/28/2023
+169,Russia,ZiL-131,1,8,2,19,30,08/28/2023
+734,Ukraine,ZiL-131,1,40,3,82,126,08/28/2023
+160,Russia,ZiL-131 tanker,0,1,0,1,2,08/28/2023
+550,Ukraine,ZiL-131 tanker,1,1,1,2,5,08/28/2023
+159,Russia,ZiL-131 UMZ mine laying vehicle,0,0,0,2,2,08/28/2023
+80,Russia,ZiL-131 with mine launchers,0,0,0,1,1,08/28/2023
+735,Ukraine,ZiL-157,0,2,0,0,2,08/28/2023
+736,Ukraine,ZiL-181,0,0,0,1,1,08/28/2023
+449,Ukraine,ZiL-4331,0,1,0,0,1,08/28/2023
+390,Russia,ZSU-23-4 Shilka,1,5,1,2,9,08/28/2023
+732,Ukraine,ZSU-23-4 Shilka,0,2,1,1,4,08/28/2023

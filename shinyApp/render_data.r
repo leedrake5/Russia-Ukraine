@@ -15,9 +15,9 @@ options(shiny.fullstacktrace=TRUE)
 
 country_colors <-   c("Russia" = "#E4181C", "Ukraine" = "#0057B8")
 
-full_data <- read.csv("data/2023-04-20.csv")
+full_data <- read.csv("~/GitHub/Russia-Ukraine/shinyApp/data/2023-08-28.csv")
 
-dates = seq(as.Date("2022-02-24"), as.Date("2023-04-20"), by="days")
+dates = seq(as.Date("2022-02-24"), as.Date("2023-08-28"), by="days")
 
 
 daily_list <- list()
@@ -30,7 +30,7 @@ for(i in dates){
 
 daily_frame <- rbindlist(daily_list, use.names=TRUE, fill=TRUE)
 
-daily_frame <- as.data.frame(merge(daily_frame, read.csv("~/GitHub/shinyApp/data/classes.csv")[,-1], by="system", all=TRUE, fill=TRUE, allow.cartesian=TRUE))
+daily_frame <- as.data.frame(merge(daily_frame, read.csv("~/GitHub/Russia-Ukraine/shinyApp/data/classes.csv")[,-1], by="system", all=TRUE, fill=TRUE, allow.cartesian=TRUE))
 daily_frame <- daily_frame[,!colnames(daily_frame) %in% c("date_recorded", "X")]
 daily_frame <- daily_frame[!is.na(daily_frame$status),]
 daily_frame <- daily_frame[order(as.Date(daily_frame$Date, format="%m-%d-%Y")),]
