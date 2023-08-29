@@ -1,0 +1,711 @@
+,system,class
+171,An-26 transport aircraft,Aircraft
+334,Il-22 airborne command post,Aircraft
+335,Il-76 transport aircraft,Aircraft
+458,MiG-29 fighter aircraft,Aircraft
+459,MiG-31BM fighter aircraft,Aircraft
+617,Su-24M strike aircraft,Aircraft
+618,Su-24M/MR strike/tactical reconnaissance aircraft,Aircraft
+619,Su-24MR tactical reconnaissance aircraft,Aircraft
+621,Su-25 close air support aircraft,Aircraft
+623,Su-27 fighter aircraft,Aircraft
+624,Su-27 multirole aircraft,Aircraft
+625,Su-30SM multirole aircraft,Aircraft
+626,Su-34 strike aircraft,Aircraft
+627,Su-34M strike aircraft,Aircraft
+628,Su-35S multirole aircraft,Aircraft
+689,Tu-22M3 strategic bomber,Aircraft
+690,Tu-95MS strategic bomber,Aircraft
+724,Unknown fighter/strike aircraft,Aircraft
+736,Unknown Su-30/Su-34/Su-35,Aircraft
+94,23mm 23 ItK 61,Anti-Aircraft Guns
+95,23mm ZU-23,Anti-Aircraft Guns
+96,23mm ZU-23-2,Anti-Aircraft Guns
+102,2S1 with ZU-23 AA gun,Armoured Fighting Vehicles
+211,BMM-4C Ambulance,Armoured Fighting Vehicles
+212,BMM-70 Ambulance,Armoured Fighting Vehicles
+213,BMM-80 ambulance,Armoured Fighting Vehicles
+229,BMPT Terminator,Armoured Fighting Vehicles
+238,BRDM-2,Armoured Fighting Vehicles
+240,BRDM-2-based ZS-82 PsyOps vehicle,Armoured Fighting Vehicles
+241,BRDM-2L1,Armoured Fighting Vehicles
+242,BRDM-2RKhb chemical reconnaissance vehicle,Armoured Fighting Vehicles
+252,BRM-1(K) reconnaissance vehicle,Armoured Fighting Vehicles
+254,BRM-1K Obr. 2021,Armoured Fighting Vehicles
+255,BRM-1K reconnaissance vehicle,Armoured Fighting Vehicles
+272,BTR-80-based ZS-88 PsyOps vehicle,Armoured Fighting Vehicles
+275,BTR-D,Armoured Fighting Vehicles
+286,BTS-4 ARV with ZU-23 AA gun,Armoured Fighting Vehicles
+317,GAZ-3344-20 'Aleut' articulated tracked carrier,Armoured Fighting Vehicles
+468,MT-LB,Armoured Fighting Vehicles
+471,MT-LB with 14.5mm 2M-7 naval gun mount,Armoured Fighting Vehicles
+474,MT-LB with BPU-1 turret,Armoured Fighting Vehicles
+475,MT-LB with ZU-23 AA gun,Armoured Fighting Vehicles
+477,MT-LB-S Ambulance,Armoured Fighting Vehicles
+479,MT-LBu,Armoured Fighting Vehicles
+481,MT-LBVM and MT-LBVMK,Armoured Fighting Vehicles
+482,MT-T multi-purpose tracked transporter,Armoured Fighting Vehicles
+713,Unknown AFV,Armoured Fighting Vehicles
+719,Unknown BTR-D/BMD-2,Armoured Fighting Vehicles
+779,Vepr,Armoured Fighting Vehicles
+780,Vityaz DT-10PM articulated tracked carrier,Armoured Fighting Vehicles
+781,Vityaz DT-30 articulated tracked carrier,Armoured Fighting Vehicles
+258,BTR-60PB,Armoured Personnel Carriers
+263,BTR-7,Armoured Personnel Carriers
+264,BTR-70,Armoured Personnel Carriers
+267,BTR-70M,Armoured Personnel Carriers
+269,BTR-80,Armoured Personnel Carriers
+273,BTR-80M,Armoured Personnel Carriers
+277,BTR-D,Armoured Personnel Carriers
+279,BTR-MDM 'Rakushka',Armoured Personnel Carriers
+280,BTR-MDM Rakushka,Armoured Personnel Carriers
+311,FV103 Spartan,Armoured Personnel Carriers
+330,GT-MU AFV converted to APC,Armoured Personnel Carriers
+422,M113,Armoured Personnel Carriers
+424,M113AS4,Armoured Personnel Carriers
+425,M113G3DK/G4DK,Armoured Personnel Carriers
+432,Mara-2M,Armoured Personnel Carriers
+591,Remdiesel Z-STS Akhmat,Armoured Personnel Carriers
+604,Sisu XA-185,Armoured Personnel Carriers
+717,Unknown BTR,Armoured Personnel Carriers
+718,Unknown BTR-80/BTR-82A,Armoured Personnel Carriers
+769,Ural-4320VV,Armoured Personnel Carriers
+777,VAB,Armoured Personnel Carriers
+784,YPR-765,Armoured Personnel Carriers
+44,152mm D-20 gun-howitzer,Artillery Support Vehicles And Equipment
+74,1V1003 command and observation vehicle (for 1V198 artillery fire control system),Artillery Support Vehicles And Equipment
+75,1V110 BM-21 Grad battery command vehicle,Artillery Support Vehicles And Equipment
+76,1V119 artillery fire direction vehicle,Artillery Support Vehicles And Equipment
+77,1V13 battery command and forward observer vehicle,Artillery Support Vehicles And Equipment
+78,1V13(M) battery fire control center,Artillery Support Vehicles And Equipment
+79,1V14 battery command and forward observer vehicle,Artillery Support Vehicles And Equipment
+81,1V15 battery command and forward observer vehicle,Artillery Support Vehicles And Equipment
+82,1V15M fire control and observation vehicle,Artillery Support Vehicles And Equipment
+83,1V16 battalion fire direction vehicle,Artillery Support Vehicles And Equipment
+84,1V16M artillery battalion command and staff vehicle,Artillery Support Vehicles And Equipment
+85,1V18 'Klyon-1' artillery command and forward observer vehicle,Artillery Support Vehicles And Equipment
+99,2F77M transloading vehicle for 2K22M Tunguska-M,Artillery Support Vehicles And Equipment
+160,9T452 transporter-loader (for BM-27 'Uragan' MRL),Artillery Support Vehicles And Equipment
+549,PRP-4(M) artillery reconnaissance vehicle,Artillery Support Vehicles And Equipment
+550,PRP-4A Argus artillery reconnaissance vehicle,Artillery Support Vehicles And Equipment
+691,TZM 9T234-2 transporter-loader (for BM-30 Smerch),Artillery Support Vehicles And Equipment
+692,TZM-T reloader vehicle (for TOS-1A),Artillery Support Vehicles And Equipment
+776,V119 artillery fire direction vehicle,Artillery Support Vehicles And Equipment
+154,9S470M1 (or variant thereof) command post (for Buk-M1/2),Command Posts And Communications Stations
+155,9S470M1 command vehicle for Buk-M1,Command Posts And Communications Stations
+156,"9S932-2 intelligence, control and command vehicle (for Barnaul-T)",Command Posts And Communications Stations
+180,APE-5 command post,Command Posts And Communications Stations
+192,Auriga-1.2V portable satellite communications station,Command Posts And Communications Stations
+194,Barnaul-T 9 C932-1 automated system for air defence units,Command Posts And Communications Stations
+204,BMD-1KSh-A command vehicle,Command Posts And Communications Stations
+218,BMP-1KSh command and staff vehicle,Command Posts And Communications Stations
+260,BTR-60PU-12 air defence command vehicle,Command Posts And Communications Stations
+261,BTR-60PU-12command vehicle,Command Posts And Communications Stations
+262,BTR-60PU-12M air defence command vehicle,Command Posts And Communications Stations
+266,BTR-70DI-02 'Svityaz' command and staff vehicle,Command Posts And Communications Stations
+294,Command vehicle for Podlet-K1 low-altitude S-band surveillance radar,Command Posts And Communications Stations
+352,K1Sh1 command and staff vehicle,Command Posts And Communications Stations
+463,MP-1IM signals vehicle,Command Posts And Communications Stations
+464,MP-2IM signals vehicle,Command Posts And Communications Stations
+465,MPUS-K mobile command post,Command Posts And Communications Stations
+499,Orlan-10 UAV control station,Command Posts And Communications Stations
+513,P-230T command vehicle,Command Posts And Communications Stations
+514,P-240 digital communications vehicle,Command Posts And Communications Stations
+515,P-260 Redut-2US communication system,Command Posts And Communications Stations
+516,P-260-U signals vehicle (for Redut-2US signal and communications system),Command Posts And Communications Stations
+560,R-142N command and staff vehicle,Command Posts And Communications Stations
+561,R-145BM command vehicle,Command Posts And Communications Stations
+563,R-145BM1 command vehicle,Command Posts And Communications Stations
+564,R-145BMA command vehicle,Command Posts And Communications Stations
+565,R-149AKSh-1 command and signals vehicle,Command Posts And Communications Stations
+567,R-149MA1 command and staff vehicle,Command Posts And Communications Stations
+568,R-149MA3 command and staff vehicle,Command Posts And Communications Stations
+570,R-166-0.5 signals vehicle,Command Posts And Communications Stations
+576,R-381T2M 1.5-3000 MHz radio monitoring station from a modernised R-381TM Taran-M automatic signals intelligence complex,Command Posts And Communications Stations
+577,R-381T2M radio monitoring station from a modernised R-381TM Taran-M automatic signals intelligence complex,Command Posts And Communications Stations
+578,R-405M radio station vehicle,Command Posts And Communications Stations
+579,R-409A radio station vehicle,Command Posts And Communications Stations
+581,R-419L1 communications station,Command Posts And Communications Stations
+582,R-431AM antenna module for the Redut-2US communications system,Command Posts And Communications Stations
+583,R-439-MD2 SatCom Station,Command Posts And Communications Stations
+584,R-441 SatCom station,Command Posts And Communications Stations
+588,Radio relay station for the TB2 UCAV,Command Posts And Communications Stations
+721,Unknown communications station,Command Posts And Communications Stations
+722,Unknown communications station based on the KamAZ 6x6,Command Posts And Communications Stations
+179,APA-80 engine starting vehicle,Engineering Vehicles And Equipment
+185,ARS-14 decontamination and degassing vehicle,Engineering Vehicles And Equipment
+196,BAT-2 heavy engineering vehicle,Engineering Vehicles And Equipment
+206,BMK-130M/BMK-150 towing and motor boat,Engineering Vehicles And Equipment
+207,BMK-460 towing and motor boat,Engineering Vehicles And Equipment
+209,BMK-MO towing and motor boat,Engineering Vehicles And Equipment
+210,BMK-MT towing and motor boat,Engineering Vehicles And Equipment
+244,BREM-1 armoured recovery vehicle,Engineering Vehicles And Equipment
+246,BREM-2 armoured recovery vehicle,Engineering Vehicles And Equipment
+247,BREM-Ch ''BREM-4'' armoured recovery vehicle,Engineering Vehicles And Equipment
+249,BREM-D armoured recovery vehicle,Engineering Vehicles And Equipment
+250,BREM-K armoured recovery vehicle,Engineering Vehicles And Equipment
+285,BTS-4 armoured recovery vehicle,Engineering Vehicles And Equipment
+287,BTS-4A armoured recovery vehicle,Engineering Vehicles And Equipment
+299,ED2x30-T400-3RA mobile generator,Engineering Vehicles And Equipment
+325,GMZ-3 minelayer,Engineering Vehicles And Equipment
+336,IMR-2 combat engineering vehicle,Engineering Vehicles And Equipment
+337,IMR-2(M) combat engineering vehicle,Engineering Vehicles And Equipment
+338,IMR-3M combat engineering vehicle,Engineering Vehicles And Equipment
+341,IRM 'Zhuk' engineer reconnaissance vehicle,Engineering Vehicles And Equipment
+342,IRM 'Zhuk' Engineer Reconnaissance Vehicle,Engineering Vehicles And Equipment
+343,ISDM Zemledeliye remote mine-laying system,Engineering Vehicles And Equipment
+364,KamAZ KMV-10V boom crane truck,Engineering Vehicles And Equipment
+370,KamAZ-5350 with EOV-3523 excavator,Engineering Vehicles And Equipment
+371,KamAZ-5350 with KS-45719-7M crane,Engineering Vehicles And Equipment
+373,KamAZ-63501 with KS-55729-7M 32-ton crane,Engineering Vehicles And Equipment
+386,KrAZ-255B,Engineering Vehicles And Equipment
+388,KrAZ-255B pontoon bridge layer,Engineering Vehicles And Equipment
+390,KrAZ-255B with excavator,Engineering Vehicles And Equipment
+393,KrAZ-260,Engineering Vehicles And Equipment
+395,KrAZ-260 pontoon bridge layer,Engineering Vehicles And Equipment
+399,KrAZ-6322 Master mobile workshop,Engineering Vehicles And Equipment
+440,MDK-3 trench-digging vehicle,Engineering Vehicles And Equipment
+461,Mobile generator for Podlet-K1 low-altitude S-band surveillance radar,Engineering Vehicles And Equipment
+483,MTO-AG-3M,Engineering Vehicles And Equipment
+484,MTO-AT mobile workshop,Engineering Vehicles And Equipment
+486,MTO-UB1 maintenance vehicle,Engineering Vehicles And Equipment
+488,MTP-A2 recovery vehicle,Engineering Vehicles And Equipment
+489,MTP-A2.1 recovery vehicle,Engineering Vehicles And Equipment
+490,MTU-72 bridge layer,Engineering Vehicles And Equipment
+491,MZA-M.1 battery charge and repair workshop,Engineering Vehicles And Equipment
+526,PMP floating bridge,Engineering Vehicles And Equipment
+528,Pontoon bridge,Engineering Vehicles And Equipment
+531,PP-2005 floating bridge,Engineering Vehicles And Equipment
+556,PTS-2 tracked amphibious transport,Engineering Vehicles And Equipment
+558,PZM-2 trench-digging vehicle,Engineering Vehicles And Equipment
+590,REM-KL recovery vehicle,Engineering Vehicles And Equipment
+593,RKhM 'Kashalot',Engineering Vehicles And Equipment
+594,RKhM-6 CBRN reconnaissance vehicle,Engineering Vehicles And Equipment
+595,RKhM-6 Povozka,Engineering Vehicles And Equipment
+596,RKhM-6 Povozka CBRN reconnaissance vehicle,Engineering Vehicles And Equipment
+637,T-64 mine clearing roller tank,Engineering Vehicles And Equipment
+683,TDA-3 mobile smoke generator,Engineering Vehicles And Equipment
+684,TMM-3 bridge layer,Engineering Vehicles And Equipment
+685,TMM-3M1 bridge layer,Engineering Vehicles And Equipment
+709,UMP-350 engine heater,Engineering Vehicles And Equipment
+749,UR-67 mine clearing charge on BTR-D APC,Engineering Vehicles And Equipment
+750,UR-77 'Meteorit' mine clearing vehicle,Engineering Vehicles And Equipment
+760,Ural-4320 KET-L recovery vehicle,Engineering Vehicles And Equipment
+762,Ural-4320 KT-L recovery vehicle,Engineering Vehicles And Equipment
+766,Ural-4320 with excavator,Engineering Vehicles And Equipment
+767,Ural-4320 with KS-3574M3 or KS-3574M crane,Engineering Vehicles And Equipment
+775,Uran-6 mine-clearing robotic system,Engineering Vehicles And Equipment
+165,Airbus H225 transport helicopter,Helicopters
+353,Ka-52 'Alligator' attack helicopter,Helicopters
+444,Mi-14 maritime helicopter,Helicopters
+446,Mi-2 training helicopter,Helicopters
+447,Mi-24 attack helicopter,Helicopters
+448,Mi-24P attack helicopter,Helicopters
+450,Mi-24P/35M attack helicopter,Helicopters
+451,Mi-24V/P attack helicopter,Helicopters
+452,Mi-24V/P/35M attack helicopter,Helicopters
+453,Mi-28 attack helicopter,Helicopters
+454,Mi-35M attack helicopter,Helicopters
+455,Mi-8 transport helicopter,Helicopters
+726,Unknown helicopter,Helicopters
+205,BMD-4M,Infantry Fighting Vehicles
+214,BMO-T,Infantry Fighting Vehicles
+215,BMP-1(P),Infantry Fighting Vehicles
+217,BMP-1AM,Infantry Fighting Vehicles
+220,BMP-1TS,Infantry Fighting Vehicles
+221,BMP-1U 'Shkval',Infantry Fighting Vehicles
+222,BMP-2 675-sb3KDZ,Infantry Fighting Vehicles
+223,BMP-2(K),Infantry Fighting Vehicles
+225,BMP-2M,Infantry Fighting Vehicles
+226,BMP-2M Berezhok,Infantry Fighting Vehicles
+227,BMP-3,Infantry Fighting Vehicles
+228,BMP-3 688M sb. 3KDZ,Infantry Fighting Vehicles
+256,BTR-3,Infantry Fighting Vehicles
+257,BTR-4,Infantry Fighting Vehicles
+274,BTR-82A(M),Infantry Fighting Vehicles
+284,BTR-ZD:,Infantry Fighting Vehicles
+290,BVP M-80A,Infantry Fighting Vehicles
+478,MT-LBM 6MB,Infantry Fighting Vehicles
+521,Pbv 501A,Infantry Fighting Vehicles
+547,PRP-3 with a BMD-2 turret,Infantry Fighting Vehicles
+715,Unknown BMP-1/2,Infantry Fighting Vehicles
+168,AMN-590951,Infantry Mobility Vehicles
+189,AT105A Saxon,Infantry Mobility Vehicles
+313,GAZ Tigr,Infantry Mobility Vehicles
+314,GAZ Tigr-M,Infantry Mobility Vehicles
+318,GAZ-3937 Vodnik,Infantry Mobility Vehicles
+332,HMMWV Ambulance,Infantry Mobility Vehicles
+333,Husky Tactical Support Vehicle,Infantry Mobility Vehicles
+339,INKAS Titan-S,Infantry Mobility Vehicles
+346,Iveco LMV,Infantry Mobility Vehicles
+347,Iveco LMV Rys,Infantry Mobility Vehicles
+376,Kozak-2,Infantry Mobility Vehicles
+377,Kozak-2M1,Infantry Mobility Vehicles
+378,Kozak-5,Infantry Mobility Vehicles
+379,Kozak-7,Infantry Mobility Vehicles
+380,KrAZ Cobra,Infantry Mobility Vehicles
+381,KrAZ Cougar,Infantry Mobility Vehicles
+382,KrAZ Spartan,Infantry Mobility Vehicles
+419,M1114 and M1151 HMMWV,Infantry Mobility Vehicles
+426,M1152 HMMWV,Infantry Mobility Vehicles
+430,M998 HMMWV,Infantry Mobility Vehicles
+460,MLS Shield,Infantry Mobility Vehicles
+466,MSh-5350.1 command vehicle,Infantry Mobility Vehicles
+467,MSL Shield,Infantry Mobility Vehicles
+493,Novator,Infantry Mobility Vehicles
+519,Panthera T6,Infantry Mobility Vehicles
+599,Roshel Senator,Infantry Mobility Vehicles
+687,Triton-1,Infantry Mobility Vehicles
+728,Unknown IMV,Infantry Mobility Vehicles
+778,Varta,Infantry Mobility Vehicles
+69,1L262E Rtut-BM,Jammers And Deception Systems
+73,1RL257 Krasukha-4 (command post),Jammers And Deception Systems
+407,L262E Rtut-BM,Jammers And Deception Systems
+411,Leer-2 electronic warfare system,Jammers And Deception Systems
+412,Leer-3 electronic warfare system,Jammers And Deception Systems
+492,NOTA,Jammers And Deception Systems
+518,Palantin electronic warfare system,Jammers And Deception Systems
+572,R-330BMV and R-394BMV Borisoglebsk-2B,Jammers And Deception Systems
+573,R-330BMV Borisoglebsk-2B,Jammers And Deception Systems
+575,R-330ZH Zhitel,Jammers And Deception Systems
+586,R-934B 'Sinitsa' automated jamming station,Jammers And Deception Systems
+587,R-934UM,Jammers And Deception Systems
+589,RB-636AM2 Svet-KU EW system,Jammers And Deception Systems
+597,RL257 Krasukha-4 (command post),Jammers And Deception Systems
+598,RLK-MC-A (ROSC-1) counter-UAV system,Jammers And Deception Systems
+603,Silok-01 counter-UAV system,Jammers And Deception Systems
+616,Strizh-3 counter-UAV system,Jammers And Deception Systems
+686,Torn(-MDM),Jammers And Deception Systems
+723,Unknown EW system,Jammers And Deception Systems
+167,Alvis 4 'Mamba',Mine-Resistant Ambush Protected (MRAP) Vehicles
+190,ATF Dingo,Mine-Resistant Ambush Protected (MRAP) Vehicles
+201,BMC Kirpi,Mine-Resistant Ambush Protected (MRAP) Vehicles
+237,BPM-97 Vystrel,Mine-Resistant Ambush Protected (MRAP) Vehicles
+289,Bushmaster Protected Mobility Vehicle,Mine-Resistant Ambush Protected (MRAP) Vehicles
+340,International M1224 MaxxPro,Mine-Resistant Ambush Protected (MRAP) Vehicles
+350,K-53949 Linza,Mine-Resistant Ambush Protected (MRAP) Vehicles
+351,K-53949 Typhoon-K,Mine-Resistant Ambush Protected (MRAP) Vehicles
+368,KamAZ-435029 Patrol-A,Mine-Resistant Ambush Protected (MRAP) Vehicles
+374,KamAZ-63968 Typhoon,Mine-Resistant Ambush Protected (MRAP) Vehicles
+403,KrAZ-MPV Shrek One,Mine-Resistant Ambush Protected (MRAP) Vehicles
+433,Mastiff Protected Patrol,Mine-Resistant Ambush Protected (MRAP) Vehicles
+783,Wolfhound Protected Patrol,Mine-Resistant Ambush Protected (MRAP) Vehicles
+20,122mm 2B17 Tornado-G,Multiple Rocket Launchers
+21,122mm 2B26 Grad-K,Multiple Rocket Launchers
+24,122mm 9P138 Grad-1,Multiple Rocket Launchers
+25,122mm Bastion-1,Multiple Rocket Launchers
+26,122mm BM-21 Grad,Multiple Rocket Launchers
+30,122mm RM-70,Multiple Rocket Launchers
+90,220mm BM-27 Uragan,Multiple Rocket Launchers
+92,220mm Bureviy,Multiple Rocket Launchers
+93,220mm TOS-1A,Multiple Rocket Launchers
+103,300mm BM-30 Smerch,Multiple Rocket Launchers
+120,80mm B-8 makeshift MRL,Multiple Rocket Launchers
+729,Unknown MRL,Multiple Rocket Launchers
+1,APA-80 engine starting vehicle,Engineering Vehicles And Equipment
+15,120mm Alakran mortar carrier,Self-Propelled Artillery
+17,120mm BRM-1K with 2S9 Nona turret,Self-Propelled Artillery
+19,120mm self-propelled gun <U+041C>1064<U+0410>3,Self-Propelled Artillery
+50,155mm AS-90,Self-Propelled Artillery
+53,155mm FH-70 howitzer,Towed Artillery
+55,155mm M109A3/A4/A5//A6L,Self-Propelled Artillery
+60,155mm TRF1 howitzer,Towed Artillery
+67,1L259 Zoopark-1,Radars
+88,203mm 2S7(M) Malka,Self-Propelled Artillery
+106,55K6A command post for S-400,Command Posts And Communications Stations
+110,5P851A (Launcher for S-300PT-1A),Surface-To-Air Missile Systems
+119,79K6 'Pelikan' 3D surveillance radar,Radars And Communications Equipment
+123,92N6A multi-functional radar,Radars
+135,9A84-2 (launcher for S-300V4),Surface-To-Air Missile Systems
+146,9S18 'Tube Arm' radar variant for the Buk missile system,Radars
+149,9S18<U+041C>1(-2) (for Buk-M2),Radars
+150,9S18<U+041C>1(-3) (for Buk-M3),Radars
+163,AeroVironment Quantix Recon UAV,Reconnaissance Unmanned Aerial Vehicles
+166,AK-04-9A 'Porosha' airfield air conditioner based on KamAZ-5320,Engineering Vehicles And Equipment
+169,AMX-10 RC(R),Armoured Fighting Vehicles
+170,AMZ Dzik-2,Infantry Mobility Vehicles
+173,AN-MPQ-64 Sentinel,Radars And Communications Equipment
+178,AN/TPQ-50 counterbattery radar,Radars And Communications Equipment
+191,ATs-10-260 Fuel Tanker,"Trucks, Vehicles and Jeeps"
+193,Avenger UCAV,Unmanned Combat Aerial Vehicles
+200,Bergepanzer 2 ARV,Engineering Vehicles And Equipment
+230,BMR-2 mine-clearing tank,Engineering Vehicles And Equipment
+231,Boeing Insitu ScanEagle 2,Reconnaissance Unmanned Aerial Vehicles
+251,BREM-L armoured recovery vehicle,Engineering Vehicles And Equipment
+271,BTR-80 with 57mm UB-32 unguided aircraft rocket pods,Armoured Fighting Vehicles
+288,Bukovel-AD EW system,Jammers And Deception Systems
+292,Chaklun,Reconnaissance Unmanned Aerial Vehicles
+295,Control station for the TB2 UCAV,Command Posts And Communications Stations
+296,CV9040C,Infantry Fighting Vehicles
+297,DAF YAD 4442 NT,"Trucks, Vehicles and Jeeps"
+298,downgraded Mowag Eagle II,"Trucks, Vehicles and Jeeps"
+300,Eleron 10,Reconnaissance Unmanned Aerial Vehicles
+301,Eleron T-16,Unmanned Combat Aerial Vehicles
+304,EOS-C VTOL,Reconnaissance Unmanned Aerial Vehicles
+320,GAZ-53,"Trucks, Vehicles and Jeeps"
+348,Iveco Magirus 90-16 AW 4x4,"Trucks, Vehicles and Jeeps"
+355,KamAZ 'Gorets' 3958,"Trucks, Vehicles and Jeeps"
+357,KamAZ 6x4,"Trucks, Vehicles and Jeeps"
+365,KamAZ tank low-loader,"Trucks, Vehicles and Jeeps"
+383,KrAZ-214,"Trucks, Vehicles and Jeeps"
+392,KrAZ-255B with KS-3575 crane,Engineering Vehicles And Equipment
+394,KrAZ-260 KT-L recovery vehicle,Engineering Vehicles And Equipment
+400,KrAZ-6322 Raptor,"Trucks, Vehicles and Jeeps"
+401,KrAZ-6446,"Trucks, Vehicles and Jeeps"
+402,KrAZ-Forpost,Mine-Resistant Ambush Protected (MRAP) Vehicles
+405,KTO Rosomak,Infantry Fighting Vehicles
+406,L-39 Albatros,Aircraft
+414,Leopard 2A4,Tanks
+415,Leopard 2A6,Tanks
+416,Leopard 2R mine-clearing tank,Engineering Vehicles And Equipment
+418,M-55S,Tanks
+420,M1123 HMMWV,Infantry Mobility Vehicles
+421,M1126 Stryker Infantry Carrier Vehicle,Armoured Personnel Carriers
+423,M1132 Stryker Engineering Squad Vehicle,Engineering Vehicles And Equipment
+427,M1165 HMMWV,Infantry Mobility Vehicles
+428,M2A2 Bradley ODS-SA,Infantry Fighting Vehicles
+429,M88A1 armoured recovery vehicle,Engineering Vehicles And Equipment
+445,Mi-14PS maritime helicopter,Helicopters
+457,Mi-8MTPR-1 electronic warfare helicopter,Helicopters
+470,MT-LB with 100mm MT-12 anti-tank gun,Armoured Fighting Vehicles
+472,MT-LB with 82-mm automatic mortar 2B9 Vasilek,Armoured Fighting Vehicles
+473,MT-LB with AZP S-60 AA gun,Armoured Fighting Vehicles
+487,MTO-UB2,Engineering Vehicles And Equipment
+494,Oncilla,Infantry Mobility Vehicles
+505,Oshkosh M-ATV,Mine-Resistant Ambush Protected (MRAP) Vehicles
+534,Primoco One 150,Reconnaissance Unmanned Aerial Vehicles
+548,PRP-3 with a BMP-1 turret,Infantry Fighting Vehicles
+555,PT-91 Twardy,Tanks
+566,R-149BMRg command and signals vehicle,Command Posts And Communications Stations
+569,R-161 signals vehicle,Command Posts And Communications Stations
+571,R-325BMV jamming station,Jammers And Deception Systems
+574,R-330M1P Diabazol,Jammers And Deception Systems
+585,R-845 radio station,Command Posts And Communications Stations
+600,RP-377LA Lorandit,Jammers And Deception Systems
+605,SkyGuard Aspide control station,Command Posts And Communications Stations
+609,Sobolyatnik 1L277 portable ground reconnaissance station,Radars
+631,T-55A,Tanks
+636,T-62MV Obr. 2022,Tanks
+638,T-64 mine-clearing tank,Engineering Vehicles And Equipment
+653,T-72AMT Zr.2022,Tanks
+663,T-72B3 Obr. 2022,Tanks
+667,T-80B,Tanks
+670,T-80BV Obr. 2022,Tanks
+688,TRML-4D multi-functional radar (for IRIS-T SLM),Radars And Communications Equipment
+696,UAZ-3151,"Trucks, Vehicles and Jeeps"
+699,UAZ-3303,"Trucks, Vehicles and Jeeps"
+700,UAZ-39094,"Trucks, Vehicles and Jeeps"
+727,Unknown HMMWV variant,Infantry Mobility Vehicles
+744,Unknown Tor variant,Surface-To-Air Missile Systems
+772,Ural-63501-AT,"Trucks, Vehicles and Jeeps"
+782,Wisent 1 mine-clearing tank,Engineering Vehicles And Equipment
+796,ZiL-131 UMZ mine laying vehicle,Engineering Vehicles And Equipment
+797,ZiL-131 with mine launchers,Engineering Vehicles And Equipment
+331,Gyurza-M-class gunboat,Naval Ships
+344,Island-class patrol boat P190 Slovyansk,Naval Ships
+404,Krivak III-class frigate 'Hetman Sahaydachniy',Naval Ships
+533,Pr.304 Amur-class command ship 'Donbas' ''U-500'',Naval Ships
+535,Project 02510 BK-16E high-speed assault boat,Naval Ships
+536,Project 03160 Raptor-class patrol boat,Naval Ships
+537,Project 1164 Slava-class guided missile cruiser 'Moskva',Naval Ships
+538,Project 1171 Tapir-class landing ship 'Saratov (BDK-65)',Naval Ships
+539,Project 11770 Serna-class landing craft,Naval Ships
+540,Project 1258 Yevgenya-class minesweeper 'Henichesk',Naval Ships
+541,Project 22870 SB-739 Vasily Bekh rescue tug,Naval Ships
+542,Project 266M Natya-class minesweeper,Naval Ships
+543,Project 376 Yaroslavets-class general purpose tugboat,Naval Ships
+544,Project 50030 Kalkan class patrol boat (Sea Guard),Naval Ships
+545,Project 58181 Centaur-class fast assault boat,Naval Ships
+546,Project 775 Ropucha-class landing ship,Naval Ships
+606,Small patrol boats (Sea Guard),Naval Ships
+610,Sorum-class seagoing tugboat 'Korets' ''A830 or P186'',Naval Ships
+614,Stenka-class patrol boat (Operated by the Sea Guard),Naval Ships
+710,UMS 600 patrol boat,Naval Ships
+711,UMS-1000 patrol boat (Sea Guard),Naval Ships
+712,UMS-600 patrol boat (Sea Guard),Naval Ships
+730,Unknown patrol boat (Sea Guard),Naval Ships
+789,Zhuk-class patrol boat (Sea Guard),Naval Ships
+63,1L119 Nebo-SVU VHF multi-functional radar,Radars
+64,1L219 (for Zoopark counter-battery radar complex),Radars
+68,1L261 (for 1L260 Zoopark-1M counter-battery radar complex),Radars
+70,1L271 Aistyonok portable mortar locating reconnaissance radar,Radars
+71,1L271 portable mortar locating reconnaissance radar,Radars
+72,1RL239 Ark-1(M) counter-battery radar,Radars
+105,48Ya6-K1 Podlet-K1 low-altitude S-band surveillance radar,Radars
+147,9S18 Kupol TUBE ARM search and acquisition radar (for Buk-M2),Radars
+148,9S18 Kupol TUBE ARM Search and Acquisition Radar for Buk-M2,Radars
+151,9S18M1(-M2) (for Buk-M2),Radars
+152,9S18M1(-M3) (for Buk-M3),Radars
+153,9S36 (for Buk-M2),Radars
+305,Fara ground surveillance radar,Radars
+509,P-18-2 2D VHF surveillance radar,Radars
+511,P-18T,Radars
+532,PPRU-1(M) '9S80(-1)' 'Sborka' (for 9K35 Strela-10),Radars
+592,Repeynik portable counter-UAS radar,Radars
+608,SNAR-10M1 battlefield surveillance radar,Radars
+731,Unknown radar,Radars
+62,1B44-1 (RPMK-1) radiosonde weather radar,Radars And Communications Equipment
+65,1L22 'Parol',Radars And Communications Equipment
+104,36D6 'Tin Shield',Radars And Communications Equipment
+107,5N63-1 'Flap Lid A' on 40V6M mast (for S-300PT),Radars And Communications Equipment
+108,5N63S 'Flap Lid B' (for S-300PS),Radars And Communications Equipment
+109,5N66M 'Clam Shell' on 40V6M mast (for S-300PT),Radars And Communications Equipment
+174,AN/TPQ-36 lightweight counter mortar radar,Radars And Communications Equipment
+175,AN/TPQ-36 weapons location radar,Radars And Communications Equipment
+176,AN/TPQ-37 weapons location radar,Radars And Communications Equipment
+177,AN/TPQ-49 lightweight counter mortar radar,Radars And Communications Equipment
+187,ARTHUR counter-battery radar,Radars And Communications Equipment
+506,P-14 'Tall King',Radars And Communications Equipment
+507,P-18 'Malakhit',Radars And Communications Equipment
+508,P-18 'Spoon Rest D',Radars And Communications Equipment
+510,P-18ML long-range VHF surveillance radar,Radars And Communications Equipment
+512,P-19 'Flat Face B',Radars And Communications Equipment
+517,P-35/37 'Bar Lock',Radars And Communications Equipment
+551,PRV-11 'Side Net',Radars And Communications Equipment
+552,PRV-13 'Odd Pair',Radars And Communications Equipment
+553,PRV-16 'Thin Skin B',Radars And Communications Equipment
+554,PRV-16ML height-finder radar,Radars And Communications Equipment
+580,"R-410-7,5 tropospheric radio relay communication station",Radars And Communications Equipment
+607,SNAR-10 battlefield surveillance radar,Radars And Communications Equipment
+613,ST-68U radar,Radars And Communications Equipment
+302,Eleron T28ME,Reconnaissance Unmanned Aerial Vehicles
+303,Eleron-3,Reconnaissance Unmanned Aerial Vehicles
+309,Forpost,Reconnaissance Unmanned Aerial Vehicles
+327,Granat-3,Reconnaissance Unmanned Aerial Vehicles
+328,Granat-4,Reconnaissance Unmanned Aerial Vehicles
+329,Grifon-12,Reconnaissance Unmanned Aerial Vehicles
+409,Lastochka-M,Reconnaissance Unmanned Aerial Vehicles
+443,Merlin-VR,Reconnaissance Unmanned Aerial Vehicles
+496,Orlan-10,Reconnaissance Unmanned Aerial Vehicles
+497,Orlan-10 'Moskit' jamming UAV,Reconnaissance Unmanned Aerial Vehicles
+498,Orlan-10 jamming UAV,Reconnaissance Unmanned Aerial Vehicles
+501,Orlan-20' ''Kartograf'',Reconnaissance Unmanned Aerial Vehicles
+502,Orlan-30,Reconnaissance Unmanned Aerial Vehicles
+503,Orlik,Reconnaissance Unmanned Aerial Vehicles
+530,Poseidon H10,Reconnaissance Unmanned Aerial Vehicles
+601,Shark,Reconnaissance Unmanned Aerial Vehicles
+629,Supercam S150,Reconnaissance Unmanned Aerial Vehicles
+630,Supercam S350,Reconnaissance Unmanned Aerial Vehicles
+682,Takhion,Reconnaissance Unmanned Aerial Vehicles
+732,Unknown reconnaissance UAV,Reconnaissance Unmanned Aerial Vehicles
+787,ZALA 421-16E2,Reconnaissance Unmanned Aerial Vehicles
+788,ZALA 421-16EM,Reconnaissance Unmanned Aerial Vehicles
+100,2K22M Tunguska-M,Self-Propelled Anti-Aircraft Guns
+101,2K22M1 Tunguska,Self-Propelled Anti-Aircraft Guns
+281,BTR-ZD,Self-Propelled Anti-Aircraft Guns
+282,BTR-ZD Skrezhet,Self-Propelled Anti-Aircraft Guns
+801,ZSU-23-4 Shilka,Self-Propelled Anti-Aircraft Guns
+141,9P148 Konkurs,Self-Propelled Anti-Tank Missile Systems
+142,9P148 Konkurs ATGM carrier,Self-Propelled Anti-Tank Missile Systems
+143,9P149 Shturm-S,Self-Propelled Anti-Tank Missile Systems
+144,9P149 Shturm-S ATGM carrier,Self-Propelled Anti-Tank Missile Systems
+145,9P163M-1 Kornet-T,Self-Propelled Anti-Tank Missile Systems
+11,120mm 2S23 Nona-SVK,Self-Propelled Artillery
+12,120mm 2S34 Khosta,Self-Propelled Artillery
+13,120mm 2S9 Nona,Self-Propelled Artillery
+16,120mm Bars-8MMK,Self-Propelled Artillery
+18,120mm BTR-3M2,Self-Propelled Artillery
+22,122mm 2S1 Gvozdika,Self-Propelled Artillery
+37,152mm 2S19 Msta-S,Self-Propelled Artillery
+39,152mm 2S3 Akatsiya,Self-Propelled Artillery
+40,152mm 2S3(M) Akatsiya,Self-Propelled Artillery
+41,152mm 2S33 Msta-SM2,Self-Propelled Artillery
+42,152mm 2S5 Giatsint-S,Self-Propelled Artillery
+48,152mm ShKH vz. 77 DANA,Self-Propelled Artillery
+49,155mm AHS Krab,Self-Propelled Artillery
+51,155mm Caesar,Self-Propelled Artillery
+54,155mm M109A3/A4/A5,Self-Propelled Artillery
+56,155mm M109A3GN,Self-Propelled Artillery
+58,155mm Panzerhaubitze 2000,Self-Propelled Artillery
+59,155mm ShKH Zuzana 2,Self-Propelled Artillery
+87,203mm 2S7 Pion,Self-Propelled Artillery
+89,203mm 2S7M Malka,Self-Propelled Artillery
+97,240mm 2S4 Tyulpan,Self-Propelled Artillery
+734,Unknown SPG,Self-Propelled Artillery
+111,5P851A (launcher for S-300PT),Surface-To-Air Missile Systems
+112,5P85D (launcher for S-300PS),Surface-To-Air Missile Systems
+113,5P85D/S (launcher for S-300PS),Surface-To-Air Missile Systems
+114,5P85S (launcher for S-300PS),Surface-To-Air Missile Systems
+115,5P85SD/SM (launcher for S-300 PMU(-1)),Surface-To-Air Missile Systems
+116,5P85SM (launcher for S-300 PMU-1),Surface-To-Air Missile Systems
+117,5P85SM2-01 (launcher for S-400),Surface-To-Air Missile Systems
+124,9A310M1 TELAR (for Buk-M1),Surface-To-Air Missile Systems
+125,9A310M1-2 TELAR (for Buk-M1-2),Surface-To-Air Missile Systems
+126,9A316 TEL (for Buk-M2),Surface-To-Air Missile Systems
+127,9A317 TELAR (for Buk-M2),Surface-To-Air Missile Systems
+128,9A330 Tor TLAR (for 9K330 Tor),Surface-To-Air Missile Systems
+130,9A331 TLAR (for 9K331 Tor-M1),Surface-To-Air Missile Systems
+131,9A331M TLAR (for 9K332 Tor-M2),Surface-To-Air Missile Systems
+132,9A39M1 TEL (for Buk-M1),Surface-To-Air Missile Systems
+133,9A39M1-2 TEL (for Buk-M1-2),Surface-To-Air Missile Systems
+134,9A83M2 (launcher for S-300V4),Surface-To-Air Missile Systems
+138,9K331MDT Tor-M2DT,Surface-To-Air Missile Systems
+139,9K35 Strela-10,Surface-To-Air Missile Systems
+410,Launcher for S-300,Surface-To-Air Missile Systems
+520,Pantsir-S1,Surface-To-Air Missile Systems
+615,Stormer HVM,Surface-To-Air Missile Systems
+720,Unknown Buk SAM system,Surface-To-Air Missile Systems
+632,T-62 Obr. 1967,Tanks
+633,T-62M,Tanks
+634,T-62M Obr. 2022,Tanks
+635,T-62MV,Tanks
+639,T-64A,Tanks
+641,T-64B,Tanks
+642,T-64B1M,Tanks
+643,T-64BM 'Bulat',Tanks
+644,T-64BM2 'Bulat',Tanks
+645,T-64BV,Tanks
+647,T-64BV Zr. 2017,Tanks
+648,T-64BVK,Tanks
+649,T-72 'Ural',Tanks
+651,T-72A,Tanks
+652,T-72AMT,Tanks
+654,T-72AV,Tanks
+656,T-72B,Tanks
+658,T-72B Obr. 1989,Tanks
+659,T-72B Obr. 2022,Tanks
+660,T-72B3,Tanks
+661,T-72B3 Obr. 2014,Tanks
+662,T-72B3 Obr. 2016,Tanks
+664,T-72BA,Tanks
+665,T-72EA,Tanks
+666,T-72M/M1(R),Tanks
+668,T-80BV,Tanks
+671,T-80BVK,Tanks
+672,T-80BVM,Tanks
+673,T-80BVM Obr. 2022,Tanks
+674,T-80U,Tanks
+675,T-80UE-1,Tanks
+676,T-80UK,Tanks
+677,T-80UM2,Tanks
+678,T-90A,Tanks
+679,T-90AK,Tanks
+680,T-90M,Tanks
+681,T-90S,Tanks
+737,Unknown T-64,Tanks
+738,Unknown T-72,Tanks
+740,Unknown T-80,Tanks
+741,Unknown tank,Tanks
+4,100mm BS-3 anti-tank gun,Towed Artillery
+5,100mm MT-12 anti-tank gun,Towed Artillery
+7,105mm L119 howitzer,Towed Artillery
+8,120mm 2B16 Nona-K gun mortar,Towed Artillery
+10,120mm 2B16 Nona-K howitzer,Towed Artillery
+28,122mm D-30 howitzer,Towed Artillery
+31,130mm M-46 field gun,Towed Artillery
+32,152mm 2A36 Giatsint-B,Towed Artillery
+33,152mm 2A36 Giatsint-B field-gun,Towed Artillery
+35,152mm 2A65 Msta-B howitzer,Towed Artillery
+46,152mm D-20 gun-howitzer,Towed Artillery
+52,155mm FH-70,Towed Artillery
+57,155mm M777A2 howitzer,Towed Artillery
+98,2B9 Vasilek 82mm automatic gun mortar,Towed Artillery
+121,82mm 2B9 Vasilek automatic gun mortar,Towed Artillery
+122,82mm 2B9 Vasilek MT-LB-based automatic gun mortar,Towed Artillery
+745,Unknown towed artillery,Towed Artillery
+3,(Unknown) vehicle,"Trucks, Vehicles and Jeeps"
+61,17 Ural-375D,"Trucks, Vehicles and Jeeps"
+118,6 Ural tanker,"Trucks, Vehicles and Jeeps"
+136,9K33 Osa,"Trucks, Vehicles and Jeeps"
+157,9T217 transloader (for 9K33 Osa),"Trucks, Vehicles and Jeeps"
+159,9T244 transloader (for 9A330/1 Tor),"Trucks, Vehicles and Jeeps"
+181,Armed pickup truck,"Trucks, Vehicles and Jeeps"
+182,Armed tactical buggy,"Trucks, Vehicles and Jeeps"
+183,Armoured KrAZ-6322,"Trucks, Vehicles and Jeeps"
+184,Armoured Volkswagen Amarok pickup truck,"Trucks, Vehicles and Jeeps"
+232,Bogdan-2251 ambulance pickup truck,"Trucks, Vehicles and Jeeps"
+233,Bogdan-2351 ambulance pickup truck,"Trucks, Vehicles and Jeeps"
+234,Bogdan-5316,"Trucks, Vehicles and Jeeps"
+235,Bogdan-63172,"Trucks, Vehicles and Jeeps"
+236,Bogdan-63172 'Kozak',"Trucks, Vehicles and Jeeps"
+293,Civilian KamAZ 6x6 converted for military use,"Trucks, Vehicles and Jeeps"
+307,FMTV M1083A1P2,"Trucks, Vehicles and Jeeps"
+308,Ford Ranger,"Trucks, Vehicles and Jeeps"
+312,GAZ Sobol,"Trucks, Vehicles and Jeeps"
+315,GAZ-3308,"Trucks, Vehicles and Jeeps"
+319,GAZ-51,"Trucks, Vehicles and Jeeps"
+321,GAZ-63,"Trucks, Vehicles and Jeeps"
+322,GAZ-66,"Trucks, Vehicles and Jeeps"
+324,GAZ-66 tanker,"Trucks, Vehicles and Jeeps"
+349,Jelcz P882 D53,"Trucks, Vehicles and Jeeps"
+354,KamAZ,"Trucks, Vehicles and Jeeps"
+356,KamAZ 4x4,"Trucks, Vehicles and Jeeps"
+358,KamAZ 6x6,"Trucks, Vehicles and Jeeps"
+360,KamAZ 6x6 tanker,"Trucks, Vehicles and Jeeps"
+362,KamAZ 8x8,"Trucks, Vehicles and Jeeps"
+363,KamAZ Avtozaks,"Trucks, Vehicles and Jeeps"
+366,KamAZ with MM-501 armoured cabin,"Trucks, Vehicles and Jeeps"
+367,KamAZ-395800 'Gorets',"Trucks, Vehicles and Jeeps"
+369,KamAZ-5350 with armoured cabin,"Trucks, Vehicles and Jeeps"
+372,KamAZ-6350 8x8 artillery tractor,"Trucks, Vehicles and Jeeps"
+384,KrAZ-255B,"Trucks, Vehicles and Jeeps"
+389,KrAZ-255B tanker,"Trucks, Vehicles and Jeeps"
+396,KrAZ-260 tanker,"Trucks, Vehicles and Jeeps"
+397,KrAZ-5233,"Trucks, Vehicles and Jeeps"
+398,KrAZ-6322,"Trucks, Vehicles and Jeeps"
+408,Land Rover Defender,"Trucks, Vehicles and Jeeps"
+417,LuAZ-969,"Trucks, Vehicles and Jeeps"
+434,MAZ AC-8-500A Tanker,"Trucks, Vehicles and Jeeps"
+435,MAZ TZ-500 tanker,"Trucks, Vehicles and Jeeps"
+437,MAZ-5316,"Trucks, Vehicles and Jeeps"
+438,MAZ-5337 fuel tanker,"Trucks, Vehicles and Jeeps"
+439,MAZ-537,"Trucks, Vehicles and Jeeps"
+442,Mercedes-Benz Unimog U1300L ambulance,"Trucks, Vehicles and Jeeps"
+524,Peugeot P4,"Trucks, Vehicles and Jeeps"
+525,Pinzgauer Vector 718,"Trucks, Vehicles and Jeeps"
+693,UAZ Patriot jeep,"Trucks, Vehicles and Jeeps"
+694,UAZ-23632 pickup truck,"Trucks, Vehicles and Jeeps"
+695,UAZ-23632-148-64 armed pickup truck,"Trucks, Vehicles and Jeeps"
+697,UAZ-31514,"Trucks, Vehicles and Jeeps"
+702,UAZ-394511 Esaul,"Trucks, Vehicles and Jeeps"
+703,UAZ-452 van,"Trucks, Vehicles and Jeeps"
+705,UAZ-469 jeep,"Trucks, Vehicles and Jeeps"
+707,UAZ-515195 'Esaul',"Trucks, Vehicles and Jeeps"
+725,Unknown fuel tanker,"Trucks, Vehicles and Jeeps"
+743,Unknown tanker,"Trucks, Vehicles and Jeeps"
+747,Unknown truck,"Trucks, Vehicles and Jeeps"
+748,Unknown vehicle,"Trucks, Vehicles and Jeeps"
+751,Ural Avtozaks,"Trucks, Vehicles and Jeeps"
+752,Ural Federal,"Trucks, Vehicles and Jeeps"
+753,Ural tanker,"Trucks, Vehicles and Jeeps"
+754,Ural-375D,"Trucks, Vehicles and Jeeps"
+756,Ural-375D tanker,"Trucks, Vehicles and Jeeps"
+757,Ural-375D with 8T210 crane,"Trucks, Vehicles and Jeeps"
+758,Ural-4320,"Trucks, Vehicles and Jeeps"
+764,Ural-4320 tanker,"Trucks, Vehicles and Jeeps"
+765,Ural-4320 with EOV-3521 excavator,"Trucks, Vehicles and Jeeps"
+768,Ural-43206,"Trucks, Vehicles and Jeeps"
+770,Ural-5323,"Trucks, Vehicles and Jeeps"
+771,Ural-542301 tank transporter,"Trucks, Vehicles and Jeeps"
+773,Ural-63704-0010 Tornado-U,"Trucks, Vehicles and Jeeps"
+774,Ural-VV,"Trucks, Vehicles and Jeeps"
+790,ZiL-130,"Trucks, Vehicles and Jeeps"
+791,ZiL-130 tanker,"Trucks, Vehicles and Jeeps"
+792,ZiL-131,"Trucks, Vehicles and Jeeps"
+794,ZiL-131 tanker,"Trucks, Vehicles and Jeeps"
+798,ZiL-157,"Trucks, Vehicles and Jeeps"
+799,ZiL-181,"Trucks, Vehicles and Jeeps"
+800,ZiL-4331,"Trucks, Vehicles and Jeeps"
+2,(Unknown) truck,Unknown
+162,A1-SM Fury,Unmanned Aerial Vehicles
+164,AeroVironment RQ-20 Puma,Unmanned Aerial Vehicles
+188,ASU-1 Valkyrja,Unmanned Aerial Vehicles
+198,Bayraktar Mini,Unmanned Aerial Vehicles
+306,FlyEye,Unmanned Aerial Vehicles
+345,ITEC Skif,Unmanned Aerial Vehicles
+413,Leleka-100,Unmanned Aerial Vehicles
+431,Malloy Aeronautics T150 cargo UAV,Unmanned Aerial Vehicles
+504,Orlik UAV,Unmanned Aerial Vehicles
+522,PD-1,Unmanned Aerial Vehicles
+523,Penguin C,Unmanned Aerial Vehicles
+602,Shark UAV,Unmanned Aerial Vehicles
+611,Spaitech Sparrow,Unmanned Aerial Vehicles
+612,Spectator-M1,Unmanned Aerial Vehicles
+708,UJ-22,Unmanned Aerial Vehicles
+733,Unknown reconnaissance UAV,Unmanned Aerial Vehicles
+199,Bayraktar TB2 UCAV,Unmanned Combat Aerial Vehicles
+310,Forpost-RU,Unmanned Combat Aerial Vehicles
+375,Korsar,Unmanned Combat Aerial Vehicles
+462,Mohajer-6,Unmanned Combat Aerial Vehicles
+495,Orion,Unmanned Combat Aerial Vehicles
+500,Orlan-10 UCAV,Unmanned Combat Aerial Vehicles
