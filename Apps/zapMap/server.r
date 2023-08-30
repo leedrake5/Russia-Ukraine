@@ -57,20 +57,7 @@ function(input, output, session) {
   # Precalculate the breaks we'll need for the two histograms
   #centileBreaks <- hist(plot = FALSE, allzips$centile, breaks = 20)$breaks
 
-  output$histCentile <- renderPlot({
-    # If no zipcodes are in view, don't plot
-    if (nrow(zipsInBounds()) == 0)
-      return(NULL)
 
-    hist(zipsInBounds()$centile,
-      breaks = 20, #centileBreaks,
-      main = "Chaco Isotope Data",
-      xlab = "Percentile",
-      #xlim = range(allzips$centile),
-      col = '#00DD00',
-      border = 'white')
-  })
-  
   output$typeselectui <- renderUI({
       
       selectInput("typeselect", "Type", choices=unique(data$Type), selected=unique(data$Type)[!unique(data$Type) %in% "Other"], multiple=TRUE)
@@ -83,8 +70,8 @@ function(input, output, session) {
                                 "Dates:",
                                 min = as.Date("2023-06-01","%Y-%m-%d"),
                                 max = as.Date(Sys.Date(),"%Y-%m-%d"),
-                                value=c(as.Date("2023-06-01","%Y-%m-%d"), as.Date(Sys.Date(),"%Y-%m-%d")),
-                                timeFormat="%Y-%m-%d")
+                                value=c(as.Date("2023-06-01","%Y-%m-%d"), as.Date(firms$acq_date[nrow(firms)],"%Y-%m-%d")),
+                                timeFormat="%m-%d")
   })
   
   dataSelected <- reactive({
@@ -223,14 +210,27 @@ function(input, output, session) {
       zipdataToo()[zipdataToo()$Type %in% input$typeselect, ]
       
   })
+  
+  firmsData <- reactive({
+      
+      firms[firms$acq_date == input$dateselect[2],]
+      
+  })
+  
 
   # This observer is responsible for maintaining the circles and legend,
   # according to the variables the user has chosen to map to color and size.
   observe({
      zipdata <- zipParsed()
+     firmsdata <- firmsData()
      
     colorBy <- input$color
     sizeBy <- input$size
+    
+    firmspal <- colorFactor(
+      palette = 'orange',
+      domain = "FIRMS"
+    )
 
     if (input$color == "Type") {
 
@@ -240,23 +240,33 @@ function(input, output, session) {
         )
         
         leafletProxy("map", data = zipdata) %>%
-          clearShapes() %>%
-          addCircleMarkers(~Longitude, ~Latitude, radius=20, layerId=~Type,
-            stroke=FALSE, fillOpacity=0.4, fillColor=~pal(Type)) %>%
-          addLegend("bottomleft", pal=pal, values=input$typeselect, title="Type",
-            layerId="colorLegend")
+            clearControls() %>%
+            clearShapes() %>%
+            addCircleMarkers(~Longitude, ~Latitude, radius=input$size, layerId=~Type,
+            stroke=FALSE, fillOpacity=0.6, fillColor=~pal(Type)) %>%
+            addCircleMarkers(~firmsData()$longitude, ~firmsData()$latitude, radius=5,
+                stroke=FALSE, fillOpacity=0.7, fillColor="orange") %>%
+            addLegend("bottomleft", pal=pal, values=input$typeselect, title=input$color,
+            layerId="Equipment Legend") %>%
+            addLegend("bottomleft", pal=firmspal, values="FIRMS", title="Current FIRMS",
+              layerId="FIRMS")
       } else if(input$color=="Country"){
-      pal <- colorFactor(
-        palette = c('dark red', 'navy blue'),
-        domain = c("Russia", "Ukraine")
-      )
+          pal <- colorFactor(
+          palette = c('dark red', 'navy blue'),
+          domain = c("Russia", "Ukraine")
+          )
       
       leafletProxy("map", data = zipdata) %>%
+        clearControls() %>%
         clearShapes() %>%
-        addCircleMarkers(~Longitude, ~Latitude, radius=20, layerId=~Type,
+        addCircleMarkers(~Longitude, ~Latitude, radius=input$size, layerId=~Type,
           stroke=FALSE, fillOpacity=0.4, fillColor=~pal(Country)) %>%
-        addLegend("bottomleft", pal=pal, values=c("Russia", "Ukraine"), title="Type",
-          layerId="colorLegend")
+        addCircleMarkers(~firmsData()$longitude, ~firmsData()$latitude, radius=5,
+            stroke=FALSE, fillOpacity=0.7, fillColor="orange") %>%
+        addLegend("bottomleft", pal=pal, values=c("Russia", "Ukraine"), title=input$color,
+          layerId="colorLegend") %>%
+        addLegend("bottomleft", pal=firmspal, values="FIRMS", title="Current FIRMS",
+                layerId="FIRMS")
     }
 
 
@@ -265,11 +275,11 @@ function(input, output, session) {
 
   # Show a popup at the given location
   showZipcodePopup <- function(zipcode, lat, lng) {
-    selectedZip <- zipParsed()[zipParsed()["Oryx URL"] %in% zipcode,]
+    selectedZip <- zipParsed()[zipParsed()[,"Oryx URL"] %in% zipcode,]
     content <- as.character(tagList(
-      tags$h4("Oryx URL:", selectedZip[,"Oryx URL"]),
+      tags$h4("Oryx URL:", as.character(selectedZip[,"Oryx URL"])),
       tags$strong(HTML(sprintf("%s, %s %s",
-        selectedZip$Type, selectedZip$Model, selectedZip$Date
+      as.character(selectedZip$Type), as.character(selectedZip$Model), as.character(selectedZip$Date)
       )))
       )
     )

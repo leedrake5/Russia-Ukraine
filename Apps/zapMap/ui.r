@@ -39,15 +39,15 @@ navbarPage("Oryx Geolocated Data", id="nav",
         tags$hr(),
 
         selectInput("color", "Color", c("Country", "Type"), selected="Country"),
-        #selectInput("size", "Size", seq(1, 10, 1), selected = 1),
+        sliderInput("size", "Size", min=5, max=25, value = 10),
         #conditionalPanel("input.color == 'superzip' || input.size == 'superzip'",
           # Only prompt for threshold when coloring or sizing by superzip
           #numericInput("threshold", "SuperZIP threshold (top n percentile)", 5)
         #),
 
         #plotOutput("histCentile", height = 200),
-        checkboxInput("uselabs", "Legend", value=T),
         uiOutput("typeselectui"),
+        checkboxInput("uselabs", "Legend", value=T),
         plotOutput("current_gen", height = 250),
         plotOutput("ratio_plot", height = 250),
         uiOutput("dateselectui")

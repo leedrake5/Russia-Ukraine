@@ -53,7 +53,7 @@ current_total <-
   geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Losses") +
   ggtitle(paste0("Total equipment losses through ", Sys.Date())) +
   theme_light() +
@@ -81,7 +81,7 @@ current_ratio <-
   geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Total equipment loss ratio through ", Sys.Date())) +
   theme_light()
@@ -127,7 +127,7 @@ current_total <-
   geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Destroyed") +
   ggtitle(paste0("Total equipment destroyed through ", Sys.Date())) +
   theme_light() +
@@ -155,7 +155,7 @@ current_ratio <-
   geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Destroyed Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Destroyed equipment loss ratio through ", Sys.Date())) +
   theme_light()
@@ -189,7 +189,7 @@ current_total <-
   geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Abandoned") +
   ggtitle(paste0("Total equipment abandoned through ", Sys.Date())) +
   theme_light() +
@@ -217,7 +217,7 @@ current_ratio <-
   geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Abandoned Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Abandoned equipment loss ratio through ", Sys.Date())) +
   theme_light()
@@ -252,7 +252,7 @@ current_total <-
   geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Captured") +
   ggtitle(paste0("Total equipment captured through ", Sys.Date())) +
   theme_light() +
@@ -280,7 +280,7 @@ current_ratio <-
   geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Captured Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Captured equipment loss ratio through ", Sys.Date())) +
   theme_light()
@@ -315,7 +315,7 @@ current_total <-
   geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Damaged") +
   ggtitle(paste0("Total equipment damaged through ", Sys.Date())) +
   theme_light() +
@@ -343,7 +343,7 @@ current_ratio <-
   geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Damaged Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Damaged equipment loss ratio through ", Sys.Date())) +
   theme_light()
@@ -378,7 +378,7 @@ current_total <-
   geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Tanks Lost") +
   ggtitle(paste0("Tanks lost through ", Sys.Date())) +
   theme_light() +
@@ -406,7 +406,7 @@ current_ratio <-
   geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Tank Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Tank loss ratio through ", Sys.Date())) +
   theme_light()
@@ -440,7 +440,7 @@ current_total <-
   geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Armored Fighting Vehicles Lost") +
   ggtitle(paste0("AFV lost through ", Sys.Date())) +
   theme_light() +
@@ -468,7 +468,7 @@ current_ratio <-
   geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("AFV Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("AFV loss ratio through ", Sys.Date())) +
   theme_light()
@@ -503,7 +503,7 @@ current_total <-
   geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Artillery Lost") +
   ggtitle(paste0("Artillery lost through ", Sys.Date())) +
   theme_light() +
@@ -531,7 +531,7 @@ current_ratio <-
   geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Artillery Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Artillery loss ratio through ", Sys.Date())) +
   theme_light()
@@ -565,7 +565,7 @@ current_total <-
   geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Vehicles Lost") +
   ggtitle(paste0("Vehicles lost through ", Sys.Date())) +
   theme_light() +
@@ -593,7 +593,7 @@ current_ratio <-
   geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Vehicle Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Vehicle loss ratio through ", Sys.Date())) +
   theme_light()
@@ -627,7 +627,7 @@ current_total <-
   geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Armor Lost") +
   ggtitle(paste0("Armor lost through ", Sys.Date())) +
   theme_light() +
@@ -655,7 +655,7 @@ current_ratio <-
   geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Armor Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Armor loss ratio through ", Sys.Date())) +
   theme_light()

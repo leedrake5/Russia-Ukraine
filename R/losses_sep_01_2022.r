@@ -142,7 +142,7 @@ current_total <-
   geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Losses") +
   ggtitle(paste0("Total equipment losses through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -162,7 +162,7 @@ current_ratio <-
   geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Total equipment loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -183,7 +183,7 @@ current_destroyed <- ggplot(destroyed_melt, aes(Date, Destroyed, colour=Country)
   geom_col(data=destroyed_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Destroyed") +
   ggtitle(paste0("Total equipment destroyed through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -202,7 +202,7 @@ destroyed_ratio <-
   geom_col(data=destroyed_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Destroyed Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Destroyed equipment loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -222,7 +222,7 @@ current_abandoned <- ggplot(abandoned_melt, aes(Date, Abandoned, colour=Country)
   geom_col(data=abandoned_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Abandoned") +
   ggtitle(paste0("Total equipment abandoned through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -241,7 +241,7 @@ abandoned_ratio <-
   geom_col(data=destroyed_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Abandoned Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Abandoned equipment loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -262,7 +262,7 @@ current_captured <- ggplot(captured_melt, aes(Date, Captured, colour=Country)) +
   geom_col(data=captured_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Captured by Enemy") +
   ggtitle(paste0("Total equipment captured by enemy through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -281,7 +281,7 @@ captured_ratio <-
   geom_col(data=destroyed_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Captured Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Captured equipment loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -301,7 +301,7 @@ current_damaged <- ggplot(damaged_melt, aes(Date, Damaged, colour=Country)) +
   geom_col(data=damaged_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Damaged") +
   ggtitle(paste0("Total equipment damaged through ", as.Date("2022-12-31"))) +
   theme_light() +
@@ -320,7 +320,7 @@ damaged_ratio <-
   geom_col(data=destroyed_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Damaged Equipment Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Damaged equipment loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -344,7 +344,7 @@ current_grid <- ggplot(all_melt, aes(Date, Number, colour=Country)) +
   geom_col(data=all_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) + 
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Lost") +
   ggtitle(paste0("Total equipment lost through ", as.Date("2022-12-31"))) +
   facet_grid(rows=vars(Type)) +
@@ -452,7 +452,7 @@ all_types <- as.data.frame(rbindlist(list(total_cast_melt, destroyed_cast_melt, 
 ratio_plot <- ggplot(data=all_types, aes(Date, Ratio, colour=Country)) +
   geom_point(size=0.1) +
   geom_line(stat="smooth", method="loess", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Lost", limits=c(-0.2, 1.1), labels=scales::percent, breaks=seq(0, 1, 0.25)) +
   ggtitle(paste0("Total equipment lost through ", as.Date("2022-12-31"))) +
   facet_wrap(~Type, nrow=2, ncol=2) +
@@ -480,7 +480,7 @@ current_grid <- ggplot(all_melt, aes(Date, Number, colour=Country)) +
   geom_col(data=all_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Equipment Lost") +
   ggtitle(paste0("Total equipment lost through ", as.Date("2022-12-31"))) +
   facet_grid(rows=vars(Type)) +
@@ -507,7 +507,7 @@ current_tanks <- ggplot(tanks_melt, aes(Date, Tanks, colour=Country)) +
   geom_col(data=tanks_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Tanks Lost") +
   ggtitle(paste0("Tanks lost through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -526,7 +526,7 @@ tank_ratio <-
   geom_col(data=tanks_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Tank Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Tank loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -547,7 +547,7 @@ current_afv <- ggplot(afv_melt, aes(Date, AFV, colour=Country)) +
   geom_col(data=afv_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Armored Fighting Vehicles Lost") +
   ggtitle(paste0("AFV lost through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -566,7 +566,7 @@ afv_ratio <-
   geom_col(data=afv_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("AFV Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("AFV loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -588,7 +588,7 @@ current_artillery <- ggplot(artillery_melt, aes(Date, Artillery, colour=Country)
   geom_col(data=artillery_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Artillery Lost") +
   ggtitle(paste0("Artillery lost through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -608,7 +608,7 @@ artillery_ratio <-
   geom_col(data=artillery_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Artillery Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Artillery loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -630,7 +630,7 @@ current_ifv <- ggplot(ifv_melt, aes(Date, IFV, colour=Country)) +
   geom_col(data=ifv_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Infantry Fighting Vehicles Lost") +
   ggtitle(paste0("IFV lost through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -649,7 +649,7 @@ ifv_ratio <-
   geom_col(data=ifv_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("IFV Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("IFV loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -670,7 +670,7 @@ current_apc <- ggplot(apc_melt, aes(Date, APC, colour=Country)) +
   geom_col(data=apc_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Armored Personal Carriers Lost") +
   ggtitle(paste0("APC lost through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -689,7 +689,7 @@ apc_ratio <-
   geom_col(data=apc_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("APC Loss Ratio Ru:Ukr") +
   ggtitle(paste0("APC loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -710,7 +710,7 @@ current_imv <- ggplot(imv_melt, aes(Date, IMV, colour=Country)) +
   geom_col(data=imv_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Infantry Mobility Vehicles Lost") +
   ggtitle(paste0("IMV lost through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -729,7 +729,7 @@ imv_ratio <-
   geom_col(data=imv_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("IMV Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("IMV loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -751,7 +751,7 @@ current_ev <- ggplot(ev_melt, aes(Date, EV, colour=Country)) +
   geom_col(data=ev_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Engineering Vehicles Lost") +
   ggtitle(paste0("EV lost through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -770,7 +770,7 @@ ev_ratio <-
   geom_col(data=ev_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Engineering Vehicle Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Engineering vehicle loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -791,7 +791,7 @@ current_vehicles <- ggplot(vehicles_melt, aes(Date, Vehicles, colour=Country)) +
   geom_col(data=vehicles_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Vehicles Lost") +
   ggtitle(paste0("Vehicles lost through ", as.Date("2022-12-31"))) +
   theme_light()+ 
@@ -811,7 +811,7 @@ vehicle_ratio <-
   geom_col(data=vehicle_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Vehicle Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Vehicle loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -833,7 +833,7 @@ current_aircraft <- ggplot(aircraft_melt, aes(Date, Aircraft, colour=Country)) +
   geom_col(data=aircraft_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Aircraft Lost") +
   ggtitle(paste0("Aircraft lost through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -852,7 +852,7 @@ aircraft_ratio <-
   geom_col(data=aircraft_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Aircraft Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Aircraft loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -873,7 +873,7 @@ current_antiair <- ggplot(antiaircraft_melt, aes(Date, Antiair, colour=Country))
   geom_col(data=antiaircraft_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Anti-Air Systems Lost") +
   ggtitle(paste0("Anti-air systems lost through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -892,7 +892,7 @@ antiair_ratio <-
   geom_col(data=antiair_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Anti-Air Systems Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Anti-air system loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -913,7 +913,7 @@ current_infantry <- ggplot(infantry_melt, aes(Date, Infantry, colour=Country)) +
   geom_col(data=infantry_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Infantry Support Lost") +
   ggtitle(paste0("Infantry support lost through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -932,7 +932,7 @@ infantry_ratio <-
   geom_col(data=infantry_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Anti-Air Systems Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Anti-air system loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -953,7 +953,7 @@ current_armor <- ggplot(armor_melt, aes(Date, Armor, colour=Country)) +
   geom_col(data=armor_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Armor Lost") +
   ggtitle(paste0("Armor support lost through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -972,7 +972,7 @@ armor_ratio <-
   geom_col(data=armor_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Armor Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Armor loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -993,7 +993,7 @@ current_logistics <- ggplot(logistics_melt, aes(Date, Logistics, colour=Country)
   geom_col(data=logistics_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Logistics Systems Lost") +
   ggtitle(paste0("Logistics systems lost through ", as.Date("2022-12-31"))) +
   theme_light() + 
@@ -1012,7 +1012,7 @@ logistics_ratio <-
   geom_col(data=logistics_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Logistics Systems Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(min(x)-1, (max(x) + 1) * 1.1))))) +
   ggtitle(paste0("Logistics systems loss ratio through ", as.Date("2022-12-31"))) +
   theme_light()
@@ -1091,7 +1091,7 @@ current_percent_total_tanks <- ggplot(data=percent_tanks, mapping=aes(Date, Tank
   geom_col(data=percent_tanks, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous(labels = percent) +
   labs(y = "Tank Losses [% of total tanks]") +
   ggtitle(paste0("Proportional tank losses through ", as.Date("2022-12-31"))) +
@@ -1125,7 +1125,7 @@ current_percent_total_tanks <- ggplot(data=percent_tanks, mapping=aes(Date, Tank
   geom_col(data=percent_tanks, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous(labels = percent) +
   labs(y = "Tank Gains/Losses [% of total tanks]") +
   ggtitle(paste0("Proportion of total tanks gained or lost through ", as.Date("2022-12-31"))) +
@@ -1158,7 +1158,7 @@ current_percent_deployed_tanks <- ggplot(data=percent_tanks, mapping=aes(Date, T
   geom_col(data=percent_tanks, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous(labels = percent) +
   labs(y = "Tank Losses [% of deployed tanks]") +
   ggtitle(paste0("Proportional tank losses through ", as.Date("2022-12-31"))) +
@@ -1192,7 +1192,7 @@ current_percent_deployed_tanks <- ggplot(data=percent_tanks, mapping=aes(Date, T
   geom_col(data=percent_tanks, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous(labels = percent) +
   labs(y = "Tank Gains/Losses [% of deployed tanks]") +
   ggtitle(paste0("Proportion of deployed tanks gained or lost through ", as.Date("2022-12-31"))) +
@@ -1227,7 +1227,7 @@ current_percent_afv <- ggplot(data=percent_afv, mapping=aes(Date, AFV, colour=Co
   geom_col(data=percent_afv, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous(labels = percent) +
   labs(y = "AFV Losses [% of AFV]") +
   ggtitle(paste0("Proportional AFV losses through ", as.Date("2022-12-31"))) +
@@ -1261,7 +1261,7 @@ current_percent_total_afv <- ggplot(data=percent_afv, mapping=aes(Date, AFV, col
   geom_col(data=percent_afv, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous(labels = percent) +
   labs(y = "AFV Gains/Losses [% of total AFVs]") +
   ggtitle(paste0("Proportion of total AFVs gained or lost through ", as.Date("2022-12-31"))) +
@@ -1295,7 +1295,7 @@ current_percent_total_armor <- ggplot(data=percent_armor, mapping=aes(Date, Armo
   geom_col(data=percent_armor, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous(labels = percent) +
   labs(y = "Armor Gains/Losses [% of total Armor]") +
   ggtitle(paste0("Proportion of total Armor gained or lost through ", as.Date("2022-12-31"))) +
@@ -1328,7 +1328,7 @@ current_absolute_total <- ggplot(data=absolute_units, mapping=aes(Date, Net, col
   geom_col(data=absolute_units, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) + 
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous(breaks = scales::pretty_breaks(n=10)) +
   labs(y = "Absolute Equipment Gains/Losses") +
   ggtitle(paste0("Equipment gained or lost through ", as.Date("2022-12-31"))) +
@@ -1425,7 +1425,7 @@ north_firms_summary_plot <- ggplot(north_firms_summary, aes(Date, FRP, colour=Re
   geom_point() +
   geom_line() +
   #stat_smooth(method="gam") +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Fire Radiative Power (MegaWatts)", breaks=scales::pretty_breaks(n=10), labels=scales::comma) +
   ggtitle("FIRMS VIIRS I-Band 375 m Active Fire") +
   theme_light()
@@ -1439,7 +1439,7 @@ south_firms_summary_plot <- ggplot(south_firms_summary, aes(Date, FRP, colour=Re
   geom_point() +
   geom_line() +
   #stat_smooth(method="gam") +
-  scale_x_date(date_labels = "%m/%d") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
   scale_y_continuous("Total Fire Radiative Power (MegaWatts)", breaks=scales::pretty_breaks(n=10), labels=scales::comma) +
   ggtitle("FIRMS VIIRS I-Band 375 m Active Fire") +
   theme_light()

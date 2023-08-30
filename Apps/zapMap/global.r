@@ -14,8 +14,11 @@ lm_eqn = function(m) {
 }
 
 data <- read.csv("data/zaporizhizhia.csv")
+firms <- read.csv("data/current_firms.csv")
 
 data$Date <- as.Date(data$Date)
+firms$acq_date <- as.Date(firms$acq_date)
+
 data <- data[complete.cases(data$Geolocation),]
 data$Latitude <- as.numeric(sapply(data$Geolocation, function(x) strsplit(x, split=",")[[1]][1]))
 data$Longitude <- as.numeric(sapply(data$Geolocation, function(x) strsplit(x, split=",")[[1]][2]))
