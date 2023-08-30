@@ -18,6 +18,7 @@ total_mod$GeneralType[total_mod$GeneralType=="Tanks"] <- "Armor"
 total_mod$GeneralType[total_mod$GeneralType=="Armoured Fighting Vehicles"] <- "Armor"
 
 write.csv(total_mod, "data/Naalsio/zaporizhizhia.csv")
+write.csv(total_mod, "Apps/zaporizhizhiaMap/data/zaporizhizhia.csv")
 total_mod$Date <- as.Date(total_mod$Date)
 total_mod <- total_mod[order(total_mod$Date),]
 
