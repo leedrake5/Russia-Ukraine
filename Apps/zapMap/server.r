@@ -50,8 +50,8 @@ function(input, output, session) {
     lngRng <- range(bounds$east, bounds$west)
 
     subset(zipdata,
-      Latitude >= latRng[1] & Latitude <= latRng[2] &
-        Longitude >= lngRng[1] & Longitude <= lngRng[2])
+      lat >= latRng[1] & lat <= latRng[2] &
+        lng >= lngRng[1] & lng <= lngRng[2])
   })
 
   # Precalculate the breaks we'll need for the two histograms
@@ -69,7 +69,7 @@ function(input, output, session) {
       sliderInput("dateselect",
                                 "Dates:",
                                 min = as.Date("2023-06-01","%Y-%m-%d"),
-                                max = as.Date(Sys.Date(),"%Y-%m-%d"),
+                                max = as.Date(firms$acq_date[nrow(firms)],"%Y-%m-%d"),
                                 value=c(as.Date("2023-06-01","%Y-%m-%d"), as.Date(firms$acq_date[nrow(firms)],"%Y-%m-%d")),
                                 timeFormat="%m-%d")
   })
@@ -211,19 +211,15 @@ function(input, output, session) {
       
   })
   
-  firmsData <- reactive({
-      
-      firms[firms$acq_date == input$dateselect[2],]
-      
-  })
+
   
 
   # This observer is responsible for maintaining the circles and legend,
   # according to the variables the user has chosen to map to color and size.
   observe({
      zipdata <- zipParsed()
-     firmsdata <- firmsData()
-     
+     firms_plot_data <- firms[firms$acq_date == as.Date(input$dateselect[2]),]
+
     colorBy <- input$color
     sizeBy <- input$size
     
@@ -242,9 +238,10 @@ function(input, output, session) {
         leafletProxy("map", data = zipdata) %>%
             clearControls() %>%
             clearShapes() %>%
-            addCircleMarkers(~Longitude, ~Latitude, radius=input$size, layerId=~Type,
+            clearMarkers() %>%
+            addCircleMarkers(~lng, ~lat, radius=input$size, layerId=~Type,
             stroke=FALSE, fillOpacity=0.6, fillColor=~pal(Type)) %>%
-            addCircleMarkers(~firmsData()$longitude, ~firmsData()$latitude, radius=5,
+            addCircleMarkers(~firms_plot_data$longitude, ~firms_plot_data$latitude, radius=5,
                 stroke=FALSE, fillOpacity=0.7, fillColor="orange") %>%
             addLegend("bottomleft", pal=pal, values=input$typeselect, title=input$color,
             layerId="Equipment Legend") %>%
@@ -259,9 +256,10 @@ function(input, output, session) {
       leafletProxy("map", data = zipdata) %>%
         clearControls() %>%
         clearShapes() %>%
-        addCircleMarkers(~Longitude, ~Latitude, radius=input$size, layerId=~Type,
+        clearMarkers() %>%
+        addCircleMarkers(~lng, ~lat, radius=input$size, layerId=~Type,
           stroke=FALSE, fillOpacity=0.4, fillColor=~pal(Country)) %>%
-        addCircleMarkers(~firmsData()$longitude, ~firmsData()$latitude, radius=5,
+        addCircleMarkers(~firms_plot_data$longitude, ~firms_plot_data$latitude, radius=5,
             stroke=FALSE, fillOpacity=0.7, fillColor="orange") %>%
         addLegend("bottomleft", pal=pal, values=c("Russia", "Ukraine"), title=input$color,
           layerId="colorLegend") %>%
@@ -275,12 +273,14 @@ function(input, output, session) {
 
   # Show a popup at the given location
   showZipcodePopup <- function(zipcode, lat, lng) {
-    selectedZip <- zipParsed()[zipParsed()[,"Oryx URL"] %in% zipcode,]
+    selectedZip <- zipParsed()[zipParsed()$ID == zipcode,]
     content <- as.character(tagList(
-      tags$h4("Oryx URL:", as.character(selectedZip[,"Oryx URL"])),
-      tags$strong(HTML(sprintf("%s, %s %s",
-      as.character(selectedZip$Type), as.character(selectedZip$Model), as.character(selectedZip$Date)
-      )))
+      tags$h4("Type:", as.character(selectedZip$Type[1])),
+      tags$br(),
+      sprintf("Model: ", as.character(selectedZip$Model[1])), tags$br(),
+      sprintf("Status: ", as.character(selectedZip$Status[1])), tags$br(),
+      sprintf("Date: ", as.character(selectedZip$Date[1])), tags$br()
+
       )
     )
     leafletProxy("map") %>% addPopups(lng, lat, content, layerId = zipcode)
@@ -289,6 +289,7 @@ function(input, output, session) {
   # When map is clicked, show a popup with city info
   observe({
     leafletProxy("map") %>% clearPopups()
+    #event <- input$map_marker_click
     event <- input$map_shape_click
     if (is.null(event))
       return()
