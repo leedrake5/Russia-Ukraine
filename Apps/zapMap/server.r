@@ -335,8 +335,11 @@ function(input, output, session) {
       
     df <- reactiveZip()
     
+    df$Oryx.URL <- paste0("<a href='",df$Oryx.URL,"'>",df$Oryx.URL,"</a>")
+    df$Source <- paste0("<a href='",df$Source,"'>",df$Source,"</a>")
 
-    DT::datatable(df)
+
+    DT::datatable(df, escape=FALSE)
   })
   
   
