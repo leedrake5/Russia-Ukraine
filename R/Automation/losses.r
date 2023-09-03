@@ -1427,7 +1427,7 @@ kupyansk <- ggmap::get_map(location=c(lon=37.707357, lat=49.732736), source="goo
 kupyansk_map <- ggmap(kupyansk) +
   #geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
   geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
-  ggtitle(paste0("Bakhmut axis on ", Sys.Date()))  + theme_light()
+  ggtitle(paste0("Kupyansk axis on ", Sys.Date()))  + theme_light()
 
 ggsave("~/Github/Russia-Ukraine/Maps/kupyansk_map.jpg", kupyansk_map, device="jpg", width=6, height=5, dpi=600)
 
