@@ -1418,8 +1418,6 @@ bakhmut_map <- ggmap(bakhmut) +
 
 ggsave("~/Github/Russia-Ukraine/Maps/bakhmut_map.jpg", bakhmut_map, device="jpg", width=6, height=5, dpi=600)
 
-49.732736, 37.707357
-
 
 ###Kupyansk
 kupyansk <- ggmap::get_map(location=c(lon=37.707357, lat=49.732736), source="google", maptype="roadmap", crop=FALSE, zoom=10)
