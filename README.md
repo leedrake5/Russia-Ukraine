@@ -1,6 +1,6 @@
 # Russia-Ukraine War
 
-##Methods
+## Methods
 Using data from [Oryx's site](https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html), I've put together a quick tracker to visualize equipment losses since [Russia's February 24th invasion of Ukraine](https://en.wikipedia.org/wiki/Russo-Ukrainian_War). This is only equipment that is independently verified, as noted by Oryx:
 
 > This list only includes destroyed vehicles and equipment of which photo or videographic evidence is available. Therefore, the amount of equipment destroyed is significantly higher than recorded here. Small arms, munitions, civilian vehicles, trailers and derelict equipment (including aircraft) are not included in this list. All possible effort has gone into discerning the status of equipment between captured or abandoned. Many of the entries listed as 'abandoned' will likely end up captured or destroyed. Similarly, some of the captured equipment might be destroyed if it can't be recovered. ATGMs and MANPADS are included in the list but not included in the ultimate count. The Soviet flag is used when the equipment in question was produced prior to 1991. 
@@ -31,26 +31,26 @@ Ukranian and Russian equipment losses started of equivalent, but Russians quickl
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/current_ratio.jpg?)
 The evolving ratio of losses increased sharply to Ukraine's favor, though early swings are impacted by Oryx and his team keeping up with data. The ratio stabilized around ~3.5 for most of the first few months of fighting, and reached as high as 4:1 following the Kharkiv Offensive. After that ratios declined to ~3.12 by the start of 2023. 
 
-##Maps
+## Maps
 Map data is provided using a Google maps base layer with troop locations from [Henry Schlottman](https://twitter.com/HN_Schlottman)'s [GitHub repo](https://github.com/simonhuwiler/uawardata). Fire data comes from [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov) VIIRS satellite.  
 
-###Tokamk Axis
+### Tokamk Axis
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/tokmak_map.jpg?)
 Tokmak is the main axis Ukrainians are focusing on in their summer 2023 offensive. 
 
-###Velyka Novosilka Axis
+### Velyka Novosilka Axis
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/velyka_novosilka_mal.jpg?)
 A supporting axis for the Ukrainian Summer 2023 summer offensive is on the Zaporhizhizhia-Donetks oblast border. 
 
-###Bahkmut Map
+### Bahkmut Map
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/bakmut_map.jpg?)
 Fighting has been intense in Bahkmut since the summer of 2022. 
 
-###Kupyansk Map
+### Kupyansk Map
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/kherson_map.jpg?)
 Russia launched a localized offensive near Kupyansk in summer of 2023, though mainy gains have since been reversed. 
 
-##Fire Radiative Power
+## Fire Radiative Power
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/axis_firms_summary_plot.jpg?)
 
 An extended discussion of how to evaluate these analyses are [here](https://bleedrake.medium.com/what-does-satellite-infrared-data-tell-us-about-the-evolving-russian-strategy-in-its-ukraine-99672ae8e4cd). In general, the fire radiative power plots (FRP) are a useful guide to activity, with the lull in IR emissions in late 2022/early 2023 representing a change in how Russia used its artillery. 

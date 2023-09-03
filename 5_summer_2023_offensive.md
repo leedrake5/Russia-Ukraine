@@ -141,26 +141,24 @@ These ratio Plots/2023-06-01/ use Russian equipment losses as the numerator and 
 
 
 ## Maps
-###Tokamk Axis
+### Tokamk Axis
 ![alt text](https:/raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/tokmak_map.jpg?)
 Tokmak is the main axis Ukrainians are focusing on in their summer 2023 offensive. 
 
-###Velyka Novosilka Axis
+### Velyka Novosilka Axis
 ![alt text](https:/raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/velyka_novosilka_mal.jpg?)
 A supporting axis for the Ukrainian Summer 2023 summer offensive is on the Zaporhizhizhia-Donetks oblast border. 
 
-###Bahkmut Map
+### Bahkmut Map
 ![alt text](https:/raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/bakmut_map.jpg?)
 Fighting has been intense in Bahkmut since the summer of 2022. 
 
-###Kupyansk Map
+### Kupyansk Map
 ![alt text](https:/raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/kherson_map.jpg?)
 Russia launched a localized offensive near Kupyansk in summer of 2023, though mainy gains have since been reversed. 
 
-##Fire Radiative Power
+## Fire Radiative Power
 ![alt text](https:/raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/axis_firms_summary_plot.jpg?)
-
-
 
 An extended discussion of how to evaluate these analyses are [here](https:/bleedrake.medium.com/what-does-satellite-infrared-data-tell-us-about-the-evolving-russian-strategy-in-its-ukraine-99672ae8e4cd). In general, the fire radiative power Plots/2023-06-01/ (FRP) are a useful guide to activity, with the lull in IR emissions in late 2022/early 2023 representing a change in how Russia used its artillery. 
 
