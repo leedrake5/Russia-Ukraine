@@ -1415,8 +1415,8 @@ crimea_firms_summary <- as.data.frame(data.table::rbindlist(crimea_means_firms))
 
 north_firms_summary <- as.data.frame(data.table::rbindlist(list(kyiv_firms_summary, north_donbas_firms_summary, south_donbas_firms_summary)))
 
-north_firms_summary_plot <- ggplot(north_firms_summary, aes(Date, FRP, colour=Region, lty=Region)) +
-  geom_point() +
+north_firms_summary_plot <- ggplot(north_firms_summary, aes(Date, FRP, colour=Region)) +
+  #geom_point() +
   geom_line() +
   #stat_smooth(method="gam") +
   scale_x_date(date_labels = "%Y/%m/%d") +
@@ -1429,8 +1429,8 @@ ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/north_firms_summary_plot.jpg", 
 
 south_firms_summary <- as.data.frame(data.table::rbindlist(list(zaporizhizhia_firms_summary, kherson_firms_summary, crimea_firms_summary)))
 
-south_firms_summary_plot <- ggplot(south_firms_summary, aes(Date, FRP, colour=Region, lty=Region)) +
-  geom_point() +
+south_firms_summary_plot <- ggplot(south_firms_summary, aes(Date, FRP, colour=Region)) +
+  #geom_point() +
   geom_line() +
   #stat_smooth(method="gam") +
   scale_x_date(date_labels = "%Y/%m/%d") +
@@ -1439,3 +1439,60 @@ south_firms_summary_plot <- ggplot(south_firms_summary, aes(Date, FRP, colour=Re
   theme_light()
 
 ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/south_firms_summary_plot.jpg", south_firms_summary_plot, device="jpg", width=6, height=5, dpi=600)
+
+
+###Axis FRP
+tokmak_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+tokmak_firms <- new_firms_frame[new_firms_frame$latitude < 47.7 & new_firms_frame$latitude > 47.0 & new_firms_frame$longitude < 36.2 & new_firms_frame$longitude > 35.4,]
+tokmak_date_firms <- list()
+tokmak_means_firms <- list()
+for(i in tokmak_dates){
+    tokmak_date_firms[[i]] <- tokmak_firms[as.Date(tokmak_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+    tokmak_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(tokmak_date_firms[[i]]$frp), Axis="Tokmak")
+}
+tokmak_firms_summary <- as.data.frame(data.table::rbindlist(tokmak_means_firms))
+
+velyka_novosilka_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+velyka_novosilka_firms <- new_firms_frame[new_firms_frame$latitude < 47.9 & new_firms_frame$latitude > 47.4 & new_firms_frame$longitude < 37.1 & new_firms_frame$longitude > 36.4,]
+velyka_novosilka_date_firms <- list()
+velyka_novosilka_means_firms <- list()
+for(i in velyka_novosilka_dates){
+    velyka_novosilka_date_firms[[i]] <- tokmak_firms[as.Date(velyka_novosilka_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+    velyka_novosilka_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(velyka_novosilka_date_firms[[i]]$frp), Axis="Velyka Novosilka")
+}
+velyka_novosilka_firms_summary <- as.data.frame(data.table::rbindlist(velyka_novosilka_means_firms))
+
+bakhmut_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+bakhmut_firms <- new_firms_frame[new_firms_frame$latitude < 48.9 & new_firms_frame$latitude > 48.3 & new_firms_frame$longitude < 38.4 & new_firms_frame$longitude > 37.6,]
+bakhmut_date_firms <- list()
+bakhmut_means_firms <- list()
+for(i in bakhmut_dates){
+    bakhmut_date_firms[[i]] <- bakhmut_firms[as.Date(bakhmut_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+    bakhmut_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(bakhmut_date_firms[[i]]$frp), Axis="Bakhmut")
+}
+bakhmut_firms_summary <- as.data.frame(data.table::rbindlist(bakhmut_means_firms))
+
+kupyansk_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+kupyansk_firms <- new_firms_frame[new_firms_frame$latitude < 48.9 & new_firms_frame$latitude > 48.3 & new_firms_frame$longitude < 38.4 & new_firms_frame$longitude > 37.6,]
+kupyansk_date_firms <- list()
+kupyansk_means_firms <- list()
+for(i in kupyansk_dates){
+    kupyansk_date_firms[[i]] <- kupyansk_firms[as.Date(kupyansk_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+    kupyansk_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(kupyansk_date_firms[[i]]$frp), Axis="Kupyansk")
+}
+kupyansk_firms_summary <- as.data.frame(data.table::rbindlist(kupyansk_means_firms))
+
+axis_firms_summary <- as.data.frame(data.table::rbindlist(list(tokmak_firms_summary, velyka_novosilka_firms_summary, bakhmut_firms_summary, kupyansk_firms_summary)))
+
+axis_firms_summary_plot <- ggplot(axis_firms_summary, aes(Date, FRP, colour=Axis)) +
+  #geom_point() +
+  geom_line() +
+  #stat_smooth(method="gam") +
+  scale_x_date(date_labels = "%Y/%m/%d") +
+  scale_y_continuous("Total Fire Radiative Power (MegaWatts)", breaks=scales::pretty_breaks(n=10), labels=scales::comma) +
+  ggtitle("FIRMS VIIRS I-Band 375 m Active Fire") +
+  facet_wrap(.~Axis, ncol=1) +
+  theme_light() +
+  theme(legend.position = "none")
+
+ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/axis_firms_summary_plot.jpg", axis_firms_summary_plot, device="jpg", width=6, height=6, dpi=600)
