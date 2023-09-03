@@ -47,7 +47,7 @@ A supporting axis for the Ukrainian Summer 2023 summer offensive is on the Zapor
 Fighting has been intense in Bahkmut since the summer of 2022. 
 
 ### Kupyansk Map
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/kherson_map.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/kupyansk_map.jpg?)
 Russia launched a localized offensive near Kupyansk in summer of 2023, though mainy gains have since been reversed. 
 
 ## Fire Radiative Power
