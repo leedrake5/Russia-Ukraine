@@ -146,11 +146,11 @@ These ratio Plots/2023-06-01/ use Russian equipment losses as the numerator and 
 Tokmak is the main axis Ukrainians are focusing on in their summer 2023 offensive. 
 
 ### Velyka Novosilka Axis
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/velyka_novosilka_mal.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/velyka_novosilka_map.jpg?)
 A supporting axis for the Ukrainian Summer 2023 summer offensive is on the Zaporhizhizhia-Donetks oblast border. 
 
 ### Bahkmut Map
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/bakmut_map.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/bakhmut_map.jpg?)
 Fighting has been intense in Bahkmut since the summer of 2022. 
 
 ### Kupyansk Map
