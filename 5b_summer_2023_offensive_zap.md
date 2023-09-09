@@ -78,14 +78,6 @@ If we consider estimates of [deployed Russian AFV](https://en.as.com/en/2022/02/
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_ifv.jpg?)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/ifv_ratio.jpg?)
 
-## Armored Personnel Carriers (APC)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_apc.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/apc_ratio.jpg?)
-
-## Infantry Mobility Vehicles (IMV)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_imv.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/imv_ratio.jpg?)
-
 # Synthetic Equipment Losses
 "Synthetic" refers to a combination of vehicle types to form a theme - such as aircraft (fighters + helicopters + drones) or anti-aircraft (SAM + MANPADS), etc. 
 
