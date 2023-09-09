@@ -37,15 +37,6 @@ Lastly, if you would like to make edits to descriptions of these data feel free 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/destroyed_ratio.jpg?)
 
 
-## Equipment Net Changes
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_absolute_total.jpg?)
-This calculation subtracts units captured by each combatant with their other loss types (destroyed, damaged, and abandoned). It is arguable if a proportion of abandoned should be included as captures. Ukraine has a net positive change in equipment - meaning that known visible evidence has more cases of new captured eqipment that of losses. Russia however has lost many more units than it has acquired from Ukraine. 
-
-## Ratios
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/ratio_grid.jpg?)
-This plot shows the ratios of losses (e.g. proportion of total) for Russia and Ukraine for each loss type.  
-
-
 # Raw Equipment Losses
 "Raw" refers to a specific type of vehicle, such as a tank or armored personnel carrier
 
