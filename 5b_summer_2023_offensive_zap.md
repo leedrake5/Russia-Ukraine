@@ -64,18 +64,13 @@ This plot shows the ratios of losses (e.g. proportion of total) for Russia and U
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_artillery.jpg?)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/artillery_ratio.jpg?)
 
-## Infantry Fighting Vehicles (IFV)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_ifv.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/ifv_ratio.jpg?)
 
 # Synthetic Equipment Losses
 "Synthetic" refers to a combination of vehicle types to form a theme - such as aircraft (fighters + helicopters + drones) or anti-aircraft (SAM + MANPADS), etc. 
-\
+
 ## Armor
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_armor.jpg?)
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/armor_ratio.jpg?)
-
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_percent_total_armor_baseline.jpg?)
 
 
 #Analysis
