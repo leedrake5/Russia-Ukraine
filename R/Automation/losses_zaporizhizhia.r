@@ -1,9 +1,9 @@
-russia <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1Oxj79cNh5GR27RBwHirHiQ9VMr5A_g7cGZ1B57zu0jk/edit#gid=25066677", sheetid="Russian Losses")
+russia <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1Oxj79cNh5GR27RBwHirHiQ9VMr5A_g7cGZ1B57zu0jk", sheet="Russian Losses")
 russia <- russia[,c("Type", "Model", "Status", "Lost by", "Unit", "Date", "Nearest location", "Oryx URL", "Source", "Geolocation", "Tags")]
 russia <- russia[complete.cases(russia$Model),]
 russia$Country <- "Russia"
 
-ukraine <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1Oxj79cNh5GR27RBwHirHiQ9VMr5A_g7cGZ1B57zu0jk/edit#gid=108833088", sheetid="Ukrainian Losses")
+ukraine <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1Oxj79cNh5GR27RBwHirHiQ9VMr5A_g7cGZ1B57zu0jk", sheet="Ukrainian Losses")
 ukraine <- ukraine[,c("Type", "Model", "Status", "Lost by", "Unit", "Date", "Nearest location", "Oryx URL",  "Source", "Geolocation", "Tags")]
 ukraine <- ukraine[complete.cases(ukraine$Model),]
 ukraine$Country <- "Ukraine"
@@ -18,7 +18,7 @@ total_mod$GeneralType[total_mod$GeneralType=="Tanks"] <- "Armor"
 total_mod$GeneralType[total_mod$GeneralType=="Armoured Fighting Vehicles"] <- "Armor"
 
 write.csv(total_mod, "data/Naalsio/zaporizhizhia.csv")
-write.csv(total_mod, "Apps/zaporizhizhiaMap/data/zaporizhizhia.csv")
+write.csv(total_mod, "Apps/zapMap/data/zaporizhizhia.csv")
 total_mod$Date <- as.Date(total_mod$Date)
 total_mod <- total_mod[order(total_mod$Date),]
 

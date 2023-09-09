@@ -1,10 +1,10 @@
 ---
-title: Summer 2023 Offensive
+title: Tokmak Axis Summer 2023 Offensive
 layout: template
 filename: summer_2023_offensive.md
 --- 
 
-# Ukrainian Summer 2023 Offensive
+# Ukrainian Summer 2023 Offensive: Tokmak Axis
 The following plots are based on the main project file, though they start their indexing at June 1st to match the current offensive. 
 
 *Strategic Objective*: Eliminate or make unfeasible Russia's land bridge to Crimea
@@ -25,39 +25,40 @@ Please keep in mind that this is empirical, not interpretive, analysis. A concer
 
 Lastly, if you would like to make edits to descriptions of these data feel free to create a pull request or a new issue. 
 
-## Total Equipment Losses
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_total.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_ratio.jpg?)
+## Total Equipment Losses
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_total.jpg?)
+
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_ratio.jpg?)
 
 ## Destroyed Equipment
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_destroyed.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_destroyed.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/destroyed_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/destroyed_ratio.jpg?)
 
 ## Abandoned Equipment
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_abandoned.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_abandoned.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/abandoned_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/abandoned_ratio.jpg?)
 
 ## Captured Equipment
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_captured.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_captured.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/captured_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/captured_ratio.jpg?)
 
 ## Damaged Equipment
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_damaged.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_damaged.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/damaged_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/damaged_ratio.jpg?)
 
 
 
 ## Equipment Net Changes
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_absolute_total.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_absolute_total.jpg?)
 This calculation subtracts units captured by each combatant with their other loss types (destroyed, damaged, and abandoned). It is arguable if a proportion of abandoned should be included as captures. Ukraine has a net positive change in equipment - meaning that known visible evidence has more cases of new captured eqipment that of losses. Russia however has lost many more units than it has acquired from Ukraine. 
 
 ## Ratios
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/ratio_grid.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/ratio_grid.jpg?)
 This plot shows the ratios of losses (e.g. proportion of total) for Russia and Ukraine for each loss type.  
 
 
@@ -65,79 +66,79 @@ This plot shows the ratios of losses (e.g. proportion of total) for Russia and U
 "Raw" refers to a specific type of vehicle, such as a tank or armored personnel carrier
 
 ## Tanks
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_tanks.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/tank_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_tanks.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/tank_ratio.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_percent_total_tanks.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_percent_total_tanks.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_percent_deployed_tanks.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_percent_deployed_tanks.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_percent_total_tanks_baseline.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_percent_total_tanks_baseline.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_percent_deployed_tanks_baseline.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_percent_deployed_tanks_baseline.jpg?)
 
 ## Armored Fighting Vehicles (AFV)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_afv.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/afv_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_afv.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/afv_ratio.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_percent_afv.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_percent_afv.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_percent_total_afv_baseline.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_percent_total_afv_baseline.jpg?)
 If we consider estimates of [deployed Russian AFV](https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html) fixed to their total inventory, Ukraine is adding modestly to its AFV inventory at the same rate which Russia is losing its AFV. 
 
 ## Artillery
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_artillery.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/artillery_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_artillery.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/artillery_ratio.jpg?)
 
 ## Infantry Fighting Vehicles (IFV)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_ifv.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/ifv_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_ifv.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/ifv_ratio.jpg?)
 
 ## Armored Personnel Carriers (APC)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_apc.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/apc_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_apc.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/apc_ratio.jpg?)
 
 ## Infantry Mobility Vehicles (IMV)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_imv.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/imv_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_imv.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/imv_ratio.jpg?)
 
 # Synthetic Equipment Losses
 "Synthetic" refers to a combination of vehicle types to form a theme - such as aircraft (fighters + helicopters + drones) or anti-aircraft (SAM + MANPADS), etc. 
 
 ## Aircraft
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_aircraft.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/aircraft_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_aircraft.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/aircraft_ratio.jpg?)
 
 ## Anti-air
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_antiair.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/antiair_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_antiair.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/antiair_ratio.jpg?)
 
 ## Armor
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_armor.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/armor_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_armor.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/armor_ratio.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_percent_total_armor_baseline.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_percent_total_armor_baseline.jpg?)
 
 ## Infantry
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_infantry.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/infantry_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_infantry.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/infantry_ratio.jpg?)
 
 ## Vehicles (standard transportation)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_vehicles.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/vehicle_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_vehicles.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/vehicle_ratio.jpg?)
 
 ## Logistics Systems
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_logistics.jpg?)
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/logistics_ratio.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_logistics.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/logistics_ratio.jpg?)
 
 #Analysis
 By grouping synthetic vehicles, we can see how different systems have been prioritized by Russia or Ukraine, providing a glimpse into strategy. 
 
 ## Loss Type
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_loss_type.jpg?)
-These ratio Plots/2023-06-01/ use Russian equipment losses as the numerator and Ukranian losses as the denominator. The higher the bar, the higher the proportion of Russian losses. 
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_loss_type.jpg?)
+These ratio Plots/zaporizhizhia/ use Russian equipment losses as the numerator and Ukranian losses as the denominator. The higher the bar, the higher the proportion of Russian losses. 
 ## Unit Type
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/current_unit_type.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_unit_type.jpg?)
 
 
 ## Maps
@@ -160,9 +161,9 @@ Fighting has been intense in Bahkmut since the summer of 2022.
 Russia launched a localized offensive near Kupyansk in summer of 2023, though mainy gains have since been reversed. 
 
 ## Fire Radiative Power
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/axis_firms_summary_plot.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/axis_firms_summary_plot.jpg?)
 
-An extended discussion of how to evaluate these analyses are [here](https://bleedrake.medium.com/what-does-satellite-infrared-data-tell-us-about-the-evolving-russian-strategy-in-its-ukraine-99672ae8e4cd). In general, the fire radiative power Plots/2023-06-01/ (FRP) are a useful guide to activity, with the lull in IR emissions in late 2022/early 2023 representing a change in how Russia used its artillery. 
+An extended discussion of how to evaluate these analyses are [here](https://bleedrake.medium.com/what-does-satellite-infrared-data-tell-us-about-the-evolving-russian-strategy-in-its-ukraine-99672ae8e4cd). In general, the fire radiative power Plots/zaporizhizhia/ (FRP) are a useful guide to activity, with the lull in IR emissions in late 2022/early 2023 representing a change in how Russia used its artillery. 
 
 
 
@@ -185,10 +186,10 @@ Kherson is an occupied city where the Russian advance was halted. FIRMS data doe
 Zaporizhzhia is a comparatively quiet region, but there are isolated artillery strikes around Russian BTGs and missile strikes in population centers. 
 
 ## Northern FIRMS Summary
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/north_firms_summary_plot.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/north_firms_summary_plot.jpg?)
 This includes Kyiv and the Donbas. Summing megawatts of energy radiated from regions of Ukraine helps highlight the independent war record. The Battle of Kyiv is clearly visible, with detectable fires concentrated in the last two weeks (March 15th - April 1st). The Battle of Donbas, following a repositioning of Russian forces, shows a more brief but just as intense spike in radiation confined to the first two weeks of May, followed by continues IR emissions into the fall. These IR emissions drop off rapidly following the successful Ukrainian Kharkiv offensive in the region in early September 2022. 
 
 ## Southern FIRMS Summary
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/2023-06-01/south_firms_summary_plot.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/south_firms_summary_plot.jpg?)
 This region includes Kherson, Zaporizhizhia, and Crimea. Maximum IR activity occured in late summer 2022, with epidosodic increases likely related to specific attacks. 
 
