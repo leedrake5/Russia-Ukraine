@@ -4,9 +4,10 @@ layout: template
 filename: summer_2023_offensive.md
 --- 
 
-<iframe src="https://bleedrake.shinyapps.io/zapApp/" style="border:none;width:1000px;height:500px;"></iframe>
-
 # Ukrainian Summer 2023 Offensive: Tokmak Axis
+
+[Interactive App here](https://bleedrake.shinyapps.io/zapApp/)
+
 The following plots are based on the main project file, though they start their indexing at June 1st to match the current offensive. 
 
 *Strategic Objective*: Eliminate or make unfeasible Russia's land bridge to Crimea
