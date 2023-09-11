@@ -15,7 +15,7 @@ lm_eqn = function(m) {
 
 data <- read.csv("data/zaporizhizhia.csv")
 data$Date <- as.Date(data$Date)
-#data$ID <- seq(1, nrow(data), 1)
+data$ID <- paste0(data$Country, "_", seq(1, nrow(data), 1))
 
 data <- data[complete.cases(data$Geolocation),]
 data$lat <- as.numeric(sapply(data$Geolocation, function(x) strsplit(x, split=",")[[1]][1]))

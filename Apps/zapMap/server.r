@@ -6,8 +6,14 @@ library(dplyr)
 library(ggplot2)
 library(data.table)
 library(DT)
+library(shiny)
+
+addResourcePath("html", file.path(R.home(), "doc", "html"))
+
 
 function(input, output, session) {
+    
+
     
     country_colors <-   c("Russia" = "#E4181C", "Ukraine" = "#0057B8")
 
@@ -239,7 +245,7 @@ function(input, output, session) {
             clearControls() %>%
             clearShapes() %>%
             clearMarkers() %>%
-            addCircleMarkers(~lng, ~lat, radius=input$size, layerId=~Type,
+            addCircleMarkers(~lng, ~lat, radius=input$size, layerId=~ID,
             stroke=FALSE, fillOpacity=0.6, fillColor=~pal(Type)) %>%
             addCircleMarkers(~firms_plot_data$longitude, ~firms_plot_data$latitude, radius=5,
                 stroke=FALSE, fillOpacity=0.7, fillColor="orange") %>%
@@ -257,7 +263,7 @@ function(input, output, session) {
         clearControls() %>%
         clearShapes() %>%
         clearMarkers() %>%
-        addCircleMarkers(~lng, ~lat, radius=input$size, layerId=~Type,
+        addCircleMarkers(~lng, ~lat, radius=input$size, layerId=~ID,
           stroke=FALSE, fillOpacity=0.4, fillColor=~pal(Country)) %>%
         addCircleMarkers(~firms_plot_data$longitude, ~firms_plot_data$latitude, radius=5,
             stroke=FALSE, fillOpacity=0.7, fillColor="orange") %>%
@@ -274,15 +280,17 @@ function(input, output, session) {
   # Show a popup at the given location
   showZipcodePopup <- function(zipcode, lat, lng) {
     selectedZip <- zipParsed()[zipParsed()$ID == zipcode,]
+    selectedZip <- selectedZip[1,]
+    
     content <- as.character(tagList(
-      tags$h4("Type:", as.character(selectedZip$Type[1])),
-      tags$br(),
-      sprintf("Model: ", as.character(selectedZip$Model[1])), tags$br(),
-      sprintf("Status: ", as.character(selectedZip$Status[1])), tags$br(),
-      sprintf("Date: ", as.character(selectedZip$Date[1])), tags$br()
+      tags$h4(as.character(selectedZip$Type)),
+      #tags$iframe(seamless = "seamless", src=paste0(selectedZip$Oryx.URL), height="40%", width="40%", frameborder="0", scrolling="yes"),
+      #tags$hr(),
+      paste0("Model: ", selectedZip$Model), tags$br(),
+      paste0("Status: ", selectedZip$Status), tags$br(),
+      paste0("Date: ", selectedZip$Date)
+      ))
 
-      )
-    )
     leafletProxy("map") %>% addPopups(lng, lat, content, layerId = zipcode)
   }
 
@@ -290,7 +298,7 @@ function(input, output, session) {
   observe({
     leafletProxy("map") %>% clearPopups()
     #event <- input$map_marker_click
-    event <- input$map_shape_click
+    event <- input$map_marker_click
     if (is.null(event))
       return()
 
