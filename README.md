@@ -23,7 +23,7 @@ In addition to this main page, specific periods of the war have been isolated an
 3. [Ukrainian Kharkiv/Kherson Offensives](3_kharkiv_kherson_2022.md)
 4. [Russian Winter 2023 Offensive](4_winter_2023_offensive.md)
 5. [Ukrainian Summer 2023 Offensive (current)](5a_summer_2023_offensive.md)
-6. [Ukrainian Summer 2023 Offensive (Tokmak Axis)](5b_summer_2023_offensive_zap.md)
+6. [Ukrainian Summer 2023 Offensive (Zaoprizhizhia)](5b_summer_2023_offensive_zap.md)
 
 
 ## Total Equipment Losses
