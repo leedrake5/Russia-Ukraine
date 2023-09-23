@@ -42,9 +42,10 @@ Lastly, if you would like to make edits to descriptions of these data feel free 
 
 # Lost Equipment Locations
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/orkhiv_all.jpg?)
+Along the Tokmak axis, the Russia:Ukraine disparity is largest, with Ukraine's losses far outpacing Russia's. Note that this analsis is restricted only to losses with known coordinates. Note however that even given the disparity, far more losses happen south of the contact area, suggesiting a major difference in deep stike capabilities. 
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/vn_all.jpg?)
-
+The Velyka Novosilka axis is in less strategically valuable terrain, but here Russian losses outpace Ukrainian ones only slightly. Note again the comparion in deep strike capabilities, with Russian losses occuring far south of the line of contact. 
 
 # Raw Equipment Losses
 "Raw" refers to a specific type of vehicle, such as a tank or armored personnel carrier
