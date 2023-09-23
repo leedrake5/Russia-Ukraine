@@ -1,3 +1,6 @@
+country_colors <-   c("Russia" = "#E4181C", "Ukraine" = "#0057B8")
+
+
 russia <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1Oxj79cNh5GR27RBwHirHiQ9VMr5A_g7cGZ1B57zu0jk", sheet="Russian Losses")
 russia <- russia[,c("Type", "Model", "Status", "Lost by", "Unit", "Date", "Nearest location", "Oryx URL", "Source", "Geolocation", "Tags")]
 russia <- russia[complete.cases(russia$Model),]
@@ -17,8 +20,8 @@ total_mod$GeneralType[total_mod$GeneralType=="Self-propelled artillery"] <- "Art
 total_mod$GeneralType[total_mod$GeneralType=="Tanks"] <- "Armor"
 total_mod$GeneralType[total_mod$GeneralType=="Armoured Fighting Vehicles"] <- "Armor"
 
-write.csv(total_mod, "data/Naalsio/zaporizhizhia.csv")
-write.csv(total_mod, "Apps/zapMap/data/zaporizhizhia.csv")
+write.csv(total_mod, "~/GitHub/Russia-Ukraine/data/Naalsio/zaporizhizhia.csv")
+write.csv(total_mod, "~/GitHub/Russia-Ukraine/Apps/zapMap/data/zaporizhizhia.csv")
 total_mod$Date <- as.Date(total_mod$Date)
 total_mod <- total_mod[order(total_mod$Date),]
 
@@ -89,15 +92,24 @@ ggsave("~/Github/Russia-Ukraine/Plots/zaporizhizhia/current_ratio.jpg", current_
 
 ###Total Map
 
-orkhiv <- ggmap::get_map(location=c(lon=35.860405, lat=47.470226), source="google", maptype="roadmap", crop=FALSE, zoom=4)
+orkhiv <- ggmap::get_map(location=c(lon=35.860405, lat=47.470226), source="google", maptype="roadmap", crop=FALSE, zoom=10)
 
-orkhiv_map <- ggmap(south_donbass) +
+orkhiv_map <- ggmap(orkhiv) +
 #geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
 geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
-ggtitle(paste0("Donetsk and Zaporizhizhia regions on ", Sys.Date())) + theme_light()
+ggtitle(paste0("Tokmak Axis on ", Sys.Date())) + theme_light()
 
-ggsave("~/Github/Russia-Ukraine/Maps/south_donbas_map.jpg", south_donbas_map, device="jpg", width=6, height=5, dpi=600)
+ggsave("~/Github/Russia-Ukraine/Maps/orkhiv.jpg", orkhiv_map, device="jpg", width=6, height=5, dpi=600)
 
+
+vn <- ggmap::get_map(location=c(lon=36.818071, lat=47.751817), source="google", maptype="roadmap", crop=FALSE, zoom=10)
+
+vn_map <- ggmap(vn) +
+#geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
+geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
+ggtitle(paste0("Velyka Novosilka Axis on ", Sys.Date())) + theme_light()
+
+ggsave("~/Github/Russia-Ukraine/Maps/vn.jpg", vn_map, device="jpg", width=6, height=5, dpi=600)
 
 ###Destroyed
 ukraine_destroyed <- ukraine_mod[ukraine_mod$Status=="Destroyed",]
