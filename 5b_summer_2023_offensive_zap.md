@@ -41,9 +41,9 @@ Lastly, if you would like to make edits to descriptions of these data feel free 
 
 
 # Lost Equipment Locations
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/orkhiv.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/orkhiv_all.jpg?)
 
-![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/vn.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/vn_all.jpg?)
 
 
 # Raw Equipment Losses
