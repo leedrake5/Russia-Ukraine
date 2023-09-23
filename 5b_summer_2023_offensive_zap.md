@@ -4,7 +4,7 @@ layout: template
 filename: summer_2023_offensive.md
 --- 
 
-# Ukrainian Summer 2023 Offensive: Tokmak Axis
+# Ukrainian Summer 2023 Offensive: Zaporizhizhia
 
 [Interactive App here](https://bleedrake.shinyapps.io/zapApp/)
 
@@ -38,6 +38,12 @@ Lastly, if you would like to make edits to descriptions of these data feel free 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_destroyed.jpg?)
 
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/destroyed_ratio.jpg?)
+
+
+# Lost Equipment Locations
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/orkhiv.jpg?)
+
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/vn.jpg?)
 
 
 # Raw Equipment Losses
@@ -74,7 +80,7 @@ By grouping synthetic vehicles, we can see how different systems have been prior
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_unit_type.jpg?)
 
 
-## Maps
+## FIRMS Maps
 ### Tokamk Axis
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/tokmak_map.jpg?)
 Tokmak is the main axis Ukrainians are focusing on in their summer 2023 

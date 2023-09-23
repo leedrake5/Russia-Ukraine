@@ -19,6 +19,9 @@ total_mod$GeneralType[total_mod$GeneralType=="MLRS"] <- "Artillery"
 total_mod$GeneralType[total_mod$GeneralType=="Self-propelled artillery"] <- "Artillery"
 total_mod$GeneralType[total_mod$GeneralType=="Tanks"] <- "Armor"
 total_mod$GeneralType[total_mod$GeneralType=="Armoured Fighting Vehicles"] <- "Armor"
+total_mod$lat <- as.numeric(sapply(total_mod$Geolocation, function(x) strsplit(x, split=",")[[1]][1]))
+total_mod$lng <- as.numeric(sapply(total_mod$Geolocation, function(x) strsplit(x, split=",")[[1]][2]))
+
 
 write.csv(total_mod, "~/GitHub/Russia-Ukraine/data/Naalsio/zaporizhizhia.csv")
 write.csv(total_mod, "~/GitHub/Russia-Ukraine/Apps/zapMap/data/zaporizhizhia.csv")
@@ -96,7 +99,8 @@ orkhiv <- ggmap::get_map(location=c(lon=35.860405, lat=47.470226), source="googl
 
 orkhiv_map <- ggmap(orkhiv) +
 #geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
-geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
+#geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
+geom_point(data=total_mod, mapping=aes(x=lng, y=lat, colour=Country, shape=Country)) +
 ggtitle(paste0("Tokmak Axis on ", Sys.Date())) + theme_light()
 
 ggsave("~/Github/Russia-Ukraine/Maps/orkhiv.jpg", orkhiv_map, device="jpg", width=6, height=5, dpi=600)
@@ -106,7 +110,7 @@ vn <- ggmap::get_map(location=c(lon=36.818071, lat=47.751817), source="google", 
 
 vn_map <- ggmap(vn) +
 #geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
-geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
+geom_point(data=total_mod, mapping=aes(x=lng, y=lat, colour=Country, shape=Country)) +
 ggtitle(paste0("Velyka Novosilka Axis on ", Sys.Date())) + theme_light()
 
 ggsave("~/Github/Russia-Ukraine/Maps/vn.jpg", vn_map, device="jpg", width=6, height=5, dpi=600)
