@@ -94,39 +94,18 @@ current_ratio <-
 ggsave("~/Github/Russia-Ukraine/Plots/avdiivka/current_ratio.jpg", current_ratio, device="jpg", width=6, height=5)
 
 ###Total Map
+avdiivka <- ggmap::get_map(location=c(lon=37.7, lat=48.15), source="google", maptype="roadmap", crop=FALSE, zoom=12)
 
-orkhiv <- ggmap::get_map(location=c(lon=35.860405, lat=47.470226), source="google", maptype="roadmap", crop=FALSE, zoom=10)
-
-orkhiv_map <- ggmap(orkhiv) +
+avdiivka_map <- ggmap(avdiivka) +
 #geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
 #geom_point(data=firms, mapping=aes(x=lon, y=lat, colour=NASA), alpha=0.5) +
 geom_point(data=total_mod, mapping=aes(x=lng, y=lat, colour=Country, shape=Country)) +
-ggtitle(paste0("Tokmak Axis on ", Sys.Date())) + 
+ggtitle(paste0("Avdiivka on ", Sys.Date())) +
 scale_colour_manual(values = country_colors)  +
 theme_light()
 
 
-ukraine_total_temp <- data.frame(Date=ukraine_mod[ukraine_mod$lng > 35.4 & ukraine_mod$lng < 36.3 & ukraine_mod$lat > 47.3 & ukraine_mod$lat < 47.6,c("Date")])
-ukraine_total_melt <- ukraine_total_temp %>%
-    group_by(Date) %>%
-    summarise(Daily=n())
-
-ukraine_total_melt$Total <- cumsum(ukraine_total_melt$Daily)
-ukraine_total_melt <- ukraine_total_melt[1:nrow(ukraine_total_melt)-1,]
-ukraine_total_melt$Country <- "Ukraine"
-
-russia_total_temp <- data.frame(Date=russia_mod[russia_mod$lng > 35.4 & russia_mod$lng < 36.3 & russia_mod$lat > 47.3 & russia_mod$lat < 47.6,c("Date")])
-russia_total_melt <- russia_total_temp %>%
-    group_by(Date) %>%
-    summarise(Daily=n())
-
-russia_total_melt$Total <- cumsum(russia_total_melt$Daily)
-russia_total_melt <- russia_total_melt[1:nrow(russia_total_melt)-1,]
-russia_total_melt$Country <- "Russia"
-
-total_melt <- as.data.frame(data.table::rbindlist(list(russia_total_melt, ukraine_total_melt)))
-
-tokamk_total <-
+avdiivka_total <-
   ggplot(total_melt, aes(Date, Total, colour=Country)) +
   geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
@@ -152,7 +131,7 @@ total_ratio_frame <- total_ratio_frame %>%
   arrange(Date) %>%
   mutate(Daily = Ratio - lag(Ratio, default = first(Ratio)))
 
-tokmak_ratio <-
+avdiivka_ratio <-
   ggplot(total_ratio_frame, aes(Date, Ratio)) +
   geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
@@ -162,84 +141,12 @@ tokmak_ratio <-
   ggtitle(paste0("Total equipment loss ratio through ", Sys.Date())) +
   theme_light()
 
-tokmak_data_plots <- cowplot::plot_grid(tokamk_total, tokmak_ratio, ncol=1)
+avdiivka_data_plots <- cowplot::plot_grid(avdiivka_total, avdiivka_ratio, ncol=1)
 
-tokmak_all <- cowplot::plot_grid(orkhiv_map, tokmak_data_plots, ncol=2)
+avdiivka_all <- cowplot::plot_grid(avdiivka_map, avdiivka_data_plots, ncol=2)
 
-ggsave("~/Github/Russia-Ukraine/Maps/orkhiv_all.jpg", tokmak_all, device="jpg", width=12, height=5, dpi=600)
+ggsave("~/Github/Russia-Ukraine/Maps/avdiivka_all.jpg", avdiivka_all, device="jpg", width=12, height=5, dpi=600)
 
-
-vn <- ggmap::get_map(location=c(lon=36.818071, lat=47.751817), source="google", maptype="roadmap", crop=FALSE, zoom=10)
-
-vn_map <- ggmap(vn) +
-#geom_point(data=btgs, mapping=aes(x=lon, y=lat, shape=Russian_BTGS), alpha=0.9, colour="purple") +
-geom_point(data=total_mod, mapping=aes(x=lng, y=lat, colour=Country, shape=Country)) +
-ggtitle(paste0("Velyka Novosilka Axis on ", Sys.Date())) +
-scale_colour_manual(values = country_colors)  +
-theme_light()
-
-ukraine_total_temp <- data.frame(Date=ukraine_mod[ukraine_mod$lng > 36.4 & ukraine_mod$lng < 37.2 & ukraine_mod$lat > 47.5 & ukraine_mod$lat < 47.9,c("Date")])
-ukraine_total_melt <- ukraine_total_temp %>%
-    group_by(Date) %>%
-    summarise(Daily=n())
-
-ukraine_total_melt$Total <- cumsum(ukraine_total_melt$Daily)
-ukraine_total_melt <- ukraine_total_melt[1:nrow(ukraine_total_melt)-1,]
-ukraine_total_melt$Country <- "Ukraine"
-
-russia_total_temp <- data.frame(Date=russia_mod[ukraine_mod$lng > 36.4 & ukraine_mod$lng < 37.2 & ukraine_mod$lat > 47.5 & ukraine_mod$lat < 47.9,c("Date")])
-russia_total_melt <- russia_total_temp %>%
-    group_by(Date) %>%
-    summarise(Daily=n())
-
-russia_total_melt$Total <- cumsum(russia_total_melt$Daily)
-russia_total_melt <- russia_total_melt[1:nrow(russia_total_melt)-1,]
-russia_total_melt$Country <- "Russia"
-
-total_melt <- as.data.frame(data.table::rbindlist(list(russia_total_melt, ukraine_total_melt)))
-
-vn_total <-
-  ggplot(total_melt, aes(Date, Total, colour=Country)) +
-  geom_col(data=total_melt, mapping=aes(Date, Daily, colour=Country,  fill=Country), alpha=0.8, position = position_dodge(0.7)) +
-  geom_point(show.legend=FALSE, size=0.1) +
-  geom_line(stat="smooth", method="loess", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%Y/%m/%d") +
-  scale_y_continuous("Total Equipment Losses") +
-  ggtitle(paste0("Total equipment losses through ", Sys.Date())) +
-  theme_light() +
-  theme(legend.position="bottom") +
-  scale_colour_manual(values = country_colors)  +
-  scale_fill_manual(values = country_colors)
-
-ukraine_small <- ukraine_total_melt[,c("Date", "Total")]
-colnames(ukraine_small) <- c("Date", "Ukraine_Total")
-russia_small <- russia_total_melt[,c("Date", "Total")]
-colnames(russia_small) <- c("Date", "Russia_Total")
-
-total_ratio_merge<- merge(ukraine_small, russia_small, by="Date")
-total_ratio_frame <- data.frame(Date=total_ratio_merge$Date, Ratio=total_ratio_merge$Russia_Total/total_ratio_merge$Ukraine_Total)
-
-total_ratio_frame$Date <- as.Date(total_ratio_frame$Date)
-total_ratio_frame <- total_ratio_frame %>%
-  arrange(Date) %>%
-  mutate(Daily = Ratio - lag(Ratio, default = first(Ratio)))
-
-vn_ratio <-
-  ggplot(total_ratio_frame, aes(Date, Ratio)) +
-  geom_col(data=total_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
-  geom_point(show.legend=FALSE, size=0.1) +
-  geom_line(stat="smooth", method="loess", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
-  scale_x_date(date_labels = "%Y/%m/%d") +
-  scale_y_continuous("Total Equipment Loss Ratio Ru:Ukr") +
-  ggtitle(paste0("Total equipment loss ratio through ", Sys.Date())) +
-  theme_light()
-
-vn_data_plots <- cowplot::plot_grid(vn_total, vn_ratio, ncol=1)
-
-vn_all <- cowplot::plot_grid(vn_map, vn_data_plots, ncol=2)
-
-
-ggsave("~/Github/Russia-Ukraine/Maps/vn_all.jpg", vn_all, device="jpg", width=12, height=5, dpi=600)
 
 ###Destroyed
 ukraine_destroyed <- ukraine_mod[ukraine_mod$Status=="Destroyed",]

@@ -1482,7 +1482,17 @@ for(i in kupyansk_dates){
 }
 kupyansk_firms_summary <- as.data.frame(data.table::rbindlist(kupyansk_means_firms))
 
-axis_firms_summary <- as.data.frame(data.table::rbindlist(list(tokmak_firms_summary, velyka_novosilka_firms_summary, bakhmut_firms_summary, kupyansk_firms_summary)))
+avdiivka_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+avdiivka_firms <- new_firms_frame[new_firms_frame$latitude < 48.3 & new_firms_frame$latitude > 48.0 & new_firms_frame$longitude < 37.9 & new_firms_frame$longitude > 37.5,]
+avdiivka_date_firms <- list()
+avdiivka_means_firms <- list()
+for(i in avdiivka_dates){
+    avdiivka_date_firms[[i]] <- avdiivka_firms[as.Date(avdiivka_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+    avdiivka_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(avdiivka_date_firms[[i]]$frp), Axis="Avdiivka")
+}
+avdiivka_firms_summary <- as.data.frame(data.table::rbindlist(avdiivka_means_firms))
+
+axis_firms_summary <- as.data.frame(data.table::rbindlist(list(tokmak_firms_summary, velyka_novosilka_firms_summary, bakhmut_firms_summary, kupyansk_firms_summary, avdiivka_firms_summary)))
 
 axis_firms_summary_plot <- ggplot(axis_firms_summary, aes(Date, FRP, colour=Axis)) +
   #geom_point() +
@@ -1495,4 +1505,4 @@ axis_firms_summary_plot <- ggplot(axis_firms_summary, aes(Date, FRP, colour=Axis
   theme_light() +
   theme(legend.position = "none")
 
-ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/axis_firms_summary_plot.jpg", axis_firms_summary_plot, device="jpg", width=6, height=6, dpi=600)
+ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/axis_firms_summary_plot.jpg", axis_firms_summary_plot, device="jpg", width=6, height=8, dpi=600)
