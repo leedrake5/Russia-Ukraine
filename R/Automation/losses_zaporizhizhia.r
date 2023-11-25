@@ -5,8 +5,8 @@ russia <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1Oxj
 russia <- russia[,c("Type", "Model", "Status", "Lost by", "Unit", "Date", "Nearest location", "Oryx URL", "Source", "Geolocation", "Tags")]
 russia <- russia[complete.cases(russia$Model),]
 russia$Country <- "Russia"
-#ukraine <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1Oxj79cNh5GR27RBwHirHiQ9VMr5A_g7cGZ1B57zu0jk", sheet="Ukrainian Losses")
-ukraine <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1niZlNuSVqb7WTj4zd9FIN_FvNrs0BtkEjNkSWCDz99I", sheet="Ukrainian Losses")
+ukraine <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1Oxj79cNh5GR27RBwHirHiQ9VMr5A_g7cGZ1B57zu0jk", sheet="Ukrainian Losses")
+#ukraine <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1niZlNuSVqb7WTj4zd9FIN_FvNrs0BtkEjNkSWCDz99I", sheet="Ukrainian Losses")
 ukraine <- ukraine[,c("Type", "Model", "Status", "Lost by", "Unit", "Date", "Nearest location", "Oryx URL",  "Source", "Geolocation", "Tags")]
 ukraine <- ukraine[complete.cases(ukraine$Model),]
 ukraine$Country <- "Ukraine"
