@@ -15,7 +15,8 @@ lm_eqn = function(m) {
 
 data <- read.csv("data/zaporizhizhia.csv")
 avdiivka_data <- read.csv("data/avdiivka.csv")
-data <- as.data.frame(data.table::rbindlist(list(data, avdiivka_data), use.names=T, fill=T))
+krynky_data <- read.csv("data/krynky.csv")
+data <- as.data.frame(data.table::rbindlist(list(data, avdiivka_data, krynky_data), use.names=T, fill=T))
 data$Date <- as.Date(data$Date)
 data$ID <- paste0(data$Country, "_", seq(1, nrow(data), 1))
 
