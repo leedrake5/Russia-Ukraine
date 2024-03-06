@@ -1,17 +1,15 @@
 ---
-title: Tokmak Axis Summer 2023 Offensive
+title: Geolocated losses
 layout: template
-filename: summer_2023_offensive.md
+filename: naalsio_regions.md
 --- 
 
-# Ukrainian Summer 2023 Offensive: Zaporizhizhia
+# Zaporizhizhia, Kherson, and Donetsk Oblasts: Geolocated losses
 
 [Interactive App here](https://bleedrake.shinyapps.io/zapApp/)
 
-The following plots are based on the main project file, though they start their indexing at June 1st to match the current offensive. 
+The following plots make use of exclusively geolocated data through the efforts of [Naalsio](https://www.twitter.com/naalsio)
 
-*Strategic Objective*: Eliminate or make unfeasible Russia's land bridge to Crimea
-*Result*: Ongoing, but full success unlikely
 
 ## Methods
 Using data from [Oryx's site](https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-equipment.html), I've put together a quick tracker to visualize equipment losses since [Russia's February 24th invasion of Ukraine](https://en.wikipedia.org/wiki/Russo-Ukrainian_War). This is only equipment that is independently verified, as noted by Oryx:
@@ -28,7 +26,7 @@ Please keep in mind that this is empirical, not interpretive, analysis. A concer
 
 Lastly, if you would like to make edits to descriptions of these data feel free to create a pull request or a new issue. 
 
-
+# Zaporizhizhia
 ## Total Equipment Losses
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_total.jpg?)
 
@@ -74,11 +72,111 @@ The Velyka Novosilka axis is in less strategically valuable terrain, but here Ru
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/armor_ratio.jpg?)
 
 
-#Analysis
+# Analysis
 By grouping synthetic vehicles, we can see how different systems have been prioritized by Russia or Ukraine, providing a glimpse into strategy. 
 
 ## Unit Type
 ![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/zaporizhizhia/current_unit_type.jpg?)
+
+# Kherson
+## Total Equipment Losses
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/current_total.jpg?)
+
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/current_ratio.jpg?)
+
+## Destroyed Equipment
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/current_destroyed.jpg?)
+
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/destroyed_ratio.jpg?)
+
+
+# Lost Equipment Locations
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/krynky_all.jpg?)
+Losses are particularly lopsided for Russia, though this should not be conflated with personel losses. Ukraine has a limited presence on the bridgehead and has not commited much heavy equipment to date. 
+
+
+# Raw Equipment Losses
+"Raw" refers to a specific type of vehicle, such as a tank or armored personnel carrier
+
+## Tanks
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/current_tanks.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/tank_ratio.jpg?)
+
+
+
+## Armored Fighting Vehicles (AFV)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/current_afv.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/afv_ratio.jpg?)
+
+
+## Artillery
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/current_artillery.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/artillery_ratio.jpg?)
+
+
+# Synthetic Equipment Losses
+"Synthetic" refers to a combination of vehicle types to form a theme - such as aircraft (fighters + helicopters + drones) or anti-aircraft (SAM + MANPADS), etc. 
+
+## Armor
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/current_armor.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/armor_ratio.jpg?)
+
+
+# Analysis
+By grouping synthetic vehicles, we can see how different systems have been prioritized by Russia or Ukraine, providing a glimpse into strategy. 
+
+## Unit Type
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/krynky/current_unit_type.jpg?)
+
+# Donetsk
+## Total Equipment Losses
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/current_total.jpg?)
+
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/current_ratio.jpg?)
+
+## Destroyed Equipment
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/current_destroyed.jpg?)
+
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/destroyed_ratio.jpg?)
+
+
+# Lost Equipment Locations
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Maps/avdiivka_all.jpg?)
+Losses are particularly lopsided for Russia, though this should not be conflated with personel losses. Note that while Russia losses are quite high, Ukrainian losses have brought the ratio down. 
+
+
+# Raw Equipment Losses
+"Raw" refers to a specific type of vehicle, such as a tank or armored personnel carrier
+
+## Tanks
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/current_tanks.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/tank_ratio.jpg?)
+
+
+
+## Armored Fighting Vehicles (AFV)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/current_afv.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/afv_ratio.jpg?)
+
+
+## Artillery
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/current_artillery.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/artillery_ratio.jpg?)
+
+
+# Synthetic Equipment Losses
+"Synthetic" refers to a combination of vehicle types to form a theme - such as aircraft (fighters + helicopters + drones) or anti-aircraft (SAM + MANPADS), etc. 
+
+## Armor
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/current_armor.jpg?)
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/armor_ratio.jpg?)
+
+
+# Analysis
+By grouping synthetic vehicles, we can see how different systems have been prioritized by Russia or Ukraine, providing a glimpse into strategy. 
+
+## Unit Type
+![alt text](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/Plots/avdiivka/current_unit_type.jpg?)
 
 
 ## FIRMS Maps

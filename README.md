@@ -22,8 +22,10 @@ In addition to this main page, specific periods of the war have been isolated an
 2. [Russian Donbass Offensive](2_donbass_2022.md)
 3. [Ukrainian Kharkiv/Kherson Offensives](3_kharkiv_kherson_2022.md)
 4. [Russian Winter 2023 Offensive](4_winter_2023_offensive.md)
-5. [Ukrainian Summer 2023 Offensive (current)](5a_summer_2023_offensive.md)
-6. [Ukrainian Summer 2023 Offensive (Zaoprizhizhia)](5b_summer_2023_offensive_zap.md)
+5. [Ukrainian Summer 2023 Offensive (current)](5_summer_2023_offensive.md)
+6. [Russian Winter 2023 Offensive (current)](6_winter_2023_offensive.md)
+
+You can also look at specific regions such as Avdiivka, Krynky, and Zaporizhizhia [here](naalsio_regions.md) gathered by [Naalsio](https://www.twitter.com/naalsio). 
 
 
 ## Total Equipment Losses

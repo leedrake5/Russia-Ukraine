@@ -61,7 +61,7 @@ colnames(btgs)[5] <- "Russian_BTGS"
 
 
 ###FIRMS Analysis
-dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 
 firms_list <- list()
 for(i in dates){
@@ -71,7 +71,7 @@ for(i in dates){
 new_firms_frame <- as.data.frame(data.table::rbindlist(firms_list, use.names=TRUE, fill=TRUE))
 
 kyiv_firms <- new_firms_frame[new_firms_frame$latitude < 52 & new_firms_frame$latitude > 50 & new_firms_frame$longitude < 32 & new_firms_frame$longitude > 29,]
-kyiv_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+kyiv_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 kyiv_date_firms <- list()
 kyiv_means_firms <- list()
 for(i in kyiv_dates){
@@ -80,7 +80,7 @@ for(i in kyiv_dates){
 }
 kyiv_firms_summary <- as.data.frame(data.table::rbindlist(kyiv_means_firms))
 
-north_donbas_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+north_donbas_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 north_donbas_firms <- new_firms_frame[new_firms_frame$latitude < 50 & new_firms_frame$latitude > 48.5 & new_firms_frame$longitude < 39 & new_firms_frame$longitude > 36,]
 north_donbas_date_firms <- list()
 north_donbas_means_firms <- list()
@@ -90,7 +90,7 @@ for(i in north_donbas_dates){
 }
 north_donbas_firms_summary <- as.data.frame(data.table::rbindlist(north_donbas_means_firms))
 
-south_donbas_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+south_donbas_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 south_donbas_firms <- new_firms_frame[new_firms_frame$latitude < 48.5 & new_firms_frame$latitude > 46.5 & new_firms_frame$longitude < 39 & new_firms_frame$longitude > 36,]
 south_donbas_date_firms <- list()
 south_donbas_means_firms <- list()
@@ -100,7 +100,7 @@ for(i in south_donbas_dates){
 }
 south_donbas_firms_summary <- as.data.frame(data.table::rbindlist(south_donbas_means_firms))
 
-zaporizhizhia_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+zaporizhizhia_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 zaporizhizhia_firms <- new_firms_frame[new_firms_frame$latitude < 47.3 & new_firms_frame$latitude > 46.0 & new_firms_frame$longitude < 37 & new_firms_frame$longitude > 34.2,]
 zaporizhizhia_date_firms <- list()
 zaporizhizhia_means_firms <- list()
@@ -111,7 +111,7 @@ for(i in zaporizhizhia_dates){
 zaporizhizhia_firms_summary <- as.data.frame(data.table::rbindlist(zaporizhizhia_means_firms))
 
 
-kherson_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+kherson_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 kherson_firms <- new_firms_frame[new_firms_frame$latitude < 47.3 & new_firms_frame$latitude > 45.5 & new_firms_frame$longitude < 34.2 & new_firms_frame$longitude > 32.6,]
 kherson_date_firms <- list()
 kherson_means_firms <- list()
@@ -121,7 +121,7 @@ for(i in kherson_dates){
 }
 kherson_firms_summary <- as.data.frame(data.table::rbindlist(kherson_means_firms))
 
-crimea_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+crimea_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 crimea_firms <- new_firms_frame[new_firms_frame$latitude < 47.3 & new_firms_frame$latitude > 44.3 & new_firms_frame$longitude < 34.2 & new_firms_frame$longitude > 33.4,]
 crimea_date_firms <- list()
 crimea_means_firms <- list()
@@ -144,7 +144,7 @@ north_firms_summary_plot <- ggplot(north_firms_summary, aes(Date, FRP, colour=Re
   ggtitle("FIRMS VIIRS I-Band 375 m Active Fire") +
   theme_light()
 
-ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/north_firms_summary_plot.jpg", north_firms_summary_plot, device="jpg", width=6, height=5, dpi=600)
+ggsave("~/Github/Russia-Ukraine/Plots/2023-10-01/north_firms_summary_plot.jpg", north_firms_summary_plot, device="jpg", width=6, height=5, dpi=600)
 
 
 south_firms_summary <- as.data.frame(data.table::rbindlist(list(zaporizhizhia_firms_summary, kherson_firms_summary, crimea_firms_summary)))
@@ -158,11 +158,11 @@ south_firms_summary_plot <- ggplot(south_firms_summary, aes(Date, FRP, colour=Re
   ggtitle("FIRMS VIIRS I-Band 375 m Active Fire") +
   theme_light()
 
-ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/south_firms_summary_plot.jpg", south_firms_summary_plot, device="jpg", width=6, height=5, dpi=600)
+ggsave("~/Github/Russia-Ukraine/Plots/2023-10-01/south_firms_summary_plot.jpg", south_firms_summary_plot, device="jpg", width=6, height=5, dpi=600)
 
 
 ###Axis FRP
-tokmak_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+tokmak_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 tokmak_firms <- new_firms_frame[new_firms_frame$latitude < 47.7 & new_firms_frame$latitude > 47.0 & new_firms_frame$longitude < 36.2 & new_firms_frame$longitude > 35.4,]
 tokmak_date_firms <- list()
 tokmak_means_firms <- list()
@@ -172,7 +172,7 @@ for(i in tokmak_dates){
 }
 tokmak_firms_summary <- as.data.frame(data.table::rbindlist(tokmak_means_firms))
 
-velyka_novosilka_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+velyka_novosilka_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 velyka_novosilka_firms <- new_firms_frame[new_firms_frame$latitude < 47.9 & new_firms_frame$latitude > 47.4 & new_firms_frame$longitude < 37.1 & new_firms_frame$longitude > 36.4,]
 velyka_novosilka_date_firms <- list()
 velyka_novosilka_means_firms <- list()
@@ -182,7 +182,7 @@ for(i in velyka_novosilka_dates){
 }
 velyka_novosilka_firms_summary <- as.data.frame(data.table::rbindlist(velyka_novosilka_means_firms))
 
-bakhmut_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+bakhmut_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 bakhmut_firms <- new_firms_frame[new_firms_frame$latitude < 48.9 & new_firms_frame$latitude > 48.3 & new_firms_frame$longitude < 38.4 & new_firms_frame$longitude > 37.6,]
 bakhmut_date_firms <- list()
 bakhmut_means_firms <- list()
@@ -192,7 +192,7 @@ for(i in bakhmut_dates){
 }
 bakhmut_firms_summary <- as.data.frame(data.table::rbindlist(bakhmut_means_firms))
 
-kupyansk_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+kupyansk_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 kupyansk_firms <- new_firms_frame[new_firms_frame$latitude < 48.9 & new_firms_frame$latitude > 48.3 & new_firms_frame$longitude < 38.4 & new_firms_frame$longitude > 37.6,]
 kupyansk_date_firms <- list()
 kupyansk_means_firms <- list()
@@ -202,7 +202,7 @@ for(i in kupyansk_dates){
 }
 kupyansk_firms_summary <- as.data.frame(data.table::rbindlist(kupyansk_means_firms))
 
-avdiivka_dates = seq(as.Date("2023-06-01"), Sys.Date(), by="days")
+avdiivka_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 avdiivka_firms <- new_firms_frame[new_firms_frame$latitude < 48.3 & new_firms_frame$latitude > 48.0 & new_firms_frame$longitude < 37.9 & new_firms_frame$longitude > 37.5,]
 avdiivka_date_firms <- list()
 avdiivka_means_firms <- list()
@@ -225,4 +225,4 @@ axis_firms_summary_plot <- ggplot(axis_firms_summary, aes(Date, FRP, colour=Axis
   theme_light() +
   theme(legend.position = "none")
 
-ggsave("~/Github/Russia-Ukraine/Plots/2023-06-01/axis_firms_summary_plot.jpg", axis_firms_summary_plot, device="jpg", width=6, height=8, dpi=600)
+ggsave("~/Github/Russia-Ukraine/Plots/2023-10-01/axis_firms_summary_plot.jpg", axis_firms_summary_plot, device="jpg", width=6, height=8, dpi=600)
