@@ -54,7 +54,7 @@ ggplot2::theme_set(ggplot2::theme_minimal())
 
 
 equipment_losses <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Origional")
-equipment_losses_before <- equipment_losses[equipment_losses$Date == "2023-05-31",]
+equipment_losses_before <- equipment_losses[equipment_losses$Date == "2023-09-30",]
 equipment_losses$Date <- as.Date(equipment_losses$Date, format="%Y-%m-%d")
 equipment_losses <- equipment_losses %>%
     filter(Date >= as.Date("2023-10-01"))
@@ -64,7 +64,7 @@ for (name in names(equipment_losses[,-1])) {
 }
 
 equipment_totals <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Totals")
-equipment_totals_before <- equipment_totals[equipment_totals$Date == "2023-05-31",-1]
+equipment_totals_before <- equipment_totals[equipment_totals$Date == "2023-09-30",-1]
 equipment_totals$Date <- as.Date(equipment_totals$Date, format="%Y-%m-%d")
 equipment_totals <- equipment_totals %>%
     filter(Date >= as.Date("2023-10-01"))
@@ -75,7 +75,7 @@ for (name in names(equipment_totals[,-1])) {
 
 
 equipment_destroyed <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Destroyed")
-equipment_destroyed_before <- equipment_destroyed[equipment_destroyed$Date == "2023-05-31",-1]
+equipment_destroyed_before <- equipment_destroyed[equipment_destroyed$Date == "2023-09-30",-1]
 equipment_destroyed$Date <- as.Date(equipment_destroyed$Date, format="%Y-%m-%d")
 equipment_destroyed <- equipment_destroyed %>%
     filter(Date >= as.Date("2023-10-01"))
@@ -86,7 +86,7 @@ for (name in names(equipment_destroyed[,-1])) {
 
 
 equipment_damaged <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Damaged")
-equipment_damaged_before <- equipment_damaged[equipment_damaged$Date == "2023-05-31",-1]
+equipment_damaged_before <- equipment_damaged[equipment_damaged$Date == "2023-09-30",-1]
 equipment_damaged$Date <- as.Date(equipment_damaged$Date, format="%Y-%m-%d")
 equipment_damaged <- equipment_damaged %>%
     filter(Date >= as.Date("2023-10-01"))
@@ -97,7 +97,7 @@ for (name in names(equipment_damaged[,-1])) {
 
 
 equipment_captures <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Captures")
-equipment_captures_before <- equipment_captures[equipment_captures$Date == "2023-05-31",-1]
+equipment_captures_before <- equipment_captures[equipment_captures$Date == "2023-09-30",-1]
 equipment_captures$Date <- as.Date(equipment_captures$Date, format="%Y-%m-%d")
 equipment_captures <- equipment_captures %>%
     filter(Date >= as.Date("2023-10-01"))
@@ -109,7 +109,7 @@ for (name in names(equipment_captures[,-1])) {
 
 
 equipment_synthetic <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bngHbR0YPS7XH1oSA1VxoL4R34z60SJcR3NxguZM9GI/edit#gid=0", sheetid="Synthetic")
-equipment_synthetic_before <- equipment_synthetic[equipment_synthetic$Date == "2023-05-31",-1]
+equipment_synthetic_before <- equipment_synthetic[equipment_synthetic$Date == "2023-09-30",-1]
 equipment_synthetic$Date <- as.Date(equipment_synthetic$Date, format="%Y-%m-%d")
 equipment_synthetic <- equipment_synthetic %>%
     filter(Date >= as.Date("2023-10-01"))
