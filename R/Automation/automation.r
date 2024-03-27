@@ -329,6 +329,7 @@ scrape_data <- function(russia_link="https://www.oryxspioenkop.com/2022/02/attac
         "article"
       ) %>%
       rvest::html_elements("li")
+      #russia_materiel <- c(russia_materiel)
       
       ukraine_materiel <-
         get_data(
@@ -336,13 +337,13 @@ scrape_data <- function(russia_link="https://www.oryxspioenkop.com/2022/02/attac
           "article"
         ) %>%
         rvest::html_elements("li")
-        
+
         materiel <- c(russia_materiel, ukraine_materiel)
 
     # Retreive the start position of each country
-    country_pos <- materiel %>% rvest::html_text2() %>%
+    #country_pos <- materiel %>% rvest::html_text2() %>%
       # T-64BV is the first row in the tank list and marks the beginning of each country
-      stringr::str_which("T-64BV")
+      #stringr::str_which("T-64BV")
 
     #' Run Program
     data <-
@@ -353,20 +354,38 @@ scrape_data <- function(russia_link="https://www.oryxspioenkop.com/2022/02/attac
         status = character(),
         url = character()
       )
+      
+      russia_data <- data
+      ukraine_data <- data
 
     counter = 0
-    for (a in seq_along(materiel)) {
-      status <- materiel[[a]] %>% rvest::html_elements("a")
-      for (b in seq_along(status)) {
+    for (a in seq_along(russia_materiel)) {
+      status_russia <- russia_materiel[[a]] %>% rvest::html_elements("a")
+      for (b in seq_along(status_russia)) {
         counter = counter + 1
-        data[counter, 1] <-
-          ifelse(a < country_pos[2], "Russia", "Ukraine")
-        data[counter, 2] <- extract_origin(materiel, a)
-        data[counter, 3] <- extract_system(materiel, a)
-        data[counter, 4] <- extract_status(status, b)
-        data[counter, 5] <- extract_url(status, b)
+        russia_data[counter, 1] <- "Russia"
+        russia_data[counter, 2] <- extract_origin(russia_materiel, a)
+        russia_data[counter, 3] <- extract_system(russia_materiel, a)
+        russia_data[counter, 4] <- extract_status(status_russia, b)
+        russia_data[counter, 5] <- extract_url(status_russia, b)
       }
     }
+    
+
+    counter = 0
+    for (a in seq_along(ukraine_materiel)) {
+      status_ukraine <- ukraine_materiel[[a]] %>% rvest::html_elements("a")
+      for (b in seq_along(status_ukraine)) {
+        counter = counter + 1
+        ukraine_data[counter, 1] <- "Ukraine"
+        ukraine_data[counter, 2] <- extract_origin(ukraine_materiel, a)
+        ukraine_data[counter, 3] <- extract_system(ukraine_materiel, a)
+        ukraine_data[counter, 4] <- extract_status(status_ukraine, b)
+        ukraine_data[counter, 5] <- extract_url(status_ukraine, b)
+      }
+    }
+    
+    data <- as_tibble(data.table::rbindlist(list(russia_data, ukraine_data)))
 
     data <- data %>%
       dplyr::mutate(status = stringr::str_extract_all(status, "destroyed|captured|abandoned|damaged")) %>%
@@ -433,13 +452,13 @@ total_by_system_wide <- function(indsn, date=NULL){
 }
 
 systems <- scrape_data()
-write.csv(systems, paste0("/Users/lee/GitHub/Russia-Ukraine/data/bySystem/Raw/Full/", Sys.Date(), ".csv"))
-previous_day <- read.csv(paste0("/Users/lee/GitHub/Russia-Ukraine/data/bySystem/Raw/Full/", Sys.Date()-1, ".csv"))
+write.csv(systems, paste0("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Full/", Sys.Date(), ".csv"))
+previous_day <- read.csv(paste0("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Full/", Sys.Date()-1, ".csv"))
 daily_systems <- systems[!systems$url %in% previous_day$url, ]
-write.csv(daily_systems, paste0("/Users/lee/GitHub/Russia-Ukraine/data/bySystem/Raw/Daily/", Sys.Date(), ".csv"))
+write.csv(daily_systems, paste0("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Daily/", Sys.Date(), ".csv"))
 
 tidy_systems <- total_by_system_wide(systems)
-write.csv(tidy_systems, paste0("/Users/lee/GitHub/Russia-Ukraine/data/bySystem/Totals/Full/", Sys.Date(), ".csv"))
+write.csv(tidy_systems, paste0("~/GitHub/Russia-Ukraine/data/bySystem/Totals/Full/", Sys.Date(), ".csv"))
 
 results <- daily_update(to_return="ok")
 if(!results$Totals$Russia_Total[nrow(results$Totals)]==results$Totals$Russia_Total[nrow(results$Totals)-1] && !results$Totals$Ukraine_Total[nrow(results$Totals)]==results$Totals$Ukraine_Total[nrow(results$Totals)-1]){
