@@ -4,7 +4,7 @@ layout: template
 filename: 6_winter_2023_offensive.md
 --- 
 
-# Russian Winter 2023 Offensive
+# Russian Winter 2023/2024 Offensive
 The following plots are based on the main project file, though they start their indexing at October 1st 2023 to match the current Russian offensive. 
 
 *Strategic Objective*: Reclaim territory in the Donbas (Donetsk and Luhansk oblasts)
