@@ -1,5 +1,5 @@
 ---
-title: Winter 2023 Offensive
+title: Winter 2023/2024 Offensive
 layout: template
 filename: 6_winter_2023_offensive.md
 --- 
