@@ -2,18 +2,23 @@ country_colors <-   c("Russia" = "#E4181C", "Ukraine" = "#0057B8")
 library(janitor)
 
 russia_first <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1p_sTP63VmW59hRMLBFola9x9T2QP70rg0rE12Uw6ehw", sheet="Russian Losses")
-russia <- russia_first[c(-1, -2),]
+russia <- russia_first[c(-1),]
 colnames(russia) <- as.character(russia_first[1,])
 colnames(russia)[5] <- "WeirdDate"
-russia$Date <- do.call("c", russia$WeirdDate)
+russia <- russia[1:length(na.omit(russia$Type)),]
+russia$Date <- do.call("c", russia$WeirdDate[1:length(na.omit(russia$Type))])
 russia <- russia[,c("Type", "Model", "Status", "Lost by", "Date", "Nearest location", "Oryx URL", "Source", "Geolocation", "Tags")]
 russia <- russia[complete.cases(russia$Model),]
 russia$Country <- "Russia"
 ukraine_first <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1p_sTP63VmW59hRMLBFola9x9T2QP70rg0rE12Uw6ehw", sheet="Ukrainian Losses") %>% as.data.frame()
-ukraine <- ukraine_first[c(-1, -2),]
+ukraine <- ukraine_first[c(-1),]
 colnames(ukraine) <- ukraine_first[1,]
 colnames(ukraine)[5] <- "WeirdDate"
-ukraine$Date <- do.call("c", ukraine$WeirdDate)#ukraine <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1niZlNuSVqb7WTj4zd9FIN_FvNrs0BtkEjNkSWCDz99I", sheet="Ukrainian Losses")
+ukraine <- ukraine[1:length(na.omit(ukraine$Type)),]
+ukraine <- ukraine[-45,]
+colnames(ukraine)[6] <- "Nearest location"
+ukraine[,"Nearest location"] <- do.call("c", ukraine[,"Nearest location"])
+ukraine$Date <- do.call("c", ukraine$WeirdDate)
 ukraine <- ukraine[,c("Type", "Model", "Status", "Lost by", "Date", "Nearest location", "Oryx URL",  "Source", "Geolocation", "Tags")]
 ukraine <- ukraine[complete.cases(ukraine$Model),]
 ukraine$Country <- "Ukraine"
