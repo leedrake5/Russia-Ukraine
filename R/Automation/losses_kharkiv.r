@@ -1,3 +1,6 @@
+source("~/GitHub/Russia-Ukraine/R/automation/initialize.R")
+
+
 country_colors <-   c("Russia" = "#E4181C", "Ukraine" = "#0057B8")
 library(janitor)
 
