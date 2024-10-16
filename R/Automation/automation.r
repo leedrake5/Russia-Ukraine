@@ -140,6 +140,9 @@ totals_fold <- function(totals_df=NULL, russia_link="https://www.oryxspioenkop.c
         totals_df$equipment_type <- as.vector(sapply(totals_df$equipment_type, function(x) strsplit(x, " (", fixed=TRUE)[[1]][1]))
         totals_df <- totals_df[!grep(")", totals_df$equipment_type, fixed=TRUE),]
         totals_df <- totals_df[!grep("(", totals_df$equipment_type, fixed=TRUE),]
+        totals_df <- totals_df[!startsWith(totals_df$equipment_type, "Losses excluding"), ]
+        totals_df <- totals_df[!startsWith(totals_df$equipment_type, "Losses of Armoured Combat Vehicles [Tanks, AFVs, IFVs, APCs, and MRAPs]"), ]
+        totals_df <- totals_df[!startsWith(totals_df$equipment_type, "\n"), ]
 
         totals_df$equipment_type[totals_df$equipment_type %in% "All Types"] <- "Total"
         totals_df$equipment_type <- gsub(" ", "_", totals_df$equipment_type)
