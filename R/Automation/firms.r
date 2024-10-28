@@ -44,7 +44,6 @@ library(zoo)
 country_colors <-   c("Russia" = "#E4181C", "Ukraine" = "#0057B8")
 
 
-
 ggplot2::theme_set(ggplot2::theme_minimal())
 # options(ggplot2.continuous.fill  = function() scale_fill_viridis_c())
 # options(ggplot2.continuous.colour = function() scale_color_viridis_c())
