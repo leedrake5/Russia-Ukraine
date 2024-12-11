@@ -464,7 +464,7 @@ tidy_systems <- total_by_system_wide(systems)
 write.csv(tidy_systems, paste0("~/GitHub/Russia-Ukraine/data/bySystem/Totals/Full/", Sys.Date(), ".csv"))
 
 results <- daily_update(to_return="ok")
-if(!results$Totals$Russia_Total[nrow(results$Totals)]==results$Totals$Russia_Total[nrow(results$Totals)-1] && !results$Totals$Ukraine_Total[nrow(results$Totals)]==results$Totals$Ukraine_Total[nrow(results$Totals)-1]){
+if(!results$Totals$Russia_Total[nrow(results$Totals)]==results$Totals$Russia_Total[nrow(results$Totals)-1] || !results$Totals$Ukraine_Total[nrow(results$Totals)]==results$Totals$Ukraine_Total[nrow(results$Totals)-1]){
     source("~/GitHub/Russia-Ukraine/R/Automation/losses.r")
     source("~/GitHub/Russia-Ukraine/R/Automation/losses_october_01_2023.r")
 }
