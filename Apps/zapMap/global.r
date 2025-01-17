@@ -1,5 +1,5 @@
 library(dplyr)
-library(rgdal)
+#library(rgdal)
 
 lm_eqn = function(m) {
     
