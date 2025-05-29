@@ -147,6 +147,7 @@ totals_fold <- function(totals_df=NULL, russia_link="https://www.oryxspioenkop.c
         totals_df$equipment_type[totals_df$equipment_type %in% "All Types"] <- "Total"
         totals_df$equipment_type <- gsub(" ", "_", totals_df$equipment_type)
         totals_df$equipment_type[totals_df$equipment_type %in% "Trucks,_Vehicles,_and_Jeeps"] <- "Trucks,_Vehicles_and_Jeeps"
+        totals_df$equipment_type[totals_df$equipment_type %in% "Trucks,_Vehicles,_Jeeps,_and_Trains"] <- "Trucks,_Vehicles_and_Jeeps"
         totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Station"] <- "Communications_Stations"
         totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Vehicles"] <- "Communications_Stations"
         totals_df$equipment_type[totals_df$equipment_type %in% "Communications_Stations"] <- "Command_Posts_And_Communications_Stations"
@@ -198,11 +199,11 @@ googleSheetPush <- function(results, sheet_url="https://docs.google.com/spreadsh
     gsheet_damaged <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Damaged, sheet="Damaged"), error=function(e) NULL)
     gsheet_abandoned <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Abandoned, sheet="Abandoned"), error=function(e) NULL)
     gsheet_captured <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Captured, sheet="Captured"), error=function(e) NULL)
-    gsheet_totals <- googlesheets4::sheet_write(ss=sheet_url, data=results$Totals, sheet="Totals")
-    gsheet_destroyed <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Destroyed, sheet="Destroyed"), error=function(e) NULL)
-    gsheet_damaged <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Damaged, sheet="Damaged"), error=function(e) NULL)
-    gsheet_abandoned <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Abandoned, sheet="Abandoned"), error=function(e) NULL)
-    gsheet_captured <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Captured, sheet="Captured"), error=function(e) NULL)
+    #gsheet_totals <- googlesheets4::sheet_write(ss=sheet_url, data=results$Totals, sheet="Totals")
+    #gsheet_destroyed <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Destroyed, sheet="Destroyed"), error=function(e) NULL)
+    #gsheet_damaged <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Damaged, sheet="Damaged"), error=function(e) NULL)
+    #gsheet_abandoned <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Abandoned, sheet="Abandoned"), error=function(e) NULL)
+    #gsheet_captured <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Captured, sheet="Captured"), error=function(e) NULL)
 }
 
 
