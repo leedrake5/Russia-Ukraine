@@ -116,7 +116,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/refugees_direction.jpg", current_refugees,
 
 
 ####Totals
-total_melt <- melt(equipment_losses[,c("Date", "Russia_Total", "Ukraine_Total")], id.var="Date")
+total_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Total", "Ukraine_Total")], id.var="Date")
 total_melt$Date <- as.Date(total_melt$Date, format="%m/%d/%Y")
 colnames(total_melt) <- c("Date", "Country", "Total")
 total_melt$Country <- gsub("_Total", "", total_melt$Country)
@@ -157,7 +157,7 @@ current_ratio <-
 ggsave("~/Github/Russia-Ukraine/Plots/current_ratio.jpg", current_ratio, device="jpg", width=6, height=5)
 
 ####Destroyed
-destroyed_melt <- melt(equipment_losses[,c("Date", "Russia_Destroyed", "Ukraine_Destroyed")], id.var="Date")
+destroyed_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Destroyed", "Ukraine_Destroyed")], id.var="Date")
 destroyed_melt$Date <- as.Date(destroyed_melt$Date, format="%m/%d/%Y")
 colnames(destroyed_melt) <- c("Date", "Country", "Destroyed")
 destroyed_melt$Country <- gsub("_Destroyed", "", destroyed_melt$Country)
@@ -197,7 +197,7 @@ destroyed_ratio <-
 ggsave("~/Github/Russia-Ukraine/Plots/destroyed_ratio.jpg", destroyed_ratio, device="jpg", width=6, height=5)
 
 ####Abandoned
-abandoned_melt <- melt(equipment_losses[,c("Date", "Russia_Abandoned", "Ukraine_Abandoned")], id.var="Date")
+abandoned_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Abandoned", "Ukraine_Abandoned")], id.var="Date")
 abandoned_melt$Date <- as.Date(abandoned_melt$Date, format="%m/%d/%Y")
 colnames(abandoned_melt) <- c("Date", "Country", "Abandoned")
 abandoned_melt$Country <- gsub("_Abandoned", "", abandoned_melt$Country)
@@ -237,7 +237,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/abandoned_ratio.jpg", abandoned_ratio, dev
 
 
 ####Captured
-captured_melt <- melt(equipment_losses[,c("Date", "Russia_Captured", "Ukraine_Captured")], id.var="Date")
+captured_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Captured", "Ukraine_Captured")], id.var="Date")
 captured_melt$Date <- as.Date(captured_melt$Date, format="%m/%d/%Y")
 colnames(captured_melt) <- c("Date", "Country", "Captured")
 captured_melt$Country <- gsub("_Captured", "", captured_melt$Country)
@@ -276,7 +276,7 @@ captured_ratio <-
 ggsave("~/Github/Russia-Ukraine/Plots/captured_ratio.jpg", captured_ratio, device="jpg", width=6, height=5)
 
 ####Damaged
-damaged_melt <- melt(equipment_losses[,c("Date", "Russia_Damaged", "Ukraine_Damaged")], id.var="Date")
+damaged_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Damaged", "Ukraine_Damaged")], id.var="Date")
 damaged_melt$Date <- as.Date(damaged_melt$Date, format="%m/%d/%Y")
 colnames(damaged_melt) <- c("Date", "Country", "Damaged")
 damaged_melt$Country <- gsub("_Damaged", "", damaged_melt$Country)
@@ -345,7 +345,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_grid.jpg", current_grid, device="j
 
 ##Ratio
 ####Totals
-total_melt <- melt(equipment_losses[,c("Date", "Russia_Total", "Ukraine_Total")], id.var="Date")
+total_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Total", "Ukraine_Total")], id.var="Date")
 total_melt$Date <- as.Date(total_melt$Date, format="%m/%d/%Y")
 colnames(total_melt) <- c("Date", "Country", "Total")
 total_melt$Country <- gsub("_Total", "", total_melt$Country)
@@ -367,7 +367,7 @@ total_cast_melt$variable[total_cast_melt$variable=="UkraineRatio"] <- "Ukraine"
 colnames(total_cast_melt) <- c("Date", "Country", "Ratio")
 total_cast_melt$Type <- "Total"
 
-destroyed_melt <- melt(equipment_losses[,c("Date", "Russia_Destroyed", "Ukraine_Destroyed")], id.var="Date")
+destroyed_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Destroyed", "Ukraine_Destroyed")], id.var="Date")
 destroyed_melt$Date <- as.Date(destroyed_melt$Date, format="%m/%d/%Y")
 colnames(destroyed_melt) <- c("Date", "Country", "Destroyed")
 destroyed_melt$Country <- gsub("_Destroyed", "", destroyed_melt$Country)
@@ -390,7 +390,7 @@ colnames(destroyed_cast_melt) <- c("Date", "Country", "Ratio")
 destroyed_cast_melt$Type <- "Destroyed"
 
 
-abandoned_melt <- melt(equipment_losses[,c("Date", "Russia_Abandoned", "Ukraine_Abandoned")], id.var="Date")
+abandoned_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Abandoned", "Ukraine_Abandoned")], id.var="Date")
 abandoned_melt$Date <- as.Date(abandoned_melt$Date, format="%m/%d/%Y")
 colnames(abandoned_melt) <- c("Date", "Country", "Abandoned")
 abandoned_melt$Country <- gsub("_Abandoned", "", abandoned_melt$Country)
@@ -413,7 +413,7 @@ colnames(abandoned_cast_melt) <- c("Date", "Country", "Ratio")
 abandoned_cast_melt$Type <- "Abandoned"
 
 
-captured_melt <- melt(equipment_losses[,c("Date", "Russia_Captured", "Ukraine_Captured")], id.var="Date")
+captured_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Captured", "Ukraine_Captured")], id.var="Date")
 captured_melt$Date <- as.Date(captured_melt$Date, format="%m/%d/%Y")
 colnames(captured_melt) <- c("Date", "Country", "Captured")
 captured_melt$Country <- gsub("_Captured", "", captured_melt$Country)
@@ -482,7 +482,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_grid.jpg", current_grid, device="j
 
 ####Raw Equipment Types
 ####Tanks
-tanks_melt <- melt(equipment_losses[,c("Date", "Russia_Tanks", "Ukraine_Tanks")], id.var="Date")
+tanks_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Tanks", "Ukraine_Tanks")], id.var="Date")
 tanks_melt$Date <- as.Date(tanks_melt$Date, format="%m/%d/%Y")
 colnames(tanks_melt) <- c("Date", "Country", "Tanks")
 tanks_melt$Country <- gsub("_Tanks", "", tanks_melt$Country)
@@ -523,7 +523,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/tank_ratio.jpg", tank_ratio, device="jpg",
 
 
 ####Armored Fighting Vehicles (AFVs)
-afv_melt <- melt(equipment_losses[,c("Date", "Russia_AFV", "Ukraine_AFV")], id.var="Date")
+afv_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_AFV", "Ukraine_AFV")], id.var="Date")
 afv_melt$Date <- as.Date(afv_melt$Date, format="%m/%d/%Y")
 colnames(afv_melt) <- c("Date", "Country", "AFV")
 afv_melt$Country <- gsub("_AFV", "", afv_melt$Country)
@@ -564,7 +564,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/afv_ratio.jpg", afv_ratio, device="jpg", w
 
 
 ####Artillery
-artillery_melt <- melt(equipment_losses[,c("Date", "Russia_Artillery", "Ukraine_Artillery")], id.var="Date")
+artillery_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Artillery", "Ukraine_Artillery")], id.var="Date")
 artillery_melt$Date <- as.Date(artillery_melt$Date, format="%m/%d/%Y")
 colnames(artillery_melt) <- c("Date", "Country", "Artillery")
 artillery_melt$Country <- gsub("_Artillery", "", artillery_melt$Country)
@@ -605,7 +605,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/artillery_ratio.jpg", artillery_ratio, dev
 
 
 ####Infantry Fighting Vehicles (AFVs)
-ifv_melt <- melt(equipment_losses[,c("Date", "Russia_IFV", "Ukraine_IFV")], id.var="Date")
+ifv_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_IFV", "Ukraine_IFV")], id.var="Date")
 ifv_melt$Date <- as.Date(ifv_melt$Date, format="%m/%d/%Y")
 colnames(ifv_melt) <- c("Date", "Country", "IFV")
 ifv_melt$Country <- gsub("_IFV", "", ifv_melt$Country)
@@ -646,7 +646,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/ifv_ratio.jpg", ifv_ratio, device="jpg", w
 
 
 ####Armored Personal Carriers
-apc_melt <- melt(equipment_losses[,c("Date", "Russia_APC", "Ukraine_APC")], id.var="Date")
+apc_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_APC", "Ukraine_APC")], id.var="Date")
 apc_melt$Date <- as.Date(apc_melt$Date, format="%m/%d/%Y")
 colnames(apc_melt) <- c("Date", "Country", "APC")
 apc_melt$Country <- gsub("_APC", "", apc_melt$Country)
@@ -686,7 +686,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/apc_ratio.jpg", apc_ratio, device="jpg", w
 
 
 ####Infantry Mobility Vehicles (IMVs)
-imv_melt <- melt(equipment_losses[,c("Date", "Russia_IMV", "Ukraine_IMV")], id.var="Date")
+imv_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_IMV", "Ukraine_IMV")], id.var="Date")
 imv_melt$Date <- as.Date(imv_melt$Date, format="%m/%d/%Y")
 colnames(imv_melt) <- c("Date", "Country", "IMV")
 imv_melt$Country <- gsub("_IMV", "", imv_melt$Country)
@@ -727,7 +727,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/imv_ratio.jpg", imv_ratio, device="jpg", w
 
 
 ####Engineering Vehicles (EVs)
-ev_melt <- melt(equipment_losses[,c("Date", "Russia_Engineering", "Ukraine_Engineering")], id.var="Date")
+ev_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Engineering", "Ukraine_Engineering")], id.var="Date")
 ev_melt$Date <- as.Date(ev_melt$Date, format="%m/%d/%Y")
 colnames(ev_melt) <- c("Date", "Country", "EV")
 #ev_melt[ev_melt$EV==0] <- 0.1
@@ -768,7 +768,7 @@ ev_ratio <-
 ggsave("~/Github/Russia-Ukraine/Plots/ev_ratio.jpg", ev_ratio, device="jpg", width=6, height=5)
 
 ####Vehicles
-vehicles_melt <- melt(equipment_losses[,c("Date", "Russia_Vehicles", "Ukraine_Vehicles")], id.var="Date")
+vehicles_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Vehicles", "Ukraine_Vehicles")], id.var="Date")
 vehicles_melt$Date <- as.Date(vehicles_melt$Date, format="%m/%d/%Y")
 colnames(vehicles_melt) <- c("Date", "Country", "Vehicles")
 vehicles_melt$Country <- gsub("_Vehicles", "", vehicles_melt$Country)
@@ -810,7 +810,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/vehicle_ratio.jpg", vehicle_ratio, device=
 ####Synthetic Units (combinations of equipment categories to highlight strategy)
 
 ####Aircraft
-aircraft_melt <- melt(equipment_losses[,c("Date", "Russia_Aircraft", "Ukraine_Aircraft")], id.var="Date")
+aircraft_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Aircraft", "Ukraine_Aircraft")], id.var="Date")
 aircraft_melt$Date <- as.Date(aircraft_melt$Date, format="%m/%d/%Y")
 colnames(aircraft_melt) <- c("Date", "Country", "Aircraft")
 aircraft_melt$Country <- gsub("_Aircraft", "", aircraft_melt$Country)
@@ -850,7 +850,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/aircraft_ratio.jpg", aircraft_ratio, devic
 
 
 ####Anti-Aircraft
-antiaircraft_melt <- melt(equipment_losses[,c("Date", "Russia_Antiair", "Ukraine_Antiair")], id.var="Date")
+antiaircraft_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Antiair", "Ukraine_Antiair")], id.var="Date")
 antiaircraft_melt$Date <- as.Date(antiaircraft_melt$Date, format="%m/%d/%Y")
 colnames(antiaircraft_melt) <- c("Date", "Country", "Antiair")
 antiaircraft_melt$Country <- gsub("_Antiair", "", antiaircraft_melt$Country)
@@ -889,7 +889,7 @@ antiair_ratio <-
 ggsave("~/Github/Russia-Ukraine/Plots/antiair_ratio.jpg", antiair_ratio, device="jpg", width=6, height=5)
 
 ####Infantry
-infantry_melt <- melt(equipment_losses[,c("Date", "Russia_Infantry", "Ukraine_Infantry")], id.var="Date")
+infantry_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Infantry", "Ukraine_Infantry")], id.var="Date")
 infantry_melt$Date <- as.Date(infantry_melt$Date, format="%m/%d/%Y")
 colnames(infantry_melt) <- c("Date", "Country", "Infantry")
 infantry_melt$Country <- gsub("_Infantry", "", infantry_melt$Country)
@@ -929,7 +929,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/infantry_ratio.jpg", infantry_ratio, devic
 
 
 ####Armor
-armor_melt <- melt(equipment_losses[,c("Date", "Russia_Armor", "Ukraine_Armor")], id.var="Date")
+armor_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Armor", "Ukraine_Armor")], id.var="Date")
 armor_melt$Date <- as.Date(armor_melt$Date, format="%m/%d/%Y")
 colnames(armor_melt) <- c("Date", "Country", "Armor")
 armor_melt$Country <- gsub("_Armor", "", armor_melt$Country)
@@ -969,7 +969,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/armor_ratio.jpg", armor_ratio, device="jpg
 
 
 ####Logistics
-logistics_melt <- melt(equipment_losses[,c("Date", "Russia_Logistics", "Ukraine_Logistics")], id.var="Date")
+logistics_melt <- reshape2::melt(equipment_losses[,c("Date", "Russia_Logistics", "Ukraine_Logistics")], id.var="Date")
 logistics_melt$Date <- as.Date(logistics_melt$Date, format="%m/%d/%Y")
 colnames(logistics_melt) <- c("Date", "Country", "Logistics")
 logistics_melt$Country <- gsub("_Logistics", "", logistics_melt$Country)
