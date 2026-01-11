@@ -35,9 +35,19 @@ git_commit_push_daily <- function(
     return(invisible(FALSE))
   }
 
-  # Daily marker commit message
-  day_label <- format(as.POSIXct(Sys.time(), tz = tz), "%B %-d, %Y")
-  commit_msg <- paste0(commit_prefix, " - ", day_label)
+  # Daily marker commit message: "January 10th, 2026"
+  tt <- as.POSIXlt(Sys.time(), tz = tz)
+  day_num <- as.integer(format(tt, "%d"))
+
+  suffix <- if (day_num %% 100 %in% c(11, 12, 13)) "th" else
+    c("th","st","nd","rd","th","th","th","th","th","th")[day_num %% 10 + 1]
+
+  day_label <- sprintf("%s %d%s, %d",
+                       format(tt, "%B"),
+                       day_num, suffix,
+                       as.integer(format(tt, "%Y")))
+
+  commit_msg <- day_label
 
   # Commit
   commit_cmd <- sprintf('git commit -m "%s"', commit_msg)
@@ -46,11 +56,18 @@ git_commit_push_daily <- function(
 
   # Push current branch to origin
   # (avoids guessing main/master; uses whatever branch is checked out)
-  rc_push <- system("git push origin HEAD")
+  # Ensure deploy key is used (cron-safe)
+  Sys.setenv(
+    GIT_SSH_COMMAND = "ssh -i ~/.ssh/russiaukraine_deploy_key -o IdentitiesOnly=yes"
+  )
+
+  rc_push <- system("git push origin HEAD", intern = FALSE)
   if (rc_push != 0) stop("git push failed.")
 
   message("Pushed: ", commit_msg)
   invisible(TRUE)
 }
+
+setwd("~/GitHub/Russia-Ukraine")
 
 git_commit_push_daily(repo_path = "~/GitHub/Russia-Ukraine", commit_prefix = "Daily marker")

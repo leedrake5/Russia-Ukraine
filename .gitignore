@@ -10,3 +10,4 @@ R/Automation/back.r
 *.dcf
 R/Automation/rsconnect.r
 R/Automation/rsconnect_cronR.r
+R/Automation/daily_update.r
