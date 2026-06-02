@@ -2,18 +2,18 @@
 
 Over the course of a multi-year war, it is possible to identify trends in equipment loss and active fire data. Presenting results briefly here. first, FIRMS:
 
-![FIRMS for Eastern Ukraine](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/annual/weekly_firms_east_yearcompare_smoothed.jpg?)
+![FIRMS for Eastern Ukraine](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/annual/weekly_firms_east_yearcompare_smoothed.jpg?)
 The dominant, but not exclusive, FIRMS signal is seasonality. However, there are noticeable breaks in trends. A sharp uptick can be seen at the end of February 2022 at the start of the war. The sharp drop in FIRMS signal in 2022 is also likely a war signal than a seasonal signal; it drops a month earlier than suceeding years, and is associated with the successful Kharkiv offensive by Ukraine which began in early September of that year.
 
 For Eastern Ukraine, 2024 and 2025 saw the highest levels of FIRMS-relted activity. This is likely related to the multi-year Russian Donbass offensive. This activity peaked in September of 2024, but still saw elevated activity through to autumn of 2025. 2026 is, in contrast, much lower than the front was in the first half of 2024 and 2025; comparable only to 2023 before the current offensive started.
 
-![Tank losses for Russia (top) and Ukraine (bottom)](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/annual/monthly_tanks_yearcompare.jpg?)
+![Tank losses for Russia (top) and Ukraine (bottom)](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/annual/monthly_tanks_yearcompare.jpg?)
 Tank losses for both sides also indicate a drop in activity in early 2026 for both sides.  Tank losses for both Russia and Ukraine are at a minima for the entire conflict most of the time.
 
-![Infantry carrier losses for Russia (top) and Ukraine (bottom)](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/annual/monthly_infantry_carriers_yearcompare.jpg?)
+![Infantry carrier losses for Russia (top) and Ukraine (bottom)](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/annual/monthly_infantry_carriers_yearcompare.jpg?)
 The drop in infantry carriers (IFV + APC + IMV) mirrors the lower activity trend for Russia, but not Ukraine. If anything, Ukraine's losses have been increasing with time.
 
-![Artillery losses for Russia (top) and Ukraine (bottom)](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/annual/monthly_artillery_yearcompare.jpg?)
+![Artillery losses for Russia (top) and Ukraine (bottom)](https://raw.githubusercontent.com/leedrake5/Russia-Ukraine/master/annual/monthly_artillery_yearcompare.jpg?)
 Again, same trend as before; Russian losses are declining, while Ukrainian losses are picking up.
 
 So, takeaways:
