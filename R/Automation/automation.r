@@ -465,11 +465,19 @@ tidy_systems <- total_by_system_wide(systems)
 write.csv(tidy_systems, paste0("~/GitHub/Russia-Ukraine/data/bySystem/Totals/Full/", Sys.Date(), ".csv"))
 
 results <- daily_update(to_return="ok")
-if(!results$Totals$Russia_Total[nrow(results$Totals)]==results$Totals$Russia_Total[nrow(results$Totals)-1] || !results$Totals$Ukraine_Total[nrow(results$Totals)]==results$Totals$Ukraine_Total[nrow(results$Totals)-1]){
+units_changed <- !results$Totals$Russia_Total[nrow(results$Totals)]==results$Totals$Russia_Total[nrow(results$Totals)-1] || !results$Totals$Ukraine_Total[nrow(results$Totals)]==results$Totals$Ukraine_Total[nrow(results$Totals)-1]
+if(units_changed){
     source("~/GitHub/Russia-Ukraine/R/Automation/losses.r")
     source("~/GitHub/Russia-Ukraine/R/Automation/losses_october_01_2023.r")
 }
 source("~/GitHub/Russia-Ukraine/R/Automation/firms.r")
 source("~/GitHub/Russia-Ukraine/R/Automation/firms_october_01_2023.r")
+
+if(units_changed){
+    # Annual comparative analysis (equipment + FIRMS). Runs only when Oryx
+    # totals moved, after FIRMS scripts so the latest hourly pull is included.
+    tryCatch(source("~/GitHub/Russia-Ukraine/annual/annual_analysis.r"),
+             error=function(e) message("annual_analysis.r failed: ", conditionMessage(e)))
+}
 #source("~/GitHub/Russia-Ukraine/R/Automation/losses_zaporizhizhia.r")
 #source("~/GitHub/Russia-Ukraine/R/Automation/losses_avdiivka.r")
