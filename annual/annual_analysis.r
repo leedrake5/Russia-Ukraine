@@ -403,6 +403,9 @@ compute_monthly_losses <- function(files, types, label) {
   monthly <- daily[, .(losses = sum(lost)), by = .(country, year, month)]
   monthly[, year_fct := factor(year)]
   monthly <- monthly[as.character(year) %in% names(year_alpha)]
+  # Drop the current month — it's only partial and would drag the line down.
+  monthly <- monthly[!(year == lubridate::year(today) &
+                       month == lubridate::month(today))]
   monthly[, category := label]
   monthly
 }
