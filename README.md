@@ -13,7 +13,9 @@ Points (red = Russia, blue = Ukraine) represent cumulative losses for each day, 
 
 Please keep in mind that this is empirical, not interpretive, analysis. A concern raised about the available data is that it undercounts Ukrainian losses. This is possible not just because of bias (note that pro-Russian sources are monitored as well) but because areas under Russian control are less likely to have photo documentation. Fog of war is very real. There is no attempt here to use a modifier to adjust numbers - analysis is strictly empirical. Any bias in the original data will be reflected in the following analyses.
 
-Lastly, if you would like to make edits to descriptions of these data feel free to create a pull request or a new issue. 
+Lastly, if you would like to make edits to descriptions of these data feel free to create a pull request or a new issue.
+
+Given that the war has now gone on for years, annual comparisons are available [here](/annual/README.md).
 
 
 In addition to this main page, specific periods of the war have been isolated and treated seperatly, you can find them here: 
