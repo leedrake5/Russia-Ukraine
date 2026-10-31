@@ -55,20 +55,28 @@ ggplot2::theme_set(ggplot2::theme_minimal())
 ###Map
 
 
-btgs <- read.csv("https://raw.githubusercontent.com/simonhuwiler/uawardata/master/data/csv/btgs_current.csv")
-colnames(btgs)[3] <- "lon"
-colnames(btgs)[5] <- "Russian_BTGS"
+# BTG layer is unused here; fetching it only gave the run another way to fail.
+#btgs <- read.csv("https://raw.githubusercontent.com/simonhuwiler/uawardata/master/data/csv/btgs_current.csv")
+#colnames(btgs)[3] <- "lon"
+#colnames(btgs)[5] <- "Russian_BTGS"
 
 
 ###FIRMS Analysis
+source("~/GitHub/Russia-Ukraine/R/Automation/firms_helpers.r")
 dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
 
 firms_list <- list()
+firms_windows <- list()
 for(i in dates){
   tryCatch(firms_list[[as.character(i)]] <- data.table::fread(paste0("~/GitHub/Russia-Ukraine/data/FIRMS/",  as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), ".csv"))[,-1], error=function(e) NULL)
+  firms_windows[[as.character(i)]] <- firms_file_window(firms_list[[as.character(i)]])
 }
+# Days whose overpasses no saved pull covers; their FRP is plotted as a gap, not as a false low.
+firms_gap_dates <- firms_incomplete_dates(data.table::rbindlist(firms_windows), dates)
 
 new_firms_frame <- as.data.frame(data.table::rbindlist(firms_list, use.names=TRUE, fill=TRUE))
+# Everything below uses the Ukraine area; keep it and count each detection once (daily files overlap).
+new_firms_frame <- firms_dedupe(new_firms_frame[new_firms_frame$latitude > 44 & new_firms_frame$latitude < 53 & new_firms_frame$longitude > 22 & new_firms_frame$longitude < 41,])
 
 kyiv_firms <- new_firms_frame[new_firms_frame$latitude < 52 & new_firms_frame$latitude > 50 & new_firms_frame$longitude < 32 & new_firms_frame$longitude > 29,]
 kyiv_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
@@ -122,11 +130,12 @@ for(i in kherson_dates){
 kherson_firms_summary <- as.data.frame(data.table::rbindlist(kherson_means_firms))
 
 crimea_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
-crimea_firms <- new_firms_frame[new_firms_frame$latitude < 47.3 & new_firms_frame$latitude > 44.3 & new_firms_frame$longitude < 34.2 & new_firms_frame$longitude > 33.4,]
+# Whole peninsula (was a lon 33.4-34.2 strip running north into Kherson oblast).
+crimea_firms <- new_firms_frame[new_firms_frame$latitude < 46.15 & new_firms_frame$latitude > 44.3 & new_firms_frame$longitude < 36.7 & new_firms_frame$longitude > 32.4,]
 crimea_date_firms <- list()
 crimea_means_firms <- list()
 for(i in crimea_dates){
-    crimea_date_firms[[i]] <- crimea_firms[as.Date(kherson_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+    crimea_date_firms[[i]] <- crimea_firms[as.Date(crimea_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
     crimea_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(crimea_date_firms[[i]]$frp), Region="Crimea")
 }
 crimea_firms_summary <- as.data.frame(data.table::rbindlist(crimea_means_firms))
@@ -134,6 +143,7 @@ crimea_firms_summary <- as.data.frame(data.table::rbindlist(crimea_means_firms))
 
 
 north_firms_summary <- as.data.frame(data.table::rbindlist(list(kyiv_firms_summary, north_donbas_firms_summary, south_donbas_firms_summary)))
+north_firms_summary$FRP[north_firms_summary$Date %in% firms_gap_dates] <- NA
 
 north_firms_summary_plot <- ggplot(north_firms_summary, aes(Date, FRP, colour=Region)) +
   #geom_point() +
@@ -148,6 +158,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/2023-10-01/north_firms_summary_plot.jpg", 
 
 
 south_firms_summary <- as.data.frame(data.table::rbindlist(list(zaporizhizhia_firms_summary, kherson_firms_summary, crimea_firms_summary)))
+south_firms_summary$FRP[south_firms_summary$Date %in% firms_gap_dates] <- NA
 
 south_firms_summary_plot <- ggplot(south_firms_summary, aes(Date, FRP, colour=Region)) +
   #geom_point() +
@@ -177,7 +188,7 @@ velyka_novosilka_firms <- new_firms_frame[new_firms_frame$latitude < 47.9 & new_
 velyka_novosilka_date_firms <- list()
 velyka_novosilka_means_firms <- list()
 for(i in velyka_novosilka_dates){
-    velyka_novosilka_date_firms[[i]] <- tokmak_firms[as.Date(velyka_novosilka_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
+    velyka_novosilka_date_firms[[i]] <- velyka_novosilka_firms[as.Date(velyka_novosilka_firms$acq_date, format="%Y-%m-%d", origin="1970-01-01") %in% as.Date(i, format="%Y-%m-%d", origin="1970-01-01"),]
     velyka_novosilka_means_firms[[i]] <- data.frame(Date=as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), FRP=sum(velyka_novosilka_date_firms[[i]]$frp), Axis="Velyka Novosilka")
 }
 velyka_novosilka_firms_summary <- as.data.frame(data.table::rbindlist(velyka_novosilka_means_firms))
@@ -193,7 +204,8 @@ for(i in bakhmut_dates){
 bakhmut_firms_summary <- as.data.frame(data.table::rbindlist(bakhmut_means_firms))
 
 kupyansk_dates = seq(as.Date("2023-10-01"), Sys.Date(), by="days")
-kupyansk_firms <- new_firms_frame[new_firms_frame$latitude < 48.9 & new_firms_frame$latitude > 48.3 & new_firms_frame$longitude < 38.4 & new_firms_frame$longitude > 37.6,]
+# Centred on the Kupyansk map (49.73N, 37.71E) like the other axes; was a copy of Bakhmut's box.
+kupyansk_firms <- new_firms_frame[new_firms_frame$latitude < 50.0 & new_firms_frame$latitude > 49.4 & new_firms_frame$longitude < 38.1 & new_firms_frame$longitude > 37.3,]
 kupyansk_date_firms <- list()
 kupyansk_means_firms <- list()
 for(i in kupyansk_dates){
@@ -213,6 +225,7 @@ for(i in avdiivka_dates){
 avdiivka_firms_summary <- as.data.frame(data.table::rbindlist(avdiivka_means_firms))
 
 axis_firms_summary <- as.data.frame(data.table::rbindlist(list(tokmak_firms_summary, velyka_novosilka_firms_summary, bakhmut_firms_summary, kupyansk_firms_summary, avdiivka_firms_summary)))
+axis_firms_summary$FRP[axis_firms_summary$Date %in% firms_gap_dates] <- NA
 
 axis_firms_summary_plot <- ggplot(axis_firms_summary, aes(Date, FRP, colour=Axis)) +
   #geom_point() +

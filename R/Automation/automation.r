@@ -14,7 +14,7 @@ get_os <- function(){
     tolower(os)
 }
 
-list.of.packages <- c("ggplot2", "RCurl", "reshape2", "data.table", "gsheet", "dplyr", "tidyverse", "lubridate", "scales", "rvest", "do")
+list.of.packages <- c("ggplot2", "RCurl", "reshape2", "data.table", "gsheet", "dplyr", "tidyverse", "lubridate", "scales", "rvest")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(get_os()!="linux"){
     if(length(new.packages)) lapply(new.packages, function(x) install.packages(x, repos="http://cran.rstudio.com/", dep = TRUE, ask=FALSE, type="binary"))
@@ -32,13 +32,15 @@ library(tidyverse)
 library(lubridate)
 library(scales)
 library(rvest)
-library(do)
+# library(do) removed: nothing used it, it masked dplyr::select, and failed loads halted whole runs.
 
 source("~/GitHub/scrape_oryx/R/functions.R")
 
-source("~/GitHub/Russia-Ukraine/R/Automation/back.r")
+# A Google auth failure should only cost the Sheets push, not the scrapes and FIRMS pull.
+tryCatch(source("~/GitHub/Russia-Ukraine/R/Automation/back.r"),
+         error=function(e) message("back.r (Google auth) failed: ", conditionMessage(e)))
 
-googlesheets4::gs4_auth_configure(api_key=api_key)
+if(exists("api_key")) googlesheets4::gs4_auth_configure(api_key=api_key)
 
 #' totals_by_type
 #' @description Gets data by system category.
@@ -162,10 +164,18 @@ totals_fold <- function(totals_df=NULL, russia_link="https://www.oryxspioenkop.c
         totals_df$equipment_type[totals_df$equipment_type %in% "Anti-tank_Guided_Missiles"] <- "Anti-Tank_Guided_Missiles"
         totals_df$equipment_type[totals_df$equipment_type %in% "Artillery"] <- "Towed_Artillery"
         totals_df$equipment_type[totals_df$equipment_type %in% "Mortars"] <- "Heavy_Mortars"
+        # Later Oryx renames: map back to the original column names so each series stays continuous
+        # (the Google Sheet's synthetic columns look these up by name).
+        totals_df$equipment_type[totals_df$equipment_type %in% "Naval_Ships_and_Submarines"] <- "Naval_Ships"
+        totals_df$equipment_type[totals_df$equipment_type %in% "Rocket_and_Missile_Artillery"] <- "Multiple_Rocket_Launchers"
+        totals_df$equipment_type[totals_df$equipment_type %in% "Artillery_and_Missile_Support_Vehicles_And_Equipment"] <- "Artillery_Support_Vehicles_And_Equipment"
+        totals_df$equipment_type[totals_df$equipment_type %in% "Trucks_and_similar_vehicles"] <- "Trucks,_Vehicles_and_Jeeps"
     colnames(totals_df) <- c("Country", "EquipmentType", "Destroyed", "Abandoned", "Captured", "Damaged", "Quantity", "Date")
     totals_df$Type <- gsub("\n", "", paste0(totals_df$Country, "_", totals_df$EquipmentType))
     totals_df$Type[totals_df$Type %in% "Ukraine_Surface-to-air_missile_systems"] <- "Ukraine_Surface-To-Air_Missile_Systems"
     totals_df$Type[totals_df$Type %in% "Ukraine_Radars"] <- "Ukraine_Radars_And_Communications_Equipment"
+    # Oryx occasionally repeats a section header (e.g. a mislabelled block); keep the first rather than letting dcast average them.
+    totals_df <- totals_df[!duplicated(paste(totals_df$Date, totals_df$Type)),]
     totals_formatted <- reshape2::dcast(data=totals_df, formula=Date~Type, value.var="Quantity", fun.aggregate = mean)
     totals_formatted <- totals_formatted[,!colnames(totals_formatted) %in% c("Russia_", "Ukraine_")]
     colnames(totals_formatted) <- gsub("\n", "", colnames(totals_formatted))
@@ -194,7 +204,7 @@ googleSheetPush <- function(results, sheet_url="https://docs.google.com/spreadsh
 
     #googlesheets4::gs4_auth()
 
-    gsheet_totals <- googlesheets4::sheet_write(ss=sheet_url, data=results$Totals, sheet="Totals")
+    gsheet_totals <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Totals, sheet="Totals"), error=function(e) message("Totals sheet push failed: ", conditionMessage(e)))
     gsheet_destroyed <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Destroyed, sheet="Destroyed"), error=function(e) NULL)
     gsheet_damaged <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Damaged, sheet="Damaged"), error=function(e) NULL)
     gsheet_abandoned <- tryCatch(googlesheets4::sheet_write(ss=sheet_url, data=results$Abandoned, sheet="Abandoned"), error=function(e) NULL)
@@ -212,7 +222,13 @@ daily_update <- function(russia_link="https://www.oryxspioenkop.com/2022/02/atta
     
     result_list <- list()
     for(i in dates[1:length(dates)-1]){
-        result_list[[as.character(as.Date(i, format="%Y-%m-%d", origin="1970-01-01"))]] <- read.csv(paste0("~/GitHub/Russia-Ukraine/data/byType/", as.Date(i, format="%Y-%m-%d", origin="1970-01-01"), ".csv"))[,-1]
+        day <- as.character(as.Date(i, format="%Y-%m-%d", origin="1970-01-01"))
+        day_file <- paste0("~/GitHub/Russia-Ukraine/data/byType/", day, ".csv")
+        # A missed day (machine off) used to stop every later run here, before the FIRMS pull.
+        if(!file.exists(day_file)) next
+        result_list[[day]] <- read.csv(day_file)[,-1]
+        # Use the filename's date: hand-copied gap fills kept the previous day's Date.
+        result_list[[day]]$Date <- day
     }
     result_list[[as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01"))]] <- totals_by_type(date=as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01")))
     write.csv(result_list[[as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01"))]], paste0("~/GitHub/Russia-Ukraine/data/byType/", as.character(as.Date(Sys.Date(), format="%Y-%m-%d", origin="1970-01-01")), ".csv"))
@@ -455,23 +471,34 @@ total_by_system_wide <- function(indsn, date=NULL){
     return(tidy_frame)
 }
 
-systems <- scrape_data()
-write.csv(systems, paste0("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Full/", Sys.Date(), ".csv"))
-previous_day <- read.csv(paste0("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Full/", Sys.Date()-1, ".csv"))
-daily_systems <- systems[!systems$url %in% previous_day$url, ]
-write.csv(daily_systems, paste0("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Daily/", Sys.Date(), ".csv"))
+# Each stage is isolated so one failure (Oryx unreachable, a Sheets API error, a plotting bug)
+# can't stop the stages after it -- above all the FIRMS pull, whose rolling 24h window is lost if missed.
+tryCatch({
+    systems <- scrape_data()
+    write.csv(systems, paste0("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Full/", Sys.Date(), ".csv"))
+    # Diff against the latest earlier snapshot rather than strictly yesterday's, which halted the run after a missed day.
+    full_files <- sort(list.files(path.expand("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Full/"), pattern="^\\d{4}-\\d{2}-\\d{2}\\.csv$"))
+    previous_file <- tail(full_files[full_files < paste0(Sys.Date(), ".csv")], 1)
+    previous_day <- read.csv(paste0("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Full/", previous_file))
+    daily_systems <- systems[!systems$url %in% previous_day$url, ]
+    write.csv(daily_systems, paste0("~/GitHub/Russia-Ukraine/data/bySystem/Raw/Daily/", Sys.Date(), ".csv"))
 
-tidy_systems <- total_by_system_wide(systems)
-write.csv(tidy_systems, paste0("~/GitHub/Russia-Ukraine/data/bySystem/Totals/Full/", Sys.Date(), ".csv"))
+    tidy_systems <- total_by_system_wide(systems)
+    write.csv(tidy_systems, paste0("~/GitHub/Russia-Ukraine/data/bySystem/Totals/Full/", Sys.Date(), ".csv"))
+}, error=function(e) message("bySystem update failed: ", conditionMessage(e)))
 
-results <- daily_update(to_return="ok")
-units_changed <- !results$Totals$Russia_Total[nrow(results$Totals)]==results$Totals$Russia_Total[nrow(results$Totals)-1] || !results$Totals$Ukraine_Total[nrow(results$Totals)]==results$Totals$Ukraine_Total[nrow(results$Totals)-1]
+results <- tryCatch(daily_update(to_return="ok"), error=function(e) {message("byType update failed: ", conditionMessage(e)); NULL})
+units_changed <- !is.null(results) && (!results$Totals$Russia_Total[nrow(results$Totals)]==results$Totals$Russia_Total[nrow(results$Totals)-1] || !results$Totals$Ukraine_Total[nrow(results$Totals)]==results$Totals$Ukraine_Total[nrow(results$Totals)-1])
 if(units_changed){
-    source("~/GitHub/Russia-Ukraine/R/Automation/losses.r")
-    source("~/GitHub/Russia-Ukraine/R/Automation/losses_october_01_2023.r")
+    tryCatch(source("~/GitHub/Russia-Ukraine/R/Automation/losses.r"),
+             error=function(e) message("losses.r failed: ", conditionMessage(e)))
+    tryCatch(source("~/GitHub/Russia-Ukraine/R/Automation/losses_october_01_2023.r"),
+             error=function(e) message("losses_october_01_2023.r failed: ", conditionMessage(e)))
 }
-source("~/GitHub/Russia-Ukraine/R/Automation/firms.r")
-source("~/GitHub/Russia-Ukraine/R/Automation/firms_october_01_2023.r")
+tryCatch(source("~/GitHub/Russia-Ukraine/R/Automation/firms.r"),
+         error=function(e) message("firms.r failed: ", conditionMessage(e)))
+tryCatch(source("~/GitHub/Russia-Ukraine/R/Automation/firms_october_01_2023.r"),
+         error=function(e) message("firms_october_01_2023.r failed: ", conditionMessage(e)))
 
 if(units_changed){
     # Annual comparative analysis (equipment + FIRMS). Runs only when Oryx

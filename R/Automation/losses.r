@@ -226,7 +226,7 @@ abandoned_ratio_frame <- abandoned_ratio_frame %>%
 
 abandoned_ratio <-
   ggplot(abandoned_ratio_frame, aes(Date, Ratio)) +
-  geom_col(data=destroyed_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
+  geom_col(data=abandoned_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%Y/%m/%d") +
@@ -266,7 +266,7 @@ captured_ratio_frame <- captured_ratio_frame %>%
 
 captured_ratio <-
   ggplot(captured_ratio_frame, aes(Date, Ratio)) +
-  geom_col(data=destroyed_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
+  geom_col(data=captured_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%Y/%m/%d") +
@@ -305,7 +305,7 @@ damaged_ratio_frame <- damaged_ratio_frame %>%
 
 damaged_ratio <-
   ggplot(damaged_ratio_frame, aes(Date, Ratio)) +
-  geom_col(data=destroyed_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
+  geom_col(data=damaged_ratio_frame, mapping=aes(Date, Daily), alpha=0.8, position = position_dodge(0.7)) +
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%Y/%m/%d") +
@@ -376,7 +376,7 @@ destroyed_melt <- destroyed_melt %>%
   arrange(Date) %>%
   mutate(Daily = Destroyed - lag(Destroyed, default = first(Destroyed)))
 destroyed_cast = reshape2::dcast(destroyed_melt[,c("Date", "Country", "Daily")], formula=Date~Country, fun.aggregate=mean, value.var="Daily")
-destroyed_cast$RussiaRatio <- destroyed_cast$Russia/(destroyed_cast$Russia+total_cast$Ukraine)
+destroyed_cast$RussiaRatio <- destroyed_cast$Russia/(destroyed_cast$Russia+destroyed_cast$Ukraine)
 destroyed_cast$UkraineRatio <- destroyed_cast$Ukraine/(destroyed_cast$Russia+destroyed_cast$Ukraine)
 destroyed_cast$Ratio <- destroyed_cast$Russia/destroyed_cast$Ukraine
 destroyed_cast <- destroyed_cast[-1,]
@@ -399,8 +399,8 @@ abandoned_melt <- abandoned_melt %>%
   arrange(Date) %>%
   mutate(Daily = Abandoned - lag(Abandoned, default = first(Abandoned)))
 abandoned_cast = reshape2::dcast(abandoned_melt[,c("Date", "Country", "Daily")], formula=Date~Country, fun.aggregate=mean, value.var="Daily")
-abandoned_cast$RussiaRatio <- abandoned_cast$Russia/(abandoned_cast$Russia+total_cast$Ukraine)
-abandoned_cast$UkraineRatio <- abandoned_cast$Ukraine/(abandoned_cast$Russia+destroyed_cast$Ukraine)
+abandoned_cast$RussiaRatio <- abandoned_cast$Russia/(abandoned_cast$Russia+abandoned_cast$Ukraine)
+abandoned_cast$UkraineRatio <- abandoned_cast$Ukraine/(abandoned_cast$Russia+abandoned_cast$Ukraine)
 abandoned_cast$Ratio <- abandoned_cast$Russia/abandoned_cast$Ukraine
 abandoned_cast <- abandoned_cast[-1,]
 
@@ -422,8 +422,8 @@ captured_melt <- captured_melt %>%
   arrange(Date) %>%
   mutate(Daily = Captured - lag(Captured, default = first(Captured)))
 captured_cast = reshape2::dcast(captured_melt[,c("Date", "Country", "Daily")], formula=Date~Country, fun.aggregate=mean, value.var="Daily")
-captured_cast$RussiaRatio <- captured_cast$Russia/(captured_cast$Russia+total_cast$Ukraine)
-captured_cast$UkraineRatio <- captured_cast$Ukraine/(captured_cast$Russia+destroyed_cast$Ukraine)
+captured_cast$RussiaRatio <- captured_cast$Russia/(captured_cast$Russia+captured_cast$Ukraine)
+captured_cast$UkraineRatio <- captured_cast$Ukraine/(captured_cast$Russia+captured_cast$Ukraine)
 captured_cast$Ratio <- captured_cast$Russia/captured_cast$Ukraine
 captured_cast <- captured_cast[-1,]
 
@@ -922,8 +922,8 @@ infantry_ratio <-
   geom_point(show.legend=FALSE, size=0.1) +
   geom_line(stat="smooth", method="gam", size=1, linetype="solid", alpha=0.5, show.legend=FALSE) +
   scale_x_date(date_labels = "%Y/%m/%d") +
-  scale_y_continuous("Anti-Air Systems Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
-  ggtitle(paste0("Anti-air system loss ratio through ", Sys.Date())) +
+  scale_y_continuous("Infantry Support Loss Ratio Ru:Ukr", breaks = function(x) unique(floor(pretty(seq(0, (max(x) + 1) * 1.1))))) +
+  ggtitle(paste0("Infantry support loss ratio through ", Sys.Date())) +
   theme_light()
 ggsave("~/Github/Russia-Ukraine/Plots/infantry_ratio.jpg", infantry_ratio, device="jpg", width=6, height=5)
 
@@ -1060,8 +1060,10 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_unit_type.jpg", unit_type, device=
 ###Relative Tank Losses
 ### Percent Loss estimate per common request
 ### Total Tanks sourced from https://inews.co.uk/news/world/russia-tanks-how-many-putin-armoured-forces-ukraine-nato-explained-1504470
+# Russia_Tank_Capture / Russia_AFV_Capture count *Russian* vehicles captured by Ukraine (and vice versa),
+# so each side's gains come from the other side's column.
 percent_tanks <- equipment_losses  %>%
-  dplyr::select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
+  dplyr::select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Ukraine_Tank_Capture, Ukraine_Capture=Russia_Tank_Capture) %>%
   mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 13300 - Russia + Russia_Capture,
          UT = 2100 - Ukraine + Ukraine_Capture,
@@ -1093,7 +1095,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_tanks.jpg", current_
 
 ###Percent Tanks Baseline Adjusted
 percent_tanks <- equipment_losses  %>%
-  dplyr::select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
+  dplyr::select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Capture=Ukraine_Tank_Capture, Ukraine_Capture=Russia_Tank_Capture) %>%
   mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 13300,
          UT = 2100,
@@ -1128,7 +1130,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_total_tanks_baseline.jpg",
 ### Percent Loss estimate per common request
 ### Deployed Tanks sourced from https://en.as.com/en/2022/02/24/latest_news/1645729870_894320.html
 percent_tanks <- equipment_losses  %>%
-  dplyr::select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
+  dplyr::select(Date, Russia = Russia_Tanks, Ukraine = Ukraine_Tanks, Russia_Capture=Ukraine_Tank_Capture, Ukraine_Capture=Russia_Tank_Capture) %>%
   mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 2840 + Russia_Capture,
          UT = 2100 + Ukraine_Capture,
@@ -1160,7 +1162,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_deployed_tanks.jpg", curre
 
 ###Percent Tanks Baseline Adjusted
 percent_tanks <- equipment_losses  %>%
-  dplyr::select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Capture=Russia_Tank_Capture, Ukraine_Capture=Ukraine_Tank_Capture) %>%
+  dplyr::select(Date, Russia_Tanks = Russia_Tanks, Ukraine_Tanks = Ukraine_Tanks, Russia_Capture=Ukraine_Tank_Capture, Ukraine_Capture=Russia_Tank_Capture) %>%
   mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 2840,
          UT = 2100,
@@ -1197,7 +1199,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_deployed_tanks_baseline.jp
 ### Percent Loss estimate per common request
 ### Total Tanks sourced from https://inews.co.uk/news/world/russia-tanks-how-many-putin-armoured-forces-ukraine-nato-explained-1504470
 percent_afv <- equipment_losses  %>%
-  dplyr::select(Date, Russia = Russia_AFV, Ukraine = Ukraine_AFV, Russia_Capture = Russia_AFV_Capture, Ukraine_Capture = Ukraine_AFV_Capture) %>%
+  dplyr::select(Date, Russia = Russia_AFV, Ukraine = Ukraine_AFV, Russia_Capture = Ukraine_AFV_Capture, Ukraine_Capture = Russia_AFV_Capture) %>%
   mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 20000 - Russia + Russia_Capture,
          UT = 2870 - Ukraine + Ukraine_Capture,
@@ -1229,7 +1231,7 @@ ggsave("~/Github/Russia-Ukraine/Plots/current_percent_afv.jpg", current_percent_
 
 ###Percent AFV Baseline Adjusted
 percent_afv<- equipment_losses  %>%
-  dplyr::select(Date, Russia_AFV = Russia_AFV, Ukraine_AFV = Ukraine_AFV, Russia_Capture=Russia_AFV_Capture, Ukraine_Capture=Ukraine_AFV_Capture) %>%
+  dplyr::select(Date, Russia_AFV = Russia_AFV, Ukraine_AFV = Ukraine_AFV, Russia_Capture=Ukraine_AFV_Capture, Ukraine_Capture=Russia_AFV_Capture) %>%
   mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 20000,
          UT = 2870,
@@ -1267,8 +1269,8 @@ percent_armor <- equipment_losses  %>%
   mutate(Date = as.Date(Date, format="%m-%d-%Y", origin="1970-01-01"),
          RT = 20000 + 13300,
          UT = 2870 + 2100,
-         Russia = (Russia_AFV_Capture + Ukraine_AFV_Capture) - (Russia_AFV + Russia_Tanks),
-         Ukraine = (Ukraine_AFV_Capture + Ukraine_Tank_Capture) - (Ukraine_AFV+Ukraine_Tanks),
+         Russia = (Ukraine_AFV_Capture + Ukraine_Tank_Capture) - (Russia_AFV + Russia_Tanks),
+         Ukraine = (Russia_AFV_Capture + Russia_Tank_Capture) - (Ukraine_AFV+Ukraine_Tanks),
          Russia =  Russia / RT,
          Ukraine = Ukraine / UT) %>%
   pivot_longer(cols = c("Russia", "Ukraine"),

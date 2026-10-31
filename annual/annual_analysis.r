@@ -8,20 +8,24 @@
 ##   data/FIRMS/YYYY-MM-DD.csv   — daily FIRMS pulls (J1 VIIRS C2, Russia-Asia 24h)
 ##
 ## Outputs (all written to annual/):
-##   annual_equipment_losses.csv
-##   annual_firms_summary.csv
-##   plots: tanks_by_year.jpg, total_units_minus_trucks_by_year.jpg,
-##          firms_by_year.jpg, firms_pokrovsk_monthly.jpg
+##   annual_equipment_losses.csv, annual_firms_summary.csv, monthly_*.csv, weekly_firms_east.csv
+##   plots: tanks_by_year.jpg, total_units_minus_trucks_by_year.jpg, loss_rate_per_day.jpg,
+##          firms_detections_per_day.jpg, firms_frp_per_day.jpg, firms_donbas_monthly.jpg,
+##          monthly_*_yearcompare.jpg, weekly_firms_east_yearcompare*.jpg
 ##
 ## Caveats:
-##   - 2022 covers Feb 24 onwards; 2026 is partial (through latest snapshot).
+##   - 2022 covers Feb 24 onwards; the current year is partial (through latest snapshot).
 ##     A per-day rate is reported alongside totals so partial years are comparable.
 ##   - FIRMS detections are an indirect proxy. Confounders: agricultural burns
 ##     (esp. spring/autumn), wildfires, industrial sites, weather/cloud cover,
 ##     satellite revisit cadence. Use the macro window and multi-year trend to
 ##     dampen short-term noise; do not over-read month-to-month wiggles.
-##   - "Total units (minus trucks)" = "All Types" row minus the trucks row,
-##     to stay consistent with recent Oryx category changes.
+##   - FIRMS days whose overpasses no saved pull fully covers (R/Automation/firms_helpers.r)
+##     are filled with the complete-day average of the same week (weekly series) or month
+##     (monthly series and annual rates) instead of counting as quiet days.
+##   - "Units (no trucks)" = "All Types" minus trucks, recon UAVs and UGVs. Oryx dropped recon
+##     UAVs and UGVs from its headline count on 2026-05-04, so they are excluded from every
+##     snapshot to keep years comparable; trucks are excluded because that category was redefined.
 
 suppressPackageStartupMessages({
   library(dplyr)
@@ -51,13 +55,21 @@ if (!file.exists(latest_snapshot)) {
 
 ## ---- 1. Equipment losses: cumulative snapshots at year boundaries ---------
 
-snapshots <- list(
-  "pre-war"   = file.path(base_dir, "data/byType/2022-02-24.csv"),
-  "2022-end"  = file.path(base_dir, "data/byType/2022-12-31.csv"),
-  "2023-end" = file.path(base_dir, "data/byType/2023-12-31.csv"),
-  "2024-end" = file.path(base_dir, "data/byType/2024-12-31.csv"),
-  "2025-end" = file.path(base_dir, "data/byType/2025-12-31.csv"),
-  "current"  = latest_snapshot
+current_year <- as.integer(format(today, "%Y"))
+years <- 2022:current_year
+
+# Latest snapshot on or before a date, so a missed Dec 31 doesn't break the year boundary.
+snapshot_on_or_before <- function(d) {
+  files <- list.files(file.path(base_dir, "data/byType"), pattern = "^\\d{4}-\\d{2}-\\d{2}\\.csv$", full.names = TRUE)
+  files <- files[as.Date(gsub("\\.csv$", "", basename(files))) <= d]
+  files[length(files)]
+}
+
+snapshots <- c(
+  list("pre-war" = file.path(base_dir, "data/byType/2022-02-24.csv")),
+  setNames(lapply(head(years, -1), function(y) snapshot_on_or_before(as.Date(paste0(y, "-12-31")))),
+           paste0(head(years, -1), "-end")),
+  list("current" = latest_snapshot)
 )
 
 read_snap <- function(path, label) {
@@ -73,6 +85,8 @@ snap <- rbindlist(snap_list, use.names = TRUE, fill = TRUE)
 # Trucks row renamed across years; match either form.
 trucks_pattern <- "^Trucks"
 all_types_pattern <- "^All Types$"
+# Removed from Oryx's headline count on 2026-05-04 ("Unmanned Aerial Vehicles" is the pre-Nov-2022 name).
+drone_types <- c("Reconnaissance Unmanned Aerial Vehicles", "Unmanned Ground Vehicles", "Unmanned Aerial Vehicles")
 
 extract_metric <- function(d, country_, pattern) {
   row <- d[country == country_ & grepl(pattern, equipment_type), ]
@@ -90,13 +104,15 @@ cum_summary <- rbindlist(lapply(names(snapshots), function(lbl) {
     tanks    <- extract_metric(d, co, "^Tanks$")
     all_t    <- extract_metric(d, co, all_types_pattern)
     trucks   <- extract_metric(d, co, trucks_pattern)
+    drones   <- as.integer(sum(d[country == co & trimws(equipment_type) %in% drone_types, type_total]))
     data.table(
       snapshot = lbl,
       country  = co,
       tanks_cum        = tanks,
       all_units_cum    = all_t,
       trucks_cum       = trucks,
-      units_no_trucks_cum = all_t - trucks
+      drones_cum       = drones,
+      units_no_trucks_cum = all_t - trucks - drones
     )
   }))
 }))
@@ -109,31 +125,23 @@ deltas <- cum_summary %>%
   mutate(
     year = case_when(
       snapshot == "pre-war"  ~ NA_character_,
-      snapshot == "2022-end" ~ "2022",
-      snapshot == "2023-end" ~ "2023",
-      snapshot == "2024-end" ~ "2024",
-      snapshot == "2025-end" ~ "2025",
-      snapshot == "current"  ~ format(today, "%Y")
+      snapshot == "current"  ~ format(today, "%Y"),
+      TRUE                   ~ sub("-end$", "", snapshot)
     ),
     tanks_year     = tanks_cum         - lag(tanks_cum),
     all_units_year = all_units_cum     - lag(all_units_cum),
     trucks_year    = trucks_cum        - lag(trucks_cum),
+    drones_year    = drones_cum        - lag(drones_cum),
     units_no_trucks_year = units_no_trucks_cum - lag(units_no_trucks_cum)
   ) %>%
   ungroup() %>%
   filter(!is.na(year))
 
 # Days in each window — pre-war anchor is Feb 24, 2022.
-year_starts <- c("2022" = as.Date("2022-02-24"),
-                 "2023" = as.Date("2023-01-01"),
-                 "2024" = as.Date("2024-01-01"),
-                 "2025" = as.Date("2025-01-01"),
-                 "2026" = as.Date("2026-01-01"))
-year_ends   <- c("2022" = as.Date("2022-12-31"),
-                 "2023" = as.Date("2023-12-31"),
-                 "2024" = as.Date("2024-12-31"),
-                 "2025" = as.Date("2025-12-31"),
-                 "2026" = today)
+year_starts <- setNames(as.Date(paste0(years, "-01-01")), years)
+year_starts["2022"] <- as.Date("2022-02-24")
+year_ends   <- setNames(as.Date(paste0(years, "-12-31")), years)
+year_ends[as.character(current_year)] <- today
 
 deltas <- deltas %>%
   mutate(
@@ -176,20 +184,21 @@ bar_year(
 
 bar_year(
   deltas, "units_no_trucks_year",
-  "Units lost, excluding trucks",
-  "Total equipment lost per year (excluding trucks)",
-  paste0("'All Types' minus 'Trucks/similar'. Oryx visually confirmed. ", partial_note),
+  "Units lost, excluding trucks and recon drones/UGVs",
+  "Total equipment lost per year (excluding trucks, recon UAVs and UGVs)",
+  paste0("'All Types' minus trucks, recon UAVs and UGVs (dropped from Oryx's count 2026-05-04).\nOryx visually confirmed. ", partial_note),
   "total_units_minus_trucks_by_year.jpg"
 )
 
 # Per-day-rate variant so the partial year is honestly comparable.
+# dplyr:: because raster (attached by firms.r in the same session) masks select().
 deltas_long <- deltas %>%
-  select(country, year, tanks_per_day, units_no_trucks_per_day) %>%
+  dplyr::select(country, year, tanks_per_day, units_no_trucks_per_day) %>%
   pivot_longer(c(tanks_per_day, units_no_trucks_per_day),
                names_to = "metric", values_to = "rate") %>%
   mutate(metric = recode(metric,
                          tanks_per_day = "Tanks / day",
-                         units_no_trucks_per_day = "Units (no trucks) / day"))
+                         units_no_trucks_per_day = "Units (no trucks/recon drones) / day"))
 
 ggplot(deltas_long, aes(year, rate, fill = country)) +
   geom_col(position = position_dodge(width = 0.8), width = 0.75) +
@@ -208,12 +217,14 @@ ggsave(file.path(out_dir, "loss_rate_per_day.jpg"),
 
 firms_dir <- file.path(base_dir, "data/FIRMS")
 firms_files <- list.files(firms_dir, pattern = "\\.csv$", full.names = TRUE)
+source(file.path(base_dir, "R/Automation/firms_helpers.r"))
 
 # Schema drifts across years (brightness vs bright_ti4/5). Keep the union.
-keep_cols <- c("latitude", "longitude", "acq_date", "frp")
+keep_cols <- c("latitude", "longitude", "acq_date", "acq_time", "frp")
 
 read_firms <- function(f) {
   d <- tryCatch(fread(f, fill = TRUE), error = function(e) NULL)
+  window <- firms_file_window(d)
   if (is.null(d) || nrow(d) == 0) return(NULL)
   miss <- setdiff(keep_cols, names(d))
   for (m in miss) d[[m]] <- NA
@@ -223,18 +234,23 @@ read_firms <- function(f) {
   d[, longitude := suppressWarnings(as.numeric(longitude))]
   d[, frp       := suppressWarnings(as.numeric(frp))]
   d[, acq_date  := suppressWarnings(as.character(acq_date))]
-  d
+  # Only the Ukraine-area windows below are used; trimming here keeps memory and the de-dup cheap.
+  list(data = d[latitude >= 44.3 & latitude <= 52.4 & longitude >= 22.1 & longitude <= 40.2], window = window)
 }
 
-firms_all <- rbindlist(lapply(firms_files, read_firms), use.names = TRUE, fill = TRUE)
+firms_read <- lapply(firms_files, read_firms)
+firms_all <- rbindlist(lapply(firms_read, `[[`, "data"), use.names = TRUE, fill = TRUE)
 firms_all[, acq_date := as.Date(acq_date)]
 firms_all <- firms_all[!is.na(acq_date) & !is.na(latitude) & !is.na(longitude) & !is.na(frp)]
 firms_all <- firms_all[acq_date >= as.Date("2022-02-24") & acq_date <= today]
-# Some daily pulls overlap (24h files can repeat detections). De-dup on the
-# rounded coordinate + date + frp signature to avoid double-counting.
-firms_all[, dedup_key := paste(round(latitude, 4), round(longitude, 4), acq_date, round(frp, 1))]
-firms_all <- unique(firms_all, by = "dedup_key")
-firms_all[, dedup_key := NULL]
+# Daily pulls overlap, so the same detection can appear in two or three files; count it once.
+firms_all <- firms_dedupe(firms_all)
+# Days no saved pull fully covers (missing/empty files, early last pulls) would read as quiet days.
+# Drop them; rates below divide by complete days, and weekly/monthly series are scaled from them.
+firms_days <- seq(as.Date("2022-02-24"), today, by = "days")
+firms_gap_dates <- firms_incomplete_dates(rbindlist(lapply(firms_read, `[[`, "window")), firms_days)
+firms_complete_days <- firms_days[!firms_days %in% firms_gap_dates]
+firms_all <- firms_all[!acq_date %in% firms_gap_dates]
 firms_all[, year := lubridate::year(acq_date)]
 
 ## ---- 4. Three nested windows over the eastern theatre --------------------
@@ -251,14 +267,16 @@ windows <- list(
   pokrovsk_axis = list(lat = c(48.0, 48.7), lon = c(36.6, 37.9)),
   donbas_oper   = list(lat = c(47.3, 49.6), lon = c(36.3, 38.7)),
   east_theatre  = list(lat = c(46.5, 50.5), lon = c(35.0, 39.5)),
-  ukraine_all   = list(lat = c(44.3, 52.4), lon = c(22.1, 40.2))
+  # West edge at 26E: the Russia-Asia feed starts there, and only the early-2022 global
+  # files reached further west, which inflated 2022 when this window started at 22.1E.
+  ukraine_all   = list(lat = c(44.3, 52.4), lon = c(26.0, 40.2))
 )
 
 window_label <- c(
   pokrovsk_axis = "Pokrovsk axis (tight)",
   donbas_oper   = "Donbas operational (medium)",
   east_theatre  = "Eastern theatre (wide)",
-  ukraine_all   = "Ukraine (whole country)"
+  ukraine_all   = "Ukraine east of 26°E"
 )
 
 subset_window <- function(df, w) {
@@ -266,23 +284,20 @@ subset_window <- function(df, w) {
      longitude >= w$lon[1] & longitude <= w$lon[2]]
 }
 
+# Incomplete days are filled with their month's complete-day average before summing to years:
+# gaps cluster in some seasons (2023's in summer/autumn), so just dropping them would bias annual rates.
+month_coverage <- data.table(date = firms_days)[, .(days = .N, complete_days = sum(!date %in% firms_gap_dates)),
+                                                by = .(year = lubridate::year(date), month = floor_date(date, "month"))]
 firms_year <- rbindlist(lapply(names(windows), function(nm) {
   w <- windows[[nm]]
   d <- subset_window(firms_all, w)
-  d[, .(detections = .N, total_frp = sum(frp, na.rm = TRUE)),
-    by = year][, window := nm]
+  m <- d[, .(detections = .N, total_frp = sum(frp, na.rm = TRUE)), by = .(month = floor_date(acq_date, "month"))]
+  m <- merge(month_coverage, m, by = "month", all.x = TRUE)[complete_days > 0]
+  m[is.na(detections), `:=`(detections = 0L, total_frp = 0)]
+  m[, .(detections = sum(detections / complete_days * days), total_frp = sum(total_frp / complete_days * days),
+        days = sum(days), complete_days = sum(complete_days)), by = year][, window := nm]
 }), use.names = TRUE)
 
-# Per-day rates so the partial year is comparable.
-year_days <- data.table(
-  year = c(2022, 2023, 2024, 2025, 2026),
-  days = as.integer(c(
-    as.Date("2022-12-31") - as.Date("2022-02-24") + 1,
-    365, 366, 365,
-    as.integer(today - as.Date("2026-01-01")) + 1
-  ))
-)
-firms_year <- merge(firms_year, year_days, by = "year", all.x = TRUE)
 firms_year[, `:=`(
   detections_per_day = detections / days,
   frp_per_day = total_frp / days,
@@ -337,7 +352,13 @@ ggsave(file.path(out_dir, "firms_frp_per_day.jpg"),
 donbas <- subset_window(firms_all, windows$donbas_oper)
 donbas[, month := floor_date(acq_date, "month")]
 monthly <- donbas[, .(detections = .N, total_frp = sum(frp, na.rm = TRUE)),
-                  by = month][order(month)]
+                  by = month]
+# Scale each month from its complete days; skip months with under a week of them.
+month_days <- data.table(date = firms_complete_days)[, .(complete_days = .N), by = .(month = floor_date(date, "month"))]
+monthly <- merge(month_days, monthly, by = "month", all.x = TRUE)[order(month)]
+monthly[is.na(detections), `:=`(detections = 0L, total_frp = 0)]
+monthly[, `:=`(detections = ifelse(complete_days >= 7, detections / complete_days * days_in_month(month), NA_real_),
+               total_frp  = ifelse(complete_days >= 7, total_frp / complete_days * days_in_month(month), NA_real_))]
 
 ggplot(monthly, aes(month, detections)) +
   geom_col(fill = "#7F1D1D", alpha = 0.85) +
@@ -347,7 +368,7 @@ ggplot(monthly, aes(month, detections)) +
   scale_y_continuous(labels = comma) +
   labs(x = NULL, y = "FIRMS detections per month",
        title = "Donbas operational window — monthly FIRMS detections",
-       subtitle = "lat 47.3–49.6, lon 36.3–38.7. Covers Kupyansk → Pokrovsk → Velyka Novosilka.")
+       subtitle = "lat 47.3–49.6, lon 36.3–38.7. Covers Kupyansk → Pokrovsk → Velyka Novosilka.\nScaled from days with full overpass coverage.")
 ggsave(file.path(out_dir, "firms_donbas_monthly.jpg"),
        width = 8, height = 5, dpi = 300)
 
@@ -366,16 +387,14 @@ month_first <- as.Date(paste0("2025-", sprintf("%02d", 1:12), "-01"))
 month_ticks_weekly <- to_week(month_first)
 month_labs  <- month.abb
 
-year_alpha <- c("2022" = 0.45, "2023" = 0.55, "2024" = 0.70,
-                "2025" = 0.85, "2026" = 1.00)
+# Interpolated over however many years exist; with five years this reproduces the original
+# 0.45/0.55/0.70/0.85/1.00 alphas and the five colours below exactly.
+year_alpha <- setNames(approx(seq(0, 1, length.out = 5), c(0.45, 0.55, 0.70, 0.85, 1.00),
+                              seq(0, 1, length.out = length(years)))$y, years)
 
 # Sequential palette — light/warm → dark/hot so recent years pop. Used on top
 # of alpha as a redundant channel so faded years stay readable.
-year_colour <- c("2022" = "#FED98E",
-                 "2023" = "#FE9929",
-                 "2024" = "#EC7014",
-                 "2025" = "#993404",
-                 "2026" = "#1A0000")
+year_colour <- setNames(colorRampPalette(c("#FED98E", "#FE9929", "#EC7014", "#993404", "#1A0000"))(length(years)), years)
 
 ## --- 7a. Monthly equipment-loss helper ------------------------------------
 
@@ -451,6 +470,14 @@ weekly_firms_east <- firms_east[
   , .(detections = .N, frp = sum(frp, na.rm = TRUE)),
   by = .(year, week)
 ]
+# Scale each week to 7 days from its complete days (gaps no longer read as quiet weeks, and the
+# 8-9 day week 52 is normalised); weeks with fewer than 3 complete days are left out.
+week_days <- data.table(date = firms_complete_days)[, .(complete_days = .N),
+                                                     by = .(year = lubridate::year(date), week = to_week(date))]
+weekly_firms_east <- merge(week_days, weekly_firms_east, by = c("year", "week"), all.x = TRUE)
+weekly_firms_east[is.na(detections), `:=`(detections = 0L, frp = 0)]
+weekly_firms_east <- weekly_firms_east[complete_days >= 3]
+weekly_firms_east[, `:=`(detections = detections / complete_days * 7, frp = frp / complete_days * 7)]
 weekly_firms_east[, year_fct := factor(year)]
 weekly_firms_east <- weekly_firms_east[as.character(year) %in% names(year_alpha)]
 
@@ -530,7 +557,7 @@ write.csv(weekly_firms_east, file.path(out_dir, "weekly_firms_east.csv"), row.na
 
 cat("\n=== Annual equipment losses ===\n")
 print(deltas %>%
-        select(country, year, tanks_year, units_no_trucks_year,
+        dplyr::select(country, year, tanks_year, units_no_trucks_year,
                tanks_per_day, units_no_trucks_per_day, days, partial) %>%
         arrange(year, country))
 
